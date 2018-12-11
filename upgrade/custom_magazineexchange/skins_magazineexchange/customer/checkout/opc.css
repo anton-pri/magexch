@@ -1,0 +1,834 @@
+/* Left column */
+
+#main_area.index_class{
+    background: #fff;
+}
+
+.index_class h1{
+  border-bottom: 1px solid #adadad;
+  font: 600 18px/22px "Roboto Condensed",sans-serif;
+  margin-bottom: 30px;
+  overflow: hidden;
+  padding: 0 0 17px;
+  text-transform: uppercase;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#opc-main {
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    float: left;
+    font-size: 12px;
+    color: #333;
+}
+
+#opc-main div, #opc-main td, #opc-main label{
+    font-size: 12px;
+    color: #2c3e49;
+}
+
+ul#opc-sections {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul#opc-sections li.opc-section {
+    list-style: none;
+    margin: 0;
+    text-align: left;
+    font-size: 12px;
+}
+
+.grey_opc{
+    padding: 0;
+    overflow: hidden;
+}
+
+ul#opc-sections li.opc-section h3 {
+    border: 0 none;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    padding: 7px 0;
+    color: #617683;
+    font-family: Arial;
+    text-decoration: underline;
+}
+ul#opc-sections li.opc-section fieldset {
+    border: none;
+}
+
+#opc_totals table.totals {
+    text-align: left;
+    width: 100%;
+}
+#opc_totals table.totals tr td.total-name {
+    width: 70%;
+    font-size: 12px;
+    text-align: left;
+}
+#opc_totals table.totals tr td.total-value, #opc_totals table.totals tr td.total-value-alt {
+    font-weight: normal;
+    width: 10%;
+    font-size: 12px;
+    text-align: right;
+}
+
+#opc_totals .totals .total {
+    color: #112536;
+    font-weight: 400;
+    padding-right: 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+#opc_totals table.totals tr.total td.total-name {
+    width: 70%;
+    text-align: left;
+}
+#opc_totals table.totals tr.total td.total-value {
+    text-align: right;
+}
+input {
+    font-size: 12px;
+    padding: 2px;
+}
+select {
+    font-size: 12px;
+    padding: 2px;
+    height: 22px;
+    border: 1px solid #a9a9a9;
+}
+.dotted {
+    border-bottom: 1px dotted #888888;
+    text-decoration: none !important;
+}
+.toggle-link {
+    background: url("../../images/offerbox_arrow.gif") no-repeat scroll right center transparent;
+    padding-right: 15px;
+}
+
+.cc_info_row {
+    margin: 4px 0;
+    clear: both;
+    overflow: hidden;
+}
+
+.cc_info_row label{
+    width: 200px;
+}
+
+.cc_info_row select, .cc_info_row input{
+    margin-right: 8px;
+}
+
+.cc_info_row span{
+    line-height: 24px;
+}
+
+.cc_info_row .PopupHelpLink img{
+    margin-bottom: -7px;
+}
+
+.input_field_0, .input_field_1 {
+    line-height:normal;
+    margin: 0px;
+    padding: 0px;
+    clear: none;
+    width: 100%;
+}
+
+.input_field_1 label,
+.input_field_0 label {
+    height: 100%;
+/* kornev, for ie6*/
+    margin: 0px;
+}
+
+.input_field_1 label:after {
+    content: " *";
+
+}
+
+input.short {
+    width: 200px;
+    margin-right: 10px;
+}
+input.long {
+    width: 250px;
+}
+
+.cart-container table.black {
+    float: none;
+}
+
+.osc-section input{
+    float: none;
+}
+
+.osc-section label, .opc-section label{
+    display: block;
+    float: none;
+}
+
+#onestep_login .input_field_easy_0{
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#opc-main div.password-recovery{
+  margin: 0 0 15px;
+  font-size: 13px;
+  margin-left: 80px;
+}
+
+.button.simple.login-button {
+  background: #fbca2f;
+  border: 2px solid #000;
+  text-decoration: none!important;
+  padding: 7px 14px!important;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 auto 10px;
+  display: inline-block;
+}
+
+.buttons_centered {
+  text-align: center;
+}
+
+.already_registered {
+  margin-top: 20px;
+}
+
+.already_registered label {
+  width: 80px;
+}
+
+.shipping_billing input{
+  margin-right: 3px;
+}
+
+.shipping_billing{
+  line-height: 18px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.input_field_small_0:after, .input_field_small_1:after, .input_field_0:after, .input_field_1:after, .input_field_easy_0_0:after{
+  clear: none;
+}
+
+.input_field_0 select{
+  width: 128px;
+}
+
+.left_floated{
+  float: none;
+}
+
+#btn_box{
+  margin-top: 10px;
+}
+
+
+.shipping tr{
+  line-height: 18px;
+}
+
+.shipping tr input{
+  margin-right: 5px;
+}
+
+.payment .osc-left{
+  width: 100%;
+  line-height: 18px;
+}
+
+.payment .osc-right{
+  width: 100%;
+}
+
+.cc_info_row label, .cc_info_row select{
+  float: left;
+}
+
+.subheader{
+  padding-top: 5px;
+}
+
+.osc-section #opc_totals label{
+  display: inline;
+}
+
+hr{
+  background-color: #888888;
+  color: #888888;
+  margin: 20px 0 10px;
+}
+
+.coupon label{
+  width: auto;
+  height: auto;
+  float: left;
+  font-size: 12px;
+  line-height:30px;
+  padding: 0;
+}
+
+a.image-button{
+  margin: 2px;
+  padding: 2px;
+  width: 25px;
+  height: 25px;
+  background: #b2b2b2;
+}
+a.image-button:before {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #fff;
+}
+.coupon input{
+  margin-left: 5px;
+  margin-right: 1px;
+}
+
+.coupon_form{
+  margin-top: 5px;
+}
+
+#onestep_place{
+  position: relative;
+  overflow: hidden;
+}
+
+.place_order{
+  position: relative;
+}
+
+.place_order .button-left{
+  text-transform: capitalize;
+}
+
+#onestep_place .input_field_0{
+  position: relative;
+  width: auto;
+  float: right;
+  padding: 0;
+}
+
+#onestep_place .input_field_0 label{
+  display: block;
+  float: none;
+}
+
+.checkboxes{
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.checkboxes input{
+  height: auto;
+}
+
+h1, h2, h3, h4{
+  font-family: Arial;
+}
+
+.osc-login .black{
+  float: left;
+}
+
+.enter label{
+  overflow: hidden;
+}
+
+.enter input[type="text"], .enter input[type="password"], .enter input[type="email"], .osc-login input[type="text"],  .osc-login input[type="password"]{
+  width: 250px;
+  border: 1px solid #a9a9a9;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+  border: 1px solid #a9a9a9;
+  background: #fff;
+}
+
+.enter .black, .enter .button_left_align{
+  float: left;
+  margin-top: 13px;
+}
+
+.enter .button_left_align{
+  padding: 2px 10px;
+  margin-top: 0;
+}
+
+span.green_text{
+  font-size: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+.login_input{
+  padding: 0 5px 0 0;
+}
+
+#onestep_login .grey_opc .grey_opc {
+    padding: 0;
+    padding-top: 20px;
+}
+
+.osc-section #address_modify .input_field_0, .osc-section #address_modify .input_field_1{
+    padding-bottom: 1px;
+}
+
+.osc-section #address_modify .input_field_0:after, .osc-section #address_modify .input_field_1:after {
+    content: '';
+    clear: both;
+    float: none;
+}
+
+#apply_address {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#apply_address .black{
+    float: none;
+}
+
+label.save_as{
+    overflow: hidden;
+}
+
+label.save_as span{
+    float: left;
+    padding-right: 7px;
+}
+
+.same label{
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+ul#opc-sections li.opc-section #section-shipping-method .summary h2{
+    margin: 0;
+    padding-top:0;
+}
+
+.summary .dotted{
+  border-bottom: 1px solid;
+  padding-right: 0;
+}
+
+.totals.border{
+    border-top: 1px solid #c4c4c4;
+}
+
+.grey_opc.payment{
+    padding: 10px 0!important;
+}
+
+.payment_list{
+    width: 100%;
+}
+
+.payment_list tr td:first-child{
+    padding: 0!important;
+}
+
+.payment_list tr td input {
+    margin-top: 7px;
+}
+
+.password-recovery a {
+  font-size: 11px;
+  font-weight: bold;
+  color: #3b3bf6;
+}
+
+#opc-main .payment_list label{
+    padding: 0;
+}
+
+.one_payment{
+  padding: 0;
+}
+
+.note{
+    float: right;
+}
+
+.note textarea{
+    width: 330px;
+}
+
+#opc-main .note label{
+    font-size: 18px;
+}
+
+.one_payment{
+    overflow: hidden;
+}
+
+.coupon{
+    padding-left: 40px;
+}
+
+.osc-section .address_label_row{
+    overflow: hidden;
+}
+
+.osc-section .address_label_row label{
+    float: left;
+    padding: 0;
+    width: 115px;
+    font-weight: bold;
+}
+
+.address_label {
+    padding-bottom: 10px;
+}
+
+.checkout_block{
+  background: none;
+  border: 1px solid #939393;
+  line-height: 23px;
+  margin: 0 0 15px;
+  padding: 10px; 
+  border-radius: 10px;
+  position: relative;
+}
+
+.checkout_block h2, .guest_block h2 {
+  font-family: Verdana,Arial,Helvetica,Sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: normal;
+  padding-bottom: 4px;
+}
+
+.width50{
+  padding: 0;
+}
+
+#opc-main .checkout_block label{
+  color: #112536;
+  font-weight: 700;
+  font-size: 11px;
+
+}
+
+#opc-main .checkout_block label span {
+  font-size: 12px;
+}
+
+#address td{
+  padding-right: 30px;
+}
+
+#profile_form input[type="text"], #profile_form input[type="password"], #profile_form input[type="email"], .osc-section #address_modify input[type="text"] {
+  max-width: 244px;
+  width: 100%;
+}
+
+#profile_form select, #address select {
+  max-width: 244px;
+  width: 100%;
+}
+
+.cc_info_row select{
+  height: 22px;
+  padding: 2px;
+}
+
+.checkout_block textarea{
+  width: 100%;
+  height: 50px;
+}
+
+.methods table td{
+}
+
+.totals{
+  margin-top: 12px;
+}
+
+.totals td{
+  border: 1px solid #d6d4d4;
+  color: #333333;
+  line-height: 1.42857;
+  padding: 9px 8px 11px 18px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.coupon form{
+  height: auto;
+}
+
+.coupon_form{
+  height: auto;
+}
+
+.place_order .button-left{
+  text-transform: uppercase;
+}
+
+.place_order .button-right{
+  margin-right: 10px;
+  height: 40px;
+}
+
+.login_input input{
+  margin-top: 1px;
+}
+
+#giftcert_form_gc_id{
+  float: left;
+  margin: 0;
+}
+
+.enter .width50 {
+  width: 385px;
+  padding: 0;
+}
+
+.width_guest {
+  width: 300px;
+  margin-top: 25px;
+}
+
+button.button_guest {
+  background: #f67325;
+  border: 2px solid #000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 7px 14px;
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.guest_block {
+  border: 1px solid #939393;
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.checkout_or {
+  text-transform: capitalize;
+  padding: 80px 10px;
+}
+
+.checkout_hidden {
+  display: none;
+}
+
+.already_registered label {
+  display: inline-block;
+}
+
+.already_registered .input_field_easy_0 {
+  float: left;
+  margin-right: 15px;
+}
+
+.already_registered label {
+  float: left;
+  padding-right: 4px;
+}
+
+.button-right {
+  background: #b2b2b2;
+  border: none;
+  border-radius: 7px;
+  padding: 2px 10px;
+}
+
+.already_registered .button-right {
+  background: #b2b2b2 url(../../images/dark_l.gif) 55px center no-repeat;
+  padding-right: 20px;
+
+}
+
+.already_registered .button-left, .button-left {
+  text-transform: none;
+  font-family: Arial,Helvetica,Sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.Star {
+  color: red;
+}
+
+.summary.checkout_block {
+  background: #666666;
+  border: 1px solid #666666;
+  width: 100%;
+  height: auto!important;
+}
+
+.summary.checkout_block h2, .summary.checkout_block p {
+  display: inline;
+  color: #fff;
+}
+
+.summary.checkout_block h2 {
+  padding-right: 20px;
+}
+
+#opc_totals {
+  display: none;
+}
+
+.shipping .float-left, .shipping .float-right {
+  float: none;
+}
+
+.toogle_link {
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background: url(../../images/dark_p.gif) top left no-repeat;
+  float: right;
+}
+
+.toogle_link.minus {
+  background: url(../../images/dark_m.gif) top left no-repeat;
+}
+
+.summary table.totals {
+  background: #fff;
+}
+
+.summary table.totals tr:last-child {
+  background: #ccc;
+  font-weight: bold;
+}
+
+.summary table.totals tr.dark {
+  background: #ccc;
+}
+
+.summary table.totals td {
+  padding: 2px;
+  border-color: #666666;
+}
+
+#onestep_login .checkout_block, .payment_methods .checkout_block, .methods.checkout_block {
+  border: none;
+  padding: 0;
+}
+
+.checkout_register, #onestep_payment {
+  background: #efefef;
+  border: 1px solid #e8e8e8;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.checkout_register {
+  margin-bottom: 15px;
+}
+
+.checkout_register br {
+  display: none;
+}
+
+.checkout_block #address h2, .methods.checkout_block h2, .payment_methods .checkout_block h2 {
+  color: gray;
+  font-size: 16px;
+}
+
+.osc-section #address label {
+  float: left;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: normal;
+}
+
+.input_field_0 label:after {
+//  content: "";
+  color: red;
+  padding-left: 4px;
+}
+
+#onestep_payment input[type=text]{
+   margin: 0; 
+}
+
+.order_avatar {
+  text-align: center;
+}
+
+.place_order .button-right {
+  background: url(../../images/Place_Order_Button.gif) center center no-repeat;
+  padding: 0;
+  border: none;
+}
+
+.place_order .button-left {
+  text-indent: -999px;
+  width: 265px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.place_button_box {
+  text-align: center;
+}
+
+.checkout_register p {
+  line-height: 14px;
+}
+
+.order_avatar img {
+  max-width: 100%;
+}
+
+@media all and (max-width: 950px) {
+
+    .note{
+      float: none;
+    }
+
+  #opc-main {
+    padding: 0 10px;
+  }
+
+}
+
+@media all and (max-width: 650px) {
+
+    .osc-section #address_modify input[type="text"]{
+      width: 90%!important;
+    }
+
+    .cc_info_row label{
+      width: 50%;
+    }
+
+}
+
+@media (max-width: 767px) {
+  .width50 {
+    width: 100%;
+  }
+
+  .osc-section #address label {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+}
+
+

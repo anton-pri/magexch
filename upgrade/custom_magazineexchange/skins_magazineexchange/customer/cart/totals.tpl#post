@@ -1,0 +1,7 @@
+
+<div align="middle">{$lng.lbl_basket_note}</div>
+<div class="cart_buttons">
+    {include file='buttons/button.tpl' button_title=$lng.lbl_clear_cart href="index.php?target=`$current_target`&action=clear_cart"  style='clear'}
+    <div class="checkout_button">{include file='buttons/button.tpl' button_title=$lng.lbl_proceed_to_checkout style='button' href="javascript: cw_submit_form('cartform', 'checkout')"}</div>
+    {include file='customer/cart/buttons.tpl'}
+</div>

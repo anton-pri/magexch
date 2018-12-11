@@ -1,0 +1,11 @@
+<div class="HeadLogoHelp" id="HeadLogoHelp"><a href="{$calalog.customer}/"><img src="{$AltImagesDir}/home_page_help.png" width="92" height="18"></a></div>
+{literal}
+<script>
+  $( ".logo" ).mouseover(function() {
+      $("#HeadLogoHelp").show();
+  })
+  .mouseout(function() {
+      $("#HeadLogoHelp").hide();
+  });
+</script>
+{/literal}

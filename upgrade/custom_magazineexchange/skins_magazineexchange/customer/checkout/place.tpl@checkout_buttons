@@ -1,0 +1,7 @@
+<div class="place_button_box">
+	    	{include file="buttons/button.tpl" button_title=$lng.lbl_submit_order href=$button_href style='btn'}
+</div>
+
+	    	<div id="request_for_quote" style="display:none">
+	    		{include file="buttons/button.tpl" button_title=$lng.lbl_request_for_quote href=$button_href_quote style='btn'}
+	    	</div>

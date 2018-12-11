@@ -1,0 +1,31 @@
+Addon description, author, date, version
+========================================
+Sellers mod based on default "Sellers" addon with extra features
+
+Artem Levagin
+
+
+History
+========================================
+This is re-working of Marketplace mod from X-cart to CW
+
+Marketplace mod despite the spec created one order for all purchased products from differents sellers. 
+As result seller had to operate with products in common order instead of operation with own normal order.
+Sller used special order list for sellers with very limited layout. Also this restriction required that sellers specified tracking number / note  per product, however seller processed own obligations as usual order - ship all at once. XC mod used special per product marker to control owed payment.
+
+In this re-implementation each seller gots really own order. He does not see payment detail but has more control and information. He can use tracking number field and notes. Old shipment marker per product now has now more natural replacement - order status. New order life cycle is:
+    Initial - Queued - Processed - Completed - Paid Out
+
+
+* Seller reviews are not re-implemented as this feature was not used in old site (no real data, even no elements in customer side)
+* Seller promo pages are not re-implemented as this feature was not used in old site (no real data)
+
+
+Documentation
+========================================
+
+
+
+TODO list
+========================================
+

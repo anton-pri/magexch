@@ -1,0 +1,156 @@
+.header_logo, .header_logo .auth, li.potato-menu-item{
+    background: none;
+    border: none;
+}
+
+.search{
+    text-align: left;
+    color: #000000;
+}
+
+.green_line{
+    padding: 0px;
+    margin: 0px;
+    height: 42px;
+    background: #6c8101
+}
+
+.splitter{
+    padding: 0px;
+    margin: 0px;
+    height: 1px;
+}
+
+
+nav{
+    padding: 0px;
+}
+
+ul.potato-menu {
+  padding: 0 30px;
+}
+
+
+ul.potato-menu > li.potato-menu-item{
+    display: block!important;
+    position: relative!important;
+    padding-top: 0px;
+    margin-right: 2px;
+
+}
+
+ul.potato-menu li.potato-menu-item a{
+    color: #fff;
+    text-shadow: none;
+    font-size: 13px;
+    padding: 15px 16px 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    white-space:normal!important;
+}
+
+li.potato-menu-item{
+    width: auto;
+    padding: 0px 20px;
+    height: auto;
+}
+
+li.potato-menu-item a{
+    padding: 10px 12px;
+}
+
+ul.potato-menu > li.potato-menu-item > a, ul.potato-menu > li.potato-menu-item.potato-menu-hover > a {
+  background: #000;
+  font: bold 11px Verdana,Arial,Helvetica,Sans-serif;
+  text-transform: none;
+  padding: 8px 23px 8px 21px;
+  border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+}
+
+ul.potato-menu li.potato-menu-item ul.potato-menu-group li.potato-menu-item{
+    width: 100%;
+}
+
+ul.potato-menu li.potato-menu-item ul.potato-menu-group li.potato-menu-item a{
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+ul.potato-menu-vertical{
+    width: 960px;
+    position: absolute;
+    left: 0!important;
+    width: 139px;
+    margin-left: 0!important;
+    background: #fff;
+}
+
+ul.potato-menu-vertical li{
+    width: auto;
+    border-bottom: 1px solid #a9a9a9;
+    padding: 0;
+}
+
+ul.potato-menu-vertical li.potato-menu-item a{
+    font-size: 12px;
+    color: #000;
+    text-shadow: none;
+    font-weight: normal;
+    padding: 6px 10px 3px;
+    width: 100%;
+    line-height: 14px;
+}
+
+
+ul.potato-menu-vertical li.potato-menu-item:hover {
+color: #000;
+text-decoration: underline;
+background: url(../../images/submenu.png) top left repeat-x;
+}
+
+
+
+ul.potato-menu-vertical li ul.potato-menu-vertical{
+    background: #5d7503;
+    margin-left: 0!important;
+    height: auto;
+    border: none;
+}
+
+ul.potato-menu-vertical li ul.potato-menu-vertical li.potato-menu-item a{
+    font-size: 12px;
+    color: #000;
+    font-weight: normal;
+    padding: 6px 10px 3px!important;
+}
+
+ul.potato-menu-vertical li ul.potato-menu-vertical li.potato-menu-item a:hover {
+    color: #000;
+}
+
+ul.potato-menu li.potato-menu-item ul li{
+    display: block;
+    float: none;
+}
+
+ul.potato-menu li.potato-menu-item ul{
+    min-width: 184px;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+ul.potato-menu li.potato-menu-item ul ul{
+    left: 182px!important;
+    top: -1px!important;
+}
+
+ul.potato-menu li.potato-menu-item ul.potato-menu-group li.potato-menu-item.potato-menu-has-holizontal > a, ul.potato-menu li.potato-menu-item ul.potato-menu-group li.potato-menu-item.potato-menu-has-holizontal.potato-menu-hover > a{
+    background: url(../../images/right.gif) 170px center no-repeat;
+
+}
+
+li.potato-menu-item{
+    font-size: 12px;
+}

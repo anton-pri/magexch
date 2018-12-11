@@ -1,0 +1,1 @@
+create table cw_magexch_sellers_feedback (feedback_id int(11) not null auto_increment, customer_id int(11) not null default 0, seller_id int(11) not null default 0, rating int(11) not null default 0, review text not null default '', PRIMARY KEY (feedback_id), UNIQUE KEY(seller_id, customer_id));

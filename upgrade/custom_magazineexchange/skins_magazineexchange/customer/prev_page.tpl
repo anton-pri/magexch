@@ -1,0 +1,1 @@
+<div class="PrevPage"><< <a href="javascript: if (history.length > 0) {ldelim} history.go(-1); {rdelim} else {ldelim} self.location='home.php' {rdelim} "><strong>{$lng.lbl_return_to_previous_page}</strong></a></div>

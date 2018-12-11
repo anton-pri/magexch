@@ -1,0 +1,9 @@
+div.tabs {
+    width: 100% !important;
+}
+span.section_tab {
+    width: 50% !important;
+}
+span.section_tab_selected {
+    width: 50% !important;
+}

@@ -1,0 +1,13 @@
+<div class="input_field_easy_1_1 right_al">
+    <label>Total Owed<label>
+    {include file='common/currency.tpl' value=$total_owed}
+</div>
+<div class="input_field_easy_1_1 right_al">
+    <label>Total Paid Out<label>
+    {include file='common/currency.tpl' value=$total_paid_out}
+</div>
+<div class="input_field_easy_1_1 right_al">
+    <label>Total Owed less Paid Out<label>
+    {include file='common/currency.tpl' value=$total_owed_remain}
+</div><br/>
+

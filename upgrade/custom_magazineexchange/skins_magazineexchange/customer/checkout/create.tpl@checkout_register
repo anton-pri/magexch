@@ -1,0 +1,13 @@
+<div class="checkout_register" {if !$customer_id}style="display:none;"{/if}>
+
+
+{if $customer_id}<h2>{$lng.lbl_your_account}</h2>{else}<p>{$lng.lbl_register_benefits}</p>{/if}
+
+{if $customer_id}
+    <form action="{$app_web_dir}/index.php?target=acc_manager&action=logout" method="post" name="osc_logout_form">
+    {$user_account.email} {$lng.txt_logged_in}<br/>
+    {if $is_anonymous and $real_email}{$lng.lbl_real_email_is}: {$real_email}<br/>{/if}
+    {include file="buttons/button.tpl" button_title=$lng.lbl_logoff href="javascript: cw_submit_form('osc_logout_form');"}
+    </form>
+{/if}
+</div>

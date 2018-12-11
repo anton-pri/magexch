@@ -1,0 +1,54 @@
+        <div class="osc-section"> 
+        {*<h2>1) {$lng.lbl_do_you_have_account}</h2>*}
+        <div class="grey_opc login_block" id="onestep_option_container">
+        {assign var='cart_contains_digital' value=0} 
+        {foreach from=$products item=_product}
+            {if $_product.seller.is_digital}
+                {assign var='cart_contains_digital' value=1}
+            {/if}
+        {/foreach} 
+        <div class="float-right width_guest">
+          <div class="guest_block">
+            {if $cart_contains_digital}
+                <h2>{$lng.lbl_create_customer_account}</h2>
+                <button class="button_guest is_digital">{$lng.lbl_create_account|capitalize}</button>
+                <div class="guest_note">{$lng.lbl_quest_note_digital}</div>
+            {else}
+                <h2>{$lng.lbl_checkout_as_a_guest}</h2>
+                <button class="button_guest">{$lng.lbl_continue}</button>
+                <div class="guest_note">{$lng.lbl_quest_note}</div>
+            {/if}
+          </div>
+        </div>
+        <div class="checkout_or float-right">- {$lng.lbl_or} -</div>
+        <div class="checkout_hidden float-left width50">
+          <div class="checkout_block">
+            <h2>{$lng.lbl_create_an_account}</h2>
+            {if !$customer_id}
+            <label>
+                   <div class="float-left login_input"><input type='radio' name='account_option' value="{if $customer_id}new{else}exists{/if}" /></div> 
+                   <div class="float-left login_text"><span class="green_text">{$lng.lbl_returning_customer}?</span> <span style="font-weight: normal;">{$lng.lbl_returning_customer_txt}</span></div>
+
+            </label>
+            <label>
+                <div class="float-left login_input"><input id="guest_option" type='radio' name='account_option' value="new" /> </div>
+                <div class="float-left login_text">
+                   <span class="green_text">{$lng.lbl_new_customer}?</span>
+                   <span style="font-weight: normal;">{$lng.lbl_new_customer_txt}</span>
+                </div>
+            </label>
+            {/if}
+          </div>
+        </div>
+
+<script>
+  {literal}
+  $('.button_guest').click(function(){
+    if ($(this).hasClass('is_digital')) {
+       window.location = 'index.php?target=acc_manager&usertype=C';
+    } else {
+       $('input#guest_option').trigger('click');
+    }
+  });
+  {/literal}
+</script>

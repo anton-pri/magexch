@@ -1,0 +1,55 @@
+{load_defer file="js/jquery-panzoom.js" type="js"}
+
+<script>
+var img_popup_code = '{include file="customer/products/free_preview.tpl"}';
+{literal}
+
+function initPanZoom() {
+          $('#pan img').panZoom({
+            'zoomIn'   	: 	$('#zoomin'),
+            'zoomOut' 	: 	$('#zoomout'),
+            'panUp'		:	$('#panup'),
+            'panDown'	:	$('#pandown'),
+            'panLeft'	:	$('#panleft'),
+            'panRight'	:	$('#panright'),
+            'fit'       :   $('#fit'),
+            'out_x1'    :   $('#x1'),
+            'out_y1'    :   $('#y1'),
+            'out_x2'    :   $('#x2'),
+            'out_y2'    :   $('#y2'),
+            'directedit':   true,
+            'debug'     :   false
+          });
+};
+
+function show_free_preview_dialog(img_url){
+    $("#free_preview_dialog").html(img_popup_code.replace('img_url', img_url)).dialog("open");
+    return false;
+}
+
+$(document).ready(function() {
+    $("#free_preview_dialog").dialog({
+        autoOpen: false,
+        open: function() {
+          var dialogWidth = $(".free_preview").width();
+          var panHeight = dialogWidth * 0.6;
+          $("#pan").css("height", panHeight + "px");
+          $("#pan img").css("width", "auto");
+          initPanZoom();
+        },
+        modal   : false,
+        height  : 450,
+        width   : 700,
+        dialogClass: "free_preview",
+        title: "<h2>Digital Edition Preview</h2> Note: Size, resolution & format of purchased file may differ."
+    });
+
+});
+
+
+function close_preview () {
+    $('.ui-dialog-titlebar-close').click();
+}
+{/literal}
+
+</script>

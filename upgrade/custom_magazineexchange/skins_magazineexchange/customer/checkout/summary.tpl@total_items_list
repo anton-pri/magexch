@@ -1,0 +1,15 @@
+{math assign='is_even' equation="x%2" x=$cart.products|@count}
+{section name=prod_num loop=$products}
+<tr {if $is_even}{cycle values="class='dark', "}{else}{cycle values=", class='dark'"}{/if}>
+  <td class="total-name">
+    <label>
+    {$products[prod_num].product}
+    </label>
+  </td>
+  <td class="total-value">
+    <span class="currency">
+    {include file='common/currency.tpl' value=$products[prod_num].display_price}
+    </span>
+  </td>
+</tr>
+{/section}

@@ -1,0 +1,5 @@
+{if $current_target eq 'message_box' && $mode eq 'new'}
+<div class="profile_img" style="padding-right:48px">
+        <img src="{$AltImagesDir}/Avatar_Customer_New_Message.gif" alt="New Message" />
+</div>
+{/if}

@@ -1,0 +1,6 @@
+<div class="cart_top_buttons">
+    <div class="checkout_button">{include file='buttons/button.tpl' button_title=$lng.lbl_proceed_to_checkout style='button' href="javascript: cw_submit_form('cartform', 'checkout')"}</div>
+
+    <div class="continue_button">{include file='buttons/button.tpl' button_title=$lng.lbl_continue_shopping href="index.php" style='button'}</div>
+
+</div>

@@ -1,0 +1,87 @@
+{*$category_magexch_attributes.magexch_category_type|@debug_print_var*}
+{*
+{tunnel func='magexch_get_attribute_value' via='cw_call' param1='C' param2=$current_category.category_id param3='magexch_category_rollover_image' assign='current_magexch_category_rollover_image'}
+
+current_magexch_category_rollover_image: {$current_magexch_category_rollover_image}
+*}
+{if $category_magexch_attributes.magexch_category_type eq "Section"}
+
+<div class="second_level">
+    {*$current_category.description *}
+    {*cms service_code="info_buttons"*}
+
+     {cms service_code="Section_Home_Page_Body_Upper"}
+     {cms service_code="Section_Home_Page_Body_Lower"}
+
+</div>
+{*
+<div class="second_level_categories incomplete">
+  {foreach from=$subcategories item=subcat}
+{$subcat.image|@debug_print_var}
+    <div class="main_subcat">
+            <div class="magazine-title"><a href="{pages_url var="index" cat=$subcat.category_id}">{$subcat.category}</a></div>
+            <a href="{pages_url var="index" cat=$subcat.category_id}">{include file='common/product_image.tpl' image=$subcat.image html_width=149 html_height=149}</a>
+            <div class="view_titles"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_view_titles}</a></div>
+    </div>
+  {/foreach}
+
+    <div class="main_subcat">
+            <div class="magazine-title"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_all_magazines}</a></div>
+            <a href="{pages_url var="index" cat=$subcat.category_id}"></a>
+            <div class="view_titles"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_view_titles}</a></div>
+    </div>
+
+    <div class="main_subcat">
+            <div class="magazine-title"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_listed_by_marque}</a></div>
+            <a href="{pages_url var="index" cat=$subcat.category_id}"></a>
+            <div class="view_titles"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_view_titles}</a></div>
+    </div>
+
+    <div class="main_subcat">
+            <div class="magazine-title"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_find_articles}</a></div>
+            <a href="{pages_url var="index" cat=$subcat.category_id}"></a>
+            <div class="view_titles"><a href="{pages_url var="index" cat=$subcat.category_id}">{$lng.lbl_view_titles}</a></div>
+    </div>
+</div>
+*}
+{*cms service_code="welcome_text"*}
+{include file="customer/main/article_search.tpl"}
+
+{elseif $category_magexch_attributes.magexch_category_type eq "SubSection"}
+
+<h1 class="category_title">{$current_category.category} {$lng.lbl_magazines}</h1>
+
+{include file="customer/products/magazine_categories.tpl"}
+
+
+{elseif $category_magexch_attributes.magexch_category_type eq "Magazine"}
+
+<h1 class="category_title desktop_hidden">{$current_category.category}</h1>
+
+{jstabs name='product_data_customer'}
+default_tab={$js_tab|default:"1"}
+default_template="customer/products/category_tabs.tpl"
+
+
+[1]
+title="{$lng.lbl_back_issues}"
+
+{if ($category_magexch_attributes.magexch_category_tab_content_2 neq 0) && $category_magexch_attributes.magexch_category_tab_title_2}
+[2]
+title="{$category_magexch_attributes.magexch_category_tab_title_2}"
+{/if}
+
+{if ($category_magexch_attributes.magexch_category_tab_content_3 neq 0) && $category_magexch_attributes.magexch_category_tab_title_3}
+[3]
+title="{$category_magexch_attributes.magexch_category_tab_title_3}"
+{/if}
+
+{if ($category_magexch_attributes.magexch_category_tab_content_4 neq 0) && $category_magexch_attributes.magexch_category_tab_title_4}
+[4]
+title="{$category_magexch_attributes.magexch_category_tab_title_4}"
+{/if}
+{/jstabs}
+{include file='tabs/js_tabs.tpl'}
+
+
+{/if}

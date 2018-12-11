@@ -1,0 +1,2 @@
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_recover_password_seller', '<div class="jatooltip">Recover password <span class="jatooltiptext">Forgotten your password? Don\'t panic, just enter your email address into the usual box and then click "Recover Password"</span></div>', '', 'Labels');
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_recover_password', 'Recover password', '', 'Labels'); 

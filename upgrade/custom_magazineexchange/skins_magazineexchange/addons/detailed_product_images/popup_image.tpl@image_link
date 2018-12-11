@@ -1,0 +1,5 @@
+
+	<a href="#" id="product-image-anchor" onclick="showImages(); return false;" style="display: block; min-height: {$config.Appearance.products_images_det_width+10}px; min-width: {$config.Appearance.products_images_det_width}px;">
+		{include file='common/product_image.tpl' product_id=$product.product_id image=$product.image_det id='product_thumbnail'}
+              <div class="enlarge"><img src="{$AltImagesDir}/zoom_image.gif" alt="" />{$lng.lbl_enlarge}</div>
+	</a>

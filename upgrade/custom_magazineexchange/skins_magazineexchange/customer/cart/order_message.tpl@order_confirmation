@@ -1,0 +1,3 @@
+<h1>{$lng.lbl_doc_info_O}</h1>
+
+{$lng.lbl_doc_info_text}

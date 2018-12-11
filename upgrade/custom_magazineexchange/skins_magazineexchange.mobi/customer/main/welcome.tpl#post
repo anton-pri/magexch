@@ -1,0 +1,9 @@
+<div class="adv">
+<div class="adv_left">
+  {cms service_code="sell_magazines"}
+  {cms service_code="payment_cards"}
+</div>
+
+<div class="adv_right">
+{cms service_code="testimonials"} 
+</div>

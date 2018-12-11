@@ -1,0 +1,4 @@
+insert into cw_languages (code, name, value, topic) values ('EN', 'attribute_name_sp', 'Seller product data', 'Attribute');
+insert into cw_attributes (name, type, field, is_required, active, orderby, addon, item_type, protection) values ('File type', 'selectbox', 'seller_product_file_type', 0, 1, 0, 'custom_magazineexchange_sellers', 'SP', 15);
+insert into cw_attributes (name, type, field, is_required, active, orderby, addon, item_type, protection) values ('Main file', 'file-selector', 'seller_product_main_file', 0, 1, 0, 'custom_magazineexchange_sellers', 'SP', 15);
+insert into cw_attributes (name, type, field, is_required, active, orderby, addon, item_type, protection) values ('Preview file', 'file-selector', 'seller_product_preview_file', 0, 1, 0, 'custom_magazineexchange_sellers', 'SP', 15);

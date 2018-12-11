@@ -1,0 +1,1 @@
+replace into cw_config (name, comment, value, config_category_id, orderby, type) values ('magexch_primary_contact_admin_email', 'Magazine Exchange admin account email (used in messaging system for the Contact Magazine Exchange links)', 'admin@magazineexchange.co.uk', (select config_category_id from cw_config_categories where category='custom_magazineexchange'), 110, 'text');

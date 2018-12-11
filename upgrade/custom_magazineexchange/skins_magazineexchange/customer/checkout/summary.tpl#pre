@@ -1,0 +1,17 @@
+<p>{$lng.lbl_cart_totals_note}</p>
+
+<a href="javascript:void(0);" class="toogle_link"></a>
+
+{literal}
+<script>
+  $(document).ready(function(){
+
+    $("a.toogle_link").click(function () {
+      $(this).toggleClass("minus");
+      $("#opc_totals").toggle();
+
+    });
+
+  });
+</script>
+{/literal}

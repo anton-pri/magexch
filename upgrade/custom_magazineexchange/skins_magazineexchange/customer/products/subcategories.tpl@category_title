@@ -1,0 +1,4 @@
+{if $current_category.category_id eq "293"}
+{else}
+    <h1 class="title">{$current_category.category}</h1>
+{/if}

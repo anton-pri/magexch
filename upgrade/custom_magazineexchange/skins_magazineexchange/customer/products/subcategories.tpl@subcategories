@@ -1,0 +1,31 @@
+{if $vendorid eq ''}
+
+{if $current_magazine_name ne ''}
+  <h1 class="category-title">{$current_magazine_name}</h1>
+{/if}
+
+{if $category_magexch_attributes.magexch_category_type eq "Section"}
+
+    <div class="second_level">
+      {cms service_code="Section_Home_Page_Body_Upper"}
+      {cms service_code="Section_Home_Page_Body_Lower"}
+    </div>
+
+{elseif $category_magexch_attributes.magexch_category_type eq "SubSection"}
+
+    <h1 class="category_title">{$current_category.category} {$lng.lbl_magazines}</h1>
+
+    {include file="customer/products/magazine_categories.tpl"}
+
+{elseif $category_magexch_attributes.magexch_category_type eq "Magazine"}
+
+    {include file="customer/products/magazine-subcategory.tpl"}
+
+{elseif $category_magexch_attributes.magexch_category_type eq "Catalog"}
+
+{/if}
+{/if}
+<p /><p />
+{if $category_magexch_attributes.orig_magexch_category_type ne "Magazine"}
+{include file="customer/main/article_search.tpl"}
+{/if}
