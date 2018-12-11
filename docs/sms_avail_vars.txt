@@ -1,0 +1,2083 @@
+<?php die(); ?>
+[09-Jul-2018 12:30:21] (local: 09-Jul-2018 12:30:21) cw\clickatell_sms\sms_content_prepare message:
+    Array
+    (
+        [doc] => Array
+            (
+                [doc_id] => 9277
+                [doc_info_id] => 41132
+                [type] => O
+                [display_id] => 9033
+                [prefix] => 
+                [display_doc_id] => 9033
+                [year] => 2018
+                [date] => 1520859840
+                [status_change] => 1531139414
+                [status] => Q
+                [info] => Array
+                    (
+                        [doc_info_id] => 41132
+                        [warehouse_customer_id] => 75265
+                        [salesman_customer_id] => 0
+                        [customer_notes] => 
+                        [details] => --- Advanced info ---
+    Reason: Approved: Accepted Status: Completed (TransID #2AH97378FH0554405)
+                        [ship_time] => 
+                        [tracking] => 
+                        [notes] => 
+                        [payment_id] => 0
+                        [payment_label] => PayPal (PayPal)
+                        [shipping_id] => 0
+                        [shipping_label] => 
+                        [cod_type_id] => 0
+                        [cod_type_label] => 
+                        [cod_leaving_type] => 0
+                        [subtotal] => 17.0000
+                        [display_subtotal] => 17.0000
+                        [discounted_subtotal] => 17.0000
+                        [display_discounted_subtotal] => 17.0000
+                        [discount] => 0.0000
+                        [discount_value] => 0.0000
+                        [giftcert_discount] => 0.0000
+                        [giftcert_ids] => 
+                        [coupon] => 
+                        [coupon_discount] => 0.0000
+                        [shipping_cost] => 6.4500
+                        [display_shipping_cost] => 6.4500
+                        [weight] => 1.8500
+                        [shipping_insurance] => 0.0000
+                        [payment_surcharge] => 0.0000
+                        [tax] => 0.0000
+                        [applied_taxes] => 
+                        [total] => 23.4500
+                        [display_total] => 23.4500
+                        [extra] => 
+                        [box_number] => 0
+                        [shipment_paid] => 0
+                        [pickup_date] => 0
+                        [layout_id] => 0
+                        [expiration_date] => 0
+                        [carrier] => Array
+                            (
+                            )
+    
+                        [extras] => Array
+                            (
+                                [manufacturers] => 
+                            )
+    
+                    )
+    
+                [userinfo] => Array
+                    (
+                        [doc_info_id] => 41132
+                        [customer_id] => 66385
+                        [membership_id] => 0
+                        [usertype] => C
+                        [company_id] => 0
+                        [main_address_id] => 235427
+                        [current_address_id] => 235428
+                        [company] => 
+                        [email] => matt_bozi@hotmail.co.uk
+                        [tax_number] => 
+                        [tax_exempt] => N
+                        [ssn] => 
+                        [company_type] => 
+                        [main_address] => Array
+                            (
+                                [address_id] => 235427
+                                [customer_id] => 0
+                                [main] => 1
+                                [current] => 0
+                                [company] => 
+                                [title] => Mr.
+                                [firstname] => Matthew
+                                [lastname] => Bosworth
+                                [address] => 16 Rosegrove Avenue
+    Arnold
+                                [address_2] => 
+                                [city] => Nottingham
+                                [county] => 
+                                [region] => 
+                                [state] => NTT
+                                [country] => GB
+                                [zipcode] => NG5 8DU
+                                [phone] => 441159209165
+                                [fax] => 
+                                [titleid] => 1
+                                [statename] => Nottinghamshire
+                                [countryname] => United Kingdom
+                                [custom_fields] => Array
+                                    (
+                                    )
+    
+                            )
+    
+                        [current_address] => Array
+                            (
+                                [address_id] => 235428
+                                [customer_id] => 0
+                                [main] => 0
+                                [current] => 1
+                                [company] => 
+                                [title] => Mr.
+                                [firstname] => Matthew
+                                [lastname] => Bosworth
+                                [address] => 16 Rosegrove Avenue
+    Arnold
+                                [address_2] => 
+                                [city] => Nottingham
+                                [county] => 
+                                [region] => 
+                                [state] => NTT
+                                [country] => GB
+                                [zipcode] => NG5 8DU
+                                [phone] => 441159209165
+                                [fax] => 
+                                [titleid] => 1
+                                [statename] => Nottinghamshire
+                                [countryname] => United Kingdom
+                                [custom_fields] => Array
+                                    (
+                                    )
+    
+                            )
+    
+                        [profile_sections] => Array
+                            (
+                                [photo] => Array
+                                    (
+                                        [section_id] => 45
+                                        [name] => photo
+                                        [type] => U
+                                        [is_default] => 1
+                                        [orderby] => 1
+                                        [section_title] => ~~~~|lbl_register_field_sections_photo|EN||~~~~
+                                        [id] => photo
+                                        [is_avail] => 
+                                    )
+    
+                                [basic] => Array
+                                    (
+                                        [section_id] => 1
+                                        [name] => basic
+                                        [type] => U
+                                        [is_default] => 1
+                                        [orderby] => 2
+                                        [section_title] => ~~~~|lbl_register_field_sections_basic|EN||~~~~
+                                        [id] => basic
+                                        [is_avail] => 1
+                                    )
+    
+                                [mailing_list] => Array
+                                    (
+                                        [section_id] => 2
+                                        [name] => mailing_list
+                                        [type] => U
+                                        [is_default] => 1
+                                        [orderby] => 3
+                                        [section_title] => ~~~~|lbl_register_field_sections_mailing_list|EN||~~~~
+                                        [id] => mailing_list
+                                        [is_avail] => 1
+                                    )
+    
+                                [address] => Array
+                                    (
+                                        [section_id] => 3
+                                        [name] => address
+                                        [type] => U
+                                        [is_default] => 1
+                                        [orderby] => 4
+                                        [section_title] => ~~~~|lbl_register_field_sections_address|EN||~~~~
+                                        [id] => address
+                                        [is_avail] => 1
+                                    )
+    
+                            )
+    
+                        [profile_fields] => Array
+                            (
+                                [basic] => Array
+                                    (
+                                        [email] => Array
+                                            (
+                                                [field_id] => 50
+                                                [section_id] => 1
+                                                [field] => email
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -100
+                                                [is_protected] => 1
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_email|EN||~~~~
+                                                [name] => basic
+                                            )
+    
+                                        [password] => Array
+                                            (
+                                                [field_id] => 41
+                                                [section_id] => 1
+                                                [field] => password
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -90
+                                                [is_protected] => 1
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_password|EN||~~~~
+                                                [name] => basic
+                                            )
+    
+                                        [status] => Array
+                                            (
+                                                [field_id] => 65
+                                                [section_id] => 1
+                                                [field] => status
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -70
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_status|EN||~~~~
+                                                [name] => basic
+                                            )
+    
+                                        [membership_id] => Array
+                                            (
+                                                [field_id] => 78
+                                                [section_id] => 1
+                                                [field] => membership_id
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => 10
+                                                [is_protected] => 1
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_membership_id|EN||~~~~
+                                                [name] => basic
+                                            )
+    
+                                        [153] => Array
+                                            (
+                                                [field_id] => 153
+                                                [section_id] => 1
+                                                [field] => suspend_account
+                                                [type] => C
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => 200
+                                                [is_protected] => 1
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => Suspend Account
+                                                [name] => basic
+                                            )
+    
+                                    )
+    
+                                [address] => Array
+                                    (
+                                        [firstname] => Array
+                                            (
+                                                [field_id] => 28
+                                                [section_id] => 3
+                                                [field] => firstname
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -99
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_firstname|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [lastname] => Array
+                                            (
+                                                [field_id] => 29
+                                                [section_id] => 3
+                                                [field] => lastname
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -98
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_lastname|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [address] => Array
+                                            (
+                                                [field_id] => 30
+                                                [section_id] => 3
+                                                [field] => address
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -97
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_address|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [address_2] => Array
+                                            (
+                                                [field_id] => 31
+                                                [section_id] => 3
+                                                [field] => address_2
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -96
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_address_2|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [country] => Array
+                                            (
+                                                [field_id] => 35
+                                                [section_id] => 3
+                                                [field] => country
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -94
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_country|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [state] => Array
+                                            (
+                                                [field_id] => 34
+                                                [section_id] => 3
+                                                [field] => state
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -92
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_state|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [city] => Array
+                                            (
+                                                [field_id] => 32
+                                                [section_id] => 3
+                                                [field] => city
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -90
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_city|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [zipcode] => Array
+                                            (
+                                                [field_id] => 36
+                                                [section_id] => 3
+                                                [field] => zipcode
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -70
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 1
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_zipcode|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                        [phone] => Array
+                                            (
+                                                [field_id] => 38
+                                                [section_id] => 3
+                                                [field] => phone
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -60
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_phone|EN||~~~~
+                                                [name] => address
+                                            )
+    
+                                    )
+    
+                                [mailing_list] => Array
+                                    (
+                                        [mailing_list] => Array
+                                            (
+                                                [field_id] => 37
+                                                [section_id] => 2
+                                                [field] => mailing_list
+                                                [type] => D
+                                                [variants] => 
+                                                [def] => 
+                                                [orderby] => -1
+                                                [is_protected] => 0
+                                                [is_avail] => 1
+                                                [is_required] => 0
+                                                [is_default] => 1
+                                                [title] => ~~~~|lbl_mailing_list|EN||~~~~
+                                                [name] => mailing_list
+                                            )
+    
+                                    )
+    
+                            )
+    
+                    )
+    
+                [related_docs] => Array
+                    (
+                    )
+    
+                [giftcerts] => Array
+                    (
+                    )
+    
+                [is_returns] => 
+                [products] => Array
+                    (
+                        [0] => Array
+                            (
+                                [product_id] => 14587
+                                [productcode] => 14587a
+                                [product] => Railway Archive Magazine, Issue 11
+                                [distribution] => 
+                                [weight] => 0.5000
+                                [descr] => From 'Annan Shawhill Station and the Solway Viaduct': Annan (Shawhill) station had always consisted of a single passenger platform, just north of a short goods loop siding, with freight sidings and the goods shed to the west of that. This southwards looking photograph is of the north end of the station, which remained fully signalled for the working of passenger trains. Passenger traffic was never going to be heavy, so a single brake composite coach usually sufficed. Here, the regular branch engine LM&S 4-4-0T No. 15027 has run round its train and awaits departure to Kirtlebridge. The station building here, was a neat, L-shaped building, constructed of local stone and with some attractive embellishments, such as the finials and tall chimneys. Despite the paucity of passengers, there was a wide array of enamelled advertising signs adorning the building and the platform fence. The well maintained row of bushes alongside the track were another nice touch. In the background, the goods yard shows evidence of a healthy traffic, with covered vans, coal and cattle wagons all to be seen. The yard crane here, just visible above the cattle wagons, was of 5 tons capacity.
+                                [fulldescr] => Contents: The Railway in the Landscape, p. 2; Annan (Shawhill) and the Solway Viaduct by Mike Christensen, p. 5; Gas By Rail Part 2: Imperial Chemical Industries by Peter Fidczuk, p. 21; The Gillford Collection Part 1: The Great Northern Around Nottingham by John Scott-Morgan & Neil Parkhouse, p. 43; The Railway Photographs of E. Pouteau: Part 11: The London, Brighton & South Coast Railway Part 1 by John Alsop, p. 57; Marriott Reinforced Concrete Signal Posts by Nigel J.L. Digby, p. 77; Wish You Were Here? Railway Postcards of Shropshire by Neil Parkhouse, p. 87
+                                [shipping_freight] => 0.0000
+                                [free_shipping] => N
+                                [discount_avail] => 0
+                                [min_amount] => 1
+                                [dim_x] => 0
+                                [dim_y] => 0
+                                [dim_z] => 0
+                                [low_avail_limit] => 0
+                                [free_tax] => N
+                                [product_type] => 0
+                                [return_time] => 0
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 0
+                                [rma_time_to_use] => 0
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 0
+                                [status] => 1
+                                [cost] => 0.00
+                                [sku] => 14587a
+                                [item_id] => 20407
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 6.0000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 6.00
+                                                [net_price] => 0
+                                                [discounted_price] => 6.00
+                                                [subtotal] => 6.00
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 100810
+                                                [condition] => 2
+                                                [comments] => Like new condition
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 100810
+                                [is_deleted] => 
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 0
+                                [product_options_txt] => 
+                                [display_price] => 6.00
+                                [display_net_price] => 0
+                                [display_discounted_price] => 6.00
+                                [display_subtotal] => 6.00
+                                [ordered_price] => 6.0000
+                                [original_price] => 0.00
+                                [price_deducted_tax] => Y
+                            )
+    
+                        [1] => Array
+                            (
+                                [product_id] => 19717
+                                [productcode] => 19717a
+                                [product] => Steam Days Magazine, August 2015 Issue
+                                [distribution] => 
+                                [weight] => 
+                                [descr] => 
+                                [fulldescr] => 
+                                [shipping_freight] => 
+                                [free_shipping] => 
+                                [discount_avail] => 
+                                [min_amount] => 
+                                [dim_x] => 
+                                [dim_y] => 
+                                [dim_z] => 
+                                [low_avail_limit] => 
+                                [free_tax] => 
+                                [product_type] => 
+                                [return_time] => 
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 
+                                [rma_time_to_use] => 
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 
+                                [status] => 
+                                [cost] => 
+                                [sku] => 
+                                [item_id] => 20408
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 2.5000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 2.50
+                                                [net_price] => 0
+                                                [discounted_price] => 2.50
+                                                [subtotal] => 2.50
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 100297
+                                                [condition] => 2
+                                                [comments] => As new
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 100297
+                                [is_deleted] => Y
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 
+                                [product_options_txt] => 
+                                [display_price] => 2.50
+                                [display_net_price] => 0
+                                [display_discounted_price] => 2.50
+                                [display_subtotal] => 2.50
+                                [ordered_price] => 2.5000
+                                [original_price] => 2.5000
+                                [price_deducted_tax] => Y
+                            )
+    
+                        [2] => Array
+                            (
+                                [product_id] => 609650
+                                [productcode] => 19718a21
+                                [product] => Steam Days Magazine, September 2016 Issue
+                                [distribution] => 
+                                [weight] => 
+                                [descr] => 
+                                [fulldescr] => 
+                                [shipping_freight] => 
+                                [free_shipping] => 
+                                [discount_avail] => 
+                                [min_amount] => 
+                                [dim_x] => 
+                                [dim_y] => 
+                                [dim_z] => 
+                                [low_avail_limit] => 
+                                [free_tax] => 
+                                [product_type] => 
+                                [return_time] => 
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 
+                                [rma_time_to_use] => 
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 
+                                [status] => 
+                                [cost] => 
+                                [sku] => 
+                                [item_id] => 20409
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 2.5000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 2.50
+                                                [net_price] => 0
+                                                [discounted_price] => 2.50
+                                                [subtotal] => 2.50
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 107437
+                                                [condition] => 2
+                                                [comments] => As new
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 107437
+                                [is_deleted] => Y
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 
+                                [product_options_txt] => 
+                                [display_price] => 2.50
+                                [display_net_price] => 0
+                                [display_discounted_price] => 2.50
+                                [display_subtotal] => 2.50
+                                [ordered_price] => 2.5000
+                                [original_price] => 2.5000
+                                [price_deducted_tax] => Y
+                            )
+    
+                        [3] => Array
+                            (
+                                [product_id] => 8504
+                                [productcode] => 8504a
+                                [product] => Backtrack Magazine, February 2012 Issue
+                                [distribution] => 
+                                [weight] => 0.2500
+                                [descr] => <p align="middle">Can you provide something to add to this area?<br><br>This part of the page works like a Wikipedia entry - we welcome contributions from anyone to improve the usefulness of this page<br><br>Click the <b>'?'</b> above for more information.</p>
+                                [fulldescr] => Strathclyde Transport - colour spread by Keith Dungate of the 'orange and black' days on Clydeside in the 1980s.
+    The Great Eastern as I knew it - Bob Farmer delves into his father's writings to present a contemporary view of the GER.
+    Sir Robert Menzies and the Highland Railway - Alistair F. Nisbet describes a confrontation and subsequent legal dispute between a Scottish laird and the railway over ticket validity.
+    Leaving Eastleigh - two colour shots by Alan Tyson of SR 'West Country' in August 1964.
+    "East Croydon, this is East Croydon" - The development of a railway centre described by Jeremy Clarke. 
+    Over the Lancashire Moors - three colour pages depicting the Bolton to Blackburn line.
+    The Sheffield Victoria Accident - Ken Grainger investigates a collision in 1954.
+    Steam on the Woodhead Route - archive photos from the Pendragon Collection.
+    LNER Mixed Traffic - four colour pages of the LNER B1 Class 4-6-0s.
+    The Burry Port & Gwendraeth Valley Railway - a brief history by Martin Smith.
+    Snowdown Colliery - two industrial colour shots by Roy Hobbs.
+    Undergraduates on the Footplate - John D. Mann offers some memories of the Cambridge University Railway Club engine-driving specials.
+    Sunderland - From Wagonway to South Dock - Michael B. Binks surveys the life and times of an important north eastern industrial centre.
+    Signalling Spotlight - three contrasting London & South Western Railway signal boxes.
+    Maintaining Railway Curves - Peter Tatlow describes permanent way work on the Southern Region in the 1950s.
+                                [shipping_freight] => 0.0000
+                                [free_shipping] => N
+                                [discount_avail] => 0
+                                [min_amount] => 1
+                                [dim_x] => 0
+                                [dim_y] => 0
+                                [dim_z] => 0
+                                [low_avail_limit] => 0
+                                [free_tax] => N
+                                [product_type] => 0
+                                [return_time] => 0
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 0
+                                [rma_time_to_use] => 0
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 0
+                                [status] => 1
+                                [cost] => 0.00
+                                [sku] => 8504a
+                                [item_id] => 20410
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 2.0000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 2.00
+                                                [net_price] => 0
+                                                [discounted_price] => 2.00
+                                                [subtotal] => 2.00
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 107251
+                                                [condition] => 1
+                                                [comments] => New unread condition
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 107251
+                                [is_deleted] => 
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 0
+                                [product_options_txt] => 
+                                [display_price] => 2.00
+                                [display_net_price] => 0
+                                [display_discounted_price] => 2.00
+                                [display_subtotal] => 2.00
+                                [ordered_price] => 2.0000
+                                [original_price] => 0.00
+                                [price_deducted_tax] => Y
+                            )
+    
+                        [4] => Array
+                            (
+                                [product_id] => 601974
+                                [productcode] => 1974
+                                [product] => Backtrack Magazine, June 2006 Issue
+                                [distribution] => 
+                                [weight] => 0.2500
+                                [descr] => Awaiting Entry
+                                [fulldescr] => Over the Tors to Princetown - Dick Riley's BackTrack Cover June 2006rare colour slides of the Yelverton to Princetown branch<br><br>ROD 2-8-0s in Australia- Graham Black's researches into the Great Central design goods locos built for the Railway Operating Division and later exported to Australia<br><br>The Brilliance of Brunel - Keith Hill's 200th anniversary tribute to I. K. Brunel and his work<br><br>Accrington - Jeffrey Wells looks at aspects of this Lancashire town's railway history<br><br>The General Strike in the Highlands - Neil Sinclair writes about how the dispute affected the former Highland lines of the LMS<br><br>The LNER's A1 Pacifics - colour feature on the A. H. Peppercorn-designed 4-6-2s<br><br>The Brunel University Photograph Collection - publicity feature<br>Lost on the Callendar & Oban line - Colour feature of diesel-hauled trains in the 1970s/80s<br><br>A Brief Survey of the Irish 4-4-0 - Part 1 - by Michael Rutherford<br><br>History Southern Style - colour feature by Alan Bennett on the SR's publicity brochures for 'selling England' to the Americans in the 1920s/30s<br><br>Logan and Hemingway, The Firm and the Families - Part 2 - Robert Emblin goes into the Hemingway side of the railway contracting company<br><br>The Real World of Railwaymen - a short anthology of poems written by railwaymen compiled by Arthur R. Nicholls<br><br>East Coast Postal - 2 colour photos of LNER Travelling Post Offices.
+                                [shipping_freight] => 0.0000
+                                [free_shipping] => N
+                                [discount_avail] => 0
+                                [min_amount] => 1
+                                [dim_x] => 0
+                                [dim_y] => 0
+                                [dim_z] => 0
+                                [low_avail_limit] => 0
+                                [free_tax] => N
+                                [product_type] => 0
+                                [return_time] => 0
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 0
+                                [rma_time_to_use] => 0
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 0
+                                [status] => 1
+                                [cost] => 0.00
+                                [sku] => 1974
+                                [item_id] => 20411
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 2.0000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 2.00
+                                                [net_price] => 0
+                                                [discounted_price] => 2.00
+                                                [subtotal] => 2.00
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 107613
+                                                [condition] => 2
+                                                [comments] => As new
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 107613
+                                [is_deleted] => 
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 0
+                                [product_options_txt] => 
+                                [display_price] => 2.00
+                                [display_net_price] => 0
+                                [display_discounted_price] => 2.00
+                                [display_subtotal] => 2.00
+                                [ordered_price] => 2.0000
+                                [original_price] => 0.00
+                                [price_deducted_tax] => Y
+                            )
+    
+                        [5] => Array
+                            (
+                                [product_id] => 8512
+                                [productcode] => 8512a
+                                [product] => Backtrack Magazine, April 2012 Issue
+                                [distribution] => 
+                                [weight] => 0.2500
+                                [descr] => <p align="middle">Can you provide something to add to this area?<br><br>This part of the page works like a Wikipedia entry - we welcome contributions from anyone to improve the usefulness of this page<br><br>Click the <b>'?'</b> above for more information.</p>
+                                [fulldescr] => 2-8-0s BackTrack Cover April 2012of the LNER - colour spread of the railway's eight-coupled freight engines.
+    Rebuilding the Railway - A. J. Mullay describes how the LNER planned post-war reconstruction in 1945.
+    The Charnwood Forest Line - Mark Smith traces a vanished Leicestershire byway.
+    Taking to the Hills again - a colour spread of Alan Tyson's pictures of steam on the Settle -Carlisle line.
+    On Tour with 'City of Bradford' - archive photos of No.46236 on the Western, Eastern and Southern Regions during the 1948 Loco Exchanges.
+    From Sneinton Hermitage to Weekday Cross - Robert Emblin surveys how the Great Northern closed the loop in its Nottingham suburban network.
+    Hinksey South - an Oxford location photographed in colour by Dr. M. H. Yardley.
+    The Role of the Civil Engineer- David Andrews looks at how they did workshop management on the Great Western Railway.
+    An Appreciation of Fireless Locomotives - Bob Yate praises an unusual industrial type.
+    Class 37s in South Wales - three colour pages by Michael Mensing from the 1980s.
+    The Forfar & Brechin Railway - Alistair F. Nisbet recounts the history of a secondary route in eastern Scotland.
+    Aspects of Junction Development - Part Two - Jeffrey Wells looks at the early days of the great railway centres of Crewe and Doncaster.
+    On the Dymchurch Line - colour spread by David Idle of the 15in gauge Romney, Hythe & Dymchurch Railway in 1969.
+    The Isle of Wight E1 Class 0-6-0Ts - Peter Paye describes the work of the four of the London, Brighton & South Coast Railway tanks which migrated to the island in the 1930s.
+    Manchester Victoria in Focus - Jeffrey Wells presents an illustrated description of some of this important station's distinctive features.
+    Station seats at Leamington Spa - colour shots by Tim Edmonds of some platform furniture survivors.
+                                [shipping_freight] => 0.0000
+                                [free_shipping] => N
+                                [discount_avail] => 0
+                                [min_amount] => 1
+                                [dim_x] => 0
+                                [dim_y] => 0
+                                [dim_z] => 0
+                                [low_avail_limit] => 0
+                                [free_tax] => N
+                                [product_type] => 0
+                                [return_time] => 0
+                                [features_text] => 
+                                [specifications] => 
+                                [warranties] => 
+                                [pdf_link] => 
+                                [shippings] => 
+                                [rma_amount] => 0
+                                [rma_time_to_use] => 0
+                                [eancode] => 
+                                [manufacturer_code] => 
+                                [attribute_class_id] => 0
+                                [status] => 1
+                                [cost] => 0.00
+                                [sku] => 8512a
+                                [item_id] => 20412
+                                [doc_id] => 9277
+                                [variant_id] => 0
+                                [product_options] => 
+                                [net_price] => 0.0000
+                                [discount_formula] => 
+                                [price] => 2.0000
+                                [history_cost] => 0.0000
+                                [amount] => 1
+                                [warehouse_customer_id] => 75265
+                                [extra_data] => Array
+                                    (
+                                        [product_options] => Array
+                                            (
+                                            )
+    
+                                        [taxes] => Array
+                                            (
+                                            )
+    
+                                        [display] => Array
+                                            (
+                                                [price] => 2.00
+                                                [net_price] => 0
+                                                [discounted_price] => 2.00
+                                                [subtotal] => 2.00
+                                            )
+    
+                                        [surcharge] => 0
+                                        [seller_item] => Array
+                                            (
+                                                [seller_item_id] => 107253
+                                                [condition] => 1
+                                                [comments] => New unread condition
+                                            )
+    
+                                    )
+    
+                                [is_auto_calc] => 0
+                                [end_price] => 0.0000
+                                [seller_data_id] => 107253
+                                [is_deleted] => 
+                                [download_key] => 
+                                [expires] => 
+                                [supplier_customer_id] => 0
+                                [product_options_txt] => 
+                                [display_price] => 2.00
+                                [display_net_price] => 0
+                                [display_discounted_price] => 2.00
+                                [display_subtotal] => 2.00
+                                [ordered_price] => 2.0000
+                                [original_price] => 0.00
+                                [price_deducted_tax] => Y
+                            )
+    
+                    )
+    
+            )
+    
+        [info] => Array
+            (
+                [doc_info_id] => 41132
+                [warehouse_customer_id] => 75265
+                [salesman_customer_id] => 0
+                [customer_notes] => 
+                [details] => --- Advanced info ---
+    Reason: Approved: Accepted Status: Completed (TransID #2AH97378FH0554405)
+                [ship_time] => 
+                [tracking] => 
+                [notes] => 
+                [payment_id] => 0
+                [payment_label] => PayPal (PayPal)
+                [shipping_id] => 0
+                [shipping_label] => 
+                [cod_type_id] => 0
+                [cod_type_label] => 
+                [cod_leaving_type] => 0
+                [subtotal] => 17.0000
+                [display_subtotal] => 17.0000
+                [discounted_subtotal] => 17.0000
+                [display_discounted_subtotal] => 17.0000
+                [discount] => 0.0000
+                [discount_value] => 0.0000
+                [giftcert_discount] => 0.0000
+                [giftcert_ids] => 
+                [coupon] => 
+                [coupon_discount] => 0.0000
+                [shipping_cost] => 6.4500
+                [display_shipping_cost] => 6.4500
+                [weight] => 1.8500
+                [shipping_insurance] => 0.0000
+                [payment_surcharge] => 0.0000
+                [tax] => 0.0000
+                [applied_taxes] => 
+                [total] => 23.4500
+                [display_total] => 23.4500
+                [extra] => 
+                [box_number] => 0
+                [shipment_paid] => 0
+                [pickup_date] => 0
+                [layout_id] => 0
+                [expiration_date] => 0
+                [carrier] => Array
+                    (
+                    )
+    
+                [extras] => Array
+                    (
+                        [manufacturers] => 
+                    )
+    
+            )
+    
+        [userinfo] => Array
+            (
+                [doc_info_id] => 41132
+                [customer_id] => 66385
+                [membership_id] => 0
+                [usertype] => C
+                [company_id] => 0
+                [main_address_id] => 235427
+                [current_address_id] => 235428
+                [company] => 
+                [email] => matt_bozi@hotmail.co.uk
+                [tax_number] => 
+                [tax_exempt] => N
+                [ssn] => 
+                [company_type] => 
+                [main_address] => Array
+                    (
+                        [address_id] => 235427
+                        [customer_id] => 0
+                        [main] => 1
+                        [current] => 0
+                        [company] => 
+                        [title] => Mr.
+                        [firstname] => Matthew
+                        [lastname] => Bosworth
+                        [address] => 16 Rosegrove Avenue
+    Arnold
+                        [address_2] => 
+                        [city] => Nottingham
+                        [county] => 
+                        [region] => 
+                        [state] => NTT
+                        [country] => GB
+                        [zipcode] => NG5 8DU
+                        [phone] => 441159209165
+                        [fax] => 
+                        [titleid] => 1
+                        [statename] => Nottinghamshire
+                        [countryname] => United Kingdom
+                        [custom_fields] => Array
+                            (
+                            )
+    
+                    )
+    
+                [current_address] => Array
+                    (
+                        [address_id] => 235428
+                        [customer_id] => 0
+                        [main] => 0
+                        [current] => 1
+                        [company] => 
+                        [title] => Mr.
+                        [firstname] => Matthew
+                        [lastname] => Bosworth
+                        [address] => 16 Rosegrove Avenue
+    Arnold
+                        [address_2] => 
+                        [city] => Nottingham
+                        [county] => 
+                        [region] => 
+                        [state] => NTT
+                        [country] => GB
+                        [zipcode] => NG5 8DU
+                        [phone] => 441159209165
+                        [fax] => 
+                        [titleid] => 1
+                        [statename] => Nottinghamshire
+                        [countryname] => United Kingdom
+                        [custom_fields] => Array
+                            (
+                            )
+    
+                    )
+    
+                [profile_sections] => Array
+                    (
+                        [photo] => Array
+                            (
+                                [section_id] => 45
+                                [name] => photo
+                                [type] => U
+                                [is_default] => 1
+                                [orderby] => 1
+                                [section_title] => ~~~~|lbl_register_field_sections_photo|EN||~~~~
+                                [id] => photo
+                                [is_avail] => 
+                            )
+    
+                        [basic] => Array
+                            (
+                                [section_id] => 1
+                                [name] => basic
+                                [type] => U
+                                [is_default] => 1
+                                [orderby] => 2
+                                [section_title] => ~~~~|lbl_register_field_sections_basic|EN||~~~~
+                                [id] => basic
+                                [is_avail] => 1
+                            )
+    
+                        [mailing_list] => Array
+                            (
+                                [section_id] => 2
+                                [name] => mailing_list
+                                [type] => U
+                                [is_default] => 1
+                                [orderby] => 3
+                                [section_title] => ~~~~|lbl_register_field_sections_mailing_list|EN||~~~~
+                                [id] => mailing_list
+                                [is_avail] => 1
+                            )
+    
+                        [address] => Array
+                            (
+                                [section_id] => 3
+                                [name] => address
+                                [type] => U
+                                [is_default] => 1
+                                [orderby] => 4
+                                [section_title] => ~~~~|lbl_register_field_sections_address|EN||~~~~
+                                [id] => address
+                                [is_avail] => 1
+                            )
+    
+                    )
+    
+                [profile_fields] => Array
+                    (
+                        [basic] => Array
+                            (
+                                [email] => Array
+                                    (
+                                        [field_id] => 50
+                                        [section_id] => 1
+                                        [field] => email
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -100
+                                        [is_protected] => 1
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_email|EN||~~~~
+                                        [name] => basic
+                                    )
+    
+                                [password] => Array
+                                    (
+                                        [field_id] => 41
+                                        [section_id] => 1
+                                        [field] => password
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -90
+                                        [is_protected] => 1
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_password|EN||~~~~
+                                        [name] => basic
+                                    )
+    
+                                [status] => Array
+                                    (
+                                        [field_id] => 65
+                                        [section_id] => 1
+                                        [field] => status
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -70
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_status|EN||~~~~
+                                        [name] => basic
+                                    )
+    
+                                [membership_id] => Array
+                                    (
+                                        [field_id] => 78
+                                        [section_id] => 1
+                                        [field] => membership_id
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => 10
+                                        [is_protected] => 1
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_membership_id|EN||~~~~
+                                        [name] => basic
+                                    )
+    
+                                [153] => Array
+                                    (
+                                        [field_id] => 153
+                                        [section_id] => 1
+                                        [field] => suspend_account
+                                        [type] => C
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => 200
+                                        [is_protected] => 1
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => Suspend Account
+                                        [name] => basic
+                                    )
+    
+                            )
+    
+                        [address] => Array
+                            (
+                                [firstname] => Array
+                                    (
+                                        [field_id] => 28
+                                        [section_id] => 3
+                                        [field] => firstname
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -99
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_firstname|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [lastname] => Array
+                                    (
+                                        [field_id] => 29
+                                        [section_id] => 3
+                                        [field] => lastname
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -98
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_lastname|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [address] => Array
+                                    (
+                                        [field_id] => 30
+                                        [section_id] => 3
+                                        [field] => address
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -97
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_address|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [address_2] => Array
+                                    (
+                                        [field_id] => 31
+                                        [section_id] => 3
+                                        [field] => address_2
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -96
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_address_2|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [country] => Array
+                                    (
+                                        [field_id] => 35
+                                        [section_id] => 3
+                                        [field] => country
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -94
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_country|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [state] => Array
+                                    (
+                                        [field_id] => 34
+                                        [section_id] => 3
+                                        [field] => state
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -92
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_state|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [city] => Array
+                                    (
+                                        [field_id] => 32
+                                        [section_id] => 3
+                                        [field] => city
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -90
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_city|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [zipcode] => Array
+                                    (
+                                        [field_id] => 36
+                                        [section_id] => 3
+                                        [field] => zipcode
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -70
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 1
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_zipcode|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                                [phone] => Array
+                                    (
+                                        [field_id] => 38
+                                        [section_id] => 3
+                                        [field] => phone
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -60
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_phone|EN||~~~~
+                                        [name] => address
+                                    )
+    
+                            )
+    
+                        [mailing_list] => Array
+                            (
+                                [mailing_list] => Array
+                                    (
+                                        [field_id] => 37
+                                        [section_id] => 2
+                                        [field] => mailing_list
+                                        [type] => D
+                                        [variants] => 
+                                        [def] => 
+                                        [orderby] => -1
+                                        [is_protected] => 0
+                                        [is_avail] => 1
+                                        [is_required] => 0
+                                        [is_default] => 1
+                                        [title] => ~~~~|lbl_mailing_list|EN||~~~~
+                                        [name] => mailing_list
+                                    )
+    
+                            )
+    
+                    )
+    
+            )
+    
+        [products] => Array
+            (
+                [0] => Array
+                    (
+                        [product_id] => 14587
+                        [productcode] => 14587a
+                        [product] => Railway Archive Magazine, Issue 11
+                        [distribution] => 
+                        [weight] => 0.5000
+                        [descr] => From 'Annan Shawhill Station and the Solway Viaduct': Annan (Shawhill) station had always consisted of a single passenger platform, just north of a short goods loop siding, with freight sidings and the goods shed to the west of that. This southwards looking photograph is of the north end of the station, which remained fully signalled for the working of passenger trains. Passenger traffic was never going to be heavy, so a single brake composite coach usually sufficed. Here, the regular branch engine LM&S 4-4-0T No. 15027 has run round its train and awaits departure to Kirtlebridge. The station building here, was a neat, L-shaped building, constructed of local stone and with some attractive embellishments, such as the finials and tall chimneys. Despite the paucity of passengers, there was a wide array of enamelled advertising signs adorning the building and the platform fence. The well maintained row of bushes alongside the track were another nice touch. In the background, the goods yard shows evidence of a healthy traffic, with covered vans, coal and cattle wagons all to be seen. The yard crane here, just visible above the cattle wagons, was of 5 tons capacity.
+                        [fulldescr] => Contents: The Railway in the Landscape, p. 2; Annan (Shawhill) and the Solway Viaduct by Mike Christensen, p. 5; Gas By Rail Part 2: Imperial Chemical Industries by Peter Fidczuk, p. 21; The Gillford Collection Part 1: The Great Northern Around Nottingham by John Scott-Morgan & Neil Parkhouse, p. 43; The Railway Photographs of E. Pouteau: Part 11: The London, Brighton & South Coast Railway Part 1 by John Alsop, p. 57; Marriott Reinforced Concrete Signal Posts by Nigel J.L. Digby, p. 77; Wish You Were Here? Railway Postcards of Shropshire by Neil Parkhouse, p. 87
+                        [shipping_freight] => 0.0000
+                        [free_shipping] => N
+                        [discount_avail] => 0
+                        [min_amount] => 1
+                        [dim_x] => 0
+                        [dim_y] => 0
+                        [dim_z] => 0
+                        [low_avail_limit] => 0
+                        [free_tax] => N
+                        [product_type] => 0
+                        [return_time] => 0
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 0
+                        [rma_time_to_use] => 0
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 0
+                        [status] => 1
+                        [cost] => 0.00
+                        [sku] => 14587a
+                        [item_id] => 20407
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 6.0000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 6.00
+                                        [net_price] => 0
+                                        [discounted_price] => 6.00
+                                        [subtotal] => 6.00
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 100810
+                                        [condition] => 2
+                                        [comments] => Like new condition
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 100810
+                        [is_deleted] => 
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 0
+                        [product_options_txt] => 
+                        [display_price] => 6.00
+                        [display_net_price] => 0
+                        [display_discounted_price] => 6.00
+                        [display_subtotal] => 6.00
+                        [ordered_price] => 6.0000
+                        [original_price] => 0.00
+                        [price_deducted_tax] => Y
+                    )
+    
+                [1] => Array
+                    (
+                        [product_id] => 19717
+                        [productcode] => 19717a
+                        [product] => Steam Days Magazine, August 2015 Issue
+                        [distribution] => 
+                        [weight] => 
+                        [descr] => 
+                        [fulldescr] => 
+                        [shipping_freight] => 
+                        [free_shipping] => 
+                        [discount_avail] => 
+                        [min_amount] => 
+                        [dim_x] => 
+                        [dim_y] => 
+                        [dim_z] => 
+                        [low_avail_limit] => 
+                        [free_tax] => 
+                        [product_type] => 
+                        [return_time] => 
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 
+                        [rma_time_to_use] => 
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 
+                        [status] => 
+                        [cost] => 
+                        [sku] => 
+                        [item_id] => 20408
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 2.5000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 2.50
+                                        [net_price] => 0
+                                        [discounted_price] => 2.50
+                                        [subtotal] => 2.50
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 100297
+                                        [condition] => 2
+                                        [comments] => As new
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 100297
+                        [is_deleted] => Y
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 
+                        [product_options_txt] => 
+                        [display_price] => 2.50
+                        [display_net_price] => 0
+                        [display_discounted_price] => 2.50
+                        [display_subtotal] => 2.50
+                        [ordered_price] => 2.5000
+                        [original_price] => 2.5000
+                        [price_deducted_tax] => Y
+                    )
+    
+                [2] => Array
+                    (
+                        [product_id] => 609650
+                        [productcode] => 19718a21
+                        [product] => Steam Days Magazine, September 2016 Issue
+                        [distribution] => 
+                        [weight] => 
+                        [descr] => 
+                        [fulldescr] => 
+                        [shipping_freight] => 
+                        [free_shipping] => 
+                        [discount_avail] => 
+                        [min_amount] => 
+                        [dim_x] => 
+                        [dim_y] => 
+                        [dim_z] => 
+                        [low_avail_limit] => 
+                        [free_tax] => 
+                        [product_type] => 
+                        [return_time] => 
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 
+                        [rma_time_to_use] => 
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 
+                        [status] => 
+                        [cost] => 
+                        [sku] => 
+                        [item_id] => 20409
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 2.5000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 2.50
+                                        [net_price] => 0
+                                        [discounted_price] => 2.50
+                                        [subtotal] => 2.50
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 107437
+                                        [condition] => 2
+                                        [comments] => As new
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 107437
+                        [is_deleted] => Y
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 
+                        [product_options_txt] => 
+                        [display_price] => 2.50
+                        [display_net_price] => 0
+                        [display_discounted_price] => 2.50
+                        [display_subtotal] => 2.50
+                        [ordered_price] => 2.5000
+                        [original_price] => 2.5000
+                        [price_deducted_tax] => Y
+                    )
+    
+                [3] => Array
+                    (
+                        [product_id] => 8504
+                        [productcode] => 8504a
+                        [product] => Backtrack Magazine, February 2012 Issue
+                        [distribution] => 
+                        [weight] => 0.2500
+                        [descr] => <p align="middle">Can you provide something to add to this area?<br><br>This part of the page works like a Wikipedia entry - we welcome contributions from anyone to improve the usefulness of this page<br><br>Click the <b>'?'</b> above for more information.</p>
+                        [fulldescr] => Strathclyde Transport - colour spread by Keith Dungate of the 'orange and black' days on Clydeside in the 1980s.
+    The Great Eastern as I knew it - Bob Farmer delves into his father's writings to present a contemporary view of the GER.
+    Sir Robert Menzies and the Highland Railway - Alistair F. Nisbet describes a confrontation and subsequent legal dispute between a Scottish laird and the railway over ticket validity.
+    Leaving Eastleigh - two colour shots by Alan Tyson of SR 'West Country' in August 1964.
+    "East Croydon, this is East Croydon" - The development of a railway centre described by Jeremy Clarke. 
+    Over the Lancashire Moors - three colour pages depicting the Bolton to Blackburn line.
+    The Sheffield Victoria Accident - Ken Grainger investigates a collision in 1954.
+    Steam on the Woodhead Route - archive photos from the Pendragon Collection.
+    LNER Mixed Traffic - four colour pages of the LNER B1 Class 4-6-0s.
+    The Burry Port & Gwendraeth Valley Railway - a brief history by Martin Smith.
+    Snowdown Colliery - two industrial colour shots by Roy Hobbs.
+    Undergraduates on the Footplate - John D. Mann offers some memories of the Cambridge University Railway Club engine-driving specials.
+    Sunderland - From Wagonway to South Dock - Michael B. Binks surveys the life and times of an important north eastern industrial centre.
+    Signalling Spotlight - three contrasting London & South Western Railway signal boxes.
+    Maintaining Railway Curves - Peter Tatlow describes permanent way work on the Southern Region in the 1950s.
+                        [shipping_freight] => 0.0000
+                        [free_shipping] => N
+                        [discount_avail] => 0
+                        [min_amount] => 1
+                        [dim_x] => 0
+                        [dim_y] => 0
+                        [dim_z] => 0
+                        [low_avail_limit] => 0
+                        [free_tax] => N
+                        [product_type] => 0
+                        [return_time] => 0
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 0
+                        [rma_time_to_use] => 0
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 0
+                        [status] => 1
+                        [cost] => 0.00
+                        [sku] => 8504a
+                        [item_id] => 20410
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 2.0000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 2.00
+                                        [net_price] => 0
+                                        [discounted_price] => 2.00
+                                        [subtotal] => 2.00
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 107251
+                                        [condition] => 1
+                                        [comments] => New unread condition
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 107251
+                        [is_deleted] => 
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 0
+                        [product_options_txt] => 
+                        [display_price] => 2.00
+                        [display_net_price] => 0
+                        [display_discounted_price] => 2.00
+                        [display_subtotal] => 2.00
+                        [ordered_price] => 2.0000
+                        [original_price] => 0.00
+                        [price_deducted_tax] => Y
+                    )
+    
+                [4] => Array
+                    (
+                        [product_id] => 601974
+                        [productcode] => 1974
+                        [product] => Backtrack Magazine, June 2006 Issue
+                        [distribution] => 
+                        [weight] => 0.2500
+                        [descr] => Awaiting Entry
+                        [fulldescr] => Over the Tors to Princetown - Dick Riley's BackTrack Cover June 2006rare colour slides of the Yelverton to Princetown branch<br><br>ROD 2-8-0s in Australia- Graham Black's researches into the Great Central design goods locos built for the Railway Operating Division and later exported to Australia<br><br>The Brilliance of Brunel - Keith Hill's 200th anniversary tribute to I. K. Brunel and his work<br><br>Accrington - Jeffrey Wells looks at aspects of this Lancashire town's railway history<br><br>The General Strike in the Highlands - Neil Sinclair writes about how the dispute affected the former Highland lines of the LMS<br><br>The LNER's A1 Pacifics - colour feature on the A. H. Peppercorn-designed 4-6-2s<br><br>The Brunel University Photograph Collection - publicity feature<br>Lost on the Callendar & Oban line - Colour feature of diesel-hauled trains in the 1970s/80s<br><br>A Brief Survey of the Irish 4-4-0 - Part 1 - by Michael Rutherford<br><br>History Southern Style - colour feature by Alan Bennett on the SR's publicity brochures for 'selling England' to the Americans in the 1920s/30s<br><br>Logan and Hemingway, The Firm and the Families - Part 2 - Robert Emblin goes into the Hemingway side of the railway contracting company<br><br>The Real World of Railwaymen - a short anthology of poems written by railwaymen compiled by Arthur R. Nicholls<br><br>East Coast Postal - 2 colour photos of LNER Travelling Post Offices.
+                        [shipping_freight] => 0.0000
+                        [free_shipping] => N
+                        [discount_avail] => 0
+                        [min_amount] => 1
+                        [dim_x] => 0
+                        [dim_y] => 0
+                        [dim_z] => 0
+                        [low_avail_limit] => 0
+                        [free_tax] => N
+                        [product_type] => 0
+                        [return_time] => 0
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 0
+                        [rma_time_to_use] => 0
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 0
+                        [status] => 1
+                        [cost] => 0.00
+                        [sku] => 1974
+                        [item_id] => 20411
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 2.0000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 2.00
+                                        [net_price] => 0
+                                        [discounted_price] => 2.00
+                                        [subtotal] => 2.00
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 107613
+                                        [condition] => 2
+                                        [comments] => As new
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 107613
+                        [is_deleted] => 
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 0
+                        [product_options_txt] => 
+                        [display_price] => 2.00
+                        [display_net_price] => 0
+                        [display_discounted_price] => 2.00
+                        [display_subtotal] => 2.00
+                        [ordered_price] => 2.0000
+                        [original_price] => 0.00
+                        [price_deducted_tax] => Y
+                    )
+    
+                [5] => Array
+                    (
+                        [product_id] => 8512
+                        [productcode] => 8512a
+                        [product] => Backtrack Magazine, April 2012 Issue
+                        [distribution] => 
+                        [weight] => 0.2500
+                        [descr] => <p align="middle">Can you provide something to add to this area?<br><br>This part of the page works like a Wikipedia entry - we welcome contributions from anyone to improve the usefulness of this page<br><br>Click the <b>'?'</b> above for more information.</p>
+                        [fulldescr] => 2-8-0s BackTrack Cover April 2012of the LNER - colour spread of the railway's eight-coupled freight engines.
+    Rebuilding the Railway - A. J. Mullay describes how the LNER planned post-war reconstruction in 1945.
+    The Charnwood Forest Line - Mark Smith traces a vanished Leicestershire byway.
+    Taking to the Hills again - a colour spread of Alan Tyson's pictures of steam on the Settle -Carlisle line.
+    On Tour with 'City of Bradford' - archive photos of No.46236 on the Western, Eastern and Southern Regions during the 1948 Loco Exchanges.
+    From Sneinton Hermitage to Weekday Cross - Robert Emblin surveys how the Great Northern closed the loop in its Nottingham suburban network.
+    Hinksey South - an Oxford location photographed in colour by Dr. M. H. Yardley.
+    The Role of the Civil Engineer- David Andrews looks at how they did workshop management on the Great Western Railway.
+    An Appreciation of Fireless Locomotives - Bob Yate praises an unusual industrial type.
+    Class 37s in South Wales - three colour pages by Michael Mensing from the 1980s.
+    The Forfar & Brechin Railway - Alistair F. Nisbet recounts the history of a secondary route in eastern Scotland.
+    Aspects of Junction Development - Part Two - Jeffrey Wells looks at the early days of the great railway centres of Crewe and Doncaster.
+    On the Dymchurch Line - colour spread by David Idle of the 15in gauge Romney, Hythe & Dymchurch Railway in 1969.
+    The Isle of Wight E1 Class 0-6-0Ts - Peter Paye describes the work of the four of the London, Brighton & South Coast Railway tanks which migrated to the island in the 1930s.
+    Manchester Victoria in Focus - Jeffrey Wells presents an illustrated description of some of this important station's distinctive features.
+    Station seats at Leamington Spa - colour shots by Tim Edmonds of some platform furniture survivors.
+                        [shipping_freight] => 0.0000
+                        [free_shipping] => N
+                        [discount_avail] => 0
+                        [min_amount] => 1
+                        [dim_x] => 0
+                        [dim_y] => 0
+                        [dim_z] => 0
+                        [low_avail_limit] => 0
+                        [free_tax] => N
+                        [product_type] => 0
+                        [return_time] => 0
+                        [features_text] => 
+                        [specifications] => 
+                        [warranties] => 
+                        [pdf_link] => 
+                        [shippings] => 
+                        [rma_amount] => 0
+                        [rma_time_to_use] => 0
+                        [eancode] => 
+                        [manufacturer_code] => 
+                        [attribute_class_id] => 0
+                        [status] => 1
+                        [cost] => 0.00
+                        [sku] => 8512a
+                        [item_id] => 20412
+                        [doc_id] => 9277
+                        [variant_id] => 0
+                        [product_options] => 
+                        [net_price] => 0.0000
+                        [discount_formula] => 
+                        [price] => 2.0000
+                        [history_cost] => 0.0000
+                        [amount] => 1
+                        [warehouse_customer_id] => 75265
+                        [extra_data] => Array
+                            (
+                                [product_options] => Array
+                                    (
+                                    )
+    
+                                [taxes] => Array
+                                    (
+                                    )
+    
+                                [display] => Array
+                                    (
+                                        [price] => 2.00
+                                        [net_price] => 0
+                                        [discounted_price] => 2.00
+                                        [subtotal] => 2.00
+                                    )
+    
+                                [surcharge] => 0
+                                [seller_item] => Array
+                                    (
+                                        [seller_item_id] => 107253
+                                        [condition] => 1
+                                        [comments] => New unread condition
+                                    )
+    
+                            )
+    
+                        [is_auto_calc] => 0
+                        [end_price] => 0.0000
+                        [seller_data_id] => 107253
+                        [is_deleted] => 
+                        [download_key] => 
+                        [expires] => 
+                        [supplier_customer_id] => 0
+                        [product_options_txt] => 
+                        [display_price] => 2.00
+                        [display_net_price] => 0
+                        [display_discounted_price] => 2.00
+                        [display_subtotal] => 2.00
+                        [ordered_price] => 2.0000
+                        [original_price] => 0.00
+                        [price_deducted_tax] => Y
+                    )
+    
+            )
+    
+        [status] => P
+        [content] => You have received a new order #{$doc.display_id} via Magazine Exchange. Please log into your account now and despatch the items promptly.
+    )
+    
+Request URI: /magazineexchange/cw/index.php?area=admin&&target=docs_O&doc_id=9277
+Backtrace:
+/home/magexch/public_html/magazineexchange/cw/core/addons/clickatell_sms/include/func.php:251
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/EventsManager.class.php:153
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:124
+/home/magexch/public_html/magazineexchange/cw/core/addons/clickatell_sms/include/func.php:324
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/EventsManager.class.php:153
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:71
+/home/magexch/public_html/magazineexchange/cw/core/include/functions/cw.doc.php:1036
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/EventsManager.class.php:153
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:124
+/home/magexch/public_html/magazineexchange/cw/core/include/functions/cw.doc.php:1145
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/EventsManager.class.php:153
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:124
+/home/magexch/public_html/magazineexchange/cw/core/include/orders/order.php:285
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/IncludesManager.class.php:58
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:148
+/home/magexch/public_html/magazineexchange/cw/core/admin/docs_O.php:10
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/IncludesManager.class.php:58
+/home/magexch/public_html/magazineexchange/cw/core/include/lib/events/init.php:148
+/home/magexch/public_html/magazineexchange/cw/index.php:34
+-------------------------------------------------

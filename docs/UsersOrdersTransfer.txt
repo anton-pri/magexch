@@ -1,0 +1,53 @@
+0. Disable mail sending and disable cron task to prevent sending out any notifications for period of data update
+
+1. Backup tables cw_magazine_sellers_pages cw_magexch_sellers_shopfront cw_customers (the last one is needed to remember links customer_id-email-xc_login)
+
+create table cw_magazine_sellers_pages_back181121 like cw_magazine_sellers_pages;
+insert into cw_magazine_sellers_pages_back181121 select * from cw_magazine_sellers_pages;
+create table cw_magexch_sellers_shopfront_back181121 like cw_magexch_sellers_shopfront;
+insert into cw_magexch_sellers_shopfront_back181121 select * from cw_magexch_sellers_shopfront;
+create table cw_customers_back181121 like cw_customers;
+insert into cw_customers_back181121 select * from cw_customers;
+
+2. Backup images
+magexch@magazineexchange.co.uk [~/public_html/cw/files]# cp -r images images_back181121
+
+3. use script to drop old customers, orders and sellers
+http://magazineexchange.co.uk/cw/admin/index.php?target=clear_userdata
+
+4. Dump xcart_customers xcart_pricing xcart_seller_data tables from the live xc site
+xcmysqldump xcart_customers xcart_pricing xcart_seller_data > dump181121_xc_customers_prices_seller_data.sql
+
+5. Load this dump into cw database
+
+6. Run transfer script
+http://magazineexchange.co.uk/cw/admin/index.php?target=magexch_xccw
+6.1.
+run the passwords update
+http://magazineexchange.co.uk/cw/admin/index.php?target=magexch_transfer_passwords
+
+
+7. Dump xc orders data
+xcmysqldump xcart_orders xcart_order_details xcart_products > dump181121_xc_orders_data.sql
+
+8. Load this dump into cw database
+
+9. Run script to copy orders
+http://magazineexchange.co.uk/cw/admin/index.php?target=magexch_transfer_orders
+
+10. Re-link shopfront data
+alter table cw_magexch_sellers_shopfront add column email varchar(128) not null default '' after customerid;
+update cw_magexch_sellers_shopfront mss inner join cw_customers_back181121 c on seller_id = customer_id set mss.email=c.email;
+update cw_magexch_sellers_shopfront mss inner join cw_customers_back181121 c on c.xc_login=mss.customerid and mss.email='' set mss.email=c.email;
+delete from cw_magexch_sellers_shopfront where seller_id = 3846;
+alter table cw_magexch_sellers_shopfront add column new_customer_id int(11) not null default 0;
+update cw_magexch_sellers_shopfront mss inner join cw_customers c on c.usertype='V' and c.email=mss.email and mss.email!='' set new_customer_id = c.customer_id;
+rename table cw_magexch_sellers_shopfront to cw_magexch_sellers_shopfront_relink181121;
+create table cw_magexch_sellers_shopfront like cw_magexch_sellers_shopfront_back181121;
+insert into cw_magexch_sellers_shopfront (id, seller_id, customerid, shop_name, logo_path, short_desc, long_desc, holiday_settings, holiday_settings_return_date) select id, new_customer_id, customerid, shop_name, logo_path, short_desc, long_desc, holiday_settings, holiday_settings_return_date from cw_magexch_sellers_shopfront_relink181121 where new_customer_id!=0;
+
+11. Update/correct condition
+ update cw_magazine_sellers_product_data set `condition`=`condition`-1;
+
+
+ 
