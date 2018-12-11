@@ -1,0 +1,1 @@
+INSERT INTO `cw_config` (`name`, `comment`, `value`, `config_category_id`, `orderby`, `type`, `defvalue`, `variants`) VALUES ('short_descr_truncate', 'Short description char limit', '200', '4', '0', 'numetric', '200', '');

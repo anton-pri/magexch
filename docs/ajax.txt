@@ -1,0 +1,132 @@
+On critical and most useful pages in admin and customer area AJAX technology should be used to minimize response time.
+
+AJAX usually assumes that data is being sent to server, UI elements are blocked while server processes request, server responses with new portion of html content to update current page.
+
+ 
+1. Client JavaScript side
+
+Main function to send AJAX request and do not care about response processing is
+
+1.1. function ajaxGet(url, blocking, callback)
+
+"url" is mandatory
+
+"blocking" is array or comma delimited string of DOM elements id that need to be blocked while request is being performed, set it to null if you do not need to block anything
+
+callback is a callback function if you need to perform some additional action after response. Mostly you do not have to perform manuall actions with ajax response, default handler is called for every response and can do most useful things such as update content or call script.
+
+The function ajaxGet()
+- blocks UI elements;
+- adds parameter is_ajax=1 to url;
+- sends AJAX request;
+- takes XML response;
+- parses it and process all actions in response as stated below;
+- then it calls calback
+- unblock UI elements
+ 
+
+1.2. function AJAXClickHandler()
+
+This function is one level upper in abstraction than ajaxGet()
+
+Bind this function as click handler to any DOM tag with href parameter, e.g.
+$('ul.address_book li a').bind('click',aAJAXClickHandler);
+
+ Function is onClick handler, sends AJAX get request to url specified in href attribute (via ajaxGet function)
+ * You should bind it to onClick event of <a> or other tag
+ * Closest parent with attribute "blockUI" defines coma separated IDs of elements which have to be blocked during request
+ * Returns false to avoid normal processing of <a> tag
+
+Force this function to call for any element which has href attribute
+aAJAXClickHandler.apply(object);
+
+SPECIAL CSS CLASSES
+- It is enough to define class='ajax' for A tag and it will be binded with this handler automatically.
+- Class 'onload' of element with defined href attribute will process ajax request automatically when document is ready. It can be used for dynamically loaded content.
+
+
+
+Example
+
+<div blockUI='address, address_book'>
+<span>Address book</span>
+<div id='address'></div>
+<ul id='address' class='address_book'>
+   <li><a href='?target=user&action=load_address&id=1'>Address 1</a></li>
+   <li><a href='?target=user&action=load_address&id=..'>Address ...</a></li>
+   <li><a href='?target=user&action=load_address&id=N'>Address N</a></li>
+</ul>
+<a href='?target=user&action=delete_address' class='ajax'>Delete</a>
+</div>
+<span class='onload' href='index?target=user&action=load_address&id=1'></span>
+<script>
+  $('ul.address_book li a').bind('click',aAJAXClickHandler);
+  // Last link will be binded automatically due to presented "ajax" calss
+  // Last span tag will force ajax request on document ready
+</script>
+
+ Every click on link Address N will block elements ID address and address_book, send AJAX by href url and processes response, updating those parts of HTML content which specified in XML response (see below)
+
+ 
+
+1.3. function submitFormPart(container, callback)
+
+/** Function sends AJAX post request to url specified in href attribute of container attaching all form fields inside container
+ * Closest parent with attribute "blockUI" defines coma separated IDs of elements which have to be blocked during request
+ */
+
+Use this function if you need to post as AJAX only part of the whole form. It also handle blockUI parameter of parents and processes XML response
+
+ 
+2. Server side
+
+Place your ajax handler to your common module controller, you can detect if controller is called in ajax by $is_ajax variable or IS_AJAX constant
+
+AJAX response can be prepared by function
+
+cw_ajax_add_block(array $block, string $key=null);
+
+ 
+
+$block - is element that must be updated on the page
+
+$block = array(
+    'id' => <div_id>,  // id tag of DOM element to be updated
+    ['action' => update|replace|remove|show|hide|append|prepend|after|before|popup|show_popup|hide_popup|script ,]  // action what to do with DOM block
+    ['title' => <title>,]
+    ['content' => <html_content>,]
+    ['template' => <template_path>,]
+);
+
+Action is 'update' by default, it means that inner content of DOM element with specified ID should be updated with specified "content" or compiled "template".
+
+Content and template are optional, can be presented both, one of them or nothing
+
+Use id = "script" or action = "script" if you want to execute "content" or "template" as JavaScript code
+
+Use action = "popup" to show content in popup, "popup" re-creates container for modal JQuery dialog, while "show_popup" 
+and "hide_popup" are used for existing div.
+
+One call of cw_add_ajax_block() adds one action for client side. You can add several blocks even with the same id if you need perform several actions or scripts.
+
+ 
+
+$key param is optoinal and can be used to mark certain entry in ajax output queue and delete if necessary
+
+cw_ajax_remove_block($key)
+
+ 
+
+At the end of script platform automatically generates XML response based on collected blocks and send it to client.
+E.g.
+
+    <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+    <xml>
+        <div_id action='update'><![CDATA[HTML CONTENT GOES HERE]]></div_id>
+        <script><![CDATA[JS CONTENT GOES HERE]]></script>
+        <another_id action='after'><![CDATA[HTML CONTENT GOES HERE]]></another_id>
+        <script><![CDATA[JS CONTENT GOES HERE]]></script>
+    </xml>
+
+
+For all ajax requests cw_header_location() are ignored.

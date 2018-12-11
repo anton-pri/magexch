@@ -1,0 +1,1 @@
+INSERT INTO `cw_config` ( `name` , `comment` , `value` , `config_category_id` , `orderby` , `type` , `defvalue` , `variants`) VALUES ( 'social_buttons', 'Social sharing buttons ', 'Y', '4', '170', 'checkbox', 'Y', '');

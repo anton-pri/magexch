@@ -1,0 +1,951 @@
+commit 787db1d67d3f3352321fd1858d9906707d5e7427
+Author: Chris Brand <arcturial@users.noreply.github.com>
+Date:   Fri Mar 24 14:59:38 2017 +0200
+
+    Remove merge conflict scar tissue.
+
+commit 63f9a8c84e9379867e8d3b61997d37dadcac5f89
+Merge: 9e6ecfc 36299fb
+Author: Chris Brand <arcturial@users.noreply.github.com>
+Date:   Fri Mar 10 12:36:27 2017 +0200
+
+    Merge pull request #5 from arcturial/master
+    
+    Fix failing tests
+
+commit 36299fb02929a577a7b9c2ca710a81fffe19c186
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:33:02 2017 +0200
+
+    Correct undefined index in test.
+
+commit 71588003b6963290d8e092cd9dde0ea36445869c
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:29:02 2017 +0200
+
+    Remove array constant to support 5.5
+
+commit be6199decebe7acb316e4c1ec5c4492bf9cae737
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:23:50 2017 +0200
+
+    Update supported version to 5.5
+
+commit 9e6ecfce9db2857c4b7e57aa7baa6ff431c4fbce
+Merge: f498d51 883e7af
+Author: Chris Brand <arcturial@users.noreply.github.com>
+Date:   Fri Mar 10 12:20:39 2017 +0200
+
+    Merge pull request #4 from arcturial/master
+    
+    Update supported version to 5.4
+
+commit 883e7af015158d613644cd6f3677e0f13fe403d2
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:19:12 2017 +0200
+
+    Update supported version to 5.4
+
+commit f498d5154ab28022f06272938b02ba29aa75037e
+Merge: 138b5a9 be25c78
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:14:36 2017 +0200
+
+    Merge branch 'master' of https://github.com/arcturial/clickatell
+    
+    Conflicts:
+    	README.md
+
+commit be25c78b5da2b96ab3ed5c7c7eaa3e7637b6bcd0
+Merge: 2bc70aa 295277b
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 12:02:33 2017 +0200
+
+    Merge branch 'master' of git://github.com/clickatell/clickatell-v2
+    
+    Conflicts:
+    	.gitignore
+    	README.md
+    	composer.lock
+
+commit 2bc70aae8edc7d84f061f9f5ff44f8ae23734ff3
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 11:57:16 2017 +0200
+
+    Include CI badge in README.
+
+commit deb1115f081a1f746a45314292bdae98889a0b7e
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 11:56:29 2017 +0200
+
+    Add travis.ci file for automated tests.
+
+commit 541ab55c3a807374fe727aad57004c09887080cf
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Mar 10 11:48:13 2017 +0200
+
+    Merge with the clickatell-v2 repository.
+
+commit 295277b310867e6a647d5ec923e9bcb3a6ffc429
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Thu Feb 9 15:45:54 2017 +0200
+
+    Update README text.
+
+commit e334246d61338a259bb3e6e15c75ff3c8126cbd1
+Author: Chris Brand <arcturial@users.noreply.github.com>
+Date:   Thu Feb 9 15:44:58 2017 +0200
+
+    Create LICENSE
+
+commit 8f732b6e3e4977ee8e0dd0b9b5c2beafdf1c9685
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Jan 6 15:12:03 2017 +0200
+
+    README formatting adjustment.
+
+commit 230db832b2c13e561bc0637f690e96224a5b162b
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Fri Jan 6 15:11:15 2017 +0200
+
+    README first draft.
+
+commit ee1e21281daa7c5222ae8e60816abaa1f5241891
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Thu Jan 5 12:43:34 2017 +0200
+
+    Add unit test coverage.
+
+commit a6a3aca20d2fae494ce710d8f19d1e7e21ccbf83
+Author: Chris Brand <chris.brand@clickatell.com>
+Date:   Tue Dec 6 13:30:06 2016 +0200
+
+    Initialize repository.
+
+commit 96cf5d105f83b0f2a38dd356b49bf1dfb4bf5529
+Merge: d348e41 f3b5f2f
+Author: Chris Brand <arcturial@users.noreply.github.com>
+Date:   Wed Oct 5 13:14:41 2016 +0200
+
+    Merge pull request #26 from Orajo/master
+    
+    Fixed issue #25 "ClickatellRest - Response is never returned on error"
+
+commit f3b5f2f8c588863aae11a6e6aebe2672d58fc5e3
+Author: Jarosław Wasilewski <jaroslaw.wasilewski@bit-sa.pl>
+Date:   Sun Sep 25 21:17:16 2016 +0200
+
+    Fixed issue #25 "ClickatellRest - Response is never returned on error"
+
+commit d348e41a4052547d60d17737bf1993dd794b5ca1
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Mar 19 23:20:48 2016 +0200
+
+    Add network as part of the optional parameters in README
+
+commit 4f8f110bef700d778d72d7773c3b352c3f737a88
+Merge: 3c268cb f0ccd93
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Mar 19 23:16:17 2016 +0200
+
+    Merge pull request #24 from arcturial/issue-23
+    
+    Make 'network' an optional parameter. Fix #23
+
+commit f0ccd9356cd927045947a6195d28c16bac6d4410
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Mar 19 23:08:37 2016 +0200
+
+    Update callback unit test to reflect the correct key order for parameters
+
+commit e64d20f332e366d60a8fe41764730d875d3f6b25
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Mar 19 23:01:36 2016 +0200
+
+    Make 'network' an optional parameter #issue23
+
+commit 3c268cb22e3a6ad83bae2b38ed3ec53b525a05be
+Merge: e67901e 75494de
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sun Feb 14 11:41:19 2016 +0200
+
+    Merge pull request #20 from etiennemarais/master
+    
+    Fixed an error with the wrong array key being utilized during a legacy response exception
+
+commit 75494ded6204d7a60823a13b98fd566cb4befff2
+Author: Etienne Marais <etienne.marais@olx.com>
+Date:   Sun Feb 14 07:40:25 2016 +0200
+
+    To fix the error code problem, the key needs to be `code` as per the Decoder definition.
+
+commit e67901e248c34e90f3c9dfac111baaba77b57953
+Merge: 16cef22 4b51681
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Feb 13 15:43:34 2016 +0200
+
+    Merge pull request #22 from Jonadabe/master
+    
+    Improve the error messages so that their purpose is clearly stated.
+
+commit 4b516817747ab03586b4d2255ddda3641a1cd4b8
+Author: Jonadabe <jonadabe@hotmail.com>
+Date:   Sat Feb 13 10:37:54 2016 +0000
+
+    Update Diagnostic.php
+    
+    Ooops.
+
+commit 4abe0228653559a45584b80cbf9a3161b02a6546
+Author: Jonadabe <jonadabe@hotmail.com>
+Date:   Sat Feb 13 10:26:59 2016 +0000
+
+    Update Diagnostic.php
+
+commit 4b991b71a53daa332c6e61369b7fa7eec125cbc4
+Author: Etienne Marais <etienne.marais@olx.com>
+Date:   Fri Feb 12 13:31:57 2016 +0200
+
+    Fixed an error in the Http Api response where the error code would always return false because the response key could not be found.
+
+commit 16cef224805e5266c2fcdb61a75d3d88dd9cc853
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Oct 10 11:40:24 2015 +0200
+
+    Move Symfony dependencies to "suggest" so it is only installed when needed.
+
+commit 1d39ccb84614b1f2153c6c8e97dacef322a09092
+Merge: 3ceb3a3 24cb8f0
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Oct 10 11:36:36 2015 +0200
+
+    Merge pull request #18 from boteeka/master
+    
+    Fix for issue #17: Method signature compatibility error in Clickatell\ClickatellEvent::getMessageCharge()
+
+commit 24cb8f0640e23916f216012d7823fcf3604285a4
+Author: Botond Szasz <botond.szasz@safechargecardservices.com>
+Date:   Fri Oct 9 12:00:13 2015 +0100
+
+    Revert "Allow higher phpunit version" - breaks php5.3 build
+    
+    This reverts commit 618135897036c5c1a7ba7b48e7198930024cb3cf.
+
+commit cc1c123a26f2adcce7055aafe039961866e8a87d
+Author: Botond Szasz <botond.szasz@safechargecardservices.com>
+Date:   Fri Oct 9 11:46:18 2015 +0100
+
+    Cleanup
+    
+    Removed unused 'use' imports
+    Added missing imports
+    Updated phpDoc to reflect actually accepted param types
+
+commit 25218686b618f68172333ce296c869b4d0d419ea
+Author: Botond Szasz <botond.szasz@safechargecardservices.com>
+Date:   Fri Oct 9 11:40:30 2015 +0100
+
+    Update method signature to comply with implemented TransportInterface
+
+commit 618135897036c5c1a7ba7b48e7198930024cb3cf
+Author: Botond Szasz <botond.szasz@safechargecardservices.com>
+Date:   Fri Oct 9 11:38:51 2015 +0100
+
+    Allow higher phpunit version
+
+commit 067276ba8942f8606a08be8509e3c29c9cb153a6
+Author: Botond Szasz <botond.szasz@safechargecardservices.com>
+Date:   Fri Oct 9 11:38:05 2015 +0100
+
+    Add missing dependencies
+
+commit 3ceb3a353f6ede39712acc5225d7c4cf15d4d1d7
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Sep 28 15:33:24 2015 +0200
+
+    Allow backwards compatibility support with the updated getMessageCharge response.
+
+commit ebf83dcb48364b0d07c97f7b2ceb012943cbf3e7
+Merge: 582406c c35cb52
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Sep 28 14:59:16 2015 +0200
+
+    Merge pull request #16 from jonnywilliamson/cliMsgIdQuery
+    
+    Allow user to query a message charge on clientMsgId #16
+
+commit c35cb520bc3aacd6fde4c05c38c9ea20bd47a676
+Author: Jonathan Williamson <jonnywilliamson@gmail.com>
+Date:   Mon Sep 28 11:24:00 2015 +0100
+
+    Fix bug when empty array was being appended to end of URI for no reason.
+
+commit e71b3ae614daf5597cec390b3c614728bda8ca24
+Author: Jonathan Williamson <jonnywilliamson@gmail.com>
+Date:   Mon Sep 28 11:15:12 2015 +0100
+
+    Update HTTP and REST API to allow cliMsgId Query
+
+commit 69e4b107597d9215504fef63558530f48941ea2f
+Author: Jonathan Williamson <jonnywilliamson@gmail.com>
+Date:   Mon Sep 28 11:13:56 2015 +0100
+
+    Fix small typo
+
+commit 64e2645db2e11637a2b1f1d8c84a073d42315398
+Author: Jonathan Williamson <jonnywilliamson@gmail.com>
+Date:   Mon Sep 28 11:13:31 2015 +0100
+
+    Update Interface to allow for cliMsgId
+
+commit 582406c795607e4dd9e5ddace74825a8d8f73f49
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Aug 20 15:47:52 2015 +0200
+
+    Update documentation to include HTTPS instructions.
+
+commit fe393446f80800e5e1164cc0d1d0dffa199d6228
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Aug 20 15:46:56 2015 +0200
+
+    Add the ability to specify the usage of HTTPS.
+
+commit 31e886795056c500869b6c7576a1ace78e5ce721
+Merge: 6e949cc 36c2dda
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sat Jul 11 15:16:12 2015 +0200
+
+    Merge pull request #14 from arcturial/feature-mo-callback
+    
+    MO and MT callback modifications
+
+commit 36c2dda8e92df2586056a01f95f4d1b109d6d365
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jul 11 15:04:43 2015 +0200
+
+    Remove lines in README.
+
+commit 730d312c6e55fdbc847b98ab083f3e7b8c437308
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jul 11 14:59:37 2015 +0200
+
+    Update README formatting.
+
+commit 112828478a743c1c42bc9011182380dd59fd02d0
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jun 15 15:34:51 2015 +0200
+
+    Implement MO callback functionality.
+
+commit 138b5a985131312bf5b82f6d07d3e11093489478
+Merge: b2c2018 6e949cc
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 19:59:07 2015 +0200
+
+    Merge pull request #3 from arcturial/master
+    
+    OTP, Symfony Bundle and User Agent
+
+commit 6e949ccd28d4c5b9912c3ee014c6bddfdb826814
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 19:53:04 2015 +0200
+
+    Add OTP functionality to the README file.
+
+commit bcb97e17be3dc4301de8ad899a41e5c0d108c889
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 19:45:41 2015 +0200
+
+    Allow user agent to be modified.
+
+commit b5bb9acf3e2a992c82714973bd6ceaf8286d2d68
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 19:43:22 2015 +0200
+
+    Update test to assert against MD5 hashed key.
+
+commit 7e6ca65b348d75cf1d9e7edebe1ec586c427c371
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 19:39:42 2015 +0200
+
+    Update README to include symfony bundle instructions.
+
+commit 258f9cc816f2606c7ab582ffa7dda918e2b0c838
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 17:35:34 2015 +0200
+
+    Add symfony bundle as part of the core package.
+
+commit 550cc1b13fff67ffbaa4171b923a0b308cf3fd7d
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Mar 30 13:04:00 2015 +0200
+
+    Allow a user to pass a unique reference to an OTP. This improves the token validity.
+
+commit 0723d5a5f34f45e1f603624b3f8c4ab7abb8464f
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Mar 29 18:24:04 2015 +0200
+
+    Don't start a session without forcing it.
+    
+    Explicitly force a session to start.
+
+commit 6ba08dfd5cb26b0e8f6c8b567fb6ba9aaf98717d
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Sun Mar 29 13:11:52 2015 +0200
+
+    Change comparison operator to OR
+    
+    Ensure you can correctly force a session_start() by changing the operator to OR instead of AND.
+
+commit cb5b16754e60929f328a5f9aa4ac15f0e77fd546
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Mar 27 11:58:36 2015 +0200
+
+    Implement Uset-Agent for the curl request.
+
+commit 7b75ed7734a3f9c687c2ba321bf705eb7869cad5
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Mar 22 19:08:25 2015 +0200
+
+    Implement OTP functionality.
+
+commit b2c20185280a72057679d05076c7615a3af437db
+Author: Arno Esterhuizen <arno.esterhuizen@gmail.com>
+Date:   Tue Jan 27 11:27:11 2015 +0200
+
+    Update README.md
+    
+    Add references to Clickatell's other libraries
+
+commit ff5e9a29ef6ad703713c94c72770338df8289921
+Author: Arno Esterhuizen <arno.esterhuizen@gmail.com>
+Date:   Tue Jan 20 13:06:10 2015 +0200
+
+    Create LICENSE.md
+
+commit bfe3b17862c51b5f07b4e43c1706783954de8ca8
+Author: Arno Esterhuizen <arno.esterhuizen@gmail.com>
+Date:   Tue Jan 20 13:05:42 2015 +0200
+
+    Delete LICENSE.txt
+
+commit 0f5757c52fb2d111bf9fa352cd652598faeb0994
+Merge: f1ea34f 68b6a42
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Dec 29 21:09:49 2014 +0200
+
+    Merge pull request #2 from arcturial/master
+    
+    Merge in refactored changes
+
+commit 68b6a42c87f6c062673c980f04af4153d30eab30
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Dec 29 20:04:47 2014 +0200
+
+    Remove old legacy tests.
+
+commit a7c495fccd37c04265c94a2096ee17b7eecb6fbf
+Merge: e45508d f228b68
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Dec 29 19:59:32 2014 +0200
+
+    Merge branch 'refactor'
+    
+    Breaks backwards compatibility. Remove redundant transport protocols and
+    refactor the HTTP and REST protocols to allow for a easier to understand
+    design.
+
+commit f228b6860191c787b81cdcac40d157f8ae7728ea
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Dec 29 19:54:09 2014 +0200
+
+    Fix usage of incorrect array key.
+
+commit e45508db55138105eb84f34b121d5e1733e3af7a
+Merge: 2e4fa4e 886efcb
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Tue Dec 16 14:01:42 2014 +0200
+
+    Merge pull request #13 from Basster/feature/https-support
+    
+    Introduced HTTPS transport
+
+commit 886efcbd0406cb134a64f09bccca67eb10bbf638
+Author: Ole Rößner <o.roessner@neusta.de>
+Date:   Tue Dec 16 12:19:30 2014 +0100
+
+    Updated README and Clickatell.php constants.
+
+commit 9b3f081aa3e09c75ca806ded97b5b6eef5bd308b
+Author: Ole Rößner <o.roessner@neusta.de>
+Date:   Tue Dec 16 12:12:29 2014 +0100
+
+    Introduced HTTPS transport
+
+commit c53efb947e97d2ec0a5520ac20e5269ca21ad98e
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Nov 30 17:22:48 2014 +0200
+
+    Ensure that the sendMessage call does not throw exceptions and returns expected results every time.
+
+commit c18d1d003f48b615496594317710e7264b5dffec
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Nov 30 14:26:43 2014 +0200
+
+    Add a staging file for demonstration purposes.
+
+commit 005043da52f3bb5e5f528a3a89b6e3be51c0a3c5
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Nov 29 22:05:53 2014 +0200
+
+    Remove table of contents.
+
+commit 9b94ab91def708d64c1980a022c458c0f58cda4c
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Nov 29 22:03:43 2014 +0200
+
+    Update readme to include item number 5.
+
+commit d6a858814415e77efcedfc1f5443370bfd2b03ca
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Nov 29 21:55:15 2014 +0200
+
+    Update the README and add event handling capabilities.
+
+commit b6e05f6bfef0acec43025d945945ca62e07ec92f
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Nov 27 23:01:37 2014 +0200
+
+    Add more test coverage.
+
+commit 8409e979fe9486ec8fc42784b1682a5b535628c0
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Nov 27 22:26:37 2014 +0200
+
+    Remove old unused files.
+
+commit 786ce0b53da91ad9ea115b6ae691f557c49695fd
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Nov 27 22:25:38 2014 +0200
+
+    Complete both the REST and the HTTP interfaces.
+
+commit 264f65bef3811c9e2c4b804b47d6094faa6c320c
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Nov 26 21:50:14 2014 +0200
+
+    Add support for REST sendMessage call
+
+commit 3e4b465368ec4f3cec7444ba86b8f7516fb6e9d1
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Tue Nov 25 23:00:02 2014 +0200
+
+    Include some initial REST adapter code.
+
+commit 6191e87356e0b17700429b93a3e23363f26a0e4c
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Tue Nov 25 22:30:15 2014 +0200
+
+    Include the newly created abstract class into source control.
+
+commit 4f445facef2c92fafa9dcdfe18f9a7a3bc9ca923
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Tue Nov 25 22:23:32 2014 +0200
+
+    Add some initial unit test to cover the HTTP API.
+
+commit 8eb7482bcf60ecfad97b8755aa42f8c2ba17f14f
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Nov 24 21:08:34 2014 +0200
+
+    Update travis config.
+
+commit 8d34bb63060c2c544d8235cc031902f81c06fc6b
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Nov 23 22:21:50 2014 +0200
+
+    Complete the HTTP interface.
+
+commit a7b486436c9aa1c4b7042bc75d11f92b039118d8
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Nov 23 22:03:06 2014 +0200
+
+    Initial refactor commit. Simplify components and allow for seamless REST integration.
+
+commit 2e4fa4ec3107e895c0edd65611e87e73334fd3d3
+Merge: 0eb98a5 ccb01ca
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Thu Nov 20 10:40:16 2014 +0200
+
+    Merge pull request #12 from ennosol/pt-rest
+    
+    Include REST transfer as a standalone class to support backwards compatibility.
+
+commit ccb01ca4b5603a15f82f8d1e34bfbe84148e8bf9
+Author: Petró Tamás <petro.tamas@gmail.com>
+Date:   Wed Nov 19 10:53:47 2014 +0100
+
+    Fix comments
+
+commit 240b56878820d277c6e9b44cc75823e20c375072
+Merge: 0eb98a5 3585d4a
+Author: Peter Perger <perger1984@gmail.com>
+Date:   Tue Nov 18 13:39:15 2014 +0100
+
+    Merge pull request #1 from ennosol/pt-rest_transfer
+    
+    REST transfer
+
+commit 3585d4a76163bdd5ec6d85db9be870b8e7bedb2d
+Author: Petró Tamás <petro.tamas@gmail.com>
+Date:   Tue Nov 18 13:07:46 2014 +0100
+
+    New ClickatelRest class
+
+commit 93a2d378a1c6f15cf1e3fa8b5757c1fb17b4cf6f
+Author: Petró Tamás <petro.tamas@gmail.com>
+Date:   Mon Nov 17 13:24:43 2014 +0100
+
+    SSL Verification fix
+
+commit a2246cce28e938358e175aadb06b0f5c3786760b
+Author: Petró Tamás <petro.tamas@gmail.com>
+Date:   Fri Nov 14 19:58:12 2014 +0100
+
+    REST transfer
+
+commit f1ea34f87e9a4e4d569c91c4ef81490785e6ac14
+Merge: 3f1b6e0 0eb98a5
+Author: Arno Esterhuizen <arno.esterhuizen@gmail.com>
+Date:   Mon Oct 6 09:02:06 2014 +0200
+
+    Merge pull request #1 from arcturial/master
+    
+    Pull in latest additions from the master repository.
+
+commit 0eb98a5e760e8c71492286a0752fde73a7de2b09
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Oct 4 13:14:16 2014 +0200
+
+    Update readme file to be more specific on response packets
+
+commit 2bec390d896e5df51b11d3fbce710ef60a4a1d8f
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Oct 4 13:11:31 2014 +0200
+
+    Support bulk sending by returning an array of messages and their statuses instead of a single response.
+
+commit f5fc506ebea678ec901b31c3e0e80c6b1cf71b63
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Sep 29 19:10:16 2014 +0200
+
+    Add some more context around the usage of the request event.
+
+commit 23a988a06f926b89704c2d41797cbca866009f9c
+Merge: e9592e6 94ad956
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Sep 29 19:10:11 2014 +0200
+
+    Merge branch 'master' of https://github.com/arcturial/clickatell
+
+commit e9592e651cedcad1563526e974b93fd1f4c02f2d
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Sep 29 19:09:50 2014 +0200
+
+    Add some more context around the usage of the request event.
+
+commit 94ad9569ca6c1de2603bbe44a5a55bea86a4dc30
+Merge: 5669fd4 ed9e38a
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Sep 29 19:03:36 2014 +0200
+
+    Merge pull request #11 from dTHQb/patch-2
+    
+    Update Api.php
+
+commit ed9e38a20a595f8904f55fdc332e94b5a72e8e5a
+Author: Giovanni <gtheun.thq@gmail.com>
+Date:   Mon Sep 29 13:38:53 2014 +0200
+
+    Update Api.php
+    
+    Please see last comment on https://github.com/arcturial/clickatell/pull/10 I made a spelling mistake in previous PR. Code work as expected and there is no errors, only problem is the property mapping to the "mo" parameter is currently "mobile_orginated" where the correct spelling  will be "mobile_originated"
+
+commit 5669fd496e4d736116076e92e86afe555a51d0ce
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Sep 26 12:25:18 2014 +0200
+
+    Update invocation test to work based on param index count and not associative index key
+
+commit 3508af13ee381b7bb249d8f82129a563237953e0
+Merge: f9978bf f5b1e84
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Sep 26 12:00:32 2014 +0200
+
+    Merge branch 'master' of https://github.com/arcturial/clickatell
+
+commit f9978bf41c572ee47346fba9128281b3a7e83fc0
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Sep 26 11:59:54 2014 +0200
+
+    Add the ability to modify request variables before execution.
+
+commit f5b1e84b89152efed0cb8f4d48840ffd025fc2a7
+Merge: ac3be78 3143cbe
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Fri Sep 26 11:44:40 2014 +0200
+
+    Merge pull request #10 from dTHQb/patch-1
+    
+    Update Api.php to include additional extra parameters
+
+commit 3143cbe9c79a001f4c6945f276470d31ff500619
+Author: Giovanni <gtheun.thq@gmail.com>
+Date:   Fri Sep 26 11:26:37 2014 +0200
+
+    Update Api.php
+    
+    Can you please add these changes so that Clickatell can provide us with a from number in cases where we have to use the "mo" parameter.  And also the "cliMsgId" parameter so we can assign every sms a unique key so when Clickatell does the callback it is easier to find the specific sms.
+    
+    Or alternatively can you please update the code so that when we use the "request" event and inject additional parameters, it persists through to the final request. At this moment the "request" event provided can only be used for logging or debugging since all changes are ignored before the request is sent.
+
+commit ac3be783e30f06c39ef9716d1bd53bc8c3c0c2c0
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Jun 6 17:51:54 2014 +0200
+
+    add example file for callback testing
+
+commit 247a4ec80bda3f44c28ca77016fc97797d73f5b9
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun May 25 23:10:16 2014 +0200
+
+    add support for unicode
+
+commit 3f1b6e0ddfc6fb7ae6656f8cdb7a462b6cfa66ea
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Feb 19 20:47:55 2014 +0200
+
+    remove clumsy debug
+
+commit cc7ddff8d8512786952db05093635f64b3f66d20
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Feb 14 18:27:00 2014 +0200
+
+    update readme with new parameters
+
+commit d25d743529d8c6497545bd5c7a97f0e93393a7c9
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Feb 14 18:25:48 2014 +0200
+
+    implement extra parameters deliv_time, concat, max_credits, req_feat
+
+commit 803363c47fbc3aac81e6f6e429cf0f3454058909
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Jan 1 19:01:36 2014 +0200
+
+    update comment to be more accurate
+
+commit 000957070a7e11ae5cd6e2501b95cc8631c4a9f5
+Merge: f305e83 0ffe84a
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Jan 1 18:16:03 2014 +0200
+
+    Merge branch 'master' of https://github.com/arcturial/clickatell
+
+commit f305e83dc04609dd8f3ba24c8b2558c55545238b
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Jan 1 18:15:11 2014 +0200
+
+    add parseCallback to handle Clickatell callbacks
+
+commit f39c89d5ab2de0eac3b37b33439667cc77184ab9
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Jan 1 18:12:07 2014 +0200
+
+    add parseCallback to handle Clickatell callbacks
+
+commit 0ffe84a4fbcc0199d979e1338267f88720d2e18a
+Merge: b351105 31dcff2
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Thu Oct 24 10:05:20 2013 -0700
+
+    Merge pull request #5 from Clickatell/master
+    
+    Merge pull request #1 from arcturial/master
+
+commit b351105fe5408a5c0b047b3795a8e5342cff0167
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Thu Oct 24 18:47:58 2013 +0200
+
+    change url encoding and add test
+
+commit 31dcff21b2fe3e3d4a45d8ffa9b566136db536ca
+Merge: ed404f4 5812ce8
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Oct 7 12:08:07 2013 -0700
+
+    Merge pull request #1 from arcturial/master
+    
+    Remove validation on "from" to allow alpha numeric characters.
+
+commit 5812ce8ce6817192acc201efa439f41907f5a84f
+Merge: ed404f4 f0027e9
+Author: Chris Brand <dcstormrage@hotmail.com>
+Date:   Mon Oct 7 11:52:07 2013 -0700
+
+    Merge pull request #3 from awestrope/FromValidation
+    
+    Removed form validation (as telephone) to allow it to be set to AlphaNum...
+
+commit f0027e932d779d0fe0841b0d77241e117a7c0620
+Author: awestrope <andrew@warwickshireIT.co.uk>
+Date:   Mon Oct 7 19:35:53 2013 +0100
+
+    Removed form validation (as telephone) to allow it to be set to AlphaNumeric
+    
+    If you get Clickatell to agree an AlphaNumeric CallerID you need to be able to set it.
+
+commit ed404f4a5ec677c80969aa9db2b6a989e15795a5
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Wed Jun 26 18:03:23 2013 +0200
+
+    add HTTP as default API
+
+commit 4fbfa99019951115d651e2b011f595f0a4b4851b
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Fri Jun 21 21:57:22 2013 +0200
+
+    change library description
+
+commit d936ac70f56524478aaa2d958dfb5e2af59fef8b
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Jun 16 15:28:11 2013 +0200
+
+    update readme with events and new installation instructions
+
+commit 012e35306fbfcb6382781590b665a6c2398bbc5f
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Jun 16 15:09:23 2013 +0200
+
+    add license to composer
+
+commit 5621237b0d23691bb32ac3766ce6a5035c74eb48
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Jun 16 14:58:25 2013 +0200
+
+    add homepage to composer
+
+commit 45042693aa055433469434873a2f8a9eb038ce63
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Jun 16 13:45:56 2013 +0200
+
+    add composer definition
+
+commit 5d648a2a259950816516033e853a3649dfb9025a
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sun Jun 16 13:39:26 2013 +0200
+
+    remove development branch
+
+commit 80c9d93adab1dc8372540cb0882713a175b48033
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 26 19:28:02 2013 +0200
+
+    remove unused files
+
+commit f2027339d22fb53599acbc25fa2a9bc72528f716
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 26 19:26:42 2013 +0200
+
+    merge in dev
+
+commit 333e1b5009f4115857699e7d2434c4489cb91ae0
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 23:36:49 2013 +0200
+
+    README formatting update
+
+commit 97cc4afd6a16191b7915a3323ef453eef806a520
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 23:31:42 2013 +0200
+
+    update README
+
+commit 1342e9439c775272502a73b518554a72fbc959f3
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 16:35:31 2013 +0200
+
+    add dev branch to ci
+
+commit b36335a8ca582b32952f052b1db460558ff865ee
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:18:08 2013 +0200
+
+    add build status to readme
+
+commit 100e6535197ade14623e9731199f869aa721d629
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:15:29 2013 +0200
+
+    change dir and then run tests
+
+commit c40b85b3d3533c27b617e1282f5038dbce2e8514
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:12:59 2013 +0200
+
+    change path for travis ci
+
+commit 545563bba8b90a468e757c45999c88348509b835
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:10:41 2013 +0200
+
+    modify testsuite path for travis ci
+
+commit 0c81581cfe0ae0c24d1920bbad4cef20c2c8ff7d
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:08:21 2013 +0200
+
+    test travis ci hook
+
+commit bd8ccca1863a86c82b6cd420da16413917f5e76e
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 15:02:58 2013 +0200
+
+    add .travis.yml
+
+commit 0c480264fe946d5bbfd11ad248190133e5390615
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 09:51:38 2013 +0200
+
+    unix pathing fix
+
+commit 7342117790ed7bcaecfc0bfaf58066aa18fc72e8
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Mon Jan 7 09:40:56 2013 +0200
+
+    fix test autoloader
+
+commit 95b61b62daabaa81c8e7f04a411031b4b59fcd98
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 5 23:30:53 2013 +0200
+
+    adhere to coding standards
+
+commit 4d96948eced39951d19597dbaad55630275eca4e
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 5 20:17:22 2013 +0200
+
+    add extraction interface and modify autoloader
+
+commit 3ecaa6e1ad0d22fee532920550d09b46339660c7
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 5 16:57:19 2013 +0200
+
+    change autoload to be more diverse and add README
+
+commit e118ab3e81453f518950ddc4e3d8795b3ab3799c
+Author: Chris Cain <dcstormrage@hotmail.com>
+Date:   Sat Jan 5 16:44:38 2013 +0200
+
+    initial commit

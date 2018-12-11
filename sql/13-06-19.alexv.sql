@@ -1,0 +1,4 @@
+UPDATE `cw_languages` SET `value` = 'File types for Product page downloads' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'txt_ppd_filetype_top_text' LIMIT 1;
+UPDATE `cw_languages` SET `value` = 'Files for download from the product page' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'txt_ppd_top_text' LIMIT 1;
+UPDATE `cw_languages` SET `value` = 'Product tabs list' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'txt_pt_top_text' LIMIT 1;
+UPDATE `cw_languages` SET `value` = 'Global product tabs list' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'txt_pt_top_text_global' LIMIT 1;

@@ -1,0 +1,39 @@
+.ps-offered-product {
+	background-image: url(images/so.png);
+	background-repeat: no-repeat no-repeat;
+	background-position: right top;
+}
+
+.ps-offers {
+	position: relative;
+}
+
+.ps-offer-details dt {
+	font-weight: bold;
+	padding: 0 6em 0 0;
+	position: relative;
+}
+
+.ps-offer-details div.ps-offer-date {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 6em;
+}
+
+.ps-offer-details dd {
+	margin: 0;
+	overflow: auto;
+}
+
+.ps-offer-details .ps-offer-inner {
+	position: relative;
+}
+
+.ps-offer-inner {
+	margin: 0 0 10px 0;
+}
+
+.ps-offer-image {
+	float: left;
+}

@@ -1,0 +1,58 @@
+1. Cron usage
+
+1.1. Cron installation 
+
+    Many vital functions depend on cron - mail sending, cache/trash cleanup, regular notifications.
+
+    Single crontab task should be added to crontab by server admin to execute following command every 1-2 minutes
+
+    */2 * * * * php <cw_installation_path>/core/cron/index.php <cron_code>
+
+    <cron_code> is set by admin for protection in Security settings
+
+    Cron script can be also used for execution certain function even if this function is not part of common scheduler, e.g:
+
+    0 0 */2 * * php <cw_installation_path>/core/cron/index.php <cron_code> <function_name>
+
+    Cron log is stored in var/log/cron folder
+
+1.2. Cron manual execution
+
+    1.2.1. Start common crontab from shell 
+
+    php <cw_installation_path>/core/cron/index.php <cron_code>
+        or
+    php <cw_installation_path>/core/cron/index.php <cron_code> <function_name>
+
+    1.2.3. Start from browser
+
+    http://<host>/<web_dir>/cron/index.php?code=<cron_code>
+        or
+    http://<host>/<web_dir>/cron/index.php?code=<cron_code>&manual_run=<function_name>
+
+
+
+2. How to add own task to cron
+
+cron handler provides following events with corresponding periods:
+
+    'cw_cron_regular' => every crontab execution,
+    'cw_cron_hourly' => SECONDS_PER_HOUR,
+    'cw_cron_daily' => SECONDS_PER_DAY,
+    'cw_cron_weekly' => SECONDS_PER_WEEK,
+    'cw_cron_beweekly' => SECONDS_PER_WEEK*2,
+    'cw_cron_monthly' => SECONDS_PER_DAY*30,
+    'cw_cron_annually' => SECONDS_PER_DAY*365,
+
+You can setup listener for any of this event. Listener gets two parameters - current time and execution counter, e.g.
+Counter can be used to do actions every N regular crontab periods.
+
+cw_event_listen('on_cron_daily', 'cw_cleanup_old_sessions');
+
+function cw_cleanup_old_sessions($time, $counter) {
+ // .. do something
+ $log_message = 'Log message';
+ return $log_message;
+}
+
+Cron handler can return log message or structured data in array - everything will be dumped to log.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE JposEntries PUBLIC "-//JavaPOS//DTD//EN"
+                             "jpos/res/jcl.dtd">
+<JposEntries>
+    <JposEntry logicalName="DitronFiscalPrinter">
+        <creation factoryClass="ditron.jpos.factories.DitronFiscalPrinterFactory" serviceClass="ditron.jpos.services.DitronFiscalPrinterService"/>
+        <vendor name="Ditron S.r.l." url="http://www.ditron.net"/>
+        <jpos category="FiscalPrinter" version="1.9"/>
+        <product description="FiscalPrinter Ditron" name="FiscalPrinter Ditron" url=""/>
+        <prop name="reportType" type="String" value="3"/>
+    </JposEntry>
+    <JposEntry logicalName="DitronLineDisplay">
+        <creation factoryClass="ditron.jpos.factories.DitronLineDisplayFactory" serviceClass="ditron.jpos.services.DitronLineDisplayService"/>
+        <vendor name="Ditron S.r.l." url="http://www.ditron.net"/>
+        <jpos category="LineDisplay" version="1.9"/>
+        <product description="LineDisplay Ditron" name="LineDisplay Ditron" url=""/>
+    </JposEntry>
+    <JposEntry logicalName="DitronCashDrawer">
+        <creation factoryClass="ditron.jpos.factories.DitronCashDrawerFactory" serviceClass="ditron.jpos.services.DitronCashDrawerService"/>
+        <vendor name="Ditron S.r.l." url="http://www.ditron.net"/>
+        <jpos category="CashDrawer" version="1.9"/>
+        <product description="CashDrawer Ditron" name="CashDrawer Ditron" url=""/>
+    </JposEntry>
+</JposEntries>

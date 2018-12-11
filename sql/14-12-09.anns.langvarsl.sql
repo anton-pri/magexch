@@ -1,0 +1,1 @@
+REPLACE INTO `cw_config` ( `name` , `comment` , `value` , `config_category_id` , `orderby`, `type`, `defvalue`, `variants`) VALUES ( 'dpi_number_visible_thumbs', 'The number of visible thumbnails', '7', '82',0, 'numeric', '1', '');

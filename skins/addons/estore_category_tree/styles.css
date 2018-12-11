@@ -1,0 +1,82 @@
+.categories_tree a{
+  color: #333333;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 3px 30px 3px 19px;
+  text-shadow: 0 1px 1px #fff;
+  border: none;
+}
+
+.categories_tree a:hover {
+  background: #E4E7B1;
+  text-decoration: none;
+
+}
+
+.categories_tree a{
+    text-decoration: none;
+}
+
+.categories_tree div a{
+    padding-left: 5px;
+}
+
+.categories_tree .blank, .categories_tree .minus, .categories_tree .plus, .categories_tree .sel{
+  float: right;
+  background: transparent none;
+  cursor: pointer;
+  display: block;
+  font-family: "FontAwesome";
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: auto;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.categories_tree .minus, .categories_tree .plus, .categories_tree .sel{
+    padding:0;
+    margin-top: 0;
+}
+
+.categories_tree .categories_tree a{
+  padding-left: 35px;
+}
+
+.categories_tree .categories_tree .sel{
+  margin-left: 15px;
+}
+
+
+.categories_tree.last a{
+    border-bottom: 1px solid #fff;
+}
+
+.categories_tree a:hover{
+    background: none;
+    text-decoration: underline;
+}
+
+.categories_tree .plus:before, .categories_tree .minus:before{
+  content: "\f0d8";
+  display: block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  color: #777;
+  line-height: 36px;
+  text-align: center;
+}
+
+.categories_tree .plus:before{
+  content: "\f0d7";
+}
+
+.menu.categories .categories_tree a:hover{
+  text-decoration: none;
+}

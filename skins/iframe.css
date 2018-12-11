@@ -1,0 +1,130 @@
+body {
+    min-width: 0px;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+
+.admin_all{
+  background: none #fff!important;
+}
+
+.admin_content{
+  margin-bottom:0!important;
+}
+
+.header_logo{
+    float: none;
+    overflow: hidden;
+    width: 635px;
+    margin: 0 auto;
+}
+
+.contentsections_bottom, .footer-dialog{
+    display: none;
+}
+
+.admin_popup{
+    background: #fff;
+}
+
+.admin_popup .header_logo .logo{
+    padding: 0;
+}
+
+.admin_popup .main{
+    padding: 0;
+}
+
+
+.admin_popup .middle-content{
+    box-shadow:none;
+    margin-top: 0;
+}
+
+.admin_popup .tabs{
+    width: 100%;
+}
+
+.admin_popup .box input.small_input[type="text"]{
+    width: 100px;
+}
+
+.admin_popup .box input.category[type="text"]{
+    width: 230px;
+}
+
+.admin_popup .tab_general_content .input_field_1 .search_options label{
+    display: block;
+    float: left;
+    padding: 0;
+    width: 175px !important;
+    line-height: auto;
+}
+
+
+.admin_popup .search_options{
+    width: 370px;
+    float: left;
+}
+
+.admin_popup .tab_general_content .input_field_1 label, .admin_popup .tab_general_content .input_field_0 label{
+    width: 190px;
+}
+
+.admin_popup .box{
+    padding: 5px 0;
+    margin: 0;
+}
+
+.admin_popup .box#manufacturer{
+    padding-top: 0;
+    margin-top: -10px;
+}
+
+
+#page-container{
+    width: auto!important; 
+    padding-top: 0px;
+    background: none transparent;
+}
+
+#page-container2{
+    padding: 0; 
+}
+
+.shipping_estimator{
+    margin: 0 10px;
+    margin-bottom: 30px;
+}
+
+.navigation{
+    display: none!important;
+}
+
+label{
+    width: 120px;
+    float: left;
+}
+
+.product_info .image{
+  padding: 10px 0;
+}
+
+.product_info{
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+#foot{
+  display: none;
+}
+
+#main_area{
+  width: auto;
+  margin: 0;
+  max-width: 100% !important;
+} 
+.prod_options label{
+  padding-top: 4px;
+}

@@ -1,0 +1,1 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'txt_settings_was_updated', 'Settings has been successfully updated ', 'Text');

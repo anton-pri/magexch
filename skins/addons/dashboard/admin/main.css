@@ -1,0 +1,217 @@
+div.dashboard_section {
+    padding: 0px;
+    margin: 12px 1% 12px 0;
+    float: left;
+    border:none;
+}
+div.dashboard_section_ {
+    width: 48%;
+}
+div.dashboard_section_small {
+    width: 23%;
+}
+div.dashboard_section_medium {
+    width: 50%;
+}
+div.dashboard_section_big {
+    width: 100%;
+}
+div.rounded_box {
+    padding: 20px;
+}
+
+div.dashboard_section.graph > div{
+    height: 570px;
+}
+
+
+.box_bottom{
+    overflow: hiden;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #cbcbcb;
+    bottom:0;
+    left:0;
+    background: #f0f0f0;
+}
+
+/* Last orders section */
+div.dashboard_last_orders {
+    margin:0;
+}
+
+.last_orders div.rounded_box{
+  padding-top: 10px;
+}
+div.dashboard_last_orders td {
+    font-weight: normal;
+    line-height: 18px;
+    padding: 2px;
+}
+
+div.dashboard_last_orders th {
+    font-weight: bold;
+    height: 22px;
+    line-height: 18px;
+    text-align: left;
+    white-space: nowrap;
+    padding: 2px;
+}
+
+/* System messages section */
+.system_message_severity_W {
+}
+.system_message_severity_E, .system_message_severity_C {
+}
+.system_message_date {
+	float: right; 
+	background-color: #EEEEEE;
+}
+.system_message .system_message_controls {
+	float: right;
+}
+/* Awaiting actions section */
+.awaiting_action {
+	padding: 12px 0;
+	border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+}
+.awaiting_action a{
+    font-weight: bold;
+}
+.awaiting_action_severity_W {
+	border-left: 4px solid orange;
+}
+.awaiting_action_severity_E, .awaiting_action_severity_C {
+	border-left: 4px solid red;
+}
+.awaiting_action .awaiting_action_controls {
+	float: right;
+	display: none;
+}
+.awaiting_action:hover .awaiting_action_controls {
+	display: inline;
+}
+
+/* News dashboard */
+div.dashboard_news {
+	overflow: auto;
+	height: 150px;
+}
+
+div.dashboard_section.news_info{
+    width: 47%;
+}
+
+#dashboard_name_system_info {
+    padding-top: 0;
+}
+
+.order_diagramm{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.order_diagramm a{
+  font-weight: normal;
+}
+
+div.dashboard_search_orders td {
+    padding: 10px 0;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+div.dashboard_search_orders td.search_orders input{
+    margin-right: 5px;
+}
+
+div.dashboard_search_orders td.search_orders{
+    padding-top: 10px;
+}
+
+div.dashboard_search_orders .ez-radio{
+    float: left;
+}
+
+div.dashboard_last_orders td span.count {
+    display: inline-block;
+    width: 30px;
+    font-weight: normal;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.ui-autocomplete-loading {
+	background: white url(../../../../skins/images/loading.gif) right center no-repeat;
+}
+
+.dashboard_pending_reviews {
+    padding: 10px;
+}
+
+a.order_status_link {
+    color: #646464;
+    padding: 0 2px;
+}
+
+a.order_Q{
+    background: #f3b760;
+    border: 1px solid #f3b760;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 2px;
+
+}
+
+a.order_C{
+    background: #46c37b;
+    border: 1px solid #46c37b;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 2px;
+
+}
+
+a.order_D{
+    background: #ffbbbc;
+    border: 1px solid #e0a4a4;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 2px;
+
+}
+
+a.order_F{
+    background: #e6e6e6;
+    border: 1px solid #e6e6e6;
+    color: #646464;
+    border-radius: 2px;
+    padding: 0 2px;
+
+}
+
+a.order_P {
+    background: #70b9eb;
+    border: 1px solid #70b9eb;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 2px;
+
+}
+
+div.dashboard_section_medium.news_info > div{
+    height: 267px;
+}
+
+.news_item{
+   padding-bottom: 15px;
+}
+
+.news_item a, .news_item p{
+    color: #000;
+    line-height: 22px;
+}

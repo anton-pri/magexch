@@ -1,0 +1,1 @@
+UPDATE `cw_languages` SET `value` = 'Attributes' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'attribute_name_pa';

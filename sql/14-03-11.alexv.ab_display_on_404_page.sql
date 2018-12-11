@@ -1,0 +1,2 @@
+ALTER TABLE `cw_cms` ADD `display_on_404` CHAR( 1 ) NOT NULL DEFAULT 'N';
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_display_on_404_page', 'Display on 404 page', '', 'Label');

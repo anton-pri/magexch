@@ -1,0 +1,1 @@
+INSERT INTO cw_config SET name='flex_import_auto_update', comment='Automatically Update Mapped Products on Sheduled Import', value='Y', config_category_id=(select config_category_id from cw_config_categories where category='flexible_import' limit 1), orderby='150', type='checkbox', defvalue='', variants='';

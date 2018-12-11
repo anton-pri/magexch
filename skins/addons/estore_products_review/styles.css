@@ -1,0 +1,75 @@
+.categories_tree a{
+    border-top: 1px solid #fff;
+    padding: 3px;
+    padding-left: 10px;
+    font-size: 13px;
+    line-height: 17px;
+    display: block;
+}
+
+.categories_tree a:hover {
+    background: #E4E7B1;
+}
+
+.categories_tree a{
+    text-decoration: none;
+}
+
+.categories_tree div a{
+    padding-left: 5px;
+}
+.categories_tree a {
+    /*padding-left: 3px;*/
+}
+.categories_tree .blank,
+.categories_tree .minus,
+.categories_tree .plus,
+.categories_tree .sel {
+    display: inline;
+    padding: 0px 9px 0px 9px;
+    cursor: pointer;
+    background-position: 50% 40%;
+    background-repeat: no-repeat;
+    float: left;
+}
+.categories_tree .sel {
+    background-image: url('images/bullet_minus.png');
+}
+.categories_tree .blank {
+    cursor: default;
+    background-image: url('images/tree_subdir_blank.gif');
+}
+.categories_tree .minus {
+    background-image: url('images/bullet_minus.png');
+}
+.categories_tree .plus {
+    background-image: url('images/bullet.png');
+}
+.categories_tree .minus, .categories_tree .plus, .categories_tree .sel{
+    padding:5px;
+    margin-top: 3px;
+    width: 10px;
+    height: 10px; 
+}
+
+.categories_tree .categories_tree a{
+  padding-left: 35px;
+}
+
+.categories_tree .categories_tree .sel{
+  margin-left: 15px;
+}
+
+
+.categories_tree.last a{
+    border-bottom: 1px solid #fff;
+}
+
+.categories_tree a:hover{
+    background: none!important;
+    text-decoration: underline;
+}
+
+.categories_tree a.selected{
+    color: #810000;
+}

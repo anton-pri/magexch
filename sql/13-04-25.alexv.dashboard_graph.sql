@@ -1,0 +1,1 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'lbl_current_month', 'Current month', 'Labels');

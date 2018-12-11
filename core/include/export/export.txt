@@ -1,0 +1,135 @@
+﻿1. How to add new field into existing export
+============================================
+
+1.1. Option 1 - add to core if you are allowed
+
+Find file responsible for this <type> of export in core/include/export/export_<type>.php
+
+There you can find function get_fields() and add new field definition into array returned by this function. See Field definition.
+
+Then add <field_code> into one or several schemas in function get_schemas(). See Schema definition.
+
+If your field exists in object returned by function get_data(), then you do not need any further actions; 
+otherwise you have to rewrite get_data() or write own handler for this field to return its value for current entry.
+
+1.2. Option 2 - add in addon
+For reference find file responsible for this <type> of export in core/include/export/export_<type>.php
+
+Define hooks in your addon 
+cw_set_hook('cw\export\<type>\get_fields','<your_namespace>\get_fields', EVENT_POST);
+cw_set_hook('cw\export\<type>\get_schemas','<your_namespace>\get_schemas', EVENT_POST);
+
+Define functions in your addon
+
+function get_fields() {
+   $fields = cw_get_return();
+   $fields[<field_code>] = array(...) // See field definition.
+   return $fields;
+}
+
+function get_schemas() {
+   $schemas = cw_get_return();
+   $schemas[<schema>]['fields'][] = <field_code> // See schema definition.
+   return $schemas;
+}
+
+If your field exists in object returned by function get_data(), then you do not need any further actions; 
+otherwise you have post-hook function cw\export\<export_type>\get_data() or 
+write own handler for this field and hook it "cw\export\<export_type>\handler_field_new"
+
+
+
+2. How to add new schema for existing export
+============================================
+See chapter "How to add new field into existing export" but omit adding new field. Change/hook only get_schemas()
+
+
+3. How to add new export type
+=============================
+Copy existing export type from core/include/export/export_<type>.php to core/include/export/export_<your_type>.php or 
+to core/addons/<your_addon>/export/export_<your_type>.php
+
+Open this new file.
+
+Change namespace to cw\export\<your_type> .
+
+Change export_type constant.
+
+Rewrite all functions without changes in func name. See all definitions to understand what to change.
+
+Change or hook function cw\export\get_export_types() to add you export type.
+
+If you add new type in addon, then define hook for controller, because core expects controller exaclty in core/include/export dir:
+cw_set_controller('include/export/export_<your_type>.php','addons/<your_addon>/export/export_<your_type>.php', EVENT_REPLACE)
+
+
+4. How to add new format
+========================
+Change/hook function cw\export\get_export_formats()
+
+Add three new functions
+cw\export\output_header_<format>($export_type, $schema, $delimiter)
+cw\export\output_data_<format>($file_handler, $row, $data, $delimiter)
+cw\export\output_footer_<format>($export_type, $schema, $delimiter)
+
+
+5. Work with saved search
+=========================
+Primary keys from saved search are stored in table cw_objects_set before call cw\export\<type>\get_key_fields()
+Wherein cw_objects_set.type = <saved_search_type>-<saved_search_id>
+
+<saved_search_type> - see Export type definition
+<saved_search_id> - selected saved search passed as param to get_key_fields()
+
+If saved_search_id passed as $saved_search - it is your responsibility to INNER JOIN your sql statement in get_key_fields() with cw_objects_set like this:
+ INNER JOIN $tables[objects_set] os ON d.doc_id=os.object_id AND os.customer_id=$customer_id AND os.set_type='O-{$saved_search}'"
+
+ 
+Appendix A. Definitions
+======================
+I. Export type
+array(
+    'name' => short public name
+    'codename' => same as namespace
+    'orderby' => sort position
+    'saved_search' => optional; saved_search.type if applicable
+    'fields' => see Fields definition
+    'schemas' => see Schemas definition
+);
+
+II. Fields
+array(
+<field_code> => array(
+	'name' => optional short description of field
+	'field' => optional (by default <field_code> is used) - field path in exported object, use notation like in smarty, e.g. "userinfo.main_address.city". you can put it directly as field_code and omit this param
+	'handler' => optional (by default "field_handler_general") - function name in current namespace or in main namespace cw\export. This function must return value which will be used in export.
+    ),
+...
+);
+
+III. schemas
+array(
+<schema_code> => array(
+	'name' => short public name,
+	'fields' => string with comma separated field_codes OR array() with field_codes; 
+                element in array can be also presented in form <alias> => <field_code>, then alias will be used for output,
+    'options' => array(
+            'format' => optional; pre-defined format from list of available formats
+            'delimiter' => optional; pre-defined delimiter
+            'no_type_header' => optional; omit [type] header in first row of csv file
+            'no_csv_header' =>  optional; omit csv header with column names
+            <any_other_options> => any options can be set here to use in custom hooks
+        ),
+	),
+...
+);
+
+
+Appendix B. Existing field handlers
+===================================
+See core/include/export/export_field_handler.php
+
+
+Appendix C. Existing output handlers
+===================================
+See core/include/export/export_output.php

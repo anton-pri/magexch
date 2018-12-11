@@ -1,0 +1,24 @@
+Any addon or script can create a system message. It is common way no notify another script or keep current state.
+
+Currently we use system messages for two dashboard widgets (you can specify corresponding type when create a message):
+
+- system messages (SYSTEM_MESSAGE_COMMON)
+
+- awaiting actions (SYSTEM_MESSAGE_AWAITING)
+
+ 
+
+To create a message use API from cw.system_messages.php which included automatically when platform init.
+
+When your script creates a message you must specify unique message code. Messages with same code will overwrite each other.
+
+If your script checked some condition to warn admin about something and decided that everything is ok, then you have to explicitly delete system message with same code, so recipient will not see it anymore until next occurrence. If something wrong and you have to notify admin about that, then just create a message again without deletion.
+
+ 
+
+Dashboard has two controls per message - hide and delete.
+
+    Hide means to ignore this message. If you add same message code again without deletion - it will be still hidden to avoid user annoying. That is why you have to re-create same messages without prior deletion. Otherwise it will flow up again and again as new.
+    Delete will remove a message until next one.
+
+ Message text is parsed as smarty code, so you can use there langvars or other smarty vars.

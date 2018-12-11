@@ -1,0 +1,1 @@
+replace into cw_config set name='defer_js_attach_onload', comment='Load deferred js code as <body> onload event attach (not recommended for custom skins)', value='N', config_category_id=20, orderby=709, type='checkbox', defvalue='N';

@@ -1,0 +1,23 @@
+.datacolumn-toggle-disabled {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+a.remove {
+}
+.editor_edit {
+}
+.editor_remove {
+}
+.center {
+  text-align: center;
+}
+.table_preview_img {
+  max-width: 70px;
+  max-height: 70px;
+}
+.edit_preview_img {
+}
+.footer_text_search {
+  width: 98%;
+  min-width: 50px;
+}

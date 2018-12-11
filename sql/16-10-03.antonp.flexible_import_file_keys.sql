@@ -1,0 +1,1 @@
+create table if not exists cw_flexible_import_loaded_files_hash (profile_id int(11) not null default 0, hash varchar(32) not null default '', date_loaded int(11) not null default 0, PRIMARY KEY fi_f_hash (profile_id, hash));

@@ -1,0 +1,21 @@
+.domain-selection {
+    float: right;
+}
+.domain-selector-main {
+    float: left;
+}
+.domain-selector-left {
+    float: left;
+    margin-left: 177px;
+
+}
+.mdm-settings {
+    display: block;
+}
+
+.domain_select .selectBox-dropdown{
+    widht: 105px;
+}
+.current_domain_warning {
+    color: #AA4400;
+}

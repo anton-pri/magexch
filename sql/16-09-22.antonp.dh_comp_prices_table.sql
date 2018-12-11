@@ -1,0 +1,1 @@
+create table if not exists cw_datahub_competitor_prices (itemid int(11) not null default 0, url varchar(255) not null default '', price decimal(19,2) not null default 0.00, date_updated int(11) not null default 0, PRIMARY KEY (itemid, url));

@@ -1,0 +1,1 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_enter_product_name', 'Enter a product name', '', 'Labels');

@@ -1,0 +1,60 @@
+.webmaster_modify {
+    display: block;
+    background: url('../../images/icon_edit.gif') no-repeat white !important;
+    width: 20px !important;
+    height: 20px !important;
+    background-position: 50% 50%;
+    cursor: pointer;
+    border: 1px solid brown !important;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/*
+    display: inline-block !important;
+    background: url('../../images/icon_edit.gif') no-repeat !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-position: 100% 50%;
+*/
+
+.webmaster_tool {
+    background-color: rgba(255, 200, 0, 0.3);
+    display: inline-block;
+    margin-left: -2px;
+    position: absolute;
+}
+
+.ui-dialog .ui-dialog-content#image_dialog{
+  padding: 2px 0;
+}
+
+.warning{
+  padding: 10px 0;
+}
+
+.image_popup{
+  overflow: auto;
+}
+
+.images_table{
+  border-bottom: 1px solid #cacaca;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.image_popup .buttons .button-right{
+  margin-bottom: 0;
+  margin-left: 4px;
+}
+
+.input_field_0, .input_field_1, .input_table{
+    margin: 5px 0;
+    padding: 15px 10px;
+    overflow: hidden;
+    border-bottom: 1px solid #cacaca;
+}
+
+.input_table{
+    width: 100%;
+}

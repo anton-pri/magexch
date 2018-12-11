@@ -1,0 +1,287 @@
+1. Event, hooks and controllers
+===============================
+
+Event - any signinficant stage in the program flow which may expect various actions from addons.
+Hook - function to be executed before/after/instead of another function
+Controller - included PHP file to process requests before/after/instead of another included code
+
+In ultimate implementation all these functionality based on Event model, difference mostly in names for convenience.
+
+1.1. Events
+Event is just a string label, which may be fired/triggered in any place of code using
+cw_event('event_name',array $params);
+
+To listen an event use
+cw_event_listen('event_name', 'callback');
+callback is a function name to call when event is triggered. Recommended that definition (number and type of parameters) of all function for the same event is the same.
+
+You can insert  event triggers in any place into your code if you think someone would like to insert processing code here.
+It is stated in industry that event name should start with 'on' to be clear that some action happened, e.g. on_product_delete, on_cart_add
+Our standard assumes that you should use form on_subject_action instead of on_action_subject or onActionSubject, e.g. on_product_add instead of on_add_product.
+
+function cw_event() has also third optional parameter.
+
+function cw_event($event, $params = array(), $result = null) {...}
+
+     * $result is start value of result. It determines how data returned from
+     * callback functions will be handled. If $result is:
+     *
+     * - array - values will be added as new elements
+     * - integer or float - values will be added to the $result
+     * - string - values will be appended to current value
+     * - null - last value returned from callback function
+
+This allow to collect data from all handlers that listen the triggered event.
+
+
+1.2. Hooks
+Hook is just an alias of event. However it is supposed that we use hooks to override existing functions not just for intermediate stages.
+
+To set hook use cw_set_hook('function','callback', int $type = EVENT_POST)
+$type defines when callback must be executed. Use predefined constants for type:
+EVENT_PRE
+EVENT_POST
+EVENT_REPLACE
+
+Assumed that all functions in code called as cw_call(string $function,array $params) instead of direct call. You should call your functions this way.
+If cw_call() has no third parameter, it is assumed as null.
+
+*you always can replace cw_call to cw_event, they are compatible.
+
+1.3. Controllers
+
+Setting controller
+cw_set_controller('original_included_file', 'your_included_file', int $type = EVENT_POST)
+If you use EVENT_REPLACE, the 'original_included_file' may not exist. This way you can set your controllers which stored in addons to process requests redirected to main areas.
+
+For example url http://www.domain.com/index.php?target=bestseller will be processed by core/customer/bestseller.php, which does not exist.
+Bestsellers addon can use controllers to replace customer/bestseller.php to addons/bestsellers/bestseller.php
+
+Assumed that all files in code called as cw_include(string $file,int $mode = INCLUDE_RW_GLOBALS) instead of direct including. You should include your files this way.
+$mode defines how to pass global variables using following constants:
+   define('INCLUDE_NO_GLOBALS',0); // include with local scope without global vars, all globals must be declared explicitly (recommended)
+   define('INCLUDE_R_GLOBALS',1);  // include with extract($GLOBALS) - all global values are available for read in local scope
+   define('INCLUDE_RW_GLOBALS',2); // include with declared all global vars, so they are available for read-write (default)
+
+If you include file with functions definition only then adding INCLUDE_NO_GLOBALS as mode will save time and memory.
+
+Remember all controllers are included inside of cw_include functions and accordingly have local var scope, $mode may adjust this aspect, but it is good to use "global" keyword to explicitly import global variables you need.
+
+By default all global variables are imported to the local scope, but some other local variables may be not visible.
+
+If you want to pass some variables to called controller, then declare them as global before cw_include call.
+
+ 
+
+Example
+-------------------------------------------------------------------------------
+$data = 1; $products = array();  // local vars
+cw_include('include/search.php'); // it uses $data and fill up $products, but has no access to these vars
+$smarty->assign('products', $products); // empty
+-------------------------------------------------------------------------------
+
+ 
+
+Use
+-------------------------------------------------------------------------------
+global $data, $products; 
+-------------------------------------------------------------------------------
+
+before script above.
+
+ 
+
+Also use more functions calls than includes
+
+
+1.4. Chains
+If you expect that all events/hooks should collect information for you into one array (for example all product tabs), follow one of the way:
+
+1.4.1. Use references as parameters
+    cw_event('on_product_tabs',array($productid,&$tabs))
+
+In this example every event handler can add own tab info into $tabs array
+
+ 
+
+    cw_call('func_product_clone',array($productid,&$new_id))
+
+Then every handler in chain can read/change the variable passed by reference and pass some values from handler to handler.
+
+
+1.4.2. Use third parameter of cw_event() as described above to collect all returns into array
+
+1.4.3. If you write a post hook for function that is not designed for chains, but you still need to use its return, then use cw_get_return() in beginning of your hook to get result of previous handler. If it is null, your function was called directly out of this event.
+
+Do not forget to return the same value so next handler could get it thru the same cw_get_return() call
+
+1.4.4. If you write a pre hook for function which is not designed for chains, you can replace its input parameters. Return special object instance
+
+return new EventReturn(mixed $result, array $params);
+
+$params will be used to call next handler
+
+* it works also for old hooks (see. p.1.6.)
+
+1.4.5. Hook function can return NULL. It means to ignore this hook return in common chain of returned values. Null will not
+override returned value of previous function. 
+Use it to add function which should do something after main function but keep its result as is.
+Use it to write chain of exclusive handlers, where only one handler actually should run, other should skip this call (see example).
+
+Following hook structures are equal
+-------------------------------------------------------------------------------
+function additional_actions($params) {
+    $r = cw_get_return(); // Get return of main function
+    /*
+        Do something here without changes in $r
+    */
+    return $r; // Keep returned value
+}
+function additional_actions($params) {
+    /*
+        Do something here
+    */
+    return null; // null will be ignore in chain of results returned by hooks
+}
+function additional_actions($params) {
+    /*
+        Do something here
+    */
+    return new EventReturn(null, array($params)); // null will be ignored in chain of results returned by hooks
+}
+-------------------------------------------------------------------------------
+
+Exclusive handlers
+-------------------------------------------------------------------------------
+function cw_payment_A_capture($order) {
+
+    if ($order['payment_id'] != 1) return null; // It is not order with payment A, skip it
+    /*
+        Do capture transaction. Save result to $transaction_result_A
+    */
+    return $transaction_result_A;
+    
+}
+function cw_payment_B_capture($order) {
+
+    if ($order['payment_id'] != 2) return null; // It is not order with payment B, skip it
+    /*
+        Do capture transaction. Save result to $transaction_result_B
+    */
+    return $transaction_result_B;
+}
+
+cw_set_hook('cw_payment_capture', 'cw_payment_A_capture', EVENT_POST);
+cw_set_hook('cw_payment_capture', 'cw_payment_B_capture', EVENT_POST);
+cw_call('cw_payment_capture', array($order_A));
+-------------------------------------------------------------------------------
+In example above the cw_payment_B_capture() will be called anyway, but skip its turn and will not override $transaction_result_A
+
+1.5. Other
+User functions declared in core/include/lib/events/init.php
+See source file.
+
+ 
+
+1.6. Old notation
+NOTE: you can also find old functions to implement hooks
+cw_addons_set_controllers()
+cw_addons_set_hooks()
+They have a little bit different notation and params pack, but idea is the same. See document http://dev.cartworks.com/wiki/doku.php?id=dev:calls
+Do not use these functions for new development without necessity.
+
+
+1.7. Delayed call
+Use cw_call_delayed(func, params) similar to cw_call() for functions which do not affect output content and can be executed later at the end of script. 
+It can be used for statistic update, re-build some data, instant mail sending, save data to DB.
+-------------------------------------------------------------------------------
+// Delayed INSERT or UPDATE
+cw_call_delayed('db_query', array('INSERT INTO table VALUES (1,"data","data2")'));
+cw_call_delayed('cw_array2update', array('table_name',$data,$where));
+
+// Delayed func call
+cw_call_delayed('cw_doc_save_history_attributes', array($doc_ids));
+-------------------------------------------------------------------------------
+
+All delayed calls are stored in memory along with passed params and executed as shutdown function, so it will work even for exit();
+This way customer will see content earlier than scrip ends. 
+
+
+2. Hooks for templates can be assigned using function
+=====================================================
+
+2.1. General usage
+
+cw_addons_set_template(post|pre|replace , what, to, [varname|function|template] )
+
+
+4th param is optional - smarty var name or function name or template name. 
+The hook will be valid only if variable is not empty or function returns true or hook included inside template.
+If 4th param is not specified the hook is unconditional.
+
+Also you can use 4th param in pre-hooks to change input variables. Do not forget to declare your function to take params by reference.
+
+Example hooks "add to cart" button template and replaces href to add via AJAX
+-------------------------------------------------------------------------------
+cw_addons_set_template(
+  array('pre', 'buttons/add_to_cart.tpl','addons/ajax_add2cart/add_to_cart.tpl','cw_smarty_replace_href')
+)
+
+function cw_smarty_replace_href(&$param) {
+  $param['href'] = str_replace('cw_submit_form','cw_submit_form_add2cart',$param['href']);
+  return true;
+}
+-------------------------------------------------------------------------------
+
+2.2. Inner and partial hooks
+
+Platform allows to insert points and mark blocks inside templates which can be hooked. 
+
+Point is marked by HTML comment
+-------------------------------------------------------------------------------
+<!-- cw@label -->
+-------------------------------------------------------------------------------
+where <label> is free name of point in template. 
+
+Block is marked by two HTML comments lines
+-------------------------------------------------------------------------------
+<!-- cw@label [ -->
+{* template goes here *}
+<!-- cw@label ] -->
+-------------------------------------------------------------------------------
+
+Hook for any point or block is follwing:
+-------------------------------------------------------------------------------
+cw_addons_set_template(
+  array('pre', 'index.tpl@label','my_hook.tpl')
+)
+-------------------------------------------------------------------------------
+
+If point has no registered hooks it appears as simple comment in HTML source and does not affect layout or performance.
+
+2.3. Autoloaded hooks
+It is enough to create file in skins with special format file.tpl@label#hook_type and this file will be declared as hook.
+E.g.
+customer/file.tpl@label is replacement for point <!-- cw@label --> in customer/file.tpl
+customer/file.tpl@label#post can be post-hook for block <!-- cw@label [ -->...<!-- cw@label ] -->
+customer/file.tpl#pre is pre-hook for customer/file.tpl
+
+This approach is good for skin integration. Addons should use explicit hooks declaration in own init.php
+
+Hooks can be assigned depending on current area: customer, admin, seller. You shall place them into special dir in skin root or in addon
+_autoload/_customer
+_autoload/_admin
+_autoload/_seller
+
+E.g. if you want to replace common order layout template for sellers, but this template is also used in admin area, do it like this:
+_autoload/_seller/admin/docs/doc.tpl - this replacement hook for template admin/docs/doc.tpl will work in seller area only
+
+2.4. Avoid hooks
+
+If you want to call some templates and avoid hooks mechanism, you cad add parameter disable_hook=true
+Normally you should not use this approach!
+
+-------------------------------------------------------------------------------
+{include file='customer/template.tpl' disable_hook=true}
+-------------------------------------------------------------------------------
+

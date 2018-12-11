@@ -1,0 +1,4 @@
+replace into cw_config set name='sprite_all_images', comment='Collect all images to sprites', value='N', config_category_id=20, orderby=740, type='checkbox', defvalue='Y';
+replace into cw_config set name='css_sprite_groups', comment='Images filenames patterns to make up separate groups of sprited images', value='/files/images/cached_thumbs\n/files/images\n/skins/images', config_category_id=20, orderby=745, type='textarea', defvalue='';
+replace into cw_config set name='css_sprite_allow_patterns', comment='Allowed images filenames patterns of sprited images (no restrictions if empty)', value='/files/images\n/skins/images', config_category_id=20, orderby=750, type='textarea', defvalue='';
+replace into cw_config set name='css_sprite_disallow_patterns', comment='Disallowed images filenames patterns of sprited images (no restrictions if empty)', value='/files/images/cms_images', config_category_id=20, orderby=760, type='textarea', defvalue='';

@@ -1,0 +1,36 @@
+[28-Sep-2016 06:57:37 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/saratdev/public_html/mysql_access/import/constants.php:82
+Stack trace:
+#0 /home/saratdev/public_html/mysql_access/import/constants.php(8): open_connection()
+#1 /home/saratdev/public_html/mysql_access/import/header.php(10): require_once('/home/saratdev/...')
+#2 /home/saratdev/public_html/mysql_access/import/index.php(2): require_once('/home/saratdev/...')
+#3 {main}
+  thrown in /home/saratdev/public_html/mysql_access/import/constants.php on line 82
+[28-Sep-2016 07:01:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/saratdev/public_html/mysql_access/import/constants.php:83
+Stack trace:
+#0 /home/saratdev/public_html/mysql_access/import/constants.php(8): open_connection()
+#1 /home/saratdev/public_html/mysql_access/import/header.php(10): require_once('/home/saratdev/...')
+#2 /home/saratdev/public_html/mysql_access/import/index.php(2): require_once('/home/saratdev/...')
+#3 {main}
+  thrown in /home/saratdev/public_html/mysql_access/import/constants.php on line 83
+[28-Sep-2016 07:01:56 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/saratdev/public_html/mysql_access/import/constants.php:82
+Stack trace:
+#0 /home/saratdev/public_html/mysql_access/import/constants.php(8): open_connection()
+#1 /home/saratdev/public_html/mysql_access/import/header.php(10): require_once('/home/saratdev/...')
+#2 /home/saratdev/public_html/mysql_access/import/index.php(2): require_once('/home/saratdev/...')
+#3 {main}
+  thrown in /home/saratdev/public_html/mysql_access/import/constants.php on line 82
+[28-Sep-2016 07:17:04 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/saratdev/public_html/mysql_access/import/constants.php:82
+Stack trace:
+#0 /home/saratdev/public_html/mysql_access/import/constants.php(8): open_connection()
+#1 /home/saratdev/public_html/mysql_access/import/header.php(10): require_once('/home/saratdev/...')
+#2 /home/saratdev/public_html/mysql_access/import/index.php(2): require_once('/home/saratdev/...')
+#3 {main}
+  thrown in /home/saratdev/public_html/mysql_access/import/constants.php on line 82
+[28-Sep-2016 07:18:54 America/New_York] PHP Warning:  date() expects at least 1 parameter, 0 given in /home/saratdev/public_html/mysql_access/import/item_dump.php on line 4
+[10-Oct-2016 09:29:57 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_connect() in /home/saratdev/public_html/mysql_access/import/constants.php:82
+Stack trace:
+#0 /home/saratdev/public_html/mysql_access/import/constants.php(8): open_connection()
+#1 /home/saratdev/public_html/mysql_access/import/header.php(10): require_once('/home/saratdev/...')
+#2 /home/saratdev/public_html/mysql_access/import/index.php(2): require_once('/home/saratdev/...')
+#3 {main}
+  thrown in /home/saratdev/public_html/mysql_access/import/constants.php on line 82

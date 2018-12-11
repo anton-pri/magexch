@@ -1,0 +1,2 @@
+{include file="common/image_alt.tpl" item_id=$product_id|default:$category_id image=$image image_type=$image_type alt=$alt assign='alt'}
+{product_image image=$image image_type=$image_type product_id=$product_id class=$class id=$id width=$width html_width=$html_width height=$height html_height=$html_height override_keep_file_h2w=$keep_file_h2w extra=$extra alt=$alt no_xcm_thumb_cache=$no_xcm_thumb_cache}

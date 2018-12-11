@@ -1,0 +1,3 @@
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'lbl_add_image', 'Add image', 'Labels');
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'err_allowed_image_types', 'File must be .jpg, .gif or .png', 'Errors');
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'err_file_bigger_than', 'File is bigger than', 'Errors');

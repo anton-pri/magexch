@@ -1,0 +1,1 @@
+<td id="{$id}"><input type="text" class="form-control" name="posted_data[{$ident}_cleanurl][{$key}]" id="{$ident}_cleanurl_{$key}" value="{$value|escape}" size="{$size}" /></td>

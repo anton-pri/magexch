@@ -1,0 +1,3 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_hi', 'Hi', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_enter_message_here', 'Enter message here', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_contact_customer_about_item', 'Contact [customer] about details about item', '', 'Labels');

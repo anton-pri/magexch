@@ -1,0 +1,26 @@
+Errors handling
+
+@see core/include/lib/error/init.php
+
+error($msg, $params=array(), $is_fatal=false)
+This function creates and returns an Error instance. All errors automatically collected.
+
+Then you can check if your function returns normal result or error using is_error($var).
+is_error() without params returns true if error occured somewhere in script before this line.
+
+get_error_message()
+This function returns all collected error messages as string separated by new line \n
+
+-------------------------------------------------------------------------------
+$result = cw_call('cw_my_func');
+
+if (is_error($result)) {
+
+    cw_add_top_message($result->getMessage(), 'E');
+    
+} else {
+
+    // Do normal actions with $result
+    
+}
+-------------------------------------------------------------------------------

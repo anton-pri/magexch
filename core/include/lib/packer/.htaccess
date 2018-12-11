@@ -1,0 +1,6 @@
+<FilesMatch ".+\.js$">
+	ForceType application/x-httpd-php
+	php_value auto_prepend_file _init.php
+#	php_value auto_append_file _jsmin.php
+	php_value auto_append_file _packer.php
+</FilesMatch>

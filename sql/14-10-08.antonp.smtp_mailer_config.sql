@@ -1,0 +1,10 @@
+replace into cw_config set name='sep13000', comment='SMTP options', config_category_id=13, orderby=50, type='separator';
+replace into cw_config set config_category_id=13, orderby=52, type='checkbox', name='use_smtp', comment='Use SMTP server instead of internal PHP mailer';
+replace into cw_config set config_category_id=13, orderby=54, type='text', name='smtp_server', comment='SMTP server';
+replace into cw_config set config_category_id=13, orderby=56, type='text', name='smtp_port', comment='SMTP port';
+replace into cw_config set config_category_id=13, orderby=58, type='text', name='smtp_mail_from', comment='SMTP "MAIL FROM" email address';
+replace into cw_config set config_category_id=13, name='smtp_mail_from_force', comment='Always use only "MAIL FROM" email address defined above', type='checkbox', orderby=59;
+replace into cw_config set config_category_id=13, orderby=60, type='text', name='smtp_username', comment='SMTP username';
+replace into cw_config set config_category_id=13, orderby=62, type='password', name='smtp_password', comment='SMTP password';
+replace into cw_config set config_category_id=13, orderby=64, type='checkbox', name='smtp_use_tlc_connect', comment='TLS secure mode';
+replace into cw_config set config_category_id=13, name='smtp_debug_enabled', comment='Enable SMTP debug output (to see smtp sending log run http://your domain/cron/index.php?code=CRON_KEY in your browser', type='checkbox', orderby=66;

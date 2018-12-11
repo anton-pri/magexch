@@ -1,0 +1,1 @@
+{tunnel func='cw_doc_get_order_status_email' status_code=$order.status area_name='customer' email_part='subject' assign='order_status_subj'}{if $order_status_subj ne ''}{eval var=$order_status_subj}{else}{ $config.Company.company_name }: {$lng.eml_order_notification_subj|substitute:"doc_id":$order.display_id}{/if}

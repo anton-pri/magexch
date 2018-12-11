@@ -1,0 +1,1 @@
+replace into cw_config (name,comment,value,config_category_id,orderby,type) values ('manufacturers_show_cnt_admin', 'Display product counters in manufacturers list in admin (not recommended with large number of manufacturers)', 'N', 30, 40, 'checkbox');

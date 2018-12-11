@@ -1,0 +1,1 @@
+replace into cw_config (name,`comment`,value,config_category_id,orderby,type) values ('ajax_add2cart_enable_microcart', 'Enable the cart content popup on the \'Basket\' link roll over', 'Y', (select config_category_id from cw_config_categories where category='ajax_add2cart' limit 1), 10, 'checkbox');

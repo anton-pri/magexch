@@ -1,0 +1,21 @@
+Use smarty {tunnel } tag to call any function from templates. Tunnel can assign result to variable or output. It supports all defined function hooks.
+
+Full format
+{tunnel func='func_name' [load='functions_group'] [assign='varname'] [via='cw_call' param1='value' param2='value' ... paramX='value'] other_params='value'}
+
+Parameters:
+* func - required param is function name
+* load - name of functions group to pre-load using cw_load() before call
+* assign - new smarty variable name, if omitted the function output will be printed in place of {tunnel} call
+* via - defines, which API is used to call function with all assigned hooks - cw_call or cw_func_call
+    if you use via='cw_call', then it is important to pass right number of parameters in correct order, so only parameters with name 'paramX' (where X is a number) are accepted to pass through function call cw_call('func_name', array(param1, param2, ..., paramX))
+    if you use via='cw_func_call' or do not specify "via" param, then all parameters fill be passed through function call cw_func_call('func_name', $params);
+
+
+Security constrains of allowed functions
+
+To keep templates secure we implemented list of allowed functions which can be executed from templetes. List mostly defined in init/smarty.php but you should extend it in your addons init.php
+-----
+  $cw_allowed_tunnels[] = 'new_addon_function_name';
+-----
+Do not allow functions which can provide sensitive information or update database!

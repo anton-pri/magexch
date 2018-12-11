@@ -1,0 +1,1 @@
+UPDATE `cw_attributes` SET `is_required` = 0 WHERE (`field` = 'dp_carrier_id' OR `field` = 'dp_shipping_address_id') AND `addon` = 'printdrop_com';

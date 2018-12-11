@@ -1,0 +1,43 @@
+#bookmarks_container {
+    overflow: hidden;
+}
+#bookmarks_container .bm_content {
+    padding-left: 5px;
+    margin-right: 32px;
+}
+#bookmarks_container .bm_peek {
+    float: right;
+    width: 30px;
+    height: 100%;
+    background-color: #708E1E;
+    color: white;
+}
+.bm_peek .add_bm {
+    width: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+.bm_peek .open_bm {
+    margin-top: 110px;
+    text-align: center;
+}
+
+.bm_peek .open_bm{
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(../../images/sprite.png) -1239px -64px no-repeat;
+    margin-left: 4px;
+}
+.open .bm_peek .open_bm{
+    background: url(../../images/sprite.png) -1217px -64px no-repeat;
+}
+
+.list-bookmarks > li {
+    padding: 5px 0;
+    line-height: 20px;
+}
+
+.list-bookmarks .btn-xs {
+    padding: 1px 3px;
+}

@@ -1,0 +1,6 @@
+select @cid:=config_category_id from cw_config_categories where category='paypal_pro_payflow';
+replace INTO `cw_config` ( `name` , `comment` , `value` , `config_category_id` , `orderby` , `type` , `defvalue` , `variants`) VALUES ( 'use_preauth', 'Perform Auth only transaction on order placement', 'N', @cid, '9', 'checkbox', 'N', '');
+
+replace INTO `cw_order_statuses` ( `code` , `name` , `email_customer` , `email_admin` , `email_message_customer` , `email_subject_customer` , `email_message_admin` , `email_subject_admin` , `email_message_customer_mode` , `email_message_admin_mode` , `orderby` , `is_system` , `deleted` , `color` , `inventory_decreasing`) VALUES ( 'A', '{$lng.lbl_authorized}', '0', '0', '{$lng.eml_order_notification|substitute:"doc_id":$order.display_id}', '{$config.Company.company_name}: {$lng.eml_order_notification_subj|substitute:"doc_id":$order.display_id}', '{$lng.eml_order_notification|substitute:"doc_id":$order.display_id}', '{$config.Company.company_name}: {$lng.eml_order_notification_subj|substitute:"doc_id":$order.display_id}', 'I', 'I', '25', '1', '0', '#f0f8ab', '1');
+
+replace INTO `cw_languages` ( `code` , `name` , `value` , `tooltip` , `topic`) VALUES ( 'EN', 'lbl_authorized', 'Authorized', '', 'Labels');

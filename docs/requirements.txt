@@ -1,0 +1,7 @@
+mysql 5 or maria db
+php 7 + gd
+apache
+
+wget
+imagemagick
+crontab

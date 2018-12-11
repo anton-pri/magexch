@@ -1,0 +1,20 @@
+.gifts_guestbook {
+    padding: 5px;
+    border-bottom: 1px solid #ededed;
+}
+.gifts_guestbook.moderator {
+    background-color: #eeeeee;
+}
+.gifts_guestbook .date,
+.gifts_guestbook .title,
+.gifts_guestbook .subject {
+    font-weight: bold;
+}
+.gifts_guestbook .title,
+.gifts_guestbook .date {
+    display: inline;
+}
+
+.gift_buttons .black{
+    float: left;
+}

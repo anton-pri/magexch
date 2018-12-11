@@ -1,0 +1,55 @@
+Data validation
+
+Every form must be validated on client and server side. Use standard approach for this process instead of custom JS functions check_blabla_form()
+
+
+1. PHP Validation
+
+We use this class http://www.html-form-guide.com/php-form/php-form-validation.html
+
+Example:
+        /*
+         * Validation
+         */
+        cw_include('include/lib/formvalidator/formvalidator.php', INCLUDE_NO_GLOBALS);
+
+        // Errors
+        $validator = new FormValidator();
+        $validator->addValidation("banner_code","req",cw_get_langvar_by_name('msg_ab_err_bannercode_is_empty'));
+        $validator->addValidation("banner_code","varname",cw_get_langvar_by_name('msg_ab_err_wrong_bannercode_format'));
+        if (!$validator->ValidateForm($banner)) {
+            cw_add_top_message(implode('<br />',$validator->GetErrors()),'E');            
+            cw_header_location('index.php?target=ad_banner&edit=Y&mode='.($action=='add_new_banner'?'add':'update&banner_id='.$banner_id));
+        }
+
+
+
+
+2. JS Validation
+We use this jQuery plugin
+https://jqueryvalidation.org/
+
+Validation rules may assigned programmely or set as class name to input fields.
+
+Example:
+<script type="text/javascript">
+{literal}
+  $(document).ready(function(){
+    bannerForm = $("#editBannerForm");
+    bannerForm.validate();
+  });
+{/literal}
+</script>
+
+<form action="{$script}" method="post" name="editBannerForm" id="editBannerForm">
+...
+    <div class="input_field_1 right">
+        <label class='required'>{$lng.lbl_ab_banner_code}:</label>
+        <input type="text" class="required alphanumeric" name="banner[banner_code]" maxlength="64" value="{$banner.banner_code}" />
+    </div>
+...
+
+   {include file="buttons/button.tpl" href="javascript: cw_submit_form('editBannerForm', 'update_banner');" button_title=$lng.lbl_ab_save_banner|escape acl=$page_acl}
+</form>
+
+

@@ -1,0 +1,1 @@
+<li><a href="javascript: void(0);" id="send_feedback_button">{$lng.lbl_send_feedback}</a></li>

@@ -1,0 +1,2 @@
+REPLACE INTO `cw_config` (`name`, `comment`, `value`, `config_category_id`, `orderby`, `type`, `defvalue`, `variants`) VALUES ('categories_images_thumb_height', 'The thumbnail height in the featured categories list', '95', 4, 151, 'numeric', '0', '');
+REPLACE INTO `cw_config` (`name`, `comment`, `value`, `config_category_id`, `orderby`, `type`, `defvalue`, `variants`) VALUES ('categories_images_thumb_width', 'The thumbnail width in the featured categories list', '125', 4, 151, 'numeric', '0', '');

@@ -1,0 +1,121 @@
+table.header.ps th, table.header.ps td {
+    padding: 3px;
+}
+
+table.header.ps td {
+    height: 2pt;
+    font-weight: normal;
+}
+
+table.header.ps td.recs-delimiter {
+    height: 1pt;
+}
+
+table.ps-bonuses {
+/*	width: 100%;*/
+}
+
+table.ps-bonuses tr {
+	vertical-align: top;
+}
+
+td.ps-checkbox {
+/*	width: 5%;*/
+    padding-top: 1em;
+    width: 10px;
+}
+
+td.ps-bonus-body {
+/*	width: 95%;*/
+	cursor: pointer;
+}
+
+a.ps-bonus-picker {
+	display: block;
+	padding: 0 1em;
+	height: 3em;
+	line-height: 3em;
+	text-decoration: none;
+       font-weight: bold;
+}
+
+a.ps-bonus-picker:hover {
+	text-decoration: none;
+	background: #ccdcf1;
+}
+
+a.ps-bonus-picker.ps-active {
+	background: #5c90d2;
+	color: #fff;
+}
+
+div.ps-bonus-details {
+	display: none;
+	padding: 10px 0;
+}
+
+ul.ps-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.ps-list li {
+	padding: 4px 0 4px 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+ul.ps-list li input {
+    vertical-align: middle;
+}
+
+ul.ps-list li label {
+    vertical-align: middle;
+}
+
+.ps-chooser {
+	cursor: pointer;
+}
+
+.ps-entities-block {
+	display: none;
+}
+
+.ps-entities-block table {
+    margin: 10px 0 0 0;
+}
+
+.ps-entities-block table th
+{
+	text-align: left;
+}
+
+.ps-entities-block table td, .ps-bonus-details table td {
+	vertical-align: middle;
+}
+
+.ps-not-saved {
+	color: #0066CC;
+}
+
+.ps-exclusive-note {
+	color: #3EAF3E;
+}
+
+.box .ps-bonus-details input[type="text"], .box .ps-bonus-details select{
+    margin-right: 5px;
+}
+
+.calendar{
+    margin: 2px;
+}
+
+.ps-bonus-details label{
+    display: inline-block;
+    line-height: 30px;
+}
+
+.ps-bonus-details label.error {
+    float: right;
+}

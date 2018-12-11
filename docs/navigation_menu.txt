@@ -1,0 +1,39 @@
+1. Top menu
+
+cw_navigation_menu
+
+Top menu contain items for all areas except customer.
+
+ 
+
+2. Side menu
+
+Some kind of interface to edit this menu at admin/index.php?target=tabs
+
+Hierarchy is section - target - tab
+
+Tab is certain menu item. Target is an URL pattern with assigned tab. Section is group of targets.
+
+You should specify addon and access_right where applicable.
+
+Tables:
+
+* cw_navigation_sections.section_id
+              |
+  cw_navigation_targets.section_id
+* cw_navigation_targets.target_id
+  cw_navigation_targets.tab_id
+              |
+* cw_navigation_tabs.tab_id
+
+ 
+
+Platform allows to assign config parameters to certain target, see cw_navigation_setting
+
+ 
+
+3. Customer top menu
+
+Controlled by addon top_menu at page admin/index.php?target=categories&js_tab=top_menu
+
+Menu contains mixed list of categories tree and custom items. Table cw_top_menu_user_categories contains custom data for menu

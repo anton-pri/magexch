@@ -1,0 +1,35 @@
+.custom_checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #333;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.checkbox-inline .custom_checkbox, .checkbox .custom_checkbox {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: -2px;
+}
+
+.custom_checkbox.checked:before {
+    display: block;
+    content: '\f00c';
+    font-family: FontAwesome;
+    width: 12px;
+    height: 12px;
+        margin-top: -3px;
+    margin-left: 0px;
+    color: #333;
+    position: absolute;
+    font-size: 16px;
+}
+
+.checkbox-inline .custom_checkbox input[type="checkbox"], .custom_checkbox input, .checkbox .custom_checkbox input[type='checkbox'] {
+    position: relative;
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+
+}

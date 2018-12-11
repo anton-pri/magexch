@@ -1,0 +1,217 @@
+SELECT CONCAT(i.Producer , " " , i.name) AS Wine, i2.store_sku, x.catalogid, csize, sfd.qty AS pos_qty, x.cstock AS web_qty, x.cost AS web_cost, x.cprice, IF(i.tareweight > 3,5, '') AS surcharge, aipo.aipo,
+(x.cprice-x.cost)*IF(x.minimumquantity > 0,x.minimumquantity,aipo) AS ppo, sfd.min_price, sfd.manual_price, round((cprice - x.cost) / (x.cost + .01),2) AS web_markup,
+
+IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),
+IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,
+IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price , " ")," ")-1)  as DECIMAL(10,2)),
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`), bear.Cost,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`), visn.`Bottle Net Cost`* visn.`Bots Per Case`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*CAST(COALESCE(i.bot_per_case,12) as SIGNED),f.case_price),2))
+ 
+
+)))))))))))) AS fcase_price,
+
+COALESCE(f.bot_price,round(
+
+IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),
+IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,
+IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price , " ")," ")-1)  as DECIMAL(10,2)),
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`), bear.Cost,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`), visn.`Bottle Net Cost`* visn.`Bots Per Case`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*CAST(COALESCE(i.bot_per_case,12) as SIGNED),f.case_price),2))
+
+ 
+
+))))))))))))
+
+
+
+/COALESCE(i.bot_per_case,12),2)) AS fbot_cost,
+
+sfd.cost AS pos_cost,
+
+xf.cost_per_bottle AS xf_bot_cost,
+
+xf.split_case_charge AS splitcase_charge,
+
+abs(round((IF(sfd.qty > 0,
+
+sfd.cost,
+
+
+COALESCE(f.bot_price,round(
+
+IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price , " ")," ")-1)  as DECIMAL(10,2)),
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`), bear.Cost,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`), visn.`Bottle Net Cost`* visn.`Bots Per Case`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*CAST(COALESCE(i.bot_per_case,12) as SIGNED),f.case_price),2))
+
+ 
+
+))))))))))))
+
+
+
+/COALESCE(i.bot_per_case,12),2))
+
+
+
++IF(ps.swe_cost_threshold < COALESCE(
+
+COALESCE(f.bot_price,round(
+
+IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price , " ")," ")-1)  as DECIMAL(10,2)),
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`), bear.Cost,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`), visn.`Bottle Net Cost`* visn.`Bots Per Case`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*CAST(COALESCE(i.bot_per_case,12) as SIGNED),f.case_price),2))
+
+ 
+
+))))))))))))
+
+
+
+/COALESCE(i.bot_per_case,12),2))
+
+
+,0) or ps.swe_min_qty_under_cost_threshold < COALESCE(i.bot_per_case,12), COALESCE(xf.split_case_charge,0), 0)))/COALESCE(x.cost+.01,.01)-1,2)) AS cost_diff,
+
+i.bot_per_case,
+
+xf.bot_per_case AS xf_bot_per_case,
+
+COALESCE(f.companies,
+IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`),"SKUR",
+IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),"TOUT",
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),"POLA",
+IF(Trim(COALESCE(aa.ID,'')) <> '','ANGEL',
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`),"BEAR",
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`),"VISN",
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`),"DOMS",
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`),"WDMN",
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`),"VS",
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), "VERITY",
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`),"BOWL",
+'')))))))))))) AS Wholesaler,
+
+ 
+
+x.minimumquantity, x.hide, x.avail_code
+
+FROM
+((((((((((((((((((
+(xfer_products_SWE AS x LEFT JOIN item AS i ON x.catalogid = i.id)
+LEFT JOIN item_store2 AS i2 ON (x.sku = i2.store_sku) AND (x.catalogid = i2.item_id and i2.store_id = 1)
+)
+LEFT JOIN SWE_store_feed AS sfd ON i2.store_sku = sfd.sku
+)
+LEFT JOIN hub_price_settings AS ps ON ps.store_id = i2.store_id
+)
+LEFT JOIN item_xref AS xf ON ((i2.item_id = xf.item_id) and (xf.store_id = 1))
+)
+LEFT JOIN BevAccessFeeds AS f ON xf.xref = f.xref
+)
+LEFT JOIN Skurnik_feed AS sf ON ((MID(xf.xref,6) =  sf.`MSW Code`)  and (LEFT(xf.xref, 5) = "SKUR-"))
+)
+LEFT JOIN splitcase_charges AS sc ON Trim(Left(CONCAT(COALESCE(f.companies,"x") , " "),InStr(CONCAT(COALESCE(f.companies,"x") , " ")," "))) = sc.company
+)
+LEFT JOIN Touton_feed AS tf ON ((MID(xf.xref,6) = tf.`Item No.`)  and (LEFT(xf.xref, 5) = "TOUT-"))
+)
+LEFT JOIN Polaner_feed AS pf ON ((MID(xf.xref,6) = pf.`Item Code`) and (LEFT(xf.xref, 5) = "POLA-"))
+)
+LEFT JOIN angels_share_feed AS aa ON ((MID(xf.xref,7) = aa.ID) and (LEFT(xf.xref, 5) = "ANGEL-"))
+)
+LEFT JOIN bear_feed AS bear ON ((MID(xf.xref,6) =  bear.SKU) and (LEFT(xf.xref, 5) = "BEAR-"))
+)
+LEFT JOIN vision_feed AS visn ON ((MID(xf.xref,6) =  visn.`Item No`) and (LEFT(xf.xref, 5) = "VISN-"))
+)
+LEFT JOIN Domaine_feed AS doms ON ((MID(xf.xref,6,12) =  doms.`Product Code`) and (LEFT(xf.xref, 5) = "DOMS-"))
+)
+LEFT JOIN wildman_feed AS wdmn ON ((MID(xf.xref,6) =  wdmn.`Item No`) and (LEFT(xf.xref, 5) = "WDMN-"))
+)
+LEFT JOIN vias_feed AS vias ON ((MID(xf.xref,4) =  vias.`Product Code`) and (LEFT(xf.xref, 3) = "VS-"))
+)
+LEFT JOIN verity_feed AS verity ON ((MID(xf.xref,8) =  verity.`Product Code`) and (LEFT(xf.xref, 7) = "VERITY-")) 
+)
+LEFT JOIN bowler_feed AS bowl ON ((MID(xf.xref,6) =    bowl.`Product ID`)  and (LEFT(xf.xref, 5) = "BOWL-"))  
+)
+LEFT JOIN pricing_aipo AS aipo ON x.catalogid = aipo.item_id
+)
+
+WHERE x.hide = false and COALESCE(xf.store_id,1) = 1 and i2.store_id = 1
+
+ORDER BY abs((IF(sfd.qty > 0,sfd.cost,COALESCE(f.bot_price,round( IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,
+IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price," ")," ")-1) as DECIMAL(10,2)),
+
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`),bear.`Cost`,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`),visn.`Bottle Net Cost`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*(COALESCE(i.bot_per_case,12)),f.case_price),2))
+
+))))))))))))/COALESCE(i.bot_per_case,12),2))+IF(ps.swe_cost_threshold < COALESCE(f.bot_price,round( IF(sfd.qty>0, sfd.cost*COALESCE(i.bot_per_case,12),IF(sf.`MSW Code` <> '' and not isnull(sf.`MSW Code`), sf.`1cs`,IF(tf.`Item No.` <> '' and not isnull(tf.`Item No.`),CAST(COALESCE(tf.Field13,0) as DECIMAL(10,2)),
+IF(pf.`Item Code` <> '' and not isnull(pf.`Item Code`),pf.`FL Price`,
+IF(Trim(COALESCE(aa.ID,''))<>'',CAST(Mid(aa.Price,2,InStr(CONCAT(aa.Price," ")," ")-1) as DECIMAL(10,2)),
+IF(bear.`SKU` <> '' and not isnull(bear.`SKU`),bear.`Cost`,
+IF(visn.`Item No` <> '' and not isnull(visn.`Item No`),visn.`Bottle Net Cost`,
+IF(doms.`Product Code` <> '' and not isnull(doms.`Product Code`), doms.`Bottle Price`,
+IF(wdmn.`Item No` <> '' and not isnull(wdmn.`Item No`), wdmn.`Bottle Cost`,
+IF(vias.`Product Code` <> '' and not isnull(vias.`Product Code`), vias.`Line`,
+IF(verity.`Product Code` <> '' and not isnull(verity.`Product Code`), verity.`On 1`,
+IF(bowl.`Product ID` <> '' and not isnull(bowl.`Product ID`), bowl.`Cost`,
+
+IF(Trim(COALESCE(xf.xref,'')) = '',sfd.cost*COALESCE(`i`.`bot_per_case`,12),
+
+
+Round(IF(COALESCE(f.case_price,0) = 0, f.bot_price*CAST(COALESCE(i.bot_per_case,12) as SIGNED),f.case_price),2))
+ 
+
+))))))))))))/COALESCE(i.bot_per_case,12),2)) or ps.swe_min_qty_under_cost_threshold < COALESCE(i.bot_per_case,12), xf.split_case_charge, 0)))/COALESCE(x.cost+.01,.01)-1) DESC , IF(COALESCE(sfd.min_price,0) > 0,sfd.min_price,x.cprice) - x.cprice DESC;

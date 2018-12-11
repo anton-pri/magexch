@@ -1,0 +1,2 @@
+REPLACE INTO `cw_languages` ( `code` , `name` , `value` , `tooltip` , `topic`) VALUES ( 'EN', 'err_field_state', 'State field is not set', '', 'Errors');
+REPLACE INTO `cw_config` ( `name` , `comment` , `value` , `config_category_id` , `orderby` , `type` , `defvalue` , `variants`) VALUES ( 'default_account_option', 'Default account option at checkout', '0', '4', '350', 'selector', '0', "0:Returning customer\n1:New customer");

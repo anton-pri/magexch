@@ -1,0 +1,23 @@
+Addon description, author, date, version
+========================================
+This addon provides base features of API server.
+It allows to build own secure API by extending functions of this addon.
+
+
+Artem Levagin
+Dec 2015
+
+
+History
+========================================
+2015-12-22  API Server v.1.
+
+
+Documentation
+========================================
+see docs/api.txt
+
+
+TODO list
+========================================
+

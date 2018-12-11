@@ -1,0 +1,38 @@
+Promotion Suite
+
+Product bundles for "Buy together" feature. 
+
+Product bundles are based on hidden offers (condition: set of products; 
+bonus: discount) and linked with certain product ID. 
+Managed on product details page, but can be reviewed on offers 
+management page using special GET param.  
+
+
+"Captured" products
+
+Every product in cart can be used in one offer only. 
+If condition is mt and contains references to products or categories, 
+then those products are marked as "captured" and cannot be used in 
+further conditions.
+Exception is product bundles. Product bundles are based on hidden 
+offers, but such offers do not capture products and they can be used in 
+other regular offers.
+
+
+Discount
+
+Only one best regular discount is chosen for cart and one best regular discount for every product.
+Bundled discounts are additional to regular discounts, thus products can be discounted twice.
+
+
+Shipping discount
+
+Initially all shippings methods are calculated basing on full cart 
+including free products. It is required to select only applicable 
+shipping methods, which really can be used to dispatch the order.
+
+After that realtime rates are re-calculated in proprotion of 
+weight or subtotal of full cart and cart without free shipped products.
+
+Manual rates are re-calculated again according to their formula with 
+corrected weight/subtotal/items values.

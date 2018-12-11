@@ -1,0 +1,1 @@
+ALTER TABLE `cw_order_statuses` ADD `sms_seller` INT(1) NOT NULL COMMENT 'send sms notification to seller' AFTER `inventory_decreasing`, ADD `sms_seller_message` VARCHAR(255) NOT NULL COMMENT 'seller sms content' AFTER `sms_seller`;

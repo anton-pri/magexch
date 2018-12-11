@@ -1,0 +1,21 @@
+
+li.potato-menu-item {
+    width:160px;
+    width: auto;
+    padding-top: 5px 0!important;
+    font-size:48px;
+
+
+}
+ul.potato-menu-group {
+    z-index:1000;
+}
+
+li.potato-menu-item a {
+    color: #fff;
+}
+
+li.potato-menu-item ul {
+/*    border-top:1px solid #000;
+    border-left:1px solid #000;*/
+}

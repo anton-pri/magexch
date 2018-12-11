@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JposDitronSettings>
+	<JposDitronSetting comPort="COM1"/>
+	<JposDitronSetting dataBits="8"/>
+	<JposDitronSetting stopBits="1"/>
+	<JposDitronSetting baudRate="38400"/>
+	<JposDitronSetting parity="none"/>
+	<JposDitronSetting attempt="3"/>
+	<JposDitronSetting logging="false"/>
+</JposDitronSettings>
+

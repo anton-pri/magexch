@@ -1,0 +1,1 @@
+ update cw_languages set value='The page you were looking for cannot be found, if you need assistance please visit our help pages' where name='txt_error_http_404_upper_message' and value='txt_error_http_404_upper_message';

@@ -1,0 +1,116 @@
+/**
+  * Rhinoslider 1.05
+  * http://rhinoslider.com/
+  *
+  * Copyright 2012: Sebastian Pontow, Rene Maas (http://renemaas.de/)
+  * Dual licensed under the MIT or GPL Version 2 licenses.
+  * http://rhinoslider.com/license/
+  */
+.rhino-btn {
+	background:url(../img/rhinoslider-sprite.png) 0 0 no-repeat;
+	z-index:10;
+	width:25px;
+	height:19px;
+	display:block;
+	text-indent:-999%;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+}
+
+
+.rhino-prev {
+       right: 50px;
+       top: -22px;
+	background: url(images/sprite.png) -989px -60px no-repeat;
+}
+
+.rhino-next {
+       right: 22px;
+       top: -22px;
+	background: url(images/sprite.png) -1020px -60px no-repeat;
+}
+
+
+
+.rhino-toggle {
+	top:-4px;
+	left:-6px;
+}
+
+.rhino-play { background-position:0 0; }
+
+.rhino-play:hover { background-position:0 -53px; }
+
+.rhino-pause { background-position:-56px 0; }
+
+.rhino-pause:hover { background-position:-56px -53px; }
+
+.rhino-container { position:relative; }
+
+.rhino-caption {
+	position:absolute;
+	background: #000;
+	display:none;
+	left:0;
+	right:0;
+	top:0;
+	color:#fff;
+	padding:10px;
+	text-align:right;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+}
+
+.rhino-bullets {
+	position: absolute;
+	bottom: 9px;
+	right: 6px;
+	margin:0;
+	z-index: 10;
+	background: transparent;
+	padding:0;
+}
+
+
+.rhino-bullets li {
+	float:left;
+	display:inline;
+	margin:0 5px;
+       background: url(images/tr_1.png) left top repeat;
+       padding: 5px;
+       border-radius: 3px;
+    behavior: url(PIE.htc);
+    position: relative;
+       
+}
+
+.rhino-bullets li a.rhino-bullet {
+	display: block;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	background: #c7c7c5;
+	font-size: 10px;
+	text-align: center;
+	padding: 0;
+	color: #c7c7c5;
+	text-decoration:none;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+       border-radius: 3px;
+    behavior: url(PIE.htc);
+    position: relative;
+}
+
+.rhino-bullets li a.rhino-bullet:hover, .rhino-bullets li a.rhino-bullet:focus {
+	color:#eee;
+	background:#eee;
+}
+
+.rhino-bullets li a.rhino-bullet.rhino-active-bullet {
+	color:#f47504;
+	background:#f47504;
+}

@@ -1,0 +1,27 @@
+Addon description, author, date, version
+========================================
+Artem Levagin
+07.05.2016
+
+This addon helps to speed up search by attributes when DB has 10K and more products.
+It builds temp flat table for product attributes and optimize search query by reducing joint tables
+
+
+History
+========================================
+
+
+
+Documentation
+========================================
+Required MYSQL right to CREATE and DROP tables
+
+Set attributes fields in your include/config.local.ini file as:
+  
+[flat_attributes_search]
+fields=field_name_1,field_name_2,field_name_3,field_name_4
+
+
+TODO list
+========================================
+

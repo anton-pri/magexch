@@ -1,0 +1,1 @@
+INSERT INTO cw_config SET name='flex_import_delete_linked_failed', comment='Delete Mapped ImportBuffer entries which has not been copied to Main data table on Update Mapped Products', value='Y', config_category_id=(select config_category_id from cw_config_categories where category='flexible_import' limit 1), orderby='160', type='checkbox', defvalue='', variants='';

@@ -1,0 +1,73 @@
+#cookiePolicy {
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%; 
+    z-index: 32769;
+}
+#cookiePolicy:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+#cookiePolicy .sleeve {
+    margin: 0 auto;
+    padding: 15px 0;
+    width: 940px;
+}
+#cookiePolicy h2 {
+    color: #000;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 8px;
+}
+#cookiePolicy a {
+    color: #000!important;
+    display: inline;
+    font-size: 13px;
+    line-height: 21px;
+}
+#cookiePolicy .formbox {
+    display: block;
+    margin-bottom: 0;
+    padding: 8px 0 0;
+    vertical-align: middle;
+}
+#cookiePolicy .field {
+    margin: 0 0 4px;
+}
+#cookiePolicy .continue {
+    background: url("/magazine/graphics/buttons/b_agree.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 0;
+    font-weight: bold;
+    height: 21px;
+    line-height: 999px;
+    margin-left: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 53px;
+}
+
+a.html_link {
+	color: inherit;
+}
+
+#cookiePolicy a.button {
+	text-decoration: underline;
+}
+
+#cookieWarningText {
+    text-align: center; 
+    width:350px; 
+    color: black!important;
+}
+
+#cookieWarningAcceptButtonBox {
+    text-align: center; 
+    width:350px; 
+    border-top: 1px solid lightgray; 
+    padding-top: 15px;
+}

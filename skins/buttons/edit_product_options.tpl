@@ -1,0 +1,1 @@
+{include file='buttons/button.tpl' button_title=$lng.lbl_edit_options href="javascript: window.open('index.php?target=popup_product_options&id=`$id`&mode=`$mode`', 'product_options', 'width=700,height=250px,toolbar=no,status=no,scrollbars=yes,resizable=no,menubar=no,location=no,direction=no'); void(0);"}

@@ -1,0 +1,165 @@
+#dpi-gallery {
+	position: absolute;
+	top: -3000px;
+	left: -5000px;
+}
+
+#dpi-thumbnails-outer {
+	display: none;
+	padding: 15px 0px;
+	position: relative;
+	margin: 0;
+}
+
+* html #dpi-thumbnails-outer{
+    margin-left: -30px;
+}
+
+#dpi-thumbnails-outer a {
+	display: block;
+	float: left;
+	padding: 0;
+	margin: 3px 6px 3px 0;
+}
+
+.dpi-clearfix {
+	float: none;
+	clear: left;
+}
+
+a.dpi-prev, a.dpi-next {
+	top: 0;
+	width: 32px;
+	height: 32px;
+	display: block;
+	position: absolute;
+}
+
+a.dpi-next {
+	right: 0;
+	background: url("../images/carouFredSel/next-horizontal.png") left top no-repeat transparent;
+}
+
+a.dpi-next:hover {
+	background-position: -32px 0;
+}
+
+a.dpi-prev {
+	left: 0;
+	background: url("../images/carouFredSel/prev-horizontal.png") left top no-repeat transparent;
+}
+
+a.dpi-prev:hover {
+	background-position: -32px 0;
+}
+
+a.dpi-prev.table {
+	position: absolute;
+	top: auto;
+	bottom: -32px;
+    left: 0;
+    right: auto;
+    width: 32px;
+    height: 32px;
+	background: url("../images/carouFredSel/prev-horizontal.png") left top no-repeat transparent;
+}
+
+a.dpi-prev.table:hover {
+	background-position: -32px 0;
+}
+
+a.dpi-prev.table.dpi-disabled, a.dpi-prev.table.dpi-disabled:hover {
+	background-position: -96px 0;
+}
+
+a.dpi-prev span, a.dpi-next span {
+	display: none;
+}
+
+#dpi-thumbnails-outer.vert {
+	margin: 0;
+	padding: 37px 0;
+}
+
+#dpi-thumbnails-outer.table {
+	margin: 0 0 37px 0;
+	padding: 0;
+}
+
+a.dpi-prev.vert {
+	position: absolute;
+    /*top: -32px;*/
+    top: 0;
+    left: 43px;
+    right: auto;
+    width: 32px;
+    height: 32px;
+	background: url("../images/carouFredSel/prev-vertical.png") left top no-repeat transparent;
+}
+
+a.dpi-prev.vert:hover {
+	background-position: 0 -32px;
+}
+
+a.dpi-next.vert {
+	position: absolute;
+	top: auto;
+	/*bottom: -32px;*/
+	bottom: 0;
+    left: 43px;
+    right: auto;
+    width: 32px;
+    height: 32px;
+	background: url("../images/carouFredSel/next-vertical.png") left top no-repeat transparent;
+}
+
+a.dpi-next.vert:hover {
+	background-position: 0 -32px;
+}
+
+a.dpi-next.table {
+	position: absolute;
+	top: auto;
+	bottom: -32px;
+    left: auto;
+    right: 0;
+    width: 32px;
+    height: 32px;
+	background: url("../images/carouFredSel/next-horizontal.png") left top no-repeat transparent;
+}
+
+a.dpi-next.table:hover {
+	background-position: -32px 0;
+}
+
+a.dpi-next.table.dpi-disabled, a.dpi-next.table.dpi-disabled:hover {
+	background-position: -96px 0;
+}
+
+#dpi-thumbnails {
+	margin: 0 auto;
+	padding: 0;
+}
+
+a.dpi-thumb {
+	padding: 2px !important;
+	display: block;
+	border: 1px solid #1475a7;
+}
+
+#dpi-thumbnails a.dpi-thumb.dpi-selected {
+	background: #000;
+}
+
+a.dpi-thumb:focus {
+	outline: none;
+}
+
+#dpi-thumbnails img {
+	border: none;
+	display: block;
+}
+
+.caroufredsel_wrapper {
+	margin: 0;
+}

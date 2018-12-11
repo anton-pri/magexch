@@ -1,0 +1,3 @@
+UPDATE `cw_languages` SET `value` = 'Unread' WHERE `cw_languages`.`code` = 'EN' AND `cw_languages`.`name` = 'lbl_do_not_read' LIMIT 1;
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_mark_messages_read', 'Mark as read', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_mark_messages_unread', 'Mark as unread', '', 'Labels');

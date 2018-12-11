@@ -1,0 +1,25 @@
+Addons
+-----------------------
+
+Idea of addons - they are absolutely independent and do not change core files. All files related to addon should be placed in "addon" folders under "core" and "skins" folders.
+Addon extends functinoality using events, hooks and controllers. Enabling/disabling addon should not crash the store.
+
+If you develop an addon and see that something in core should be changed to allow addon to interfere into the program flow, please discuss it with architect. For example some function is not designed for chains or you need an event call in some important stage.
+
+
+
+Namespaces
+------------------------
+
+Use namespaces in your addon to declare functions and event handlers. Event handler or hook in addon should be named exactly as event name or hooked function, namespaces allows to do it. For example addon News can declare function on_product_delete under namespace News and then add it as handler
+
+cw_listen('on_product_delete','News\on_product_delete');
+
+Later for 3rd party addons namespaces should include also vendor name additionally to addon name, e.g.
+namespace Devteam\Helpdesk
+
+
+Example
+------------------------
+
+see addon "addon_skeleton" as basis for your own addons

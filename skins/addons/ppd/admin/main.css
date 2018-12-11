@@ -1,0 +1,34 @@
+table.header.ppd th, table.header.ppd td {
+	padding: 3px;
+}
+
+table.header.ppd td {
+	height: 2pt;
+}
+
+table.header.ppd td.recs-delimiter {
+	height: 1pt;
+}
+
+option.filetype-icon-back {
+	padding: 2px 0 2px 18px;
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+	vertical-align: middle;
+}
+
+.file-icon {
+	vertical-align: middle;
+}
+
+div.fields-note {
+	margin: 20px auto;
+}
+
+span.note-style {
+	font-weight: bold;
+}
+
+.file-not-exist {
+	color: red;
+}

@@ -1,0 +1,1 @@
+REPLACE INTO cw_config set name='products_images_thumb_height', comment='The thumbnail height in the products list', value='90', config_category_id=4, orderby=150, type='numeric', defvalue=0, variants='';

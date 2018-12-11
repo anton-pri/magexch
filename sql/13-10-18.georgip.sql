@@ -1,0 +1,2 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_unassigned', 'Unassigned', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_feat_class', 'Feature class', '', 'Labels');

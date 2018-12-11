@@ -1,0 +1,50 @@
+.datacolumn-toggle-disabled {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+a.remove {
+}
+.editor_edit {
+}
+.editor_remove {
+}
+.center {
+  text-align: center;
+}
+.table_preview_img {
+  max-width: 70px;
+  max-height: 70px;
+}
+.edit_preview_img {
+}
+.footer_text_search {
+  width: 98%;
+  min-width: 50px;
+}
+div.DTED_Lightbox_Wrapper {
+  z-index: 1100!important;
+}
+
+.dh_data_loading {
+  background: white url(../../../../../skins/images/loading.gif) center center no-repeat;
+}
+
+table.dataTable tbody td {
+   padding-top: 2px!important;
+   padding-bottom: 1px!important;
+}
+
+label.narrow {
+   margin-bottom:0px!important;
+}
+table.dataTable thead .sorting_asc{
+  background-image:url("../images/sort_asc.png")!important;
+}
+
+table.dataTable thead .sorting_desc{
+  background-image:url("../images/sort_desc.png")!important;
+}
+table.dataTable tfoot th, table.dataTable tfoot td{
+  padding-left: 1px!important;
+  padding-right: 1px!important;
+}

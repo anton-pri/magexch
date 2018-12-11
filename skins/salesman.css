@@ -1,0 +1,441 @@
+H1 {
+    FONT-SIZE: 15px;
+}
+H2 {
+    FONT-SIZE: 13px;
+}
+H3 {
+    FONT-SIZE: 12px;
+}
+HR {
+    border-top:  #DDDDDD 1px solid;
+    background-color: #ffffff;
+    color: #ffffff;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+IFRAME {
+    border: 1px solid #c2c2c2;
+}
+
+.Section {
+    padding: 0px 0px 15px 0px;
+}
+.SectionBox {
+    background-color: #ffffff;
+}
+.SectionBox_ngrey #top,
+.SectionBox_grey #top,
+.SectionBox_grey_2 #top,
+.SectionBox_lite_grey #top,
+.SectionBox_nbox #top,
+.SectionBox #top {
+    background-position: top;
+    background-repeat: repeat-x;
+    background-image: url(images/section/border.gif);
+}
+.SectionBox_ngrey #bottom,
+.SectionBox_grey #bottom,
+.SectionBox_grey_2 #bottom,
+.SectionBox_lite_grey #bottom,
+.SectionBox_nbox #bottom,
+.SectionBox #bottom {
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-image: url(images/section/border.gif);
+}
+.SectionBox_ngrey #left,
+.SectionBox_grey #left,
+.SectionBox_grey_2 #left,
+.SectionBox_lite_grey #left,
+.SectionBox_nbox #left,
+.SectionBox #left {
+    background-position: left;
+    background-repeat: repeat-y;
+    background-image: url(images/section/border.gif);
+}
+.SectionBox_ngrey #right,
+.SectionBox_grey #right,
+.SectionBox_grey_2 #right,
+.SectionBox_lite_grey #right,
+.SectionBox_nbox #right,
+.SectionBox #right {
+    background-position: right;
+    background-repeat: repeat-y;
+    background-image: url(images/section/border.gif);
+}
+.SectionBox_ngrey #section_title,
+.SectionBox_grey #section_title,
+.SectionBox_grey_2 #section_title,
+.SectionBox_lite_grey #section_title,
+.SectionBox_nbox #section_title,
+.SectionBox #section_title {
+    padding: 0px 2px 0px 2px;
+    color: #595959;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 22px;
+}
+.SectionBox_ngrey #top_left,
+.SectionBox_grey #top_left,
+.SectionBox_grey_2 #top_left,
+.SectionBox_lite_grey #top_left,
+.SectionBox_nbox #top_left,
+.SectionBox #top_left {
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-image: url(images/section/top_left.gif);
+}
+.SectionBox_ngrey #top_right,
+.SectionBox_grey #top_right,
+.SectionBox_grey_2 #top_right,
+.SectionBox_lite_grey #top_right,
+.SectionBox_nbox #top_right,
+.SectionBox #top_right {
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-image: url(images/section/top_right.gif);
+}
+.SectionBox_ngrey #bottom_left,
+.SectionBox_grey #bottom_left,
+.SectionBox_grey_2 #bottom_left,
+.SectionBox_lite_grey #bottom_left,
+.SectionBox_nbox #bottom_left,
+.SectionBox #bottom_left {
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-image: url(images/section/bottom_left.gif);
+}
+.SectionBox_ngrey #bottom_right,
+.SectionBox_grey #bottom_right,
+.SectionBox_grey_2 #bottom_right,
+.SectionBox_lite_grey #bottom_right,
+.SectionBox_nbox #bottom_right,
+.SectionBox #bottom_right {
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-image: url(images/section/bottom_right.gif);
+}
+
+.SectionBox_ngrey {
+    background-color: #eeeeee;
+}
+.SectionBox_ngrey #top {
+    background-image: url(images/section/top_ngrey.gif);
+}
+.SectionBox_ngrey #bottom {
+    background-image: url(images/section/bottom_ngrey.gif);
+}
+.SectionBox_ngrey #left {
+    background-image: url(images/section/left_ngrey.gif);
+}
+.SectionBox_ngrey #right {
+    background-image: url(images/section/right_ngrey.gif);
+}
+.SectionBox_ngrey #top_left {
+    background-image: url(images/section/top_left_ngrey.gif);
+}
+.SectionBox_ngrey #top_right {
+    background-image: url(images/section/top_right_ngrey.gif);
+}
+.SectionBox_ngrey #bottom_left {
+    background-image: url(images/section/bottom_left_ngrey.gif);
+}
+.SectionBox_ngrey #bottom_right {
+    background-image: url(images/section/bottom_right_ngrey.gif);
+}
+
+.SectionBox_grey {
+    background-color: #eeeeee;
+}
+.SectionBox_grey #top {
+    background-image: url(images/section/top_grey.gif);
+}
+.SectionBox_grey #bottom {
+    background-image: url(images/section/bottom_grey.gif);
+}
+.SectionBox_grey #left {
+    background-image: url(images/section/left_grey.gif);
+}   
+.SectionBox_grey #right {
+    background-image: url(images/section/right_grey.gif);
+}
+.SectionBox_grey #top_left {
+    background-image: url(images/section/top_left_grey.gif);
+}
+.SectionBox_grey #top_right {
+    background-image: url(images/section/top_right_grey.gif);
+}   
+.SectionBox_grey #bottom_left {
+    background-image: url(images/section/bottom_left_grey.gif);
+}
+.SectionBox_grey #bottom_right {
+    background-image: url(images/section/bottom_right_grey.gif);
+}
+
+.SectionBox_grey_2 {
+    background-color: #d5d5d5;
+}   
+.SectionBox_grey_2 #top {
+    background-image: url(images/section/top_grey_2.gif);
+}
+.SectionBox_grey_2 #bottom {
+    background-image: url(images/section/bottom_grey_2.gif);
+}
+.SectionBox_grey_2 #left {
+    background-image: url(images/section/left_grey_2.gif);
+}
+.SectionBox_grey_2 #right {
+    background-image: url(images/section/right_grey_2.gif);
+}   
+.SectionBox_grey_2 #top_left {
+    background-image: url(images/section/top_left_grey_2.gif);
+}
+.SectionBox_grey_2 #top_right {
+    background-image: url(images/section/top_right_grey_2.gif);
+}
+.SectionBox_grey_2 #bottom_left {
+    background-image: url(images/section/bottom_left_grey_2.gif);
+}
+.SectionBox_grey_2 #bottom_right {
+    background-image: url(images/section/bottom_right_grey_2.gif);
+}
+    
+.SectionBox_lite_grey {
+    background-color: #eeeeee;
+}   
+.SectionBox_lite_grey #top {
+    background-image: url(images/section/top_lite_grey.gif);
+}   
+.SectionBox_lite_grey #bottom {
+    background-image: url(images/section/bottom_lite_grey.gif);
+}   
+.SectionBox_lite_grey #left {
+    background-image: url(images/section/left_lite_grey.gif);
+}   
+.SectionBox_lite_grey #right {
+    background-image: url(images/section/right_lite_grey.gif);
+}   
+.SectionBox_lite_grey #top_left {
+    background-image: url(images/section/top_left_lite_grey.gif);
+}
+.SectionBox_lite_grey #top_right {
+    background-image: url(images/section/top_right_lite_grey.gif);
+}
+.SectionBox_lite_grey #bottom_left {
+    background-image: url(images/section/bottom_left_lite_grey.gif);
+}
+.SectionBox_lite_grey #bottom_right {
+    background-image: url(images/section/bottom_right_lite_grey.gif);
+}
+
+.SectionBox_nbox {
+    background-color: #e9e8e8;
+}
+.SectionBox_nbox #top {
+    background-image: url(images/section/border_nbox.gif);
+}
+.SectionBox_nbox #bottom {
+    background-image: url(images/section/border_nbox.gif);
+}
+.SectionBox_nbox #left {
+    background-image: url(images/section/border_nbox.gif);
+}
+.SectionBox_nbox #right {
+    background-image: url(images/section/border_nbox.gif);
+}
+.SectionBox_nbox #top_left {
+    background-image: url(images/section/top_left_nbox.gif);
+}
+.SectionBox_nbox #top_right {
+    background-image: url(images/section/top_right_nbox.gif);
+}
+.SectionBox_nbox #bottom_left {
+    background-image: url(images/section/bottom_left_nbox.gif);
+}
+.SectionBox_nbox #bottom_right {
+    background-image: url(images/section/bottom_right_nbox.gif);
+}
+
+.MenuPadding {
+    padding: 0px 0px 5px 0px;
+}
+.MenuTitle { 
+    padding: 0px 0px 5px 0px;
+}
+.MenuTitle #menu_hr {
+    line-height: 2px; 
+    background-image: url(images/menu/menu_bbg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+}
+.MenuTitle #menu_title {
+    background-color: #bb0000;
+    background-image: url(images/menu/menubg.gif);
+    background-repeat: repeat-x;
+    padding: 3px 0px 1px 0px;
+
+    color: #ffffff;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 29px;
+}
+.MenuTitle #menu_right {
+    width: 5px;
+    background-color: #bb0000;
+    background-position: top right;
+    background-image: url(images/menu/menu2.gif);
+    background-repeat: no-repeat;
+}
+.MenuTitle #menu_left {
+    width: 36px;
+    background-color: #bb0000;
+    background-position: top left;
+    background-image: url(images/menu/menu1.gif);
+    background-repeat: no-repeat;
+}
+.MenuTitle #menu_content {
+    border-left: #b4b3b3 1px solid;
+    border-bottom: #b4b3b3 1px solid;
+    border-right: #b4b3b3 1px solid;
+    background-color: #ffffff; 
+    background-image: url(images/menu/menu_boxbg.gif);
+    background-repeat: repeat-x;
+    background-position: top;
+}
+.MenuContent {
+    color: #444444;
+    text-decoration: none;
+}
+.MenuContent A:link {
+    color: #444444;
+    text-decoration: none;
+}   
+.MenuContent A:visited {
+    color: #444444;
+    text-decoration: none;
+}
+.MenuContent A:hover {
+    color: #a90000;
+    text-decoration: underline;
+}
+.MenuContent A:active  {
+    color: #444444;
+    text-decoration: none;
+}
+
+.VertMenuLeftColumn {
+    width: 166px;
+    vertical-align: top;
+    padding-left: 7px;
+    padding-right: 15px;
+}
+
+.TableHead {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.Star { 
+    color: #FF0000; 
+}   
+
+.HeadLogo {
+    PADDING-LEFT: 15px;
+    PADDING-RIGHT: 38px;
+    TEXT-ALIGN: left;
+}   
+.HeadText {
+    FONT-SIZE: 13px;
+    font-family: Arial;
+    color: #bb0000;
+    FONT-WEIGHT: bold;
+    vertical-align: middle;
+}   
+.BottomBox { 
+    BACKGROUND-COLOR: #eae9e9;
+    COLOR: #918888;
+    HEIGHT: 35px;
+    VERTICAL-ALIGN: middle;
+    PADDING-LEFT: 14px;
+    PADDING-RIGHT: 12px;
+}   
+.BottomLinks {
+    color: #bb0000;
+    font-size: 11px;
+}
+.BottomDialogBox {
+    BACKGROUND-COLOR: #eeeeee;
+    PADDING-LEFT: 13px;
+    PADDING-TOP: 10px;
+    PADDING-BOTTOM: 10px;
+}   
+
+TABLE.SubHeader {
+    WIDTH: 100%;
+    MARGIN-BOTTOM: 10px;
+}
+.SubHeader {
+    COLOR: #bb0000;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    text-transform: uppercase;
+    PADDING: 0px;
+}
+.SubHeaderLine {
+    HEIGHT: 1px;
+    BACKGROUND-COLOR: #c2c2c2;
+    PADDING: 0px;
+}
+TABLE.SubHeaderGrey {
+    WIDTH: 100%;
+    MARGIN-BOTTOM: 10px;
+}   
+.SubHeaderGrey {
+    COLOR: #666666;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    PADDING: 0px;
+}
+.SubHeaderGreyLine {
+    HEIGHT: 1px;
+    BACKGROUND-COLOR: #CCCCCC;
+    PADDING: 0px;
+}
+
+.input_table {
+    line-height: 22px;
+}
+.input_table #label {
+    font-weight: bold;
+    width: 110px;
+    padding-right: 10px;
+}
+.input_table #label_right {
+    font-weight: bold;
+    padding-right: 10px;
+}
+.input_table select {
+    width: 200px;
+}
+
+/*
+AOM special styles
+*/
+.edit_order_controls {
+    text-align: right;
+    padding: 10px;
+}
+
+
+.VertMenuLeftColumn {
+    width: 166px; 
+    vertical-align: top;
+    padding-left: 7px;
+    padding-right: 15px;
+}   

@@ -1,0 +1,2 @@
+INSERT INTO `cw_config` (`name`, `comment`, `value`, `config_category_id`, `orderby`, `type`, `defvalue`, `variants`) VALUES ('pause_email_sending', 'Pause flag for on/off email sending', '0', '1', '0', 'text', '0', '');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `topic`) VALUES ('EN', 'lbl_pause_email_sending', 'Pause email sending', 'Labels');

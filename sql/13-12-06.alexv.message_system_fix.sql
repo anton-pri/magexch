@@ -1,0 +1,1 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_send_to_archive', 'Send to Archive', '', 'Labels');

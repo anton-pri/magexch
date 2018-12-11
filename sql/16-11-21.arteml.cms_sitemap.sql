@@ -1,0 +1,3 @@
+INSERT IGNORE cw_attributes (`attribute_id`, `name`, `type`, `field`, `is_required`, `active`, `orderby`, `addon`, `item_type`, `is_sortable`, `is_comparable`, `is_show`, `pf_is_use`, `pf_orderby`, `pf_display_type`, `is_show_addon`, `facet`, `protection`, `description`) VALUES (NULL, 'Add to sitemap', 'yes_no', 'add_to_sitemap', '0', '1', '100', 'sitemap_xml', 'AB', '0', '0', '0', '0', '0', '', '1', '0', '15', 'Include to sitemap');
+SELECT @aid:=attribute_id FROM cw_attributes WHERE field='add_to_sitemap' AND item_type='AB' AND addon='sitemap_xml' LIMIT 1;
+INSERT IGNORE INTO cw_attributes_values (item_id, attribute_id, value, item_type) SELECT contentsection_id, @aid, 1, 'AB' FROM cw_cms WHERE `type`='staticpage' AND active='Y';

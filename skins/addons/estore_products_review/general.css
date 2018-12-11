@@ -1,0 +1,94 @@
+.features-tab-review {
+    margin-left: 200px;
+}
+
+.estore_testimonials_class .dialog{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.estore_container_item {
+    border-bottom: 1px solid #D7DADD;
+    margin: 5px 0;
+    overflow: hidden;
+    padding: 8px 10px;
+}
+
+.estore_container_item:last-child {
+    border-bottom: none;
+}
+
+.estore_container_delete {
+    float: right;
+}
+
+.vote_name{
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+#vote_reviews {
+    float: right;
+}
+    
+.voting .rating {
+    background: none repeat scroll 0 0 #4f4d52;
+    float: left;
+    height: 25px;
+    margin-left: 6px;
+    margin-right: 8px;
+    width: 188px;
+}
+.voting .rating .full {
+    background: linear-gradient(to bottom, #b3ec81 0%, #93bc51 40%, #639c21 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 25px;
+}
+
+.reviews .separator{
+    background: #E0E0E0;
+    width: 100%;
+    height: 1px;
+    margin-bottom:5px;
+    float:left;
+}
+.like_btn, .dislike_btn{
+    width: 18px;
+    height: 18px;
+    padding: 5px;
+    float: left;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.like_btn{
+    background: url(../../images/vote/like-ico.png) 5px 50% no-repeat;
+}
+.like_btn:hover, .like-h, .like_vote{
+    background: url(../../images/vote/like-ico-h.png) 5px 50% no-repeat; color: #0c6502;
+}
+.dislike_btn{
+    background: url(../../images/vote/dislike-ico.png) 50% 50% no-repeat;
+}
+.dislike_btn:hover, .dislike-h, .dislike_vote {
+    background: url(../../images/vote/dislike-ico-h.png) 50% 50% no-repeat;
+}
+.like_vote, .dislike_vote{
+    opacity: 0.5;
+}
+
+.stat-cnt{
+    min-width: 100px;
+    float: right;
+    margin: 5px;
+}
+.stat-cnt a{
+    float: left;
+}
+.like_count, .dislike_count{
+    width: auto; height: 18px;
+    float: left;
+    font-size: 12px;
+    line-height: 18px;
+    color: #555555;
+    padding:7px 15px 0 0px;
+}

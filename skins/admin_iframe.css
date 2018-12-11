@@ -1,0 +1,9 @@
+body, .admin, .middle-content, .header_logo, .header_line, .bottom{
+    min-width: 0px;
+    width: auto;
+}
+
+.middle-content{box-shadow: none;}
+
+
+

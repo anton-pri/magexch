@@ -1,0 +1,1 @@
+{if !$customer_id}<a href="{$catalogs.customer}/index.php?target=help&section=login_customer" class='need_login'><i class="icon-lock"></i>{$lng.lbl_login}</a>{else}<a href="{$catalogs.customer}/index.php?target=acc_manager&action=logout"><i class="icon-lock"></i>{$lng.lbl_logoff}</a>{/if}

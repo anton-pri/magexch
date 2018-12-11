@@ -1,0 +1,120 @@
+table.header.ps th, table.header.ps td {
+    padding: 3px;
+}
+
+table.header.ps td {
+    height: 2pt;
+    font-weight: normal;
+}
+
+table.header.ps td.recs-delimiter {
+    height: 1pt;
+}
+
+table.dod-bonuses {
+/*	width: 100%;*/
+}
+
+table.dod-bonuses tr {
+	vertical-align: top;
+}
+
+td.dod-checkbox {
+/*	width: 5%;*/
+    padding-top: 1em;
+    width: 10px;
+}
+
+td.dod-bonus-body {
+/*	width: 95%;*/
+	cursor: pointer;
+}
+
+a.dod-bonus-picker {
+	display: block;
+	padding: 0 1em;
+	height: 3em;
+	line-height: 3em;
+	text-decoration: none;
+       font-weight: bold;
+}
+
+a.dod-bonus-picker:hover {
+	text-decoration: none;
+	background: #EDEDED;
+}
+
+a.dod-bonus-picker.dod-active {
+	background: #CCCCCC;
+}
+
+div.dod-bonus-details {
+	display: none;
+}
+
+ul.dod-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.dod-list li {
+	padding: 4px 0 4px 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+ul.dod-list li input {
+    vertical-align: middle;
+}
+
+ul.dod-list li label {
+    vertical-align: middle;
+}
+
+.dod-chooser {
+	cursor: pointer;
+}
+
+.dod-entities-block {
+	/*display: none;*/
+}
+
+.dod-entities-block table {
+    margin: 10px 0 0 0;
+}
+
+.dod-entities-block table th
+{
+	text-align: left;
+}
+
+.dod-entities-block table td, .dod-bonus-details table td {
+	vertical-align: middle;
+}
+
+.dod-not-saved {
+	color: #0066CC;
+}
+
+.dod-exclusive-note {
+	color: #3EAF3E;
+}
+
+.box .dod-bonuses input[type="text"], .box .dod-bonus-details input[type="text"], .box .dod-bonus-details select{
+    width: auto!important;
+}
+
+.box .dod-bonus-details input[type="text"], .box .dod-bonus-details select{
+    float: left;
+    margin-right: 5px;
+}
+
+.calendar{
+    margin: 2px;
+}
+
+.dod-bonus-details label{
+    display: inline-block;
+    line-height: 30px;
+}

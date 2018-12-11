@@ -1,0 +1,61 @@
+Edit on place feature
+===============================
+
+This feature allows safely edit simple table fields right on place where they appear. 
+For example product name on product list.
+
+You should mark this field using special smarty plugin {edit_on_place}. It accepts following parameters:
+    table - (required) table name, existing in global $tables array
+    field - (required) field in table to edit
+    pk - primary key, can be any primary id in target table
+    where - additional sql query in case pk is not enough
+    token_only - defines format of function output - token id only or class="" and token="" params as part of html attributes
+    handler - special function for complex entries update
+
+e.g.
+-------------------------------------------------------------------------------
+ <input type='text' name='product' {edit_on_place table="products" pk=$product.product_id field="product" handler="cw_edit_on_place_product"} />
+-------------------------------------------------------------------------------
+resolved into
+-------------------------------------------------------------------------------
+ <input type='text' name='product' class='edit_on_place' token='9321876419841659847198327' />
+-------------------------------------------------------------------------------
+or use token_only if class attribute has complex value
+-------------------------------------------------------------------------------
+ <input type='text' name='product' class='small product edit_on_place' token='{edit_on_place table="products" pk=$product.product_id field="product" handler="cw_edit_on_place_product" token_only=true}'>
+-------------------------------------------------------------------------------
+
+Currently input, checkbox, textarea, select (single value) and span are supported.
+If edited field is a link, then span shall wrap the link - <span {edit_on_place ...}><a>Value</a></span>
+
+
+Validators
+------------------------
+You can add own validators and update handlers.
+Main validator is cw_can_edit_on_place($token_data), it checks for allowed table. Listen to the event 
+    cw_event('on_edit_on_place_allowed_tables',array($token_data, &$addon_allowed_tables));
+and fill $addon_allowed_tables with your custom tables which you want to edit as well.
+
+To add also custom validator create hook for cw_can_edit_on_place($token_data). It is called before update. Validator must return
+true or an Error object instance using error($message) function. Your validator should not take care about other validators and their results.
+See function cw_can_edit_on_place_productcode() as example
+
+
+Update handlers
+------------------------
+Update handlers are assigned in smarty plugin as shown above (handler=cw_edit_on_place_product). 
+It allows sequenced update of other tables when main table/field is already updated.
+Example function cw_edit_on_place_product($token_data, $value) allows to edit additional lang table when main product table is updated.
+
+
+Structure of token
+------------------------
+$token_data = array(
+        'group' => hash of tokens group from one page, you do not need to operate with it
+        'table' => table to edit
+        'field' => field to edit
+        'pk'    => primary key value
+        'where' => additinal sql condition
+        'handler' => update handler function
+        'time'  => timestamp the token was created
+    );

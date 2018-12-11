@@ -1,0 +1,92 @@
+.shipping_estimator h1 {
+    font-size: 12px;
+    color: #000;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.shipping_estimator .top,
+.shipping_estimator .bottom {
+    padding: 10px 0px 10px 0px;
+}
+.shipping_estimator .product,
+.shipping_estimator .input_field_1 {
+    /*border: 1px solid #818181;
+    background-color: #eaeaea;
+    padding: 5px;*/
+}
+.shipping_estimator .field_error {
+    font-weight: bold;
+}
+
+.shipping_estimator .black{
+    margin-left: 106px;
+    margin-top: 5px;
+}
+
+
+
+.shipping_estimator{
+    padding-top: 0px;
+}
+
+.shipping_estimator .black, .shipping_estimator input, .shipping_estimator select{
+    float: left;
+}
+
+
+.shipping_estimator input, .shipping_estimator select{
+    margin: 3px;
+}
+
+.shipping_estimator input{
+   height: 18px;
+}
+.shipping_estimator select{
+   padding: 3px;
+}
+
+.shipping_estimator .product .title{
+    padding: 5px 0;
+    color: #000;
+    font-size: 20px;
+}
+
+
+.shipping_estimator .product{
+  background: #fff;
+  margin-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.shipping_estimator .product .image{
+  border: 1px solid #ccc;
+  width: 130px;
+  text-align: center;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+
+.shipping_estimator .product .field_error{
+    padding-top: 10px;
+}
+
+.ui-dialog #shipping_estimate_dialog.ui-dialog-content{
+    overflow: hidden;
+}
+
+.shipping_estimator_link a {
+	padding: 0 20px 20px;
+	display: block;
+}
+
+.shipping_estimator .input_field_1 {
+	padding: 3px 0;
+	border: none;
+}
+
+#shipping_estimator_dialog {
+	max-width: 100%;
+	padding: 10px 20px 20px;
+}

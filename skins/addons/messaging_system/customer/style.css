@@ -1,0 +1,35 @@
+/* message */
+.new_message_table{
+    padding: 5px;
+    border: none;
+    margin-top: 15px;
+}
+.m_border_top {
+    border-top: 1px solid #808080;
+}
+.m_border_left {
+    border-left: 1px solid #808080;
+}
+.m_border_right {
+    border-right: 1px solid #808080;
+}
+.m_border_bottom {
+    border-bottom: 1px solid #808080;
+}
+.m_cursor{
+    cursor: pointer;
+}
+.m_conversation_message {
+    border: 1px solid #808080;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 3px;
+    cursor: pointer;
+    padding: 10px;
+}
+.m_incomig {
+    background-color: #EEFEE6;
+}
+.m_sent {
+    background-color: #F6F9E5;
+}

@@ -1,0 +1,1 @@
+REPLACE INTO `cw_languages` ( `code` , `name` , `value` , `tooltip` , `topic`) VALUES ( 'en', 'lbl_check_updates', '<img id="updates_img" src="http://{{updates_url}}" alt="" style="display: none" />', '', 'Text');

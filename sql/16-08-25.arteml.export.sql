@@ -1,0 +1,1 @@
+INSERT INTO `cw_menu` (`menu_id`, `parent_menu_id`, `title`, `link`, `target`, `orderby`, `area`, `access_level`, `func_visible`, `addon`, `skins_subdir`, `is_loggedin`) VALUES (NULL, '7', 'lbl_export', 'index.php?target=export', 'export', '1600', 'A', '1300', '', '', '', '1');

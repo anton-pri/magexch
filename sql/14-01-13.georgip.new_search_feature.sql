@@ -1,0 +1,2 @@
+REPLACE INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'opt_single_search_res', 'If product search result contains only one item, redirect directly to product page', '', 'Options');
+INSERT INTO `cw_config` (`name`, `comment`, `value`, `config_category_id`, `orderby`, `type`, `defvalue`, `variants`) VALUES ('single_search_res', 'If product search result contains only one item, redirect directly to product page', 'N', '20', '70', 'checkbox', 'N', '');

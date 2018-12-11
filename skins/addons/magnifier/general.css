@@ -1,0 +1,16 @@
+.magnifier {
+    margin: 10px;
+}
+
+.magnifier .left-column {
+    margin-right: 10px;
+    float: left;
+}
+
+.product_magnifier_class {
+	/*width: 700px !important; */
+}
+
+body{
+    max-width: 100%;
+}

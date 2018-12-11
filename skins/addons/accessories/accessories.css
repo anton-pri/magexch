@@ -1,0 +1,132 @@
+.accessories {
+    padding: 5px 0px 5px 0px;
+}
+.accessories .price {
+    padding-top: 5px;
+}
+.accessories .product_info .product {
+    padding: 0px;
+}
+
+.side_line a:link,
+.side_line a:visited,
+.side_line a:hover,
+.side_line a:active {
+    background-image: none;
+    background: none;
+}
+.side_line .product_info {
+    border: 0px;
+}
+.side_line .product_info .product {
+    padding: 0px;
+}
+
+.acc_wrapper {
+margin: 0px;
+padding: 9px;
+background: #f0f0f0;
+border-top: 1px solid #d1d1d1;
+border-bottom: 1px solid #d1d1d1;
+}
+
+.acc_wrapper .featured_category{
+   padding: 8px;
+   padding-left: 0px;
+   margin-left: 8px;
+}
+
+.acc_product .rating_line{
+    margin: 0 auto;
+    float: none;
+}
+
+.acc_thumbnail {
+    float: left;
+    margin: 0px;
+    width: 100px;
+}
+
+.acc_thumbnail img{
+    max-height: 90px;
+}
+.acc_add a {
+    text-decoration: none;
+}
+
+.acc_add input {
+    margin: 0px;
+    float: right;
+    border: none;
+    padding: 0;
+}
+.acc_recent{
+    height:200px!important;
+}
+
+.acc_recent li{
+ height: 200px!important;
+ list-style: none;
+}
+
+.product .acc_product_main .product_field label, .product .acc_product .product_field.taxed_price label{
+  width: auto;
+}
+
+.product .acc_product .product_field.taxed_price{
+  height: 20px;
+  padding-top: 5px;
+  line-height: 20px;
+}
+
+
+.product .product_field.price.cycle, .product .product_field.taxed_price.cycle, .product .product_field.cycle{
+  width: 170px;
+}
+
+.link_to, .sku_number{
+  /*height: 15px;*/
+}
+
+.product .acc_product_main .fields{
+  width: 170px;
+  height: 67px;
+}
+
+.link_to a{
+  text-decoration: none;
+}
+
+.acc_qty{
+  display: none;
+}
+
+.acc_product .product_field label{
+  display: inline!important;
+  font-size: 12px;
+  color: #999999;
+}
+
+.acc_product .info_box{
+    overflow: hidden;
+    margin: 4px 0;
+}
+
+.acc_add{
+    display: inline-block;
+    padding-right: 5px;
+    margin-top: 12px;
+}
+
+#accessories_price {
+    margin-top: 5px;
+    display: inline; 
+}
+
+#accessories_price span{
+    font-size: 12px;
+}
+
+.acc_recent {
+  margin-top: 15px;
+}

@@ -1,0 +1,18 @@
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_filter_attributes', 'Filter attributes', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_item_type', 'Item type', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_addon', 'Addon', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_p', 'Product', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_c', 'Category', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_m', 'Manufacturer', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_s', 'Static page', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_b', 'Speed bar', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_d', ' Shipping method', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_g', 'Payment methdod', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_o', 'Owner', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_ab', 'Ad banner', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_dm', 'Domain', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_ps', 'Promotion suite', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_q', 'Search', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'attribute_name_pa', 'Product Accessories', '', 'Attribute');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_core', 'Core', '', 'Labels');
+INSERT INTO `cw_languages` (`code`, `name`, `value`, `tooltip`, `topic`) VALUES ('EN', 'lbl_custom_attirbute', 'Custom attribute', '', 'Labels');

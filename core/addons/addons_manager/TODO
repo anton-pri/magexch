@@ -1,0 +1,4 @@
+1. It does not patch VERSION file
+2. It does not apply SQL with multiline command
+3. Possibly it omits hunk if it is at the end of file
+4. It does not patch alternative skins

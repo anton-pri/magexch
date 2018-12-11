@@ -1,0 +1,1 @@
+replace into cw_config (name,`comment`,value,config_category_id,orderby,type) values ('cms_use_multiselect', 'Use multiselect control in Restrict to Categories option on the Update Content Section page', 'Y', (select config_category_id from cw_config_categories where category='cms' limit 1), 10, 'checkbox');

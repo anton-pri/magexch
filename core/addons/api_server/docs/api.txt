@@ -1,0 +1,65 @@
+I. How API Server works
+
+API Server listen for URL
+http://domain.com/cw_dir/index.php?taget=api
+
+API Server can be called via GET or POST request with following parameters
+ * [api_key]    => API key
+ * [api_sign]   => optional for public API; required for signed/encrypted API. It is md5(request+api_secret). Never pass api_secret with API request
+ * [api_server_version] => version of communication protocol with API server
+ * [version]    => version of requested api method
+ * [encrypted]  => true|1 for encrypted requests
+ * [method]     => requested API method
+ * [request]    => JSON encoded request data (can be encypted, api_sign must be calculated after encryption)
+
+API Server replies with JSON encoded content. 
+After decoding JSON to array the element "response" in this array is again JSON encoded string which must be decoded once again.
+Before decoding of "response" you may need to check signature and decrypt this string.
+
+
+Use function cw_api_server_call() to call another API Server. Using this function you should not care about signature,
+encoding/decoding and encryption/decryption procedure. Just prepare minimal set of request data:
+array(
+    'api_key'    => API key
+    'version'    => version of requested api method
+    'method'     => requested API method
+    'request'    => <your_data>
+);
+
+cw_api_server_call() returns full decoded decrypted response including API server data and requested method data
+
+
+API Server supports 
+public methods - anyone can request method without identifier
+identified methods - only users with proper ID can request method
+protected methods - only users with proper ID and secret key can request method
+encrypted methods - only users with proper ID and secret key can request method, requested data and response are encrypted
+
+
+
+II. How to build own API
+You should write only 3 own hooks for following functions:
+
+
+1. function api_is_key_valid($key, $method)
+In this function you should check if called $method is yours and API $key is valid.
+- return null if it is not your $method called;
+- return always true if you implement public API and it does not matter which key provided;
+- check if $key exists and valid and return true/false if you implement API for registered users with known API keys only
+
+2. function api_secret_get($key, $method)
+In this function you should check if called $method is yours and return api_secret for user authentification
+- return null if it is not your $method called;
+- return false explicitly if authentification is not required;
+- return api_secret from your DB/file storage for provided $key for protected/encrypted API methods with authentification
+
+3. function api_method_exec_<method>($method)
+It must be your main function where API method is implemented.
+All requested data can be obtained via call like this
+    $request = cw_call('cw\api_server\api_data_get', array('request'));
+    $version = intval(cw_call('cw\api_server\api_data_get', array('version')));
+Strongly recomeneded to include supporting of "version" param into your code, so you could adjust API later and keep back compatibility.
+Return data which should be considered as response of your method.
+
+
+API Server provided with simple "echo" method as example.

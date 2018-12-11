@@ -1,0 +1,22 @@
+/* message */
+.new_message_table{
+    padding: 5px;
+    border: 1px solid #EDE6E6;
+}
+.m_cursor{
+    cursor: pointer;
+}
+.m_no_cursor{
+    cursor: default !important;
+}
+.m_conversation_message {
+    overflow: hidden;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.m_incomig {
+    background-color: #EEFEE6;
+}
+.m_sent {
+    background-color: #F6F9E5;
+}

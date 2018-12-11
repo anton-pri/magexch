@@ -1,0 +1,175 @@
+@media print {
+
+TABLE, IMG, FRAME {
+    BORDER: 0px;
+}
+BODY,DIV,TH,TD,P,INPUT,SELECT,TEXTAREA,TT {
+    font-family: Verdana, Arial;
+    COLOR: #444444;
+    FONT-SIZE: 10px;
+}
+
+body, #page-container{
+    background: none;
+}
+
+table.header th {
+    background-color: #cccccc;
+    font-weight: bold;
+    line-height: 18px;
+    white-space: nowrap;
+    height: 22px;
+    text-align: center;
+}
+tr.cycle {
+    background-color: #e8e8e8;
+}
+tr.cycle #nobg {
+    background-color: #ffffff;
+}
+
+#header_container, .bottom_links, #footer_container, .back_to_category {
+    display: none;
+}
+
+#main_area {
+    background: none transparent;
+    padding: 0;
+}
+
+.options, .wl_not_found, .product .buttons {
+    box-shadow: none;
+}
+
+#product-image-anchor {
+    padding: 10px;
+}
+
+/* 
+document classes
+*/
+.doc_layout_top {
+    height: 364px;
+}
+.doc_layout_middle {
+    height: 200px;
+}
+.doc_layout_bottom {
+    height: 100px;
+}
+
+.doc_layout_top,
+.doc_layout_middle,
+.doc_layout_bottom {
+    width: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.doc_layout_top #doc_title {
+    border-bottom: 1px solid black;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+}
+.doc_layout_top #doc_bank {
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: right;
+}
+
+.doc_layout_top #dc_line_company {
+    font-weight: bold;
+}
+.doc_layout_top #dc_line_vat {
+    border-bottom: 1px solid black;
+}
+
+.doc_bank_info #db_line_bank,
+.doc_warehouse #dw_line_company {
+    font-weight: bold;
+}
+
+.doc_layout_top label,
+.doc_layout_middle label,
+.doc_layout_bottom label {
+    font-weight: bold;
+}
+
+.doc_shipping_address #dsa_address_title,
+.doc_billing_address #dba_address_title {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.doc_reference {
+    text-align: right;
+    font-weight: bold;
+    width: 100%;
+}
+
+.doc_products_title {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.doc_products {
+    border-collapse: collapse;
+    border: 1px solid #DDDDDD;
+}
+.doc_products th {
+    background-color: #cccccc;
+    border: 1px solid #DDDDDD;
+    white-space : nowrap;
+}
+.doc_products td {
+    border: 1px solid #DDDDDD;
+    white-space : nowrap;
+    font-size: 11px;
+}
+
+/*
+barcode addon
+*/
+.barcode_border {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+
+.admin_content .tab_general_content {
+  min-height: 100px!important;
+}
+
+.order_block + .order_block, .admin_all {
+  page-break-before: always;
+}
+
+#doc_title {
+  margin-top: 20px;
+}
+
+
+
+.doc_products td, .doc_products th {
+  padding: 5px;
+  text-align: left;
+}
+
+.order_adress label {
+  padding-right: 4px;
+}
+
+.order_adress .address_label_address2 label {
+  padding: 0;
+}
+
+.doc_layout_top, .doc_layout_middle, .doc_layout_bottom {
+  max-width: 700px!important;
+}
+
+}
