@@ -1371,15 +1371,15 @@ function cw_core_copy_tables($table, $key_field, $product_id, $new_product_id) {
         foreach ($row as $k=>$v) {
             if (is_numeric($k)) continue;
 
-            if ($k==$key_field || !eregi("auto_increment",$fields[$k]))
+            if ($k==$key_field || strpos($fields[$k], "auto_increment")===false)
                 $str .= "$k,";
         }
 
-        $str = ereg_replace(",$", ") VALUES (", $str);
+        $str = preg_replace("/,$/", ") VALUES (", $str);
         foreach ($row as $k=>$v) {
             if (is_numeric($k)) continue;
 
-            if ($k==$key_field || !eregi("auto_increment",$fields[$k])) {
+            if ($k==$key_field || strpos($fields[$k], "auto_increment")===false) {
                 if ($k == $key_field) {
                     if (is_numeric($new_product_id))
                         $str .= "$new_product_id,";
