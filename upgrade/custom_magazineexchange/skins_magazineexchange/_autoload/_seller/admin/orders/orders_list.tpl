@@ -104,8 +104,8 @@ var txt_delete_selected_orders_warning = "{$lng.txt_delete_selected_orders_warni
 	{/if}
 	<td class="font-w400" align="middle">
 
-{$order.customer_id|user_title}
-<!--                {$order.customer_id|user_title:$order.usertype:$order.doc_id} -->
+<!-- {$order.customer_id|user_title} -->
+     {$order.customer_id|user_title:'default format':$order.doc_id}
     </td>
 {*
 {if $usertype eq 'A'}

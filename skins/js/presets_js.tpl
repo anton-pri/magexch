@@ -8,12 +8,7 @@ var images_dir = "{$ImagesDir}";
 var skin_dir = "{$SkinDir}";
 var alt_images_dir = "{$AltImagesDir}";
 var lbl_no_items_have_been_selected = '{$lng.lbl_no_items_have_been_selected|escape:javascript}';
-var current_area = '{$current_area}';
-var current_target = '{$current_target}';
-var current_location = "{$catalogs.$app_area}";
 var currency = "{$config.General.currency_symbol}";
-var usertype = "{$usertype}";
-var customer_id = parseInt("{$customer_id}");
 var lbl_field_is_required = "{$lng.lbl_field_is_required}";
 var is_checkout = 0;
 
@@ -23,4 +18,13 @@ var send_to_friend_dialog_width = 720;
 var send_to_friend_dialog_height = 600;
 var send_to_friend_dialog_title = "{$lng.lbl_send_to_friend_dialog_title|escape:javascript}";
 var webmaster_status = '{$webmaster_status}';
+</script>
+
+<script type="text/javascript">
+/*pagespeed_no_defer*/
+var current_area = '{$current_area}';
+var current_target = '{$current_target}';
+var current_location = "{$catalogs.$app_area}";
+var usertype = "{$usertype}";
+var customer_id = parseInt("{$customer_id}");
 </script>

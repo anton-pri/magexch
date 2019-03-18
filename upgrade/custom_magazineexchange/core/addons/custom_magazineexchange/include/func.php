@@ -62,6 +62,9 @@ function magexch_sort_by_month_time_of_year ($params, $return) {
     global $allowed_products_sort_fields;
     $allowed_products_sort_fields[] = 'month_id';
 
+//global $REMOTE_ADDR;
+//if ($REMOTE_ADDR != '87.120.150.77') {
+/*
     $return['query_joins']['month_attr'] = array(
         'tblname' => 'attributes_values',
         'on' => "$tables[products].product_id=month_attr.item_id and month_attr.item_type='P' and month_attr.attribute_id=179",
@@ -98,8 +101,68 @@ function magexch_sort_by_month_time_of_year ($params, $return) {
                                  )
                                )
                              ) as month_id";
+*/
+//}
 
     return new EventReturn($return, $params); 
+
+}
+
+function magexch_on_prepare_search_products($params, &$fields, &$from_tbls, &$query_joins, &$where, &$groupbys, &$having, &$orderbys) {
+    global $current_area, $tables;
+ 
+//global $REMOTE_ADDR;
+//if ($REMOTE_ADDR == '87.120.150.77') {
+
+    if ($params['data']['category_id'] && $current_area == 'C') {
+
+        $query_joins['month_attr'] = array(
+            'tblname' => 'attributes_values',
+            'on' => "$tables[products].product_id=month_attr.item_id and month_attr.item_type='P' and month_attr.attribute_id=179",
+        );
+        $query_joins['cat_sort'] = array(
+            'tblname' => 'products_categories',
+            'on' => "cat_sort.category_id='".$params['data']['category_id']."' and $tables[products].product_id=cat_sort.product_id",
+            'is_inner' => false
+        );
+
+        $fields[] = "IF(LOCATE('january', month_attr.value),1000,
+                             IF(LOCATE('february', month_attr.value),2000,
+                               IF(LOCATE('march', month_attr.value),3000,
+                                 IF(LOCATE('april', month_attr.value),4000,
+                                   IF(LOCATE('may', month_attr.value),5000,
+                                     IF(LOCATE('june', month_attr.value),6000,
+                                       IF(LOCATE('july', month_attr.value),7000,
+                                         IF(LOCATE('august', month_attr.value),8000,
+                                           IF(LOCATE('sept', month_attr.value),9000,
+                                             IF(LOCATE('oct', month_attr.value),10000,
+                                               IF(LOCATE('nov', month_attr.value),11000,
+                                                 IF(LOCATE('december', month_attr.value),12000,
+                                                   IF(LOCATE('winter', month_attr.value)=1,1000,
+                                                     IF(LOCATE('spring', month_attr.value)=1,2000,
+                                                       IF(LOCATE('summer', month_attr.value)=1,3000,
+                                                         IF(LOCATE('autumn', month_attr.value)=1,4000,0)
+                                                         )
+                                                       )
+                                                     ) 
+                                                   )
+                                                 ) 
+                                               )
+                                             )
+                                           ) 
+                                         )   
+                                       ) 
+                                     )
+                                   )
+                                 )
+                               )
+                             ) + COALESCE(cat_sort.orderby, 0) as month_id";
+
+
+    } else {
+       $orderbys = array_filter($orderbys, function($v) {return (strpos($v, 'month_id')===false);});
+    }
+//}
 
 }
 

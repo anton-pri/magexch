@@ -105,7 +105,7 @@ function mag_product_update_stock($product_id) {
 
     if (!$is_digital) {
 
-        $in_stock = cw_query_first_cell("SELECT SUM(quantity) FROM $tables[magazine_sellers_product_data] WHERE product_id='$product_id' and is_digital=0");
+        $in_stock = cw_query_first_cell("SELECT SUM(quantity) FROM $tables[magazine_sellers_product_data] WHERE product_id='$product_id' and is_digital=0 AND quantity>=0");
         db_query("UPDATE $tables[products_warehouses_amount] 
             SET avail='$in_stock' 
             WHERE product_id='$product_id' AND variant_id=0 AND warehouse_customer_id='0'");

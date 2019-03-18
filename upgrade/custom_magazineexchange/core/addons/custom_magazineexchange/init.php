@@ -53,6 +53,8 @@ if (APP_AREA == 'customer') {
         array('post', 'cw_seller_get_info', 'magexch_seller_get_info')
     );
 
+    cw_event_listen('on_prepare_search_products','magexch_on_prepare_search_products');
+
     cw_addons_set_template(
         array('replace', 'customer/top_menu.tpl', 'customer/empty.tpl'),
         array('replace', 'customer/head.tpl@minicart', 'customer/empty.tpl'),

@@ -1,5 +1,5 @@
 <?php
-
+die('Enable this script');
 //$xcdb = "antonp_magexch.";
 $xcdb = "";
 cw_load('crypt');

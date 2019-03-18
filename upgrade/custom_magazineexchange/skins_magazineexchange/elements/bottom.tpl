@@ -39,7 +39,7 @@
     <ul>
       <li><a href="{$catalogs.customer}/start-selling.html">{$lng.lbl_new_seller_overview}</a></li>
       <li><a href="{$catalogs.customer}/seller-account-registration.html">{$lng.lbl_new_seller_registration}</a></li>
-      <li><a href="{$catalogs.admin}/index.php">{$lng.lbl_existing_seller_login}</a></li>
+      <li><a href="{$catalogs.seller}/index.php">{$lng.lbl_existing_seller_login}</a></li>
             <li><a href="{$catalogs.customer}/contribute-content-introduction.html">{$lng.lbl_contribute_content}</a> </li>
     </ul>
   </div>

@@ -1,6 +1,6 @@
 <?php
 
-//die('Clean off the userdata and orders first, then enable this script');
+die('enable this script');
 
 function cw_magexch_import_logged_query($query, $comment = '') {
     global $cw_fi_preview_mode;

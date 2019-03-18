@@ -62,6 +62,7 @@
 
 	<script type="text/javascript">
 	//<!--
+        /*pagespeed_no_defer*/
 
 	var current_viewer = "{$config.detailed_product_images.dpi_images_viewer|default:'null'}";
 	var defaultProductImgId = 'product_thumbnail';
@@ -78,6 +79,11 @@
 		productImages['{$dpi_image.in_type}_{$dpi_image.image_id}'] = "{$dpi_image.dpi_primage_url}";
 	{/foreach}
     var all_images_count = '{$images|@count}';
+        //-->
+        </script>
+
+        <script type="text/javascript">
+        //<!--
 	{literal}
 	$(document).ready(function() {
 
