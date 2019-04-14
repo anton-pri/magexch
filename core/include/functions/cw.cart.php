@@ -1120,7 +1120,7 @@ function cw_cart_on_build_cart_product_hash($product) {
     $h = array(
         'PID'.$product['product_id'],
         'OPT'.crc32(serialize($product['otptions'])),
-        'W'.$product['warehouse_customer_id'],
+        //'W'.$product['warehouse_customer_id'],
         );
     if (!empty($product['hidden'])) $h[] = 'HID'.crc32(uniqid(rand())); // Hidden must be always separate in cart
     if ($product['free_price']>0) $h[] = 'FREEPRICE'.$product['free_price'];

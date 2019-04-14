@@ -5,7 +5,7 @@ cw_event_listen('on_cron_hourly',   'cw_cron_expand_images');
 cw_event_listen('on_cron_daily',    'cw_cron_invoice_check_params');
 cw_event_listen('on_cron_biweekly', 'cw_cron_optimize_table');
 cw_event_listen('on_cron_monthly',  'cw_cron_doc_delete_temp');
-cw_event_listen('on_cron_monthly',  'cw_cron_logging_archive');
+cw_event_listen('on_cron_weekly',  'cw_cron_logging_archive');
 
 /**
  * Optimize table, try to analyze for InnoDB
@@ -156,7 +156,7 @@ function cw_cron_logging_archive($time) {
 
     $log = array();
 
-    $past = $time - constant('SECONDS_PER_DAY')*30;
+    $past = $time - constant('SECONDS_PER_DAY')*7;
 
     if (!file_exists($var_dirs['logs_archive'])) 
      mkdir($var_dirs['logs_archive']);
@@ -204,8 +204,8 @@ function cw_cron_logging_archive($time) {
     // before deletion double check that we are working in var/log
     if (!empty($var_dirs['log']) && strpos($var_dirs['log'],$app_dir)!==false && strpos($var_dirs['log'],'/var/log')!==false) {
         $arch_log_file_name = 'logs_archive_'.date('Y_m_d_His', $past).'.tgz';
-        $log[] = "Archive and delete log files older than 30 days. File {$var_dirs['log']}/{$arch_log_file_name}";
-        $shell = "cd {$var_dirs['log']} && find . -type f -regextype posix-extended -regex '.*-[0-9]{6}\.php' -mtime +30 -print0 | tar --remove-files -czvf {$var_dirs['log']}/{$arch_log_file_name} --null -T -";
+        $log[] = "Archive and delete log files older than 7 days. File {$var_dirs['log']}/{$arch_log_file_name}";
+        $shell = "cd {$var_dirs['log']} && find . -type f -regextype posix-extended -regex '.*-[0-9]{6}\.php' -mtime +7 -print0 | tar --remove-files -czvf {$var_dirs['log']}/{$arch_log_file_name} --null -T -";
         $log[] = $shell;
         $shell_log = shell_exec($shell);
         shell_exec("cd $app_dir"); // Return back to app root for safity

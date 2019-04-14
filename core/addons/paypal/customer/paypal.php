@@ -1,5 +1,5 @@
 <?php
-    define('PP_STD_DBG', 0);
+    define('PP_STD_DBG', 1);
     
     cw_load('http', 'paypal', 'payment', 'doc');
 
@@ -98,7 +98,7 @@ if ($REQUEST_METHOD == "POST" && isset($request_prepared['payment_type']) && iss
     $https_success = true;
     $https_msg = "";
 
-    if ($config['paypal_solution'] != 'uk') {
+    if ($config['paypal']['paypal_solution'] != 'uk') {
         # do PayPal (IPN) background request...
         $post = array();
         foreach ($_POST as $key => $val)

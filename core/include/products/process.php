@@ -52,7 +52,10 @@ if ($action == 'update' && is_array($posted_data)) {
 }
 
 if ($action == "delete" && AREA_TYPE == 'A') {
-    $products_to_delete = &cw_session_register("products_to_delete");
+    $products_to_delete = &cw_session_register("products_to_delete", array());
+
+    if (!is_array($products_to_delete)) 
+        $products_to_delete = array();
 
     if ($confirmed=="Y") {
         cw_load('product');
