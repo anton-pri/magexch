@@ -5173,6 +5173,10 @@ div.new_message_fields div.field_input input, div.new_message_fields div.field_i
     font-size: 14px;
 }
 
+//#top_message.info {
+//   background-color: #bbb;
+//}
+
 .ja_no_box_title {
     display:none;
 }
