@@ -836,6 +836,8 @@ function cw_products_in_cart($cart, $user_info, $leave_info = false) {
 	if (empty($cart) || empty($cart['products']))
 		return array();
 
+   // cw_call('cw_cart_normalize', array(&$cart));
+
 	return cw_products_from_scratch($cart['products'], $user_info, false, $leave_info);
 }
 

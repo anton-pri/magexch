@@ -630,3 +630,33 @@ function magexch_get_admin_customer_id($config_field) {
 
     return $result;
 }
+
+// use like alt skin
+function magexch_code_get_template_dir($params, $return) {
+        global $target, $app_dir, $tables;
+
+        global $product_id;
+
+        if ($target != 'product' || empty($product_id))
+            return $return; 
+
+        $custom_skin = cw_call('magexch_get_attribute_value', array('P', $product_id, 'magexch_product_skin'));
+
+        if (empty($custom_skin))
+            return $return; 
+
+        //cw_log_add(__FUNCTION__, ['target'=>$target, 'product_id'=>$product_id, 'params'=>$params, 'return'=>$return]);
+
+        $return = (array)$return;
+
+        $data = ['skin' => $custom_skin];
+        $altskin = $data['skin'];
+
+        if (!$altskin) return $return;
+
+        if (!in_array($app_dir . $altskin, $return, true)) {
+                array_unshift($return, $app_dir . $altskin);
+        }
+
+        return $return;
+}

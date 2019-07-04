@@ -16,7 +16,7 @@ $cw_allowed_tunnels[] = 'cw_clean_url_alt_tags';
 cw_include('addons/clean_urls/include/func.clean_urls.php');
 
 cw_addons_set_controllers(
-    array('pre', 'init/abstract.php', 'addons/clean_urls/init/abstract.php')
+    array('pre', 'init/smarty.php', 'addons/clean_urls/init/abstract.php')
 );
 
 cw_event_listen('on_product_delete'	,'cw_clean_url_on_product_delete');

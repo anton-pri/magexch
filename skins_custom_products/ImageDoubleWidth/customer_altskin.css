@@ -832,7 +832,7 @@ a.navDisabled, a.navDisabled:hover {
 
 span.section_tab {
   border: 0px solid #d3d3d3;
-  background: #fff url(images/tab_default_product.png) 50% 50% repeat-x;
+  /*background: #fff url(images/tab_default_product.png) 50% 50% repeat-x;*/
   font-weight: normal;
   color: #000;
   background-size: 100% 38px;
@@ -841,6 +841,9 @@ span.section_tab {
   margin: 0 0 0 -2px;
   top: 2px;
   padding-right: 0;
+  border-radius: 20px 20px 0px 0px;
+  border: black solid 2px;
+  background-color: white;
 }
 
 span.section_tab_selected {
@@ -884,11 +887,11 @@ span.section_tab:first-child, span.section_tab_selected:first-child  {
   padding-left: 0;
   padding-right: 0;
   float: none;
-  line-height: 19px;
+  line-height: 14px;
 }
 
 span.section_tab_selected span {
-  border-bottom: 1px solid #a9a9a9;
+  /*border-bottom: 1px solid #a9a9a9;*/
   padding-bottom: 6px;
 
 }
@@ -1224,7 +1227,7 @@ a.ProductBlue {
 }
 
 .product .image {
-  width: 31%;
+  width: 400px;
   padding: 0;
   position: absolute;
   background: #fff;
@@ -1262,7 +1265,8 @@ a.ProductBlue {
 }
 
 .product .tabs, h1.product_name {
-  width: 69%;
+  width: calc(100% - 400px); 
+  float: right;
   margin-left: 31%;
 }
 
@@ -1281,7 +1285,7 @@ h1.product_name {
 
 #product-image-pos, #product-image-pos1 {
   float: left;
-  width: 31.1%;
+  width: 400px;
   height: 173px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -1290,7 +1294,7 @@ h1.product_name {
 .ProductData {
   padding: 10px 0;
   float: left;
-  width: 43%;
+  width: calc(75% - 400px);
 }
 
 .product_border {
@@ -1543,7 +1547,7 @@ a.send_to_friend {
 
 .product .tabs #tab_2 {
   float: right;
-  width: 329px;
+  /*width: 329px;*/
 }
 
 .product .tabs #tab_2:after {
@@ -2123,7 +2127,8 @@ td.cart_product {
 #dpi-thumbnails-outer {
   position: absolute;
   top: 0;
-  left: 224px;
+  /*left: 224px;*/
+  right: 20px;
   padding: 10px 0;
 }
 

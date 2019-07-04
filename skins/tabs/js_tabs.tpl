@@ -28,5 +28,7 @@
 
 <script type="text/javascript">
     var tabs_images_dir='{$ImagesDir}/tab/';
-    switchOn('tab_{$js_tab}','contents_{$js_tab}', '{$js_tab}', '{$group}');
+    $(document).ready(function(){ldelim}
+        switchOn('tab_{$js_tab}','contents_{$js_tab}', '{$js_tab}', '{$group}');
+    {rdelim});
 </script>

@@ -39,7 +39,8 @@ if (APP_AREA == 'customer') {
         array('replace', 'customer/magexch_seller_feedback.php', 'addons/' . magazineexchange_addon_name . '/customer/seller_feedback.php'), 
         array('post', 'customer/docs_O.php', 'addons/' . magazineexchange_addon_name . '/customer/docs_O.php'),
         array('post', 'customer/index.php', 'addons/' . magazineexchange_addon_name . '/customer/category_custom_fields.php'),
-        array('post', 'addons/mobile/init/mobile.php', 'addons/' . magazineexchange_addon_name . '/customer/mobile.php')
+        array('post', 'addons/mobile/init/mobile.php', 'addons/' . magazineexchange_addon_name . '/customer/mobile.php'),
+        array('post', 'customer/product.php', 'addons/' . magazineexchange_addon_name . '/customer/product.php')
     );
 
     cw_addons_set_hooks(
@@ -51,6 +52,10 @@ if (APP_AREA == 'customer') {
         array('post', 'cw_core_get_html_page_url', 'magexch_get_vendor_html_page_url'),
         array('pre', 'cw_product_search', 'magexch_filter_products_by_vendor'),
         array('post', 'cw_seller_get_info', 'magexch_seller_get_info')
+    );
+
+    cw_addons_set_hooks(
+        array('post', 'cw_code_get_template_dir', 'magexch_code_get_template_dir')
     );
 
     cw_event_listen('on_prepare_search_products','magexch_on_prepare_search_products');
