@@ -44,7 +44,7 @@
         {if $ge_id && !$read_only}<input type="checkbox" value="1" name="fields[features_text]" />{/if}
         {$lng.lbl_features}: 
     </label>
-    <div class="col-xs-12">{include file='main/textarea.tpl' name="product_data[features_text]" data=$product.features_text disabled=$read_only init_mode='exact'}</div>
+    <div class="col-xs-12">{include file='main/textarea.tpl' name="product_data[features_text]" data=$product.features_text disabled=$read_only init_mode='exact' no_wysywig='Y'}</div>
 </div>
 
 <div class="form-group">

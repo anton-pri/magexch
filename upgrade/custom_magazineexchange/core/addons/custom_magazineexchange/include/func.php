@@ -635,17 +635,22 @@ function magexch_get_admin_customer_id($config_field) {
 function magexch_code_get_template_dir($params, $return) {
         global $target, $app_dir, $tables;
 
-        global $product_id;
+        $skin_params = ['product'=>['product_id', 'P', 'magexch_product_skin'], 'index'=>['cat', 'C', 'magexch_index_skin']][$target];
 
-        if ($target != 'product' || empty($product_id))
-            return $return; 
+        if (empty($skin_params)) 
+            return $return;
 
-        $custom_skin = cw_call('magexch_get_attribute_value', array('P', $product_id, 'magexch_product_skin'));
+        $param_name = $skin_params[0];
+
+        global $$param_name;
+
+        if (empty($$param_name))
+            return $return;
+
+        $custom_skin = cw_call('magexch_get_attribute_value', array($skin_params[1], $$param_name, $skin_params[2]));
 
         if (empty($custom_skin))
             return $return; 
-
-        //cw_log_add(__FUNCTION__, ['target'=>$target, 'product_id'=>$product_id, 'params'=>$params, 'return'=>$return]);
 
         $return = (array)$return;
 

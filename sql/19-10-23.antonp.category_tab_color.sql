@@ -1,0 +1,1 @@
+insert into cw_attributes (name, type, field, is_required, active, orderby, addon, item_type, is_show_addon, protection) values ('Tab background color', 'text', 'magexch_category_tab_color', 0, 1, 202, 'custom_magazineexchange', 'C', 1, 15);

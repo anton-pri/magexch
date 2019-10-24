@@ -1,3 +1,26 @@
+{tunnel func='magexch_get_attribute_value' via='cw_call' param1='C' param2=$cat param3='magexch_category_tab_color' assign='magexch_category_tab_color'}
+
+{if $magexch_category_tab_color ne ''}
+<script type="text/javascript">
+var magexch_category_tab_color = '{$magexch_category_tab_color}';
+<!--
+{literal}
+    $(document).ready(function(){
+        $("<style type='text/css'> .magexch_category_tab_color{ background-color:"+magexch_category_tab_color+"!important;} </style>").appendTo("head");
+        $('body').bind('switch_to_tab', custom_color_category_tab);
+    });
+
+    function custom_color_category_tab(event, tab, contents, tab_name) {
+        $('#'+tab).addClass('magexch_category_tab_color');
+        //$("article.product_item.item div.prod_border").addClass('magexch_category_tab_color');
+        $('#contentscell').addClass('magexch_category_tab_color'); 
+    }  
+{/literal}
+-->
+</script>
+{/if}
+
+
 {if $vendorid}
 {assign var='tab2content' value=$category_magexch_attributes.magexch_category_tab_content_2}
 {else}
@@ -34,7 +57,7 @@
     <div clss="clear"></div>
   {elseif $products}
   {tunnel func='cw_category_get' assign='parent_category' cat=$current_category.parent_id}
-  <div style="padding: 0 7px 10px 7px; font-size: 12px;">{$lng.lbl_click_cover_images}</div>
+  <div style="padding: 0 7px 10px 7px; font-size: 12px;">{include file="customer/products/category_tabs_top_text.tpl"}</div>
 
     <div class="sub_box">
 
