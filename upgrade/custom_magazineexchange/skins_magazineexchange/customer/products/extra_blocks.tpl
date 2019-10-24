@@ -5,7 +5,7 @@
       </div>
       <div class="subtitle">{$product.fulldescr}
       </div>
-      <div class="footerLink">{cms service_code="add_comments_improve_description" preload_popup="Y" page_link_override="Add Coments / Improve Description"}</div>
+      <div class="footerLink">{cms service_code="add_comments_improve_description" preload_popup="Y" page_link_override="Add Comments / Improve Description"}</div>
 
     </div>
 
@@ -71,13 +71,6 @@ var send_to_friend_dialog_height = 260;
        {cms service_code='product_context' }
        {*<a class="ProductBlue" href="">{$lng.lbl_advertise_your_business}</a>*}
        <div class="ProductBlue">{cms service_code='advertising_guide_intro'}</div>
-      </div>
-      <div class="product_det_content auto_height border_bottom" style="border: none;">
-        <u>{$lng.lbl_buy_sell_collections}:</u><br />
-         {cms service_code='product_classifieds'}
-         <div class="ProductBlue">{cms service_code='classifieds'}</div> 
-        {*<a class="ProductBlue" href="">{$lng.lbl_visit_classifieds_section}</a>*}
-       
       </div>
     </div>
 </div>

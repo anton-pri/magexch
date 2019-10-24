@@ -17,8 +17,8 @@
       <a href="{pages_url var='index' cat=$c.category_id}">{$c.category}</a>
     </li>
   {/foreach}
-{if !$vendorid}
-      <li class="classifieds"><a href="Classifieds.html">{$lng.lbl_classifieds}</a></li>
+<!--{if !$vendorid}
+      <li class="classifieds"><a href="Classifieds.html">{$lng.lbl_classifieds}</a></li>-->
 {/if}
 
   </ul>

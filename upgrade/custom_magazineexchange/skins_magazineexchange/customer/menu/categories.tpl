@@ -23,8 +23,8 @@
           <a href="{pages_url var='index' cat=$c.category_id}">{$c.category}<div class="img"><img src="{$current_magexch_popup_category_image}" alt="" /></div></a>
         </li>
       {/foreach}
-{if !$vendorid}
-      <li class="classifieds"><a href="Classifieds.html">{$lng.lbl_classifieds}</a></li>
+<!--{if !$vendorid}
+      <li class="classifieds"><a href="Classifieds.html">{$lng.lbl_classifieds}</a></li>-->
 {/if}
     </ul>
    {/if}

@@ -47,7 +47,7 @@ title="{$lng.lbl_additional_options}"
 {include file='tabs/sellersearch_tabs.tpl' is_checkboxes=1 name="search_sections" value=$search_prefilled.search_sections}
 </form>
 </div></div><div>
-<div style="margin-left: 500px;"><a href="#"><img src="/images/Need_Help_Selling_Guide.gif" width="123" height="183"></a></div>
+<div style="margin-left: 500px;"><a href="/help-centre-selling-back-issues.html"><img src="/images/Need_Help_Selling_Guide.gif" width="123" height="183"></a></div>
 <div style="clear: both;"></div>
 </div></div>
 

@@ -22,17 +22,7 @@ var magexch_product_tab_color = '{$magexch_product_tab_color}';
 
 {if $magexch_product_single_tab eq 'Y'}
 
-{assign var='current_tab' value=1}
-
-{jstabs name='product_data_customer'}
-default_tab={$current_tab}
-default_template="customer/products/me_prod_tabs.tpl"
-
-[1]
-title="{$lng.lbl_print_edition}"
-
-{/jstabs}
-{include file='tabs/js_tabs.tpl' tab_extra_cls="style='width:100%'" }
+{include file="customer/products/custom_product_tabs_def_single_tab.tpl"}
 
 {else}
 {assign var='current_tab' value=0}

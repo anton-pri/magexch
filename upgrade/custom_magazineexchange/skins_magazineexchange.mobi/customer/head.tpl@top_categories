@@ -4,7 +4,7 @@
 
   <div class="log_in_out">
     {*include file='customer/menu/login.tpl'*}
-    <a href="http://dev.cartworks.com/magazineexchange/index.php?target=help&section=login_customer"><i class="icon-lock"></i></a>
+    <a href="/index.php?target=help&section=login_customer"><i class="icon-lock"></i></a>
   </div>
   <div class="contact_link"><a href="{pages_url var="help" section="contactus"}"><i class="phone_icon"></i><span class="phone_hide">{$lng.lbl_contact_us}</span></a></div>
 

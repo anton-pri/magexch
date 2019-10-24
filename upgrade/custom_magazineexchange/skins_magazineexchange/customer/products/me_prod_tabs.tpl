@@ -72,24 +72,10 @@
 {* start *}
   <div id="product-image-pos1"></div>
   <div class="ProductData">
-  <div class="product_border">
-    <img src="{$AltImagesDir}/marketplace.png" width="137" height="25">
-	{cms service_code="digital_edition_tab"}
-    <div class="learn-more">{cms service_code="digital_editions_pop_up" preload_popup="Y"}</div>
-  </div>
+    {include file="customer/products/dig_edit_buy_or_sell_copies.tpl"}
   </div>
   <div class="ProductInfo">
-    <span class="ProductDef">{$lng.lbl_details_of_magazine}:</span>
-    <ul>
-      <li>{$lng.lbl_number_of_pages}<span style="width: 20px;height: 15px;display:inline-block;float:right;"></span><span class="right">{if ($product.weight ne "0.00" || $variants ne '')}{$magexch_product_NUMBER_PAGES}   {/if}</span></li>
-      <li>{$lng.lbl_shipping_weight_kg}<span style="width: 20px;height: 15px;display:inline-block;float:right;"></span><span class="right">0</span></li>
-      <li>{$lng.lbl_shipping_cost} <span class="right question">{cms service_code="feature_not_activated" preload_popup="Y"}</span></li>
-    </ul>
-    <span class="ProductDef">{$lng.lbl_digital_editions_feedback}:</span> 
-      <ul>
-        <li class="adb_text">{cms service_code='product_banner'}</li> 
-      </ul>
-    <div class="sell_wrapper" style="margin-top: 3px"><a href="/cw/seller/index.php" class="ProductBlue">{$lng.lbl_sell_this_item}</a><span class="right question">{cms service_code="sell_popup" preload_popup="Y"}</span></div>
+    {include file="customer/products/dig_edit_details_of_magazine.tpl"}
   </div>
 
   <div class="clear"></div>

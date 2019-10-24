@@ -1,5 +1,5 @@
 
- {cms service_code="process_order"} 
+
 <div class="block-content block-content-narrow push-50">
 
 <div style="background-color: #FCCB05;
@@ -117,7 +117,6 @@
 
 <h3 style="color:black;">Order Has Been Despatched</h3>
 
-{* NOTE TO CARTWORKS: LINE BELOW TO BE MADE DYNAMIC SO THAT DATE ORDER WAS MARKED AS DESPATCHED IS DISPLAYED *}
 <h8 style="font-size:9pt; font-weight:300; color:red;">Date Posted: <b>{$doc.status_change|date_format:"%d-%m-%y"}</b></h8>
 
 <br><br>
@@ -334,17 +333,17 @@ details_fields_labels["{$dfield|escape:javascript}"] = "{$dlabel|escape:javascri
 
 <div style="float:left;">
 <div style="width:450px; margin-left: 75px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="http://form.jotformpro.com/form/62737334950965?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:352px; border:none;" scrolling="no">
+<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62737334950965?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:352px; border:none;" scrolling="no">
 </iframe>
 <hr style="border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 </div>
 <div style="width:450px; margin-left: 75px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="http://form.jotformpro.com/form/62778022935967?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:327px; border:none;" scrolling="no">
+<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62778022935967?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:327px; border:none;" scrolling="no">
 </iframe>
 <hr style="border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 </div>
 <div style="width:350px; margin-left: 125px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="http://form.jotformpro.com/form/62804053507956?orderNumber={$doc.display_id}" frameborder="0" style="width:350px; height:384px; border:none;" scrolling="no">
+<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62804053507956?orderNumber={$doc.display_id}" frameborder="0" style="width:350px; height:384px; border:none;" scrolling="no">
 </iframe>
 </div>
 
