@@ -1,0 +1,1 @@
+insert into cw_attributes (name, type, field, is_required, active, orderby, addon, item_type, is_show_addon, protection) values ('Custom Product Type', 'text', 'magexch_product_tab_title1', 0, 1, 204, 'custom_magazineexchange', 'P', 1, 15);
