@@ -635,7 +635,9 @@ function magexch_get_admin_customer_id($config_field) {
 function magexch_code_get_template_dir($params, $return) {
         global $target, $app_dir, $tables;
 
-        $skin_params = ['product'=>['product_id', 'P', 'magexch_product_skin'], 'index'=>['cat', 'C', 'magexch_index_skin']][$target];
+        $mobile_mobile_flag = cw_session_register('mobile_mobile_flag');
+ 
+        $skin_params = ['product'=>['product_id', 'P', 'magexch_product_skin'], 'index'=>['cat', 'C', 'magexch_index_skin', true]][$target];
 
         if (empty($skin_params)) 
             return $return;
@@ -651,6 +653,16 @@ function magexch_code_get_template_dir($params, $return) {
 
         if (empty($custom_skin))
             return $return; 
+
+        if ($mobile_mobile_flag == 'on') { 
+            if ($skin_params[3]) {
+                $mobi_custom_skin = $custom_skin.'.mobi';
+                if (file_exists($app_dir . $mobi_custom_skin))
+                    $custom_skin = $mobi_custom_skin;
+            } else {
+                return $return;
+            }
+        }
 
         $return = (array)$return;
 

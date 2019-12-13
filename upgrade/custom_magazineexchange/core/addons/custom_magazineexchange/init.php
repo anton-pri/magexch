@@ -55,7 +55,7 @@ if (APP_AREA == 'customer') {
     );
 
     cw_addons_set_hooks(
-        array('post', 'cw_code_get_template_dir', 'magexch_code_get_template_dir')
+        array('post', /*'cw_code_get_template_dir'*/ 'cw_mobile_code_get_template_dir', 'magexch_code_get_template_dir')
     );
 
     cw_event_listen('on_prepare_search_products','magexch_on_prepare_search_products');

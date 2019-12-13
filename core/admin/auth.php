@@ -22,7 +22,7 @@ cw_set_hook('cw_auth_security', 'cw_auth_updates', EVENT_PRE);
 
 cw_call('cw_auth_security');
 
-cw_event_listen('on_login','cw_license_check');
+//cw_event_listen('on_login','cw_license_check');
 cw_event_listen('on_login','cw_on_login_crontab');
 
 //logging code
