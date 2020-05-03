@@ -804,6 +804,8 @@ function cw_attribute_get_value($attribute_id, $item_id, $language=null) {
     $language = $language?$language:(!empty($current_language) ? $current_language : $config['default_customer_language']);
     
     $attribute = $cw_attributes['all'][$attribute_id];
+    $item_id = intval($item_id);
+    $attribute_id = intval($attribute_id);	
     $value = cw_query_first_cell("SELECT value FROM $tables[attributes_values] WHERE item_id='$item_id' AND attribute_id='$attribute_id' AND code IN ('$language','')");
     if (in_array($attribute['type'], array('selectbox','multi-selectbox'))) {
         // replace reference to value ID by real value
