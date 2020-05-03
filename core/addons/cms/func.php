@@ -61,6 +61,14 @@ function cw_ab_get_cms_categories($contentsection_id = 0) {
 
 }
 
+function cw_ab_get_cms_categories_ex($contentsection_id = 0) {
+
+	$categories = cw_ab_get_cms_restrictions($contentsection_id,'CX','category_id');
+	return array_column($categories,'category_id');
+
+}
+
+
 function cw_ab_get_cms_products($contentsection_id = 0) {
 
 	return cw_ab_get_cms_restrictions($contentsection_id,'P','id');

@@ -182,6 +182,23 @@ function manageTypeField(type) {
     </div>
 
     <div class="form-group">
+    	<label class="col-xs-12">{$lng.lbl_cs_restrict_from_categories|default:'Restrict from Categories'}:</label>
+    	<div class="col-xs-12">
+{if $config.cms.cms_use_multiselect eq 'Y'}
+    {include 
+      file='admin/select/category_multi.tpl' 
+      name='content_section_categories_ex[]' 
+      id='content_section_categories_ex' 
+      value=$categories_ex 
+      title=$lng.lbl_cs_restrict_from_categories|default:'Restrict from Categories'
+    }
+{else}
+    {include file='admin/select/category.tpl' name='content_section_categories_ex[]' value=$categories_ex multiple=1}
+{/if}
+        </div>
+    </div>
+
+    <div class="form-group">
     	<label class="col-xs-12">{$lng.lbl_cs_restrict_to_products}:</label>
        <div class="adcontentsection_prod col-xs-12">
         {include file="addons/cms/products_selector.tpl"}

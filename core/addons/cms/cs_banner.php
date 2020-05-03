@@ -109,6 +109,19 @@ if ($REQUEST_METHOD == 'POST') {
             cw_array2insert('cms_restrictions', $data, true);
           }
         }
+
+        if (!empty($content_section_categories_ex) && is_array($content_section_categories_ex) && !empty($contentsection_id)) {
+          foreach ($content_section_categories_ex as $category_id) {
+            if (intval($category_id)==0) continue;
+            $data = array(
+              'contentsection_id'   => $contentsection_id,
+              'object_type' => 'CX',
+              'object_id' => intval($category_id)
+            );
+            cw_array2insert('cms_restrictions', $data, true);
+          }
+        }
+
         if (!empty($content_section_products) && !empty($content_section_products)) {
           $content_section_products = array_unique($content_section_products,SORT_NUMERIC);
           foreach ($content_section_products as $cms_product) {
@@ -212,6 +225,7 @@ if ($REQUEST_METHOD == 'POST') {
 }
 
 $categories    = cw_ab_get_cms_categories($contentsection_id);
+$categories_ex    = cw_ab_get_cms_categories_ex($contentsection_id);
 $products      = cw_ab_get_cms_products($contentsection_id);
 $manufacturers = cw_ab_get_cms_manufacturers($contentsection_id);
 $clean_urls    = cw_ab_get_cms_clean_urls($contentsection_id);
@@ -254,6 +268,7 @@ $smarty->assign('skins', $skins);
 $smarty->assign('attributes', $attributes);
 $smarty->assign('clean_urls', $clean_urls);
 $smarty->assign('categories', $categories);
+$smarty->assign('categories_ex', $categories_ex);
 $smarty->assign('products', $products);
 $smarty->assign('manufacturers', $manufacturers);
 $smarty->assign('restricted_attributes', $restricted_attributes);
