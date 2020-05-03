@@ -31,13 +31,16 @@ function on_cms_check_restrictions_C($data) {
 	
 	if (isset($cat)) {
 		$allowed_categoryids = cw_ab_get_cms_categories($data['contentsection_id']);
+		$excluded_categoryids = cw_ab_get_cms_categories_ex($data['contentsection_id']);
 		if (!empty($allowed_categoryids) && is_array($allowed_categoryids)) {
 
-			$excluded_categoryids = cw_ab_get_cms_categories_ex($data['contentsection_id']);
 			if (!empty($excluded_categoryids) && is_array($excluded_categoryids))
 				$allowed_categoryids = array_diff($allowed_categoryids, $excluded_categoryids);
 
 			if (!in_array(intval($cat), $allowed_categoryids)) return false;
+		} elseif (!empty($excluded_categoryids) && is_array($excluded_categoryids)) {
+			
+			if (in_array(intval($cat), $excluded_categoryids)) return false;
 		}
 	}
 	return true;
