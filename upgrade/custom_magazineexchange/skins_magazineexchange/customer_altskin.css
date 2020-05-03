@@ -844,7 +844,7 @@ span.section_tab {
 }
 
 span.section_tab_selected {
-  /*background: url(images/tab_selected_product.png) left top no-repeat;*/
+  background: url(images/tab_selected_product.png) left top no-repeat;
   background-size: 100% 38px;
   border: none;
   height: 38px;
@@ -852,9 +852,6 @@ span.section_tab_selected {
   margin:  0 0 0 -2px;
   top: 2px;
   padding-right: 0;
-  border-radius: 20px 20px 0px 0px;
-  border: black solid 2px;
-  background-color: #fecc06;
 }
 
 span.section_tab:first-child, span.section_tab_selected:first-child  {
@@ -1489,6 +1486,7 @@ a.button.small {
   font-weight: 700;
 }
 
+
 .ProductDetLinks {
   border: 1px solid #000;
   margin-bottom: 18px;
@@ -1974,19 +1972,6 @@ a.button.simple:hover {
   border: none;
 }
 
-#apply_address .button-right {
-  background: url(images/continue_mgex.png) center center no-repeat;
-  padding: 0;
-  border: none;
-  height: 31px;
-}
-#apply_address .button-left {
-  text-indent: -999px;
-  width: 192px;
-  height: 31px;
-  overflow: hidden;
-}
-
 .SellerName {
   color: #1800ff;
   font-size: 13px;
@@ -2002,31 +1987,6 @@ a.button.simple:hover {
 
 .continue_button, .checkout_button {
   height: 30px;
-}
-
-label[for=pm45] {
-    background: url(images/Credit_Debit_Payment.jpg) right center no-repeat;
-    height: 75px;
-    width: 370px;
-    line-height: 75px;
-    padding-left: 3px;
-}
-
-label[for=pm33] {
-    background: url(images/PayPal_Payment.jpg) right center no-repeat;
-    height: 85px;
-    width: 370px;
-    line-height: 85px;
-    padding-left: 3px;
-}
-
-.payment_list td.title {
-    width: 400px;
-}
-
-div.input_field_easy_0 label.checkout_login {
-    text-align: right;
-    line-height: 24px;
 }
 
 .cart_top_buttons {
@@ -4172,6 +4132,14 @@ div.ab_container.ab_container_code_new_category_body {
     margin-bottom: 15px;
 }
 
+.cat_plan_box {
+    font-size: 20px;
+    font-family: Arial; Acherus Grotesque, Trebuchet MS,Helvetica,sans-serif;
+    font-weight: bold;
+padding-top: 10px;
+    text-align: center;
+   }
+
 .cat_icon_text {
     font-size: 9px;
     line-height: 16px;
@@ -5172,13 +5140,9 @@ div.new_message_fields div.field_input input, div.new_message_fields div.field_i
 
 #top_message_content {
     font-weight: bold;
-    color: darkred;
+    color: #FDCD0D;
     font-size: 14px;
 }
-
-//#top_message.info {
-//   background-color: #bbb;
-//}
 
 .ja_no_box_title {
     display:none;
@@ -5275,6 +5239,23 @@ div.vendor_head_short_desc {
     margin-bottom: 20px;
 }
 
-div.products_top>div.nav_line {
-    display: none;
+.covid, .covid a {
+  color: red;
+display: table;
+margin: 0 auto;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 34px;
+ font-family: Acherus Grotesque, Trebuchet MS,Helvetica,sans-serif;
+text-align: center;
+margin-bottom: 15px;
+   }
+
+.covid a:hover {
+  text-decoration: underline;
+}
+
+.footerLink, .footerLink a {
+  color: #2002fe;
+  font-weight: 700;
 }

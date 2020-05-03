@@ -3,7 +3,7 @@
 <head>
 <title>{tunnel func='cw_core_get_meta' via='cw_call' param1='title'}</title>
 {include file='customer/js_insert_codes.tpl'}
-
+<script data-ad-client="ca-pub-9685314840757931" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {include file='elements/meta.tpl'}
 
 {include file='customer/service_css.tpl'}

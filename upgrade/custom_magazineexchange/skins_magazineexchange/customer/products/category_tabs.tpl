@@ -49,7 +49,11 @@ var magexch_category_tab_color = '{$magexch_category_tab_color}';
 
     <div class="years_column">
                      <div style="padding: 0px 20px 0px 30px">
-						{cms service_code='years_list'}<br>
+						{cms service_code='years_list'}
+
+
+
+<br>
 			<a class="ProductBlue" href="/advertising-guide-intro.html">Advertise your business</a></div>
                      
                      

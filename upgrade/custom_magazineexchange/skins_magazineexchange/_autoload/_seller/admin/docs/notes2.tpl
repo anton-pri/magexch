@@ -1,5 +1,5 @@
 
-
+ {cms service_code="process_order"} 
 <div class="block-content block-content-narrow push-50">
 
 <div style="background-color: #FCCB05;
@@ -117,6 +117,7 @@
 
 <h3 style="color:black;">Order Has Been Despatched</h3>
 
+{* NOTE TO CARTWORKS: LINE BELOW TO BE MADE DYNAMIC SO THAT DATE ORDER WAS MARKED AS DESPATCHED IS DISPLAYED *}
 <h8 style="font-size:9pt; font-weight:300; color:red;">Date Posted: <b>{$doc.status_change|date_format:"%d-%m-%y"}</b></h8>
 
 <br><br>
@@ -138,7 +139,7 @@
 
 
 
-<div style="float:right;"><a href="{$catalogs.customer}/help-centre-selling-back-issues.html"><img src="/cw/images/Need_Help_Selling_Guide.gif" width="123" height="183"></a></div>
+<div style="float:right;"><a href="{$catalogs.customer}/help-centre-selling-back-issues.html"><img src="{$AltImagesDir}/admin/Need_Help_Selling_Guide.gif" width="123" height="183"></a></div>
 
 
 
@@ -325,7 +326,7 @@ details_fields_labels["{$dfield|escape:javascript}"] = "{$dlabel|escape:javascri
 
  <div class="adminnotes">{$lng.lbl_notes_process_order_2}</div>
 
-<div style="background-color: white; padding: 20px 20px 1px; max-width: 100%; height:1200px; overflow-x: visible;">
+<div style="background-color: white; padding: 20px 20px 1px; max-width: 100%; height:1600px; overflow-x: visible;">
 
 
 
@@ -333,25 +334,23 @@ details_fields_labels["{$dfield|escape:javascript}"] = "{$dlabel|escape:javascri
 
 <div style="float:left;">
 <div style="width:450px; margin-left: 75px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62737334950965?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:352px; border:none;" scrolling="no">
-</iframe>
+<script type="text/javascript" src="https://form.jotform.com/jsform/62737334950965"></script>
 <hr style="border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 </div>
 <div style="width:450px; margin-left: 75px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62778022935967?orderNumber={$doc.display_id}" frameborder="0" style="width:450px; height:327px; border:none;" scrolling="no">
-</iframe>
+<script type="text/javascript" src="https://form.jotform.com/jsform/62778022935967"></script>
 <hr style="border: 0; height: 1px; background: #333; background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 </div>
 <div style="width:350px; margin-left: 125px; margin-right: auto;" class="block block-themed animated fadeIn">
-<iframe allowtransparency="true" src="https://form.jotformpro.com/form/62804053507956?orderNumber={$doc.display_id}" frameborder="0" style="width:350px; height:384px; border:none;" scrolling="no">
-</iframe>
+<script type="text/javascript" src="https://form.jotform.com/jsform/62804053507956"></script>
 </div>
 
 
+
 </div>
 
 
-<div style="float:right; vertical-align: top;"><img src="/cw/images/Cant_complete_order.gif" width="123" height="315"></div>
+<div style="float:right; vertical-align: top;"><img src="{$AltImagesDir}/admin/Cant_complete_order.gif" width="123" height="315"></div>
 
 
 

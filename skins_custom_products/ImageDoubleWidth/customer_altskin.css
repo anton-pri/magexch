@@ -1493,6 +1493,19 @@ a.button.small {
   font-weight: 700;
 }
 
+.PopupLink {
+  min-height: 30px;
+  border-top: 1px solid #000;
+border-bottom: 1px solid #000;
+  text-align: center;
+padding: 4px;
+}
+
+.PopupLink, .PopupLink a {
+  color: #2002fe;
+  font-weight: 700;
+}
+
 .ProductDetLinks {
   border: 1px solid #000;
   margin-bottom: 18px;
