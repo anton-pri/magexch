@@ -568,3 +568,10 @@ padding: 0 0 20px 0;
     font-size: 16px;
     font-weight: bold;
 }
+
+.my_shopfront_note {
+  color: black;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-top: 10px;
+}
