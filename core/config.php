@@ -66,6 +66,7 @@ $tables = array (
     'memberships' => 'cw_memberships',
     'memberships_lng' => 'cw_memberships_lng',
     'access_levels' => 'cw_access_levels',
+    'memberships_categories_edit_allowed' => 'cw_memberships_categories_edit_allowed',
 
 # user fields/sections
     'register_fields_sections' => 'cw_register_fields_sections',

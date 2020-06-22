@@ -12,7 +12,7 @@
 	<th >{$lng.lbl_active}</th>
 	<th >{$lng.lbl_orderby}</th>
 	<th nowrap="nowrap" align="center">{$lng.lbl_assigned_users}</th>
-    {if $type eq 'C' || $type eq 'R'}
+    {if $type eq 'C' || $type eq 'R' || $type eq 'V'}
     <th  width="10">{$lng.lbl_settings}</th>
     {/if}
     {if $type eq 'B'}<th>{$lng.lbl_register}</th>{/if}
@@ -45,7 +45,7 @@
     <td colspan="3">{$lng.lbl_retail}</td>
 {/if}
 	<td align="center">{$v.users|default:$lng.txt_not_available}</td>
-    {if $type eq 'C' || $type eq 'R'}
+    {if $type eq 'C' || $type eq 'R' || $type eq 'V'}
     <td align="center">{include file="main/visiblebox_link.tpl" mark="membership_`$membership_id`" title=""}</td>
     {/if}
     {if $type eq 'B'}
@@ -60,34 +60,67 @@
     </td>
     {/if}
 </tr>
-{if $type eq 'C' || $type eq 'R'}
+{if $type eq 'C' || $type eq 'R' || $type eq 'V'}
 <tr id="membership_{$membership_id}" style="display:none">
     <td colspan="6" style="padding: 0;">
-<table class="table" width="100%">
-<thead>
-<tr>
-    <th class="text-center">{$lng.lbl_default}</th>
-    <th class="text-center">{$lng.lbl_show_summary}</th>
-    <th class="text-center">{$lng.lbl_show_price}</th>
-</tr>
-</thead>
-<tr>
-    <td align="center">
-{if $membership_id}
-        <input type="hidden" name="posted_data[{$membership_id}][default_membership]" value="N" />
-        <input type="checkbox" name="posted_data[{$membership_id}][default_membership]" value="Y"{if $v.default_membership eq 'Y'} checked="checked"{/if} />
-{/if}
-    </td>
-    <td align="center">
-        <input type="hidden" name="posted_data[{$membership_id}][show_summary]" value="N" />
-        <input type="checkbox" name="posted_data[{$membership_id}][show_summary]" value="Y"{if $v.show_summary eq 'Y'} checked="checked"{/if} />
-    </td>
-    <td align="center">
-        <input type="hidden" name="posted_data[{$membership_id}][show_prices]" value="0" />
-        <input type="checkbox" name="posted_data[{$membership_id}][show_prices]" value="1"{if $v.show_prices} checked="checked"{/if} />
-    </td>
-</tr>
-</table>
+        <table class="table" width="100%">
+        {if $type eq 'C' || $type eq 'R'}
+            <thead>
+                <tr>
+                    <th class="text-center">{$lng.lbl_default}</th>
+                    <th class="text-center">{$lng.lbl_show_summary}</th>
+                    <th class="text-center">{$lng.lbl_show_price}</th>
+                </tr>
+            </thead>
+            <tr>
+                <td align="center">
+            {if $membership_id}
+                    <input type="hidden" name="posted_data[{$membership_id}][default_membership]" value="N" />
+                    <input type="checkbox" name="posted_data[{$membership_id}][default_membership]" value="Y"{if $v.default_membership eq 'Y'} checked="checked"{/if} />
+            {/if}
+                </td>
+                <td align="center">
+                    <input type="hidden" name="posted_data[{$membership_id}][show_summary]" value="N" />
+                    <input type="checkbox" name="posted_data[{$membership_id}][show_summary]" value="Y"{if $v.show_summary eq 'Y'} checked="checked"{/if} />
+                </td>
+                <td align="center">
+                    <input type="hidden" name="posted_data[{$membership_id}][show_prices]" value="0" />
+                    <input type="checkbox" name="posted_data[{$membership_id}][show_prices]" value="1"{if $v.show_prices} checked="checked"{/if} />
+                </td>
+            </tr>
+        {elseif $type eq 'V'}    
+        <!--
+            <thead>
+                <th>Restrict products edit to Categories:
+                </th>
+                <th>Restrict products edit from Categories:
+                </th>
+            </thead>
+        -->    
+            <tr>
+                <td width="50%" class="membership_categories">
+                {include 
+                    file='admin/select/category_multi.tpl' 
+                    name="posted_data[`$membership_id`][edit_categories_on][]"
+                    id="edit_categories_on_`$membership_id`" 
+                    value=$v.edit_categories_on 
+                    multiple=1
+                    title="Restrict products edit to Categories"
+                }
+                </td>
+                <td width="50%" class="membership_categories">
+                {include 
+                    file='admin/select/category_multi.tpl' 
+                    name="posted_data[`$membership_id`][edit_categories_off][]"
+                    id="edit_categories_off_`$membership_id`"
+                    value=$v.edit_categories_off 
+                    multiple=1
+                    title="Restrict products edit from Categories"
+                }
+                </td>
+            </tr>
+        {/if}    
+        </table>
     </td>
 </tr>
 {/if}
@@ -109,7 +142,7 @@
     {include file='admin/buttons/button.tpl' href="javascript: cw_submit_form(document.form`$type`);" button_title=$lng.lbl_update style="btn-green push-5-r push-20"}
     {include file='admin/buttons/button.tpl' href="javascript: cw_submit_form(document.form`$type`, 'delete');" button_title=$lng.lbl_delete_selected style="btn-danger push-5-r push-20"}
     {/if}
-    {include file='admin/buttons/button.tpl' href="index.php?target=memberships&mode=add&type=`$type`" button_title=$lng.lbl_add_new style="btn-green push-5-r push-20"}</div>
+    {include file='admin/buttons/button.tpl' href="index.php?target=memberships&mode=add&type=`$type`" button_title=$lng.lbl_add_new_membership|default:'Add new membership' style="btn-green push-5-r push-20"}</div>
 
 </form>
 {/capture} 

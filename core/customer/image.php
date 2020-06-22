@@ -12,7 +12,9 @@ $image_path = '';
 $image_size = 0;
 
 if (isset($_GET['tmp'])) {
-    $file_upload_data = &cw_session_register('file_upload_data', array());
+	$file_upload_data = &cw_session_register('file_upload_data', array());
+	
+	cw_log_add('image_customer', compact('file_upload_data'));
 
     if ($available_images[$type]['multiple'] && is_array($file_upload_data)) {
 

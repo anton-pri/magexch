@@ -1,5 +1,7 @@
 {include_once_src file='main/include_js.tpl' src='main/popup_image_selection.js'}
-{if $idtag eq ''}{assign var='idtag' value="edit_image_`$in_type`"}{/if}
+{if $idtag eq ''}
+    {assign var='idtag' value="edit_image_`$in_type`"}
+{/if}
 
 <div id="{$idtag}">
 {if $image.image_type eq 'application/x-shockwave-flash'}
@@ -14,9 +16,32 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/ flash/swflash.cab#v
 </OBJECT>
 
 {elseif $image.tmbn_url}
-<img src="{$image.tmbn_url}"{if $image.image_x ne 0} width="{$image.image_x}"{/if}{if $image.image_y ne 0} height="{$image.image_y}"{/if} alt="{include file="main/images/property.tpl"}"/>
+<img 
+    src="{$image.tmbn_url}"
+    {if $image.image_x ne 0} width="{$image.image_x}"{/if}
+    {if $image.image_y ne 0} height="{$image.image_y}"{/if} 
+    alt="{include file="main/images/property.tpl"}"
+/>
 {else}
-<img src="{$catalogs.customer}/index.php?target=image&type={$in_type}&tmp=1{if $image.multiple_tmp && $image.id}&imgid={$image.id}&id={$image.id}{/if}"{if $image.image_x ne 0} width="{$image.image_x}"{/if}{if $image.image_y ne 0} height="{$image.image_y}"{/if} alt="{include file="main/images/property.tpl"}"/>
+
+    <script language="javascript">
+        var idtag = "{$idtag}";
+        var in_type = "{$in_type}";
+        var catalogs_customer = "{$catalogs.customer}";
+        {literal}
+            $(document).ready(function() {
+                ajaxGet(catalogs_customer + "/index.php?target=image_tmp&in_type=" + in_type + "&idtag=" + idtag, 'tmp_' + idtag);
+            });
+        {/literal}
+    </script>
+<div id="tmp_{$idtag}">
+<img 
+    src="{$catalogs.customer}/index.php?target=image&type={$in_type}&tmp=1{if $image.multiple_tmp && $image.id}&imgid={$image.id}&id={$image.id}{/if}"
+    {if $image.image_x ne 0} width="{$image.image_x}"{/if}
+    {if $image.image_y ne 0} height="{$image.image_y}"{/if} 
+    alt="{include file="main/images/property.tpl"}"
+/>
+</div>
 {/if}
 </div>
 
@@ -29,3 +54,4 @@ codebase="http://download.macromedia.com/pub/shockwave/cabs/ flash/swflash.cab#v
 {/if}
 </div>
 {/if}
+

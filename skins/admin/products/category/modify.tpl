@@ -168,6 +168,7 @@
 <div class="clear"></div>
 </div>
 </form>
+<!-- cw@category_modify_form_end -->
 {/if}
 {/capture}
 {/capture}

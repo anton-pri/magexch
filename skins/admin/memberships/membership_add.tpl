@@ -35,7 +35,7 @@
 </tr>
 </table>
     <div class="buttons">
-    {include file='admin/buttons/button.tpl' href="javascript: cw_submit_form(document.form`$type`, 'add');" button_title=$lng.lbl_add_new style="btn-green push-20"}</div>
+    {include file='admin/buttons/button.tpl' href="javascript: cw_submit_form(document.form`$type`, 'add');" button_title=$lng.lbl_add_new_membership|default:'Add new membership' style="btn-green push-20"}</div>
 
 </form>
 {/capture} 
