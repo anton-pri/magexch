@@ -6,7 +6,8 @@
 
 .category_path {
     color: blue;
-    text-indent: 120px;
+    /*text-indent: 120px;*/
+    padding-left: 14px;
     margin-top: 16px;
     font-size: 14px;
 }
@@ -58,6 +59,7 @@
 #category_selector {
     width: 810px;
     overflow-x: auto;
+    overflow-y: hidden;
     height: 240px;
 }
 

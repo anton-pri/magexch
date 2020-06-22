@@ -6,7 +6,7 @@ delete from cw_menu where title='lbl_collections_available';
 replace into cw_languages (code, topic, name, value) values ('EN', 'Labels', 'lbl_seller_create_new_product_page', 'Create new product page');
 
 
-delete from cw_bredcrumbs where link like '%index.php?target=seller_add_product';
+delete from cw_breadcrumbs where link like '%index.php?target=seller_add_product';
 update cw_breadcrumbs set title='Edit Product Page' where link='/index.php?target=seller_add_product&product_id=[[ANY]]';
 REPLACE into cw_breadcrumbs (link, title, parent_id, area) values ('/index.php?target=seller_add_product', 'Create New Product Page', 0, 'seller');
 
