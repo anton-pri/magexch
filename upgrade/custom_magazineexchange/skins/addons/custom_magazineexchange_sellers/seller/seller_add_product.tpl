@@ -106,19 +106,27 @@
 
 {capture name=dialog}
   <div style="margin-left: 1%;">
-    <div style="float:left; width:99%;" class="block block-themed animated fadeIn">
+    <div style="margin:0 auto; width: 770px" class="block block-themed animated fadeIn">
       <div class="block-header bg-green">
-        <h3 style="text-align: center;" class="block-title">{$lng.lbl_add_new_product|default:'Add new product'}</h3>
+        <h3 style="text-align: center;" class="block-title">{$lng.lbl_seller_create_new_product_page}</h3>
       </div>
+      <div class="col-sm-12" style="padding:10px 0 10px 15px;">{$lng.lbl_seller_add_product_note}</div>
       <div class="jasellerblock-content">
 
         <div class="block seller_add_product">
 
-            <div class="block-content" style="padding:20px !important">
+            <div class="block-content" style="padding:60px 20px !important">
               <form name="seller_add_product" action="index.php?target=seller_add_product" method="POST">
                 <input type="hidden" name="mode" value="{if $product.product_id}update{else}add{/if}" />
                 <input type="hidden" name="action" value="" />
                 <input type="hidden" name="product_id" value="{$product.product_id}" />
+
+                <div style="float:right; margin-right:4%;">
+                  <a target="_blank" href="#">
+                    <img src="/cw/images/Create_Product_Page_Avatar.png" width="214" alt="" />
+                  </a>
+                </div>
+
 
                 <div class="form-group category-selector required">
                   <label class="col-xs-12" {*style="width:auto; padding-right:0"*}>Product Category&nbsp;</label>{$lng.lbl_seller_add_new_product_note}
@@ -132,6 +140,8 @@
                   </div>
                 </div>
 
+
+
                 <div class="form-group short-input required">
                   <label class="required col-xs-12" {*style="width:auto; padding-right:0"*}>
                     {$lng.lbl_product_full_name|default:'Product Full Name'}
@@ -142,7 +152,7 @@
                   </div>
                 </div>              
 
-                <div class="form-group short-input">
+                <div class="form-group short-input required">
                   <label class="col-xs-12">
                     {$lng.lbl_product_short_name|default:'Product Short Name'}
                   </label>
@@ -225,30 +235,34 @@
 
 
                 <div class="form-buttons">
-                  <span>
+                  
+                    <div>
+                      <div class="product-btn">
                       <input 
                         type="button" 
                         class="btn btn-minw btn-default btn-green push-5-t" 
                         value="{$lng.lbl_preview}" 
                         onclick="javascript: cw_seller_add_product_submit_form('seller_add_product', 'preview');"
-                    />
-                  </span>
-                  <span style="margin-left:20px">
-                    <input 
+                      />
+                      </div>
+                      <span>{$lng.lbl_seller_product_preview_note}</span>
+                    </div>
+
+                    
+                  <br />
+                    <div>
+                      <div class="product-btn">
+                      <input 
                         type="button" 
                         class="btn btn-minw btn-default btn-green push-5-t" 
                         value="{$lng.lbl_publish}" 
                         onclick="javascript: cw_seller_add_product_submit_form('seller_add_product', 'publish');"
-                    />
-                  <!--
-                    <input 
-                        type="button" 
-                        class="btn btn-minw btn-default btn-green push-5-t" 
-                        value="{$lng.lbl_preview}" 
-                        onclick="javascript:var win = window.open('../index.php?target=product&product_id={$product.product_id}', '_blank'); win.focus();"
-                    />
-                  -->  
-                  </span>
+                      />
+                      </div>
+                      <span>{$lng.lbl_seller_product_published_note}</span>
+                    </div>
+
+                    
                 </div>
               </form>
             </div>  

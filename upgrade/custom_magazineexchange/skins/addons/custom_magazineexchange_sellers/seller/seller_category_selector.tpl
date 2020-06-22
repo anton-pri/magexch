@@ -91,7 +91,7 @@
             picked_cat_ids = init_cats;
 
             $('body').css('overflow-y', 'hidden').css('background-color', '#FCCB05');
-            $("div.content").css('padding', 0).addClass('transp');
+            $("div.content").css('padding', 0).css('position', 'fixed').addClass('transp');
             $("div.block").css('margin-bottom', 0).addClass('transp');
             $('#page-container').addClass('transp');
             if (init_cats.length == 0) {

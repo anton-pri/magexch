@@ -38,6 +38,14 @@
     border: silver 1px solid;
 }
 
+.cat_select select option {
+    
+}
+
+.cat_select select option:disabled {
+    color: rgb(219, 219, 219);
+}
+
 #categories_boxes {
     width: max-content;
     height: 235px;
@@ -50,6 +58,7 @@
 #category_selector {
     width: 810px;
     overflow-x: auto;
+    height: 240px;
 }
 
 .category_selector_footer {
@@ -79,7 +88,7 @@
 
 .seller_image {
     position: relative;
-    float: left;
+    float: right;
     height: 150px;
     width: 150px;
     text-align: center;
@@ -126,14 +135,32 @@
 
 .seller_product_images {
     position: relative;
-    height: 160px;
+    height: 170px;
     width: 100%;
     overflow-x: auto;
     margin-left: 14px;
 }
 
+.seller_product_images#seller_product_images_products_detailed_images .images_tmp_container,
+.seller_product_images#seller_product_images_products_detailed_images .images_saved_container {
+    width: 482px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+.seller_product_images#seller_product_images_products_images_det {
+    width: 50%;
+}
+
+
 .seller_img_add {
     float: left;
+    border: 2px dashed silver;
+    height: 164px;
+    background-color: whitesmoke;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .seller_img_add span {
@@ -162,6 +189,10 @@ td#on_internet_add_button.multiple2_plus_button {
     height: 240px;
 }
 
+.seller_add_product .form-group.textarea textarea {
+    width: 645px;
+}
+
 .seller_add_product .form-group.small-input {
     height: 70px;    
 }
@@ -173,6 +204,17 @@ td#on_internet_add_button.multiple2_plus_button {
 .seller_add_product .form-buttons {
     padding-left: 16px;
     padding-top: 20px;
+}
+
+div.product-btn {
+    display:block; 
+    float:left;
+    margin-right:24px;
+}
+
+.seller_add_product .form-buttons span {
+    display: block;
+    padding-top: 6px;
 }
 
 .seller_add_product .lng_tooltip {
