@@ -34,6 +34,7 @@ $cw_allowed_tunnels[] = 'cw\custom_magazineexchange_sellers\mag_check_digital_se
 $cw_allowed_tunnels[] = 'cw\custom_magazineexchange_sellers\mag_get_shopfront';
 $cw_allowed_tunnels[] = 'cw\custom_magazineexchange_sellers\mag_order_owed';
 $cw_allowed_tunnels[] = 'cw_seller_get_info';
+$cw_allowed_tunnels[] = 'cw\custom_magazineexchange_sellers\mag_category_allowed_by_seller_memberships';
 
 // Include functions
 cw_include('addons/'.addon_name.'/include/func.php');
@@ -71,7 +72,11 @@ if (APP_AREA == 'admin') {
     cw_addons_set_template(
         array('post','admin/memberships/membership_edit.tpl', 'addons/'.addon_name.'/admin/memberships/membership_edit.tpl')
     );
-    
+
+    cw_addons_set_template(
+        array('replace', 'admin/products/category/modify.tpl@category_modify_form_end', 'addons/' .addon_name. '/admin/seller_membership_access.tpl') 
+    );
+
     // Promotion pages field on seller profile
     cw_set_controller('admin/user_V.php', 'addons/' . addon_name . '/admin/user_V.php', EVENT_PRE);
     cw_addons_set_template(
@@ -82,6 +87,8 @@ if (APP_AREA == 'admin') {
     cw_addons_set_template(
         array('replace', 'admin/main/magexch_flat_charges.tpl', 'addons/' . addon_name . '/admin/flat_charges.tpl')
     );
+
+    cw_addons_add_css('addons/'.addon_name.'/admin/main.css');
 
 }
 if (APP_AREA == 'customer') {
@@ -134,6 +141,9 @@ if (APP_AREA == 'seller') {
     // Add seller data to products list
     cw_set_controller('include/products/search.php',  'addons/' . addon_name . '/seller/products.php', EVENT_POST);
     cw_set_controller('include/products/process.php', 'addons/' . addon_name . '/seller/products.php', EVENT_PRE);
+    cw_set_controller('seller/seller_add_product.php', 'addons/' . addon_name . '/seller/add_product.php', EVENT_REPLACE);
+    cw_set_controller('seller/seller_category_selector.php', 'addons/' . addon_name . '/seller/category_selector.php', EVENT_REPLACE);
+    cw_set_controller('seller/seller_product_images.php', 'addons/' . addon_name . '/seller/product_images.php', EVENT_REPLACE);
 
     // Seller page request
     cw_set_controller('seller/seller_newpage_req.php',      'addons/' . addon_name . '/seller/seller_external_pages.php', EVENT_REPLACE);
@@ -182,8 +192,17 @@ if (APP_AREA == 'seller') {
 
     cw_event_listen('on_prepare_search_products','cw\\'.addon_name.'\\on_prepare_search_products');
 
+    cw_addons_set_template(
+        array('post', 'admin/products/search_form.tpl@search_in_params', 'addons/'.addon_name.'/products/my_products_search.tpl')
+    );
+   
 }
-
+/*
+cw_addons_set_template(
+    array('replace', 'mail/seller_modified_product_subj.tpl', 'addons/'.addon_name.'/mail/seller/modified_product_subj.tpl'),
+    array('replace', 'mail/seller_modified_product.tpl', 'addons/'.addon_name.'/mail/seller/modified_product.tpl')
+);
+*/
 if (APP_AREA == 'seller' || APP_AREA == 'admin') {
 
     cw_set_hook('cw_check_user_field_username', 'cw\\'.addon_name.'\cw_check_user_field_username', EVENT_REPLACE);

@@ -9,7 +9,7 @@
        
       </div>
       <div class="subtitle">
-{$product.fulldescr}
+        {$product.fulldescr}
       </div>
       <div class="footerLink">{cms service_code="add_comments_improve_description" preload_popup="Y" page_link_override="Add Comments / Improve Description"}</div>
 
@@ -52,13 +52,21 @@ var send_to_friend_dialog_height = 260;
 <div class="width50 right">
     <div class="product_det" style="margin-top: 20px;">
       <div class="product_det_title">
-{tunnel func='magexch_get_attribute_value' via='cw_call' param1='P' param2=$product.product_id param3='magexch_custom_product_type' assign='magexch_custom_product_type'}
+{tunnel 
+  func='magexch_get_attribute_value' via='cw_call' 
+  param1='P' 
+  param2=$product.product_id 
+  param3='magexch_custom_product_type' 
+  assign='magexch_custom_product_type'}
+
 {if $magexch_custom_product_type eq 'Plan'}
 {$lng.lbl_plan_additional_info} {else}{$lng.lbl_article_snippets}{/if}
       
 <span class="right question">{cms service_code="article_snippet" preload_popup="Y"}</span>
       </div>
-      <div class="subtitle">{$product.descr}</div>
+      <div class="subtitle">
+        {$product.descr} 
+      </div>
     </div>
 
     <div class="product_det" style="margin-bottom: 0;">

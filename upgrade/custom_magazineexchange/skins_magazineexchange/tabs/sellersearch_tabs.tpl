@@ -40,6 +40,7 @@
   {foreach from=$js_tabs item=tab key=ct}
   <div class='search_tabs_section' id="{$ct}_section" style="display: none;">
      <!-- <h3 class="block-title push-15">{$tab.title}</h3>-->
+     <!-- {$tab.template}-->
     {include file=$tab.template included_tab=$ct}
   </div>
   {/foreach}

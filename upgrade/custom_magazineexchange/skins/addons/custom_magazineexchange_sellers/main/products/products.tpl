@@ -100,7 +100,8 @@ $(document).ready(function() {
 {if $current_target ne 'digital_products'}
 	<th>{$lng.lbl_in_stock}</th>
 {/if}
-	<th><nobr>{$lng.lbl_price} ({$config.General.currency_symbol})</nobr></th>
+	<th width="100px"><nobr>{$lng.lbl_price} ({$config.General.currency_symbol})</nobr></th>
+    <th width="5%">&nbsp;</th>
 </tr>
 
 {tunnel func='cw_attributes_get' item_type='SP' item_id=0 assign='sp_attributes'}
@@ -109,9 +110,11 @@ $(document).ready(function() {
 <tr{cycle values=', class="cycle"'}>
 	<td>{*<input type="checkbox" name="product_ids[{$product.product_id}]" class="products_item" />*}&nbsp;</td>
     <td>
-    {include file='common/product_image.tpl' product_id=$product.product_id image=$product.image_det id="product_thumbnail_`$product.product_id`" html_width='50'}
+        {include file='common/product_image.tpl' product_id=$product.product_id image=$product.image_det id="product_thumbnail_`$product.product_id`" html_width='50'}
     </td>
-	<td><a href="{$catalogs.customer}/index.php?target=product&product_id={$product.product_id}" target="_blank" class="ProductBlue">{$product.product}</a></td>
+	<td>
+        <a href="{$catalogs.customer}/index.php?target=product&product_id={$product.product_id}" target="_blank" class="ProductBlue">{$product.product}</a>
+    </td>
 {if $current_target ne 'digital_products'}
     <td width="125">
         <select style="width: 100px;" class="form-control" name='posted_data[{$product.product_id}][condition]'>
@@ -135,6 +138,20 @@ $(document).ready(function() {
 	<td width="35" nowrap align="center">
         <input style="width:100%;" type='text' name='posted_data[{$product.product_id}][price]' class="form-control" value='' />
 	</td>
+    <td>
+        {if $product.created_by_current_user}
+            <span>
+                <input 
+                    type="button" 
+                    class="btn btn-minw btn-default btn-green push-5-t" 
+                    value="{$lng.lbl_edit}" 
+                    onclick="javascript:var win = window.open('index.php?target=seller_add_product&product_id={$product.product_id}', '_blank'); win.focus();"
+                />
+            </span>
+        {else}
+        &nbsp;    
+        {/if}
+    </td>
 </tr>
 {if $product.seller_data}
 {foreach from=$product.seller_data item=seller_data}
@@ -166,6 +183,7 @@ $(document).ready(function() {
 	<td width="35" nowrap align="center">
         <input style="width:100%;" class="form-control" type='text' name='seller_data[{$seller_data.seller_item_id}][price]' class='micro' value='{$seller_data.price}' />
 	</td>
+    <td>&nbsp;</td>
 </tr>
 {/foreach}
 {/if}

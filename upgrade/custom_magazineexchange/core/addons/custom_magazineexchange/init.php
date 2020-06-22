@@ -142,6 +142,7 @@ if (APP_AREA == 'customer') {
     cw_addons_set_template(
         array('replace', 'admin/products/category/modify.tpl@category_location_select', 'addons/' . magazineexchange_addon_name . '/admin/extra_parent_categories_select.tpl') 
     );
+
     cw_addons_set_template(
         array('replace', 'elements/favicon.tpl', 'addons/' . magazineexchange_addon_name . '/admin/elements/favicon.tpl')
     );
