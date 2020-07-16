@@ -144,6 +144,7 @@ if (APP_AREA == 'seller') {
     cw_set_controller('seller/seller_add_product.php', 'addons/' . addon_name . '/seller/add_product.php', EVENT_REPLACE);
     cw_set_controller('seller/seller_category_selector.php', 'addons/' . addon_name . '/seller/category_selector.php', EVENT_REPLACE);
     cw_set_controller('seller/seller_product_images.php', 'addons/' . addon_name . '/seller/product_images.php', EVENT_REPLACE);
+    cw_set_controller('seller/seller_add_category.php', 'addons/' . addon_name . '/seller/add_category.php', EVENT_REPLACE);
 
     // Seller page request
     cw_set_controller('seller/seller_newpage_req.php',      'addons/' . addon_name . '/seller/seller_external_pages.php', EVENT_REPLACE);

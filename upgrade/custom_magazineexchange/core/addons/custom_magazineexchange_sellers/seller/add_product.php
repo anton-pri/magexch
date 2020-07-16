@@ -203,6 +203,21 @@ if ($REQUEST_METHOD == "POST") {
             cw_product_update_price($product_id, 0, 0, 0, 1, 1, $product_data['price'], $product_data['list_price']);
         }
 
+        if ($is_new_product) {
+            if ($product_data['quick_listing']['quantity'] || $product_data['quick_listing']['price']) {
+                $data = array(
+                    'product_id'    => intval($product_id),
+                    'seller_id'     => $product_data['supplier'],
+                    'comments'      => cw_strip_tags($product_data['quick_listing']['comments']),
+                    'price'         => floatval($product_data['quick_listing']['price']),
+                    'quantity'      => intval($product_data['quick_listing']['quantity']),
+                    'condition'     => intval($product_data['quick_listing']['condition']),
+                    'is_digital'    => 0
+                );
+                cw_array2insert('magazine_sellers_product_data', $data, true);
+            }
+        }
+
         if ($is_new_product)
             cw_add_top_message(cw_get_langvar_by_name('msg_seller_product_add'));
         else

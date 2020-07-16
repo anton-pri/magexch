@@ -6,9 +6,9 @@
     if ($('#category_dialog').length==0)
       $('body').append('<div id="category_dialog"></div>');
       // Load iframe with category selector into dialog
-      $('#category_dialog').html("<iframe frameborder='no' width='828' height='325' src='index.php?target=seller_category_selector'></iframe>");
+      $('#category_dialog').html("<iframe frameborder='no' width='828' height='415' src='index.php?target=seller_category_selector'></iframe>");
       // Show dialog
-      sm('category_dialog', 840, 365, true, 'Select category');
+      sm('category_dialog', 840, 455, true, 'Select category');
   }
 
   function set_selected_category(a, b) {
@@ -233,6 +233,48 @@
                   </div>  
                 </div>  
 
+                {if !$product.product_id}
+                <div class="form-group listing-form" >
+                  <label class="">
+                    {$lng.lbl_seller_create_sales_listing_simultaneously|default:'Create sales listing simultaneously (Optional)'}
+                  </label>
+                  {$lng.lbl_seller_create_sales_listing_simultaneously_note}
+                  <div class="quick_listing">
+                    <table class="table table-striped dataTable vertical-center" width="100%" id="seller_products_list">
+                      <tr>	
+                        <th>{$lng.lbl_product_search_condition}</th>
+                        <th>{$lng.lbl_comments}</th>
+                        <th>{$lng.lbl_in_stock}</th>
+                        <th width="100px"><nobr>{$lng.lbl_price} ({$config.General.currency_symbol})</nobr></th>
+                      </tr>
+
+                      <tr>
+                        <td width="125">
+                          <select style="width: 100px;" class="form-control" name='product_data[quick_listing][condition]'>
+                            <option value='4' >Select</option>        
+                            <option value='0' >New</option>
+                            <option value='1' >Good</option>
+                            <option value='2' >Fair</option>
+                            <option value='3' >Poor</option>
+                          </select>
+                        </td>
+
+                        <td width="250">
+                          <textarea style="width:100%;" class="form-control" name='product_data[quick_listing][comments]' rows='2' class='free'></textarea>
+                        </td>
+                      
+                        <td width="40">
+                          <input style="width:100%;" type='text'  name='product_data[quick_listing][quantity]' class="form-control" value='' />
+                        </td>
+                      
+                        <td width="35" nowrap align="center">
+                          <input style="width:100%;" type='text' name='product_data[quick_listing][price]' class="form-control" value='' />
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                {/if}
 
                 <div class="form-buttons">
                   

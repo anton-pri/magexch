@@ -144,7 +144,7 @@ $(document).ready(function() {
                 <input 
                     type="button" 
                     class="btn btn-minw btn-default btn-green push-5-t" 
-                    value="{$lng.lbl_edit}" 
+                    value="{$lng.lbl_edit_page}" 
                     onclick="javascript:var win = window.open('index.php?target=seller_add_product&product_id={$product.product_id}', '_blank'); win.focus();"
                 />
             </span>

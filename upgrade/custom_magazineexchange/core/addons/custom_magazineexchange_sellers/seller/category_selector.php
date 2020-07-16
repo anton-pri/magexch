@@ -21,6 +21,7 @@ if (defined('IS_AJAX') && $mode == 'get_subcats') {
     
     foreach ($cat_resp as $cr_k => $cr_val) {
         $cat_resp[$cr_k]['allowed'] = mag_seller_is_category_allowed_for_seller($user_account['membership_id'], $cr_val['category_id'], $access_note);
+        $cat_resp[$cr_k]['category_type'] = cw_call('magexch_get_attribute_value', array('C', $cr_val['category_id'], 'magexch_category_type'));
     }    
 
     define('PREVENT_SESSION_SAVE', true);

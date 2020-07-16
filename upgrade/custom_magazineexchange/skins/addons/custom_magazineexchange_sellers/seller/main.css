@@ -23,7 +23,7 @@
 .category_path span {
     color: black;
     position: relative;
-    bottom: 2px;
+    bottom: 0px;
 }
 
 .cat_select {
@@ -32,11 +32,17 @@
     height: 220px;
     float: left;
     margin-left: 10px;
+    /*min-width: 160px;*/
 }
 
 .cat_select select {
     height: 100%;
+    width: 100%;
     border: silver 1px solid;
+}
+
+.cat_select .buttons {
+    margin-top: 5px;
 }
 
 .cat_select select option {
@@ -60,7 +66,7 @@
     width: 810px;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 240px;
+    height: 330px;
 }
 
 .category_selector_footer {
@@ -234,4 +240,87 @@ div.product-btn {
 .seller_add_product div.textarea>div
  {
     float: none;
+}
+
+.request-category-btn {
+    width: 100%;
+    background-color: #F8740A!important;
+}
+
+.request-category-btn span {
+    color: white;
+    white-space: break-spaces;
+    width: 100%;
+    display: block;
+    max-width: fit-content;
+}
+
+.add-category-btn {
+    width: 100%;
+}
+
+.add-category-btn span {
+    white-space: break-spaces;
+    width: 100%;
+    display: block;
+    max-width: fit-content;
+}
+
+.add-category-btn.btn.disabled {
+    color: rgb(128, 128, 128);
+}
+
+.category_add_footer {
+    float: right;
+}
+
+#category_add {
+    
+}
+
+#category_add .add_note {
+    margin-bottom: 10px;
+    color: #646464;
+    font-size: 16px;
+}
+
+#category_add .master_category {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+#category_add .master_category span {
+    font-weight: bold;
+}
+
+#category_add .add_field {
+
+}
+
+#category_add .add_field input {
+    width: 100%;
+    font-size: 16px;
+    text-indent: 4px;
+}
+
+.category_add_footer .buttons {
+    padding-right: 6px;
+}
+
+.quick_listing {
+    border: #fccb05 12px solid;
+}
+
+.quick_listing .dataTable {
+    margin: 0!important;
+    border-bottom: 0!important;
+}
+
+.form-group.listing-form {
+    padding-left: 16px;
+}
+
+.form-group.listing-form span.lng_tooltip img {
+    position: relative;
+    top: -2px;
 }
