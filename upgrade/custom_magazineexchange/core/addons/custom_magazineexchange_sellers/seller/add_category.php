@@ -10,24 +10,7 @@ if ($REQUEST_METHOD == "POST") {
 $master_category_data = cw_func_call('cw_category_get', array('cat' => $master_category));
 
 if (defined('IS_AJAX') && $mode == 'add_category') {
-    /*
-    $parent_id = isset($parent) ? intval($parent) : 0;
-    $cat_resp = cw_query("SELECT c.*, IFNULL(c_lng.category, c.category) category_name 
-        FROM $tables[categories] c 
-        LEFT JOIN $tables[categories_lng] c_lng ON c.category_id=c_lng.category_id AND c_lng.code='EN'
-        WHERE c.parent_id=$parent_id 
-        HAVING category_name != '' 
-        ORDER BY category_name ASC 
-        LIMIT 1000");
 
-
-    global $user_account;
-    
-    foreach ($cat_resp as $cr_k => $cr_val) {
-        $cat_resp[$cr_k]['allowed'] = mag_seller_is_category_allowed_for_seller($user_account['membership_id'], $cr_val['category_id'], $access_note);
-        $cat_resp[$cr_k]['category_type'] = cw_call('magexch_get_attribute_value', array('C', $cr_val['category_id'], 'magexch_category_type'));
-    }    
-    */
     $cloned_category = [];
     if ($master_category_data) {
 
@@ -46,7 +29,8 @@ if (defined('IS_AJAX') && $mode == 'add_category') {
         cw_array2update('categories', $category_update, "category_id='$cat'", $update_fields);        
         cw_category_update_status($cat, $category_update['status']);
         cw_category_update_path($cat);
-        cw_membership_update('categories', $cat, $category_update['membership_ids'], 'category_id');
+
+        cw_membership_update('categories', $cat, [0 => 0], 'category_id');
 
         $category_lng = array();
         $category_lng['code'] = $edited_language;
