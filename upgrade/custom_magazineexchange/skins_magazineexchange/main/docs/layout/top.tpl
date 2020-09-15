@@ -200,7 +200,15 @@
       </div>
       <div id="dig_line_doc_status">
         <div class="add-l">{$lng.lbl_order_status}:&nbsp;</div>
-<div class="add-r">        {include file="main/select/doc_status.tpl" status=$doc.status mode="static"}</div>
+<div class="add-r">  
+
+  {include file="main/select/doc_status.tpl" status=$doc.status mode="static"}
+
+  {include file="addons/custom_magazineexchange/main/orders/orders_list_payment_attempt_popup.tpl"}
+  {include file="addons/custom_magazineexchange/main/orders/orders_list_payment_attempt_link.tpl"}
+
+</div>
+
       </div>
       {/if}
      <!-- <div id="dig_line_payment">

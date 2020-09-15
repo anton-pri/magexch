@@ -115,7 +115,7 @@ if ($doc_data) {
 }
 $smarty->assign('doc', $doc_data);
 
-if ($current_area == 'C' && $doc_data['userinfo']['customer_id'] != $customer_id)
+if ($current_area == 'C' && !in_array($doc_data['userinfo']['customer_id'], cw_doc_get_linked_customers_list($customer_id)))
     cw_header_location('index.php');
 
 if ($current_area == 'B' && $doc_data['info']['salesman_customer_id'] != $customer_id)

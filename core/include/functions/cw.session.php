@@ -91,7 +91,7 @@ function cw_session_check_var($varname) {
 	return true;
 }
 
-function &cw_session_register($varname, $default = '') {
+function &cw_session_register($varname, $default = null) {
 	global $APP_SESSION_VARS, $APP_SESSION_UNPACKED_VARS;
 	
 	if (empty($varname))

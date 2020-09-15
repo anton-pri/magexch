@@ -725,3 +725,15 @@ padding: 20px;
 .membership_categories .pq-select-button {
   width: 100%!important;
 }
+
+.clone_category {
+  display: block;
+  width: 110px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0!important;
+}
+
+.save_category {
+  margin-top: 20px;
+}

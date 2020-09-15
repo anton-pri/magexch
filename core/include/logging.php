@@ -3,10 +3,45 @@ define ('LOG_PHP_SIGNATURE', '<'.'?php die(); ?'.">\n");
 
 function cw_log_add($label, $message, $add_backtrace=true, $stack_skip=0, $email_addresses=false, $email_only=false) {
 	global $var_dirs;
-	global $PHP_SELF;
-	global $config;
+	global $PHP_SELF, $REMOTE_ADDR;
+	global $config, $APP_SESS_ID;
+
+	static $lock;
+
+	if ($lock > 0) return 0; // prevent recursive call
+
+    $lock = 1; // lock
+
+	static $logs_settings;
+	if (empty($logs_settings) && function_exists('cw_query_hash')) {
+		$logs_settings = cw_query_hash("select * from cw_logs_settings order by log_name asc", 'log_name', 0, 0);
+	}
 
     $label = str_replace('../','',$label);
+ 
+	if (isset($logs_settings[$label])) {
+		if (!$logs_settings[$label]['active']) {
+			$lock = 0;
+			return;
+		}
+
+		if ($logs_settings[$label]['email_notify'] && !empty($config['Email']['eml_logs_emails_addresses']) && $config['Email']['eml_logs_emails_enabled']=='Y') {
+
+			$_extra_addresses_list = array_filter(array_map('trim',explode("\n", $config['Email']['eml_logs_emails_addresses'])));
+			if (!empty($_extra_addresses_list)) {
+				foreach ($_extra_addresses_list as $extra_addr) {
+					$extra_addr = filter_var($extra_addr, FILTER_VALIDATE_EMAIL);
+
+					if ($extra_addr !== false) {
+						if (!isset($logs_settings_email_addresses))
+							$logs_settings_email_addresses = array();
+
+						$logs_settings_email_addresses[] = $extra_addr;
+					}
+				}
+			}
+		}
+	}
 
 	$filename = sprintf("%s/%s-%s.php", $var_dirs['log'], strtolower($label), date('ymd'));
 
@@ -22,10 +57,24 @@ function cw_log_add($label, $message, $add_backtrace=true, $stack_skip=0, $email
 
 	if ($add_backtrace) {
 		$stack = cw_get_backtrace(1+$stack_skip);
-		$backtrace = "Request URI: $uri\nBacktrace:\n".implode("\n", $stack)."\n";
+		$backtrace = "Backtrace:\n".implode("\n", $stack)."\n";
 	}
 	else
 		$backtrace = '';
+
+        if (isset($logs_settings_email_addresses) && !empty($logs_settings_email_addresses)) {
+             $backtrace_hash = date('ymd').';'.md5($backtrace);   
+             if ((strpos($logs_settings[$label]['backtrace_hashes'], $backtrace_hash) === false) || !$logs_settings[$label]['email_notify_once']) {
+                 if (!$email_addresses)
+                     $email_addresses = array();
+
+                 $email_addresses = array_merge($email_addresses, $logs_settings_email_addresses);   
+                 if ($logs_settings[$label]['email_notify_once']) {
+                     $logs_settings[$label]['backtrace_hashes'] .= '|'.$backtrace_hash;
+                     cw_array2update('logs_settings', array('backtrace_hashes'=>$logs_settings[$label]['backtrace_hashes']), "log_name='$label'"); 
+                 } 
+             }
+        }
 
 	if (is_array($message) || is_object($message)) {
 		ob_start();
@@ -38,17 +87,19 @@ function cw_log_add($label, $message, $add_backtrace=true, $stack_skip=0, $email
 
 	$local_time = "";
 	if (!empty($config)) {
-		$local_time = '(local: '.date('d-M-Y H:i:s', cw_core_get_time()).')';
+		$local_time = '(local: '.date('d-M-Y H:i:s ', cw_core_get_time()).microtime(true).')';
 	}
 
 	$message = str_replace("\n", "\n    ", "\n".$message);
 	$message = str_replace("\t", "    ", $message);
 
-	$data = sprintf("[%s] %s %s %s:%s\n%s-------------------------------------------------\n",
+	$data = sprintf("[%s] %s %s %s:%s\nRequest URI: %s\nSESS_ID: %s; IP: %s; CALL_ID: %s\n%s-------------------------------------------------\n",
 		date('d-M-Y H:i:s'),
 		$local_time,
 		$label, $type,
 		$message,
+		$uri,
+                $APP_SESS_ID, $REMOTE_ADDR, constant('CALL_ID'),
 		$backtrace
 	);
 
@@ -72,6 +123,9 @@ function cw_log_add($label, $message, $add_backtrace=true, $stack_skip=0, $email
 				$data);
 		}
 	}
+
+    $lock = 0; // release local lock;
+
 }
 
 function cw_log_flag($flag_key, $label, $message, $add_backtrace=false, $stack_skip=0) {
@@ -100,6 +154,41 @@ function cw_log_flag($flag_key, $label, $message, $add_backtrace=false, $stack_s
 }
 
 function cw_log_list_files($labels = false, $start=false, $end=false) {
+
+        global $registered_logs, $logs_files_summary_size;
+
+        if (empty($registered_logs)) {
+            cw_load('logs');
+            list($logs_settings, $registered_logs, $logs_files_summary_size) = cw_get_logs_files_and_settings();
+        }
+        $result = array();
+
+        foreach ($registered_logs as $log_name => $log_data) {
+            if (empty($log_data['filenames'])) continue;
+
+            if (!empty($labels) && is_array($labels))  
+                if (!in_array($log_name, $labels)) continue;
+
+            foreach ($log_data['filenames'] as $fname) {  
+                if (!file_exists($fname)) continue;
+
+                $mtime = filemtime($fname);   
+                if (intval($start)>0)
+                    if ($mtime < $start) continue;
+
+                if (intval($end)>0)     
+                     if ($mtime > $end) continue; 
+
+                if (!isset($result[$log_name])) 
+                    $result[$log_name] = array();
+
+                $result[$log_name][$mtime] = $fname;     
+
+            }  
+
+        }  
+        return $result;
+/*
 	global $var_dirs;
 
 	$regexp = '!^([a-zA-Z_-]+)-(\d{6})\.php$!S';
@@ -159,6 +248,7 @@ function cw_log_list_files($labels = false, $start=false, $end=false) {
 	}
 
 	return $return;
+*/
 }
 
 function cw_log_get_contents($labels = false, $start=false, $end=false, $html_safe=false, $count=0) {
@@ -177,7 +267,12 @@ function cw_log_get_contents($labels = false, $start=false, $end=false, $html_sa
 		$contents = "";
 		$records = array();
 		foreach ($data as $ts=>$file) {
-			$fp = @fopen($var_dirs['log'].'/'.$file, "rb");
+
+                        $_fname = $file;
+                        if (!file_exists($_fname))
+                            $_fname = $var_dirs['log'].'/'.$file; 
+
+			$fp = @fopen($_fname, "rb");
 			if ($fp !== false) {
 				fseek($fp, strlen(LOG_PHP_SIGNATURE), SEEK_SET);
 				$buffer = '';
@@ -244,7 +339,11 @@ function cw_log_count_messages($labels=false, $start=false, $end=false) {
 
 		foreach ($list as $timestamp=>$file) {
 			# count records in single log file
-			$fp = @fopen($var_dirs['log'].'/'.$file, 'r');
+                        $_fname = $file;
+                        if (!file_exists($_fname))
+                            $_fname = $var_dirs['log'].'/'.$file;
+
+			$fp = @fopen($_fname, 'r');
 			if ($fp === false)
 				continue;
 
@@ -266,7 +365,14 @@ function cw_log_get_names($labels=false, $force_output=false) {
 	static $all_labels = false;
 
 	if ($all_labels === false) {
-		$all_labels = array (
+            global $registered_logs, $logs_files_summary_size;
+            
+            if (empty($registered_logs)) {
+                cw_load('logs');
+                list($logs_settings, $registered_logs, $logs_files_summary_size) = cw_get_logs_files_and_settings();
+            }  
+      
+            $_all_labels = array (
 			'DATABASE' => 'lbl_log_database_operations',
 			'FILES' => 'lbl_log_file_operations',
 			'ORDERS' => 'lbl_log_orders_operations',
@@ -280,6 +386,14 @@ function cw_log_get_names($labels=false, $force_output=false) {
 			'DECRYPT' => 'lbl_decrypt_errors',
 			'BENCH' => 'lbl_log_bench_reports'
 		);
+                $all_labels = array();
+                foreach ($registered_logs as $log_name => $log_data) {
+                    if (empty($log_data['filenames'])) continue;      
+                        if (in_array(strtoupper($log_name), array_keys($_all_labels)))
+                            $all_labels[$log_name] = $_all_labels[strtoupper($log_name)];
+                        else 
+                            $all_labels[$log_name] = 'lbl_log_'.$log_name;
+                } 
 	}
 
 	if ($force_output !== false && $fource_output !== true)
@@ -462,8 +576,12 @@ function cw_error_handler($errno, $errstr, $errfile, $errline) {
 
     if (ini_get("log_errors") == 1 && ini_get("error_log") != '') {
     	# Write error to file
+
+        global $APP_SESS_ID, $REMOTE_ADDR;
+
 	    $bt = '';
     	$bt = "\nREQUEST_URI: ".$_SERVER['REQUEST_URI'];
+        $bt = "\nSESS_ID: $APP_SESS_ID; IP: $REMOTE_ADDR; CALL_ID: ".constant('CALL_ID');
 		$bt .= "\nBacktrace:\n\t".implode("\n\t", cw_get_backtrace(1));
 
     	error_log(

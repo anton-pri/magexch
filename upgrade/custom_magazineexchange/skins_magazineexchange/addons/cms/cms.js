@@ -29,7 +29,8 @@ $(document).ready(
         autoOpen: false,
         modal   : false,
         height  : "auto",
-        width   : 376
+        width   : 376,
+        resizable: false
     });
 
     $('a[rel="cms_link_staticpopup"]').click(
@@ -44,7 +45,9 @@ $(document).ready(
     $('a[rel="cms_link_staticpopup_preload"]').click(
       function () {
         $('#cms_staticpopup_dialog').dialog('option', 'title', $(this).attr('title'));
+        //$("#cms_staticpopup_dialog").html('<div><h2>Some basic HTML</h2></div>').dialog("open");
         $("#cms_staticpopup_dialog").html($($(this).attr('href')).html()).dialog("open");
+        $($(this).attr('href')).attr('custom-data', $(this).attr('custom-data'));
         return false;
       }
     );

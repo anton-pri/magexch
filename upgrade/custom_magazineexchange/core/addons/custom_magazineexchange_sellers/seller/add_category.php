@@ -77,7 +77,7 @@ if (defined('IS_AJAX') && $mode == 'add_category') {
         $cloned_category = cw_func_call('cw_category_get', array('cat' => $cat));
     }
 
-    cw_log_add('clone_category', compact('master_category', 'new_category', 'master_category_data', 'cloned_category', 'attributes'));
+    //cw_log_add('clone_category', compact('master_category', 'new_category', 'master_category_data', 'cloned_category', 'attributes'));
 
     define('PREVENT_SESSION_SAVE', true);
     echo json_encode($cloned_category);

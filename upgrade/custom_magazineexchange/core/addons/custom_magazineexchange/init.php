@@ -92,7 +92,9 @@ if (APP_AREA == 'customer') {
         array('pre', 'customer/checkout/create.tpl@checkout_reg_form', 'addons/'.magazineexchange_addon_name.'/customer/checkout/checkout_reg_form_pre.tpl'),
         array('post', 'customer/checkout/create.tpl@checkout_reg_form', 'addons/'.magazineexchange_addon_name.'/customer/checkout/checkout_reg_form_post.tpl'),
         array('post', 'customer/checkout/address.tpl',  'addons/'.magazineexchange_addon_name.'/customer/checkout/address_post.tpl'),
-        array('post', 'customer/checkout/place.tpl', 'addons/'.magazineexchange_addon_name.'/customer/checkout/place_post.tpl') 
+        array('post', 'customer/checkout/place.tpl', 'addons/'.magazineexchange_addon_name.'/customer/checkout/place_post.tpl'), 
+        array('pre', 'main/orders/orders_list.tpl@orders_list_table', 'addons/'.magazineexchange_addon_name.'/main/orders/orders_list_payment_attempt_popup.tpl'),
+        array('post', 'main/orders/orders_list.tpl@orders_list_status', 'addons/'.magazineexchange_addon_name.'/main/orders/orders_list_payment_attempt_link.tpl')
     );
 
     if ($vendorid) {

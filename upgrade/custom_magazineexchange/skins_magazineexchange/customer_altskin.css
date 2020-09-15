@@ -3536,6 +3536,27 @@ a.home_link {
   padding: 12px 0 5px 0;
 }
 
+.attempt_button, .opc_continue_button {
+  width: 147px;
+  height: 31px;
+  background: url(images/continue_mgex.png) center top no-repeat;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+a.attempt_note {
+  font-weight: 600;
+  color: #1800ff;
+}
+
+a[href='#preloaded_staticpopup_999999'] {
+  font-weight: 600;
+  color: #1800ff;
+  font-size: 12px;
+  padding-top: 2px;
+  display: inline-block;
+}
+
 .acc_manager_class .navigation {
   display: none;
 }

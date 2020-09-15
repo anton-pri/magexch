@@ -45,6 +45,8 @@ function magexch_feedback_popup(seller_id, doc_id) {
 <input type='hidden' name='order_customer_id' value='{$customer_id}' />
 <input type="hidden" name="action" value="feedback_display" />
 
+<!-- cw@orders_list_table [ -->
+
 <div class="box orders" id="magexch_box_orders">
 
 <table class="table table-striped dataTable vertical-center" width="100%">
@@ -69,6 +71,8 @@ function magexch_feedback_popup(seller_id, doc_id) {
 </tr>
 </thead>
 <tbody>
+
+
 {foreach from=$orders item=order}
 
 {math equation="x + ordertotal" x=$total ordertotal=$order.total assign="total"}
@@ -81,7 +85,11 @@ function magexch_feedback_popup(seller_id, doc_id) {
 
 	<td><a href="index.php?target={$current_target}&mode=details&doc_id={$order.doc_id}">#{$order.display_id}</a></td>
 	<td>
+        <!-- cw@orders_list_status [ -->
+        <div>
             <b>{include file="main/select/doc_status.tpl" status=$order.status mode="static"}</b>
+        </div>
+        <!-- cw@orders_list_status ] -->
 	</td>
 {*
     <td align="center">
@@ -105,6 +113,8 @@ function magexch_feedback_popup(seller_id, doc_id) {
 {/foreach}
 </tbody>
 </table>
+</div>
+<!-- cw@orders_list_table ] -->
 
 <!-- cw@orders_list_total [ -->
 <div class="text-right" style="margin-top:14px;">

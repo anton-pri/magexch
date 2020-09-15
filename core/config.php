@@ -226,6 +226,7 @@ $tables = array (
 # logging 
     'logged_data' => 'cw_logged_data',
     'logged_data_sessions' => 'cw_logged_data_sessions',
+    'logs_settings' => 'cw_logs_settings',
 
 # admin form elements visibility settings   
     'admin_forms_hidedisplay' => 'cw_admin_forms_hidedisplay',

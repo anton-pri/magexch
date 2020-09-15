@@ -121,7 +121,7 @@
                 <input type="hidden" name="action" value="" />
                 <input type="hidden" name="product_id" value="{$product.product_id}" />
 
-                <div style="float:right; margin-right:4%;">
+                <div class="create-product-page-avatar">
                   <a target="_blank" href="#">
                     <img src="/cw/images/Create_Product_Page_Avatar.png" width="214" alt="" />
                   </a>
