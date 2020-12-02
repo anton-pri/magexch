@@ -109,6 +109,9 @@ if ($action == 'login') {
 
         if ($is_ajax && $is_checkout) cw_call('cw_checkout_login');
 
+        $search_data = &cw_session_register('search_data', array());
+        unset($search_data['orders']);
+
         if ($current_area == "C") {
                 
             $remember_data = &cw_session_register("remember_data");

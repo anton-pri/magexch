@@ -22,6 +22,9 @@ if (!empty($_GET['operate_as_user']) && !empty($identifiers['A'])) {
         $products   = cw_call('cw_products_in_cart',array($cart, $userinfo));
         $cart       = cw_func_call('cw_cart_calc', array('cart' => $cart, 'products' => $products, 'userinfo' => $userinfo));
 
+	$search_data = &cw_session_register('search_data', array());
+	unset($search_data['orders']);	
+
         cw_add_top_message('You operate as user '.$tmp_user['email'], 'W');
 	} else {
         cw_add_top_message('You cannot operate as this user', 'E');

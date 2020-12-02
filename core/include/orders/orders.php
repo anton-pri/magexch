@@ -398,6 +398,7 @@ if ($mode == 'search') {
 
 # kornev, we don't need to sort the result in counter - because it's faster to do it this way
     $count_query = cw_db_generate_query(array('count(*)'), $from_tbls, $query_joins, $where, $groupbys, $having, null);
+
     $_res = db_query($count_query);
     $total_items = db_num_rows($_res);
     db_free_result($_res);
