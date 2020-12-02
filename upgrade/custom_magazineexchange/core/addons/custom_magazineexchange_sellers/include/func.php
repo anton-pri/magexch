@@ -528,9 +528,7 @@ function on_prepare_search_products($params, &$fields, &$from_tbls, &$query_join
 
     global $customer_id, $tables;
     $seller_custom_fields = cw_user_get_custom_fields($customer_id,0,'','field');
-
     if ($seller_custom_fields['allow_non_marketplace_products'] != 'Y') {
-
         $attr_id = cw_query_first_cell("SELECT attribute_id FROM $tables[attributes] WHERE field='is_non_marketplace_product'");
         if ($attr_id) {
             $non_marketplace_attr_alias = 'non_marketplace_attr';
@@ -540,8 +538,19 @@ function on_prepare_search_products($params, &$fields, &$from_tbls, &$query_join
             );
             $where[] = "COALESCE($non_marketplace_attr_alias.value,0) != 1";
         }   
-
     }   
+
+    //cw_log_add(__FUNCTION__, compact('params'));
+    if ($params['data']['only_this_seller'] == 1) {
+        $query_joins['created_by_seller'] = array(
+            'tblname' => 'products_system_info',
+            'on' => "$tables[products].product_id = created_by_seller.product_id",
+            //'is_inner' => 1
+        );
+        $where[] = "created_by_seller.creation_customer_id = $customer_id";
+    } 
+
+    cw_log_add(__FUNCTION__, compact('params', 'query_joins'));
 
 }
 
@@ -646,4 +655,108 @@ function dashboard_get_sections_list() {
             [active] => 1
         )
 */
+}
+
+function mag_seller_is_category_allowed_for_seller($membership_id, $category_id, &$access_note) {
+    global $tables;
+    static $all_cats_allowed;
+
+    if (!isset($all_cats_allowed))
+        $all_cats_allowed = [];
+
+    if (!isset($all_cats_allowed[$membership_id]))    
+        $all_cats_allowed[$membership_id] = 
+            !boolval(
+                cw_query_first_cell(
+                    "SELECT count(*) 
+                    FROM $tables[memberships_categories_edit_allowed] 
+                    WHERE membership_id=$membership_id AND permission=1"
+                )
+            );
+
+    $membership_all_cats_allowed = $all_cats_allowed[$membership_id];               
+
+    $result = false;
+
+    $disabled_by_settings = 
+        cw_query_first_cell(
+            "SELECT COUNT(*) 
+            FROM $tables[memberships_categories_edit_allowed] 
+            WHERE membership_id=$membership_id
+            AND category_id=$category_id 
+            AND permission=2"
+        );
+
+    if ($disabled_by_settings) {   
+        $result = false;
+        $access_note = 'Category is selected in \'Restrict from Categories\' option';
+        return $result;
+        //continue;
+    }
+
+    if (!$membership_all_cats_allowed) {
+        $check_category_id = $category_id;
+        $found = false;
+        $safety_count = 10;
+        do {
+            $perm_data = 
+                cw_query_first(
+                    "SELECT c.parent_id, IFNULL(mcea.category_id, 0) as allowed_category_id FROM $tables[categories] c 
+                    LEFT JOIN $tables[memberships_categories_edit_allowed] mcea ON 
+                        mcea.membership_id=$membership_id AND
+                        mcea.category_id = c.category_id AND
+                        mcea.permission=1 
+                    WHERE c.category_id = $check_category_id"
+                );
+
+
+            if ($perm_data['allowed_category_id'])    
+                $found = true;
+
+            $safety_count--;
+            if (!$found)
+                $check_category_id = $perm_data['parent_id'];
+            
+        } while (!$found && $check_category_id && $safety_count > 0);   
+
+        $result = $found;
+        if ($found)
+            $access_note = 'Category or its parent is selected in \'Restrict to Categories\' option';
+        else
+            $access_note = 'Category is not selected in \'Restrict to Categories\' option';    
+    } else {
+        $result = true;
+        $access_note = "Enabled access to all categories, there is no match to any exclusion";
+    }
+
+    return $result;
+}
+
+function mag_category_allowed_by_seller_memberships($category_id) {
+    global $tables, $current_language;
+
+    $seller_memberships = 
+        cw_query(
+            "SELECT 
+                m.membership_id, 
+                IFNULL(ml.membership, m.membership) as membership_name 
+            FROM $tables[memberships] m 
+            LEFT JOIN $tables[memberships_lng] ml ON 
+                ml.membership_id = m.membership_id AND code='$current_language' 
+            WHERE m.area = 'V' 
+            ORDER BY m.membership_id");
+
+/*
+    print('<pre>');        
+    print_r(compact('seller_memberships', 'category_id'));
+    print('</pre>');
+*/    
+
+    foreach ($seller_memberships as $m_k => $m_v) {       
+        $access_note = '';
+        $seller_memberships[$m_k]['allowed'] = mag_seller_is_category_allowed_for_seller($m_v['membership_id'], $category_id, $access_note);
+        $seller_memberships[$m_k]['access_note'] = $access_note;
+    }    
+
+    return $seller_memberships;        
 }

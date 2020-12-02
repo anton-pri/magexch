@@ -2,27 +2,29 @@
 
 cw_load('files');
 
-$logging_search = &cw_session_register('logging_search', array());
-$logging_filter = &cw_session_register('logging_filter', array());
+$logging_search = &cw_session_register('logging_search');
+$logging_filter = &cw_session_register('logging_filter');
 
 if (empty($logging_search)) 
     $logging_search = array('sortby'=>'date', 'sortdir'=>0);
 
 
-$log_columns = &cw_session_register('log_columns', array());
+$log_columns = &cw_session_register('log_columns');
 
 if (empty($log_columns)) {
     $log_columns = array(
-        'current_area' => array('title'=>"Area", 'fixed'=>1),
+        'current_area' => array('title'=>"Area"),
         'date' => array('title'=>"Date",'fixed'=>1),
         'is_logged' => array('title'=>"User Is Logged"),
         'REQUEST_URI' => array('title'=>"URI",'fixed'=>1),
-        'REQUEST_METHOD' => array('title'=>"Method"),
+        'REQUEST_METHOD' => array('title'=>"Method",'display'=>1),
         'GET_POST' => array('title'=>"GET/POST"),
-        'target_code' => array('title'=>"target/code"),
-        'cwsid' => array('title'=>"session id"),
+        'target_code' => array('title'=>"target_code",'display'=>1),
+        'cwsid' => array('title'=>"cwsid / call id"),
+        'customer_id' => array('title'=>"customer_id"),
         'HTTP_REFERER' => array('title'=>"REFERER"),
-        'REDIRECT_URL' => array('title'=>"REDIRECT_URL")
+        'REDIRECT_URL' => array('title'=>"REDIRECT_URL"),
+        'IP' => array('title'=>"IP"),
     );
 }
 
@@ -46,7 +48,7 @@ if (isset($_GET['sortby']) || isset($_GET['sortdir'])) {
 }
 
 $where_conditions = array();
-$text_log_filters = array('REQUEST_URI', 'cwsid', 'HTTP_REFERER', 'REDIRECT_URL');
+$text_log_filters = array('REQUEST_URI', 'cwsid','call_id', 'HTTP_REFERER', 'REDIRECT_URL','IP');
 if (!empty($logging_filter)) {
     if (!empty($logging_filter['date'])) {
         if (!empty($logging_filter['date']['date_start'])) 
@@ -55,9 +57,17 @@ if (!empty($logging_filter)) {
             $where_conditions[] = "ld.date <= ".$logging_filter['date']['date_end'];
     }
 
+    if (!empty($logging_filter['date_int'])) {
+        if (!empty($logging_filter['date_int']['date_start']))
+            $where_conditions[] = "ld.date >= ".$logging_filter['date_int']['date_start'];
+        if (!empty($logging_filter['date_int']['date_end']))
+            $where_conditions[] = "ld.date <= ".$logging_filter['date_int']['date_end'];
+    }
+
+
     foreach ($text_log_filters as $tlf) {
         if (!empty($logging_filter[$tlf])) {
-            $where_conditions[] = "ld.$tlf like ('%$logging_filter[$tlf]%')";
+            $where_conditions[] = "ld.$tlf like ('%".db_escape_string_once($logging_filter[$tlf])."%')";
         }
     }
     if (!empty($logging_filter['is_logged'])) { 
@@ -67,6 +77,10 @@ if (!empty($logging_filter)) {
         if ($logging_filter['is_logged']['no'])
             $is_logged_qry[] = "ld.customer_id = 0";
         $where_conditions[] = "(".implode(" or ", $is_logged_qry).")";
+    }
+
+    if (trim($logging_filter['customer_id']) !== '') {
+        $where_conditions[] = "ld.customer_id = '".intval($logging_filter['customer_id'])."'";
     }
 
     if (!empty($logging_filter['current_area'])) {
@@ -168,18 +182,20 @@ foreach ($logged_data as $ld_k=>$ld_v) {
 }
 $smarty->assign('logged_data', $logged_data);
 
-$_sess_data = cw_query("select * from $tables[logged_data_sessions] where cwsid in ('".implode("', '",array_keys($session_ids))."')");
-$sess_data = array();
-foreach ($_sess_data as $s_data) {
-    $s_data['SERVER'] = unserialize($s_data['SERVER']);
-    $s_data['user_account'] = unserialize($s_data['user_account']);
-    $_cwsid = $s_data['cwsid'];
-    unset($s_data['cwsid']);
-    $sess_data[$_cwsid] = $s_data;
+if ($logging_filter['cwsid']) {
+    $_sess_data = cw_query("select * from $tables[logged_data_sessions] where cwsid in ('" . db_escape_string_once($logging_filter['cwsid']) . "')");
+    $sess_data = array();
+    foreach ($_sess_data as $s_data) {
+        $s_data['SERVER'] = unserialize($s_data['SERVER']);
+        $s_data['user_account'] = unserialize($s_data['user_account']);
+        $_cwsid = $s_data['cwsid'];
+        unset($s_data['cwsid']);
+        $sess_data[$_cwsid] = $s_data;
+    }
+    $smarty->assign('sess_data', $sess_data);
 }
-$smarty->assign('sess_data', $sess_data);
 
-$unq_target_code = cw_query_column("select distinct target_code from $tables[logged_data] as ld", 'target_code');
+$unq_target_code = cw_query_column("select distinct target_code from $tables[logged_data] as ld order by target_code", 'target_code');
 $smarty->assign('unq_target_code', $unq_target_code);
 
 

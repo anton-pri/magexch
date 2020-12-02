@@ -45,6 +45,7 @@ $(document).ready(
       function () {
         $('#cms_staticpopup_dialog').dialog('option', 'title', $(this).attr('title'));
         $("#cms_staticpopup_dialog").html($($(this).attr('href')).html()).dialog("open");
+        $($(this).attr('href')).attr('custom-data', $(this).attr('custom-data'));
         return false;
       }
     );

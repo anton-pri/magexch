@@ -6,32 +6,29 @@
     <label class="col-xs-12">{$lng.lbl_search_for_pattern}</label>
     <div class="col-xs-12 col-md-4"><input type="text" name="posted_data[substring]" value="{$search_prefilled.substring|escape}" class="form-control" /></div>
 </div>
-<div class="form-group">
-
-    <label class="col-xs-12">{$lng.lbl_search_in}</label>
-<div class="col-xs-12">
-    <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_title]"{if $search_prefilled eq "" or $search_prefilled.by_title} checked="checked"{/if} value="1" />
-    {$lng.lbl_product_title}&nbsp;</label>
-    <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_shortdescr]"{if $search_prefilled eq "" or $search_prefilled.by_shortdescr} checked="checked"{/if} value="1" />
-    {$lng.lbl_short_description}&nbsp;</label>
-    <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_fulldescr]"{if $search_prefilled eq "" or $search_prefilled.by_fulldescr} checked="checked"{/if} value="1" />
-    {$lng.lbl_det_description}&nbsp;</label>
-</div>
-{if $config.search.allow_search_by_words eq 'Y'}
-<div class="col-xs-12">
-
-    <label class="radio-inline"><input type="radio" name="posted_data[including]" value="all"{if $search_prefilled eq "" or $search_prefilled.including eq '' or $search_prefilled.including eq 'all'} checked="checked"{/if} />
-    {$lng.lbl_all_word}&nbsp;</label>
-    <label class="radio-inline"><input type="radio" name="posted_data[including]" value="any"{if $search_prefilled.including eq 'any'} checked="checked"{/if} />
-    {$lng.lbl_any_word}&nbsp;</label>
-    <label class="radio-inline"><input type="radio" name="posted_data[including]" value="phrase"{if $search_prefilled.including eq 'phrase'} checked="checked"{/if} />
-    {$lng.lbl_exact_phrase}&nbsp;</label>
-</div>
-
-{/if}
-
-</div>
-
+  <!-- cw@search_in_params [ -->
+  <div class="form-group">
+      <label class="col-xs-12">{$lng.lbl_search_in}</label>
+        <div class="col-xs-12">
+            <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_title]"{if $search_prefilled eq "" or $search_prefilled.by_title} checked="checked"{/if} value="1" />
+            {$lng.lbl_product_title}&nbsp;</label>
+            <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_shortdescr]"{if $search_prefilled eq "" or $search_prefilled.by_shortdescr} checked="checked"{/if} value="1" />
+            {$lng.lbl_short_description}&nbsp;</label>
+            <label class="checkbox-inline"><input type="checkbox" name="posted_data[by_fulldescr]"{if $search_prefilled eq "" or $search_prefilled.by_fulldescr} checked="checked"{/if} value="1" />
+            {$lng.lbl_det_description}&nbsp;</label>
+        </div>
+    {if $config.search.allow_search_by_words eq 'Y'}
+      <div class="col-xs-12">
+          <label class="radio-inline"><input type="radio" name="posted_data[including]" value="all"{if $search_prefilled eq "" or $search_prefilled.including eq '' or $search_prefilled.including eq 'all'} checked="checked"{/if} />
+          {$lng.lbl_all_word}&nbsp;</label>
+          <label class="radio-inline"><input type="radio" name="posted_data[including]" value="any"{if $search_prefilled.including eq 'any'} checked="checked"{/if} />
+          {$lng.lbl_any_word}&nbsp;</label>
+          <label class="radio-inline"><input type="radio" name="posted_data[including]" value="phrase"{if $search_prefilled.including eq 'phrase'} checked="checked"{/if} />
+          {$lng.lbl_exact_phrase}&nbsp;</label>
+      </div>
+    {/if}
+  </div>
+  <!-- cw@search_in_params ] -->
 </div>
 
 {elseif $included_tab eq 'add_search'}

@@ -1,0 +1,30 @@
+.membership_categories .pq-select-button {
+    width: 100%!important;
+}
+
+.cat-sellers-memberships-access {
+    padding: 16px 0px 34px 0px;
+}
+
+.cat-sellers-memberships-access .title {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #8c8c8c;
+    text-transform: uppercase;
+}
+.cat-sellers-memberships-access .access-data {
+    font-size: 14px;
+    margin-top: 4px;
+}
+.cat-sellers-memberships-access .access-data .membership-name {
+    font-weight: normal;
+}
+.cat-sellers-memberships-access .access-data .access-status{
+    font-weight: 600;    
+    text-decoration: dashed #3169b1 underline;
+    cursor: help;
+}
+.extra-parent-cats {
+    padding-left:0;
+}

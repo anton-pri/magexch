@@ -32,6 +32,24 @@ function getByEmail($email) {
     return cw_query_first('SELECT * FROM '.$tables['customers'].' WHERE email="'.db_escape_string($email).'" ORDER BY customer_id ASC');
 }
 
+function getByEmailCustomer($email) {
+    global $tables, $current_area;
+
+    if ($current_area == 'C') {
+        $result = cw_query_first(
+            "SELECT c.* 
+            FROM $tables[customers] c 
+            INNER JOIN $tables[customers_system_info] csi 
+            ON csi.customer_id=c.customer_id AND csi.last_login!=0 
+            WHERE c.email='" . db_escape_string($email) . "' 
+            ORDER BY c.customer_id ASC");
+
+        return $result;    
+    } else
+        return getByEmail($email);    
+}
+
+
 function getField($id,$field) {
     $data = get($id);
     return $data[$field];

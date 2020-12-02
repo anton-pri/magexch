@@ -1639,3 +1639,38 @@ function cw_doc_order_status_email_enabled ($status_code, $area_name) {
     return cw_query_first_cell("select email_$area_name from $tables[order_statuses] where code='$status_code'");
 }
 
+function cw_doc_allowed_to_customer($doc_id, $customer_id) {
+    global $tables;
+
+    $result = cw_query_first_cell($s =
+        "SELECT COUNT(*) 
+        FROM $tables[customers] c1 
+        INNER JOIN $tables[customers] c2 ON c1.email = c2.email AND c1.usertype = c2.usertype AND c1.usertype = 'C'
+        INNER JOIN $tables[docs] d ON d.doc_id = '$doc_id'
+        INNER JOIN $tables[docs_user_info] dui ON dui.doc_info_id = d.doc_info_id AND dui.customer_id = c2.customer_id
+        WHERE c1.customer_id = '$customer_id'"
+        );
+
+    
+    return $result;    
+}
+
+function cw_doc_get_linked_customers_list($customer_id) {
+    global $tables, $current_area;
+
+    if ($current_area == 'C')
+        $result = cw_query_column(
+            "SELECT c2.customer_id 
+            FROM $tables[customers] c1 
+            INNER JOIN $tables[customers] c2 
+                ON 
+                    c1.email = c2.email 
+                    AND c1.usertype = c2.usertype 
+                    AND c1.usertype = 'C' 
+            WHERE c1.customer_id = '$customer_id'"
+            );
+    else 
+        $result = [$customer_id];    
+
+    return $result;    
+}

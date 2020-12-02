@@ -1,6 +1,7 @@
 <?php
 
 $recalc_subcat_count = false;
+cw_load('category');
 
 if (!cw_query_first_cell("select count(*) from $tables[memberships] where area='C' and membership_id=0")) {
 # kornev. problem with auto-increment, which is not set to 0
@@ -19,7 +20,24 @@ if ($action == 'update' && !empty($posted_data)) {
         else $v['default_membership'] = 'N';
 
 		cw_array2update("memberships", $v, "membership_id = '$id'");
-		db_query("REPLACE INTO $tables[memberships_lng] VALUES ('$id','$edited_language','$membership')");
+        db_query("REPLACE INTO $tables[memberships_lng] VALUES ('$id','$edited_language','$membership')");
+        
+        db_query("DELETE FROM $tables[memberships_categories_edit_allowed] WHERE membership_id=$id");
+        foreach(['edit_categories_on' => 1, 'edit_categories_off' => 2] as $option_name => $permission) {
+            if (isset($v[$option_name])) {
+                foreach($v[$option_name] as $mem_cat_id) {
+                    cw_array2insert(
+                        'memberships_categories_edit_allowed', 
+                        [
+                            'membership_id' => $id,
+                            'category_id' => $mem_cat_id,
+                            'permission' => $permission,
+                        ]
+                    );
+                }    
+            }
+        }
+        
 	}
 
     cw_header_location("index.php?target=$target");
@@ -55,12 +73,42 @@ $memberships['A'] = array();
 $memberships['C'] = array();
 $memberships['V'] = array();
 
-$tmp = cw_query("SELECT $tables[memberships].*, COUNT($tables[customers].customer_id) as users, IFNULL($tables[memberships_lng].membership, $tables[memberships].membership) as membership FROM $tables[memberships] LEFT JOIN $tables[customers] ON $tables[customers].membership_id = $tables[memberships].membership_id LEFT JOIN $tables[memberships_lng] ON $tables[memberships].membership_id = $tables[memberships_lng].membership_id AND $tables[memberships_lng].code = '$edited_language' GROUP BY $tables[memberships].membership_id ORDER BY IF(FIELD($tables[memberships].area, 'A','P','C','R','B','V') > 0, FIELD($tables[memberships].area, 'A','P','C','R','B','V'), 100), $tables[memberships].orderby");
+$tmp = cw_query(
+        "SELECT 
+            $tables[memberships].*, 
+            COUNT($tables[customers].customer_id) as users, 
+            IFNULL($tables[memberships_lng].membership, 
+            $tables[memberships].membership) as membership 
+        FROM $tables[memberships] 
+        LEFT JOIN $tables[customers] ON $tables[customers].membership_id = $tables[memberships].membership_id 
+        LEFT JOIN $tables[memberships_lng] ON 
+            $tables[memberships].membership_id = $tables[memberships_lng].membership_id AND 
+            $tables[memberships_lng].code = '$edited_language' 
+        GROUP BY $tables[memberships].membership_id 
+        ORDER BY 
+            IF(FIELD($tables[memberships].area, 'A','P','C','R','B','V') > 0, 
+                FIELD($tables[memberships].area, 'A','P','C','R','B','V'), 100), 
+        $tables[memberships].orderby");
 
 if (!empty($tmp))
 foreach ($tmp as $v)
     if (isset($memberships[$v['area']]))
         $memberships[$v['area']][] = $v;
+
+if (isset($memberships['V'])) {
+    foreach ($memberships['V'] as $m_k => $seller_membership) {
+        foreach(['edit_categories_on' => 1, 'edit_categories_off' => 2] as $option_name => $permission) { 
+            $memberships['V'][$m_k][$option_name] = 
+                cw_query_column(
+                    "SELECT category_id 
+                    FROM $tables[memberships_categories_edit_allowed] 
+                    WHERE 
+                        membership_id=$seller_membership[membership_id] AND 
+                        permission=$permission"
+                    );
+        }        
+    }
+}
 
 $memberships_lbls = array();
 foreach ($memberships as $k => $v)

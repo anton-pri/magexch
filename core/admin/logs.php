@@ -1,4 +1,7 @@
 <?php
+
+//cw_load('logs');
+
 $location[] = array(cw_get_langvar_by_name("lbl_shop_logs"), "index.php?target=logs");
 
 function logs_convert_date($posted_data) {
@@ -28,11 +31,12 @@ function logs_convert_date($posted_data) {
 	return array($start_date, $end_date);
 }
 
+global $registered_logs, $logs_files_summary_size; 
+
 #
 # Log names translation
 #
 $log_labels = cw_log_get_names();
-
 $logs_search_data = &cw_session_register('logs_search_data', array());
 
 if ($REQUEST_METHOD != 'POST')
@@ -112,10 +116,10 @@ if (!empty($posted_data)) {
 	$logs_data = "";
 	$labels = array();
 
-	if (!empty($posted_data['logs']) && is_array($posted_data['logs']))
-		$labels = array_keys($posted_data['logs']);
-	$_tmp = cw_log_get_contents($labels, $start_date, $end_date, true, $posted_data['count']);
-
+	if (!empty($posted_data['logs']) && is_array($posted_data['logs'])) {
+	    $labels = array_keys($posted_data['logs']);
+  	    $_tmp = cw_log_get_contents($labels, $start_date, $end_date, true, $posted_data['count']);
+        }
 
 	if (is_array($_tmp) && !empty($_tmp)) {
 		foreach ($_tmp as $label=>$_data) {
@@ -129,13 +133,18 @@ if (!empty($posted_data)) {
 else {
 	$posted_data = array();
 	$posted_data['date_period'] = 'D';
-
+/*
 	foreach ($log_labels as $k=>$v) {
 		$posted_data['logs'][$k] = 1;
 	}
-
-	$posted_data['count'] = 5;
+*/
+	$posted_data['count'] = 20;
 }
+
+ksort($registered_logs);
+$smarty->assign('registered_logs', $registered_logs);
+$smarty->assign('summary_size', cw_logs_size_format($logs_files_summary_size));
+
 
 $smarty->assign('log_labels', $log_labels);
 $smarty->assign('search_prefilled', $posted_data);

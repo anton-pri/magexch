@@ -25,7 +25,7 @@ if ($action == 'register_customer' || $action == 'register_reseller') {
 // artem, TODO: add fields validation
 
     if ($register['email']) {
-        $is_user = Customer\getByEmail($register['email']);
+        $is_user = Customer\getByEmailCustomer($register['email']);
         if ($is_user) {
             $fill_error['email'] = cw_get_langvar_by_name('lbl_email_already_used');
         }
@@ -59,11 +59,14 @@ if ($action == 'register_customer' || $action == 'register_reseller') {
         );
         $prefilled_info = array();
     
-	$remember_data = &cw_session_register("remember_data");
-	if (isset($remember_data['URL']) && !empty($remember_data['URL'])) {
-		cw_header_location($remember_data['URL']);
-	}
+	    $remember_data = &cw_session_register("remember_data");
+        if (isset($remember_data['URL']) && !empty($remember_data['URL'])) {
+            cw_header_location($remember_data['URL']);
+        }
+        if ($customer_id)
+            db_query("update $tables[customers_system_info] set last_login='".cw_core_get_time()."' where customer_id='$customer_id'");
     }
+
     cw_header_location("index.php?target=$target&usertype=$usertype");
 }
 

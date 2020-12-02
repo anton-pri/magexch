@@ -41,7 +41,7 @@ if ($REQUEST_METHOD == "POST") {
             }
         }
 
-    if (is_array($fileurls))
+    if (is_array($fileurls)) {
         foreach($fileurls as $fileurl) {
             $tmp = array();
     		$fileurl = trim($fileurl);
@@ -55,12 +55,16 @@ if ($REQUEST_METHOD == "POST") {
                 $tmp['source'] = 'U';
                 $data[] = $tmp;
 	    	}
-	    }
+        }
+        $file_urls_data = $data;
+    }
+        
     if (is_array($data)) {
         foreach($data as $k=>$val) {
 
 	        if (isset($val['file_path']) && !cw_is_allowed_file($val['file_path']) || !isset($val['file_path']) || zerolen($val['file_path'])) {
-        		if ($val['is_copied']) @unlink($val['file_path']);
+                if ($val['is_copied']) @unlink($val['file_path']);
+                cw_log_add('image_internet', ['allowed'=>cw_is_allowed_file($val['file_path']), compact('k', 'val')]);
 		        unset($data[$k]);
                 continue;
 	        }
@@ -72,7 +76,8 @@ if ($REQUEST_METHOD == "POST") {
     	    	$val['image_type']) = cw_get_image_size($val['file_path']);
 
         	if ($val['file_size'] == 0) {
-    	    	if ($data['is_copied']) unlink($val['file_path']);
+                if ($data['is_copied']) unlink($val['file_path']);
+                cw_log_add('image_internet', ['fsz'=>$val['file_size'], compact('k', 'val')]);
                 unset($data[$k]);
                 continue;
     	    }
@@ -92,6 +97,9 @@ if ($REQUEST_METHOD == "POST") {
             	$file_upload_data[$type] = $val;
         }
     }
+
+    cw_log_add('image_internet', compact('fileurls', 'file_urls_data', 'data', 'file_upload_data'));
+
     cw_session_save();
 
     $smarty->assign('type', $type);

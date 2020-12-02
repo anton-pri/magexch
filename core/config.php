@@ -66,6 +66,7 @@ $tables = array (
     'memberships' => 'cw_memberships',
     'memberships_lng' => 'cw_memberships_lng',
     'access_levels' => 'cw_access_levels',
+    'memberships_categories_edit_allowed' => 'cw_memberships_categories_edit_allowed',
 
 # user fields/sections
     'register_fields_sections' => 'cw_register_fields_sections',
@@ -225,6 +226,7 @@ $tables = array (
 # logging 
     'logged_data' => 'cw_logged_data',
     'logged_data_sessions' => 'cw_logged_data_sessions',
+    'logs_settings' => 'cw_logs_settings',
 
 # admin form elements visibility settings   
     'admin_forms_hidedisplay' => 'cw_admin_forms_hidedisplay',

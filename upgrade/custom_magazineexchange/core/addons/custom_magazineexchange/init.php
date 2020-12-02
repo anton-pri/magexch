@@ -93,7 +93,9 @@ if (APP_AREA == 'customer') {
         array('pre', 'customer/checkout/create.tpl@checkout_reg_form', 'addons/'.magazineexchange_addon_name.'/customer/checkout/checkout_reg_form_pre.tpl'),
         array('post', 'customer/checkout/create.tpl@checkout_reg_form', 'addons/'.magazineexchange_addon_name.'/customer/checkout/checkout_reg_form_post.tpl'),
         array('post', 'customer/checkout/address.tpl',  'addons/'.magazineexchange_addon_name.'/customer/checkout/address_post.tpl'),
-        array('post', 'customer/checkout/place.tpl', 'addons/'.magazineexchange_addon_name.'/customer/checkout/place_post.tpl') 
+        array('post', 'customer/checkout/place.tpl', 'addons/'.magazineexchange_addon_name.'/customer/checkout/place_post.tpl'), 
+        array('pre', 'main/orders/orders_list.tpl@orders_list_table', 'addons/'.magazineexchange_addon_name.'/main/orders/orders_list_payment_attempt_popup.tpl'),
+        array('post', 'main/orders/orders_list.tpl@orders_list_status', 'addons/'.magazineexchange_addon_name.'/main/orders/orders_list_payment_attempt_link.tpl')
     );
 
     if ($vendorid) {
@@ -143,6 +145,7 @@ if (APP_AREA == 'customer') {
     cw_addons_set_template(
         array('replace', 'admin/products/category/modify.tpl@category_location_select', 'addons/' . magazineexchange_addon_name . '/admin/extra_parent_categories_select.tpl') 
     );
+
     cw_addons_set_template(
         array('replace', 'elements/favicon.tpl', 'addons/' . magazineexchange_addon_name . '/admin/elements/favicon.tpl')
     );

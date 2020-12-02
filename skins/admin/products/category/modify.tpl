@@ -133,13 +133,43 @@
 {include file='admin/attributes/object_modify.tpl'}
 
 </div>
-</form>
+
 
 <div id="sticky_content">
-
-{include file='admin/buttons/button.tpl' button_title=$lng.lbl_save href="javascript:cw_submit_form('category_form')" acl='__1200'  style='btn-green push-20'}
-
+  {if !$ge_id || $cw_group_edit_count eq 1}
+  <script type="text/javascript">
+  var txt_category_clone_confirmation = '{$lng.txt_category_clone_confirmation}';
+  var txt_please_enter_cloned_category_name = '{$lng.txt_please_enter_cloned_category_name}';
+  {literal}
+    function submit_clone_category() {
+      if ($('#cloned_name').val().length === 0) { 
+        alert(txt_please_enter_cloned_category_name); 
+        $('#cloned_name').focus();
+      } else {
+        if (confirm(txt_category_clone_confirmation)) {
+          cw_submit_form('category_form', 'clone');
+        }  
+      }
+    }
+  {/literal}
+  </script>
+    {include 
+      file='admin/buttons/button.tpl' 
+      button_title=$lng.lbl_clone_as|default:'Clone As' 
+      href="javascript: submit_clone_category()" 
+      acl='__1200'  
+      style='btn-green push-20 clone_category'}
+    <div class="form-group">
+      <div class="col-xs-12 col-md-6" style="padding-left:0">
+        <input type="text" id="cloned_name" name="cloned_name" maxlength="255" size="65" value="{$current_category.category|escape:"html"} clone" class="form-control required"/>
+      </div>
+    </div>
+    <br><br>
+  {/if}
+  {include file='admin/buttons/button.tpl' button_title=$lng.lbl_save href="javascript:cw_submit_form('category_form')" acl='__1200'  style='btn-green push-20 save_category'} 
 </div>
+</form>
+
 {if $mode eq 'edit' && $accl.__1200}
 <form name="category_location_form" id="category_location_form" action="index.php?target={$current_target}" method="post">
 <input type="hidden" name="mode" value="{$mode}" />
@@ -168,6 +198,7 @@
 <div class="clear"></div>
 </div>
 </form>
+<!-- cw@category_modify_form_end -->
 {/if}
 {/capture}
 {/capture}

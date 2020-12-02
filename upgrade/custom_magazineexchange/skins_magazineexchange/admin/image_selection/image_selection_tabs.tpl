@@ -32,7 +32,7 @@
 
     </td>
 {if $multiple eq 2}
-    <td id="on_local_add_button">{include file="main/multirow_add.tpl" mark="on_local" is_lined=true}</td>
+    <td id="on_local_add_button" class="multiple2_plus_button">{include file="main/multirow_add.tpl" mark="on_local" is_lined=true}</td>
 {/if}
 </tr>
 </table>
@@ -46,7 +46,7 @@
     <td id="on_internet_box_0">{$lng.lbl_url}:</td>
 	<td id="on_internet_box_1"><input type="text" size="60" name="fileurls[0]" /></td>
 {if $multiple eq 2}
-    <td id="on_internet_add_button">{include file="main/multirow_add.tpl" mark="on_internet" is_lined=true}</td>
+    <td id="on_internet_add_button" class="multiple2_plus_button">{include file="main/multirow_add.tpl" mark="on_internet" is_lined=true}</td>
 {/if}
 </tr>
 </table>

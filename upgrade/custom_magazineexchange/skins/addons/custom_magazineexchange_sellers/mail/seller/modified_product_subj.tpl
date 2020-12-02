@@ -1,0 +1,1 @@
+Seller {$seller_info.firstname} {$seller_info.lastname} has {if $is_new_product}added{else}updated{/if} the product "{$product_data.product}"

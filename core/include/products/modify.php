@@ -268,7 +268,7 @@ if (
 
         cw_func_call('cw_items_attribute_classes_save', 
             array('item_id' => $product_id, 'attribute_class_ids' => $product_data['attribute_class_ids'], 'item_type' => 'P'));
-
+        cw_log_add('product_modify', $product_data);
 # kornev, it have to be product_data here - because we change the attributes in the error_check function
         cw_call('cw_attributes_save', array('item_id' => $product_id, 'item_type' => 'P', 'attributes' => $product_data['attributes'], 'language' => $edited_language, array('update_posted_only'=>true, 'is_default' => false)));
         cw_attributes_group_update($ge_id, $product_id, 'P', $fields);

@@ -6,6 +6,7 @@ cw_event_listen('on_cron_daily',    'cw_cron_invoice_check_params');
 cw_event_listen('on_cron_biweekly', 'cw_cron_optimize_table');
 cw_event_listen('on_cron_monthly',  'cw_cron_doc_delete_temp');
 cw_event_listen('on_cron_weekly',  'cw_cron_logging_archive');
+cw_event_listen('on_cron_daily', 'cw_cron_logs_old_files_delete');
 
 /**
  * Optimize table, try to analyze for InnoDB
@@ -275,4 +276,16 @@ function cw_cron_expand_images($time, $counter) {
     }
     
     return $log;
+}
+
+/**
+ * deletes or archives old logs files
+ * @cron 12 hours
+ */
+function cw_cron_logs_old_files_delete() {
+    cw_load('logs');
+
+    list($logs_settings, $registered_logs, $logs_files_summary_size) = cw_get_logs_files_and_settings();
+    $actioned_files = cw_action_old_logs($registered_logs, $logs_settings);
+    return $actioned_files;
 }

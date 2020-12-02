@@ -308,7 +308,9 @@ if ($mode == 'search') {
         $customer_condition = array();
 
         if (!empty($data['customer']['by_customer_id']))
-            $customer_condition[] = "$tables[customers].customer_id = '".$data['customer']['substring']."'";
+            //$customer_condition[] = "$tables[customers].customer_id = '".$data['customer']['substring']."'";
+            $customer_condition[] = 
+                "$tables[customers].customer_id IN ('".implode("','",cw_doc_get_linked_customers_list($data['customer']['substring']))."')";
 
         if (!empty($data['customer']['by_firstname']))
             $customer_condition[] = "ca.firstname LIKE '%".$data['customer']['substring']."%'";
@@ -360,7 +362,7 @@ if ($mode == 'search') {
         $where[] = "$tables[docs_info].salesman_customer_id = '".$data['basic']['salesman_customer_id']."'";
 
     if (!empty($data['basic']['customer_id']))
-        $where[] = "$tables[docs_user_info].customer_id = '".$data['basic']['customer_id']."'";
+        $where[] = "$tables[docs_user_info].customer_id IN ('".implode("','",cw_doc_get_linked_customers_list($data['basic']['customer_id']))."')";
 
     if ($data['warehouse_area']) {
         $where[] = "($tables[docs_info].warehouse_customer_id = '".$data['warehouse_area']."' or $tables[docs_user_info].customer_id = '".$data['warehouse_area']."')";

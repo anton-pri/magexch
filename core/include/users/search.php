@@ -566,8 +566,9 @@ if ($mode == 'search') {
 
             print(implode($delimiter,$export_columns_names)."\n"); 
             $u_keys = array();
-            $result = mysql_query($user_search_query);
-            while ($row = mysql_fetch_assoc($result)) {
+            global $__mysql_connection_id;
+            $result = mysqli_query($__mysql_connection_id, $user_search_query);
+            while ($row = mysqli_fetch_assoc($result)) {
                 $exp_line = array();
 
                 $row['email'] = strtolower($row['email']);

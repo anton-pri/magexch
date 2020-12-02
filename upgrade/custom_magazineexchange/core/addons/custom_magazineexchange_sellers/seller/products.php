@@ -32,6 +32,7 @@ return $action_result;
  */
 function search() {
     global $request_prepared;
+    global $tables;
     global $products, $customer_id;
    
     global $target, $edited_language;
@@ -39,6 +40,8 @@ function search() {
     if (!empty($customer_id) && is_array($products)) {
         foreach ($products as $k=>$v) {
             $products[$k]['seller_data'] = cw_call('cw\custom_magazineexchange_sellers\mag_product_seller_data', array($v['product_id'], $customer_id));
+            $products[$k]['created_by_current_user'] = 
+                cw_query_first_cell("select COUNT(*) from $tables[products_system_info] where product_id = $v[product_id] and creation_customer_id = $customer_id");
             if ($target == 'digital_products' && !empty($products[$k]['seller_data'])) {
                 foreach ($products[$k]['seller_data'] as $sd_k => $seller_data) {
                     $products[$k]['seller_data'][$sd_k]['attributes'] = cw_func_call('cw_attributes_get', array('item_id' => $seller_data['seller_item_id'], 'item_type' => 'SP', 'language' => $edited_language)); 
