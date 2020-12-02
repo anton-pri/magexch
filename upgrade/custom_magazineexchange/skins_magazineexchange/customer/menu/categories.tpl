@@ -35,7 +35,10 @@
   {else}
     {if $vendorid}
         {include file='common/menu.tpl' title="magazines from this seller" content=$smarty.capture.menu style='categories'}
-    {else}  
+ {elseif $cat eq 7589 or $cat eq 7590 or $cat eq 7600 or $cat eq 7601 or $cat eq 7606 or $cat eq 7607 or $cat eq 7608 or $cat eq 7912 or $cat eq 7609 or $cat eq 7610 or $cat eq 7780 or $cat eq 7882 or $cat eq 7874 or $cat eq 7875 or $cat eq 7876 or $cat eq 7877 or $cat eq 7647 or $cat eq 7880 or $cat eq 7878 or $cat eq 7879 or $cat eq 7881} 
+        {include file='common/menu.tpl' title=$lng.lbl_plans_by_type content=$smarty.capture.menu style='categories'}
+
+{else}
         {include file='common/menu.tpl' title=$lng.lbl_magazines_in_this_section content=$smarty.capture.menu style='categories'}
     {/if}
   {/if}
@@ -47,6 +50,7 @@
 {/if}
 {/if}
 {if $vendorid eq 4010}{cms service_code='shopfront_PP_Link_Keyseller'}{/if}
+
 {*
 {cms service_code="sell_magazines"}
 {cms service_code="payment_cards"}

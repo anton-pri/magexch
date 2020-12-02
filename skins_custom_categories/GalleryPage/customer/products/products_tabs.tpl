@@ -8,7 +8,7 @@ default_tab={$js_tab|default:"1"}
 default_template="customer/products/category_tabs.tpl"
 
 [1]
-title="{$lng.lbl_back_issues}"
+title="{$lng.lbl_plans}"
 
 {if ($category_magexch_attributes.magexch_category_tab_content_2 neq 0 || ($vendorid ne '' && $category_magexch_attributes.magexch_category_tab_content_2 neq '')) && $category_magexch_attributes.magexch_category_tab_title_2}
 [2]

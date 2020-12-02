@@ -431,6 +431,9 @@ function cw_payment_stop($payment_data) {
 	    cw_session_save();
 	    cw_save_customer_cart($customer_id, $cart);
 
+	if (constant('OGONE_DBG')) cw_log_add('ogone', array('cw_payment_stop START', compact('customer_id', 'cart')), false);
+	if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('cw_payment_stop START', compact('customer_id', 'cart')), false);
+
         global $current_area, $identifiers, $APP_SESS_ID;
         if ($identifiers[$current_area]['customer_to_merge']>0) {
             cw_load('user');
@@ -442,6 +445,10 @@ function cw_payment_stop($payment_data) {
             cw_event('on_logout');
         }
     }
+
+    if (constant('OGONE_DBG')) cw_log_add('ogone', array('cw_payment_stop END', compact('payment_data', 'customer_id', 'cart')), false);
+    if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('cw_payment_stop END', compact('payment_data', 'customer_id', 'cart')), false);
+
     cw_header_location($request);
 }
 

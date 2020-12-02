@@ -1,5 +1,5 @@
-{if $alt_template eq "classifieds"}
-<img src="{$AltImagesDir}/Classifieds_Header.png" width="950" height="84">
+{if $alt_template eq "plans_section"}
+<img src="{$AltImagesDir}/Plans_Section_Header.png" width="950" height="84">
 {elseif $alt_template eq "new_seller"}
 <img src="{$AltImagesDir}/New_Sellers_Section_Header.png" width="950" height="84">
 {elseif $alt_template eq "subscribtion"}

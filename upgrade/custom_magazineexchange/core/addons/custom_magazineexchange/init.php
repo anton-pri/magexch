@@ -44,6 +44,7 @@ if (APP_AREA == 'customer') {
     );
 
     cw_addons_set_hooks(
+        array('post', 'cw_warehouse_get_avail_for_customer', 'magexch_warehouse_get_avail_for_customer'),
         array('pre', 'cw_product_search', 'magexch_sort_by_month_time_of_year'),
         array('pre', 'cw_category_search', 'magexch_category_search'),
         array('post', 'cw_product_get', 'magexch_product_get'),

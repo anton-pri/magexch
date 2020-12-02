@@ -1,12 +1,5 @@
 <?php
 
-function magexch_warehouse_get_avail_for_customer() {
-    $return = cw_get_return();
-
-    return 9999;
-}
-
-
 function magexch_get_attribute_value ($item_type, $item_id, $attribute_field='') {
 
     if (!empty($attribute_field)) {
@@ -69,9 +62,9 @@ function magexch_sort_by_month_time_of_year ($params, $return) {
     global $allowed_products_sort_fields;
     $allowed_products_sort_fields[] = 'month_id';
 
-//global $REMOTE_ADDR;
-//if ($REMOTE_ADDR != '87.120.150.77') {
-/*
+global $REMOTE_ADDR;
+if ($REMOTE_ADDR != '87.120.150.77') {
+
     $return['query_joins']['month_attr'] = array(
         'tblname' => 'attributes_values',
         'on' => "$tables[products].product_id=month_attr.item_id and month_attr.item_type='P' and month_attr.attribute_id=179",
@@ -108,8 +101,7 @@ function magexch_sort_by_month_time_of_year ($params, $return) {
                                  )
                                )
                              ) as month_id";
-*/
-//}
+}
 
     return new EventReturn($return, $params); 
 
@@ -118,8 +110,8 @@ function magexch_sort_by_month_time_of_year ($params, $return) {
 function magexch_on_prepare_search_products($params, &$fields, &$from_tbls, &$query_joins, &$where, &$groupbys, &$having, &$orderbys) {
     global $current_area, $tables;
  
-//global $REMOTE_ADDR;
-//if ($REMOTE_ADDR == '87.120.150.77') {
+global $REMOTE_ADDR;
+if ($REMOTE_ADDR == '87.120.150.77') {
 
     if ($params['data']['category_id'] && $current_area == 'C') {
 
@@ -169,7 +161,9 @@ function magexch_on_prepare_search_products($params, &$fields, &$from_tbls, &$qu
     } else {
        $orderbys = array_filter($orderbys, function($v) {return (strpos($v, 'month_id')===false);});
     }
-//}
+
+
+}
 
 }
 
@@ -636,51 +630,4 @@ function magexch_get_admin_customer_id($config_field) {
     }
 
     return $result;
-}
-
-// use like alt skin
-function magexch_code_get_template_dir($params, $return) {
-        global $target, $app_dir, $tables;
-
-        $mobile_mobile_flag = cw_session_register('mobile_mobile_flag');
- 
-        $skin_params = ['product'=>['product_id', 'P', 'magexch_product_skin'], 'index'=>['cat', 'C', 'magexch_index_skin', true]][$target];
-
-        if (empty($skin_params)) 
-            return $return;
-
-        $param_name = $skin_params[0];
-
-        global $$param_name;
-
-        if (empty($$param_name))
-            return $return;
-
-        $custom_skin = cw_call('magexch_get_attribute_value', array($skin_params[1], $$param_name, $skin_params[2]));
-
-        if (empty($custom_skin))
-            return $return; 
-
-        if ($mobile_mobile_flag == 'on') { 
-            if ($skin_params[3]) {
-                $mobi_custom_skin = $custom_skin.'.mobi';
-                if (file_exists($app_dir . $mobi_custom_skin))
-                    $custom_skin = $mobi_custom_skin;
-            } else {
-                return $return;
-            }
-        }
-
-        $return = (array)$return;
-
-        $data = ['skin' => $custom_skin];
-        $altskin = $data['skin'];
-
-        if (!$altskin) return $return;
-
-        if (!in_array($app_dir . $altskin, $return, true)) {
-                array_unshift($return, $app_dir . $altskin);
-        }
-
-        return $return;
 }

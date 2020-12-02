@@ -1103,7 +1103,7 @@ function cw_product_search($params, $return = null) {
 
 //            if($current_area == 'C' && $is_assigned)
             if ($current_area == 'C')
-                $products[$k]['avail'] = cw_warehouse_get_avail_for_customer($v['product_id'], $v['variant_id']);
+                $products[$k]['avail'] = cw_call('cw_warehouse_get_avail_for_customer', [$v['product_id'], $v['variant_id']]);
             elseif($current_area == 'A') {
                 $products[$k]['avails'] = cw_warehouse_get_avails($v['product_id']);
             }
@@ -1433,7 +1433,7 @@ function cw_product_get($params, $return = null) {
 // with flag - total avail as set in admin per variant
 //                $product['avail'] = cw_warehouse_get_avail_for_customer($id, $product['variant_id']);
 //                $product['avails']= cw_warehouse_get_avails_customer($id);
-                $product['avail'] = cw_warehouse_get_avail_for_customer($id, $product['variant_id']);
+                $product['avail'] = cw_call('cw_warehouse_get_avail_for_customer', [$id, $product['variant_id']]);
             }
         }
         else
