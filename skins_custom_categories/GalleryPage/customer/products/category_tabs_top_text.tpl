@@ -1,1 +1,1 @@
-text is defined in 'skins_custom_categories/GalleryPage/customer/products/category_tabs_top_text.tpl' 
+<span style="font-weight: bold; color: rgb(255, 0, 8);">Click images below</span> to view details of that plan & model. Use <span style="font-weight: bold;">Previous</span> and <span style="font-weight: bold;">Next</span> to see more plans.

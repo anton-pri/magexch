@@ -208,7 +208,9 @@ function cw_seller_on_doc_change_status_emails_send($doc_data, $status) {
  */
  /* TODO: Move to seller addon */
 function cw_seller_on_build_order_hash($product) {
-    return 'S'.$product['system']['creation_customer_id'];
+    //return 'S'.$product['system']['creation_customer_id'];
+    //MAGEXCH fix, to be moved to addon as replace hook	
+    return 'S';
 }
 
 // end events

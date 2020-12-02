@@ -6,10 +6,7 @@
   <div class="footer_block" id="about">
     <h4>{$lng.lbl_about_us}</h4>
     <ul>
-      <li><a href="{$catalogs.customer}/help-centre-buying-searching-and-browsing.html">{$lng.lbl_who_we_are}</a> </li>
-      <li><a href="{$catalogs.customer}/help-centre-buying-back-issues.html">{$lng.lbl_our_service}</a> </li>
-      <li><a href="{$catalogs.customer}/help-centre-buying-subscriptions.html">{$lng.lbl_careers}</a> </li>
-      <li><a href="{$catalogs.customer}/help-centre-buying-digital-editions.html">{$lng.lbl_contact_us}</a> </li>
+      <li><a href="{$catalogs.customer}/help-centre-about-us-who-we-are.html">{$lng.lbl_who_we_are}</a> </li>
     </ul>
   </div>
 
@@ -19,7 +16,7 @@
       <li><a href="{$catalogs.customer}/search-for-magazine-articles.html">{$lng.lbl_find_magazines_articles}</a></li>
       <li>{cms service_code="bying_back_issues" preload_popup="Y"}</li>
       <li><a href="{$catalogs.customer}/help-centre-buying-subscriptions.html">{$lng.lbl_bying_subscriptions}</a></li>
-      <li><a href="{$catalogs.customer}/Delivery-Rates_Basics.html">{$lng.lbl_delivery_rates_info}</a></li>
+      <li><a href="{$catalogs.customer}/Delivery-Rates_Basics-1.html">{$lng.lbl_delivery_rates_info}</a></li>
     </ul>
   </div>
 

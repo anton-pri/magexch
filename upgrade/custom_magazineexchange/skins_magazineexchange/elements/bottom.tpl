@@ -30,7 +30,7 @@
       <li><a href="{$catalogs.customer}/help-centre-buying-back-issues-1.html">{$lng.lbl_bying_back_issues}</a></li>
       <li><a href="{$catalogs.customer}/help-centre-buying-digital-editions.html">{$lng.lbl_buying_digital_issues}</a></li>
       <li><a href="{$catalogs.customer}/help-centre-buying-subscriptions.html">{$lng.lbl_bying_subscriptions}</a></li>
-      <li><a href="{$catalogs.customer}/Delivery-Rates_Basics.html">{$lng.lbl_delivery_rates_info}</a></li>
+      <li><a href="{$catalogs.customer}/Delivery-Rates_Basics-1.html">{$lng.lbl_delivery_rates_info}</a></li>
     </ul>
   </div>
 
