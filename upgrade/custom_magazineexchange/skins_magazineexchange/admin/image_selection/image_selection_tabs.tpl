@@ -39,7 +39,7 @@
 
 {elseif $included_tab eq 'on_internet'}
 {* start *}
-<div class="warning">Create lang var to go here</div>
+<div class="warning">{$lng.lbl_use_image_from_internet}</div>
 
 <table class="input_table" style="border:0; margin:0;">
 <tr>

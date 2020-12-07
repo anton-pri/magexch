@@ -54,7 +54,7 @@ if (defined('IS_AJAX') && in_array($in_type, ['products_images_det', 'products_i
 
     if (in_array($in_type, ['products_images_det', 'products_images_thumb'])) {
         $image_data = cw_image_get($in_type, $product_id);
-        if ($image_data && $image_data['tmbn_url'] != '')
+        if ($image_data && $image_data['tmbn_url'] != '' && !$image_data['is_default'])
             $product_images = [$image_data];
     } elseif ($in_type == 'products_detailed_images') {
         $product_images = cw_image_get_list('products_detailed_images', $product_id, ($current_area == 'C'?1:0));

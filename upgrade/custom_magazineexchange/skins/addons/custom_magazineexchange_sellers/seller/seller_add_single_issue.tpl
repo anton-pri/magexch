@@ -9,6 +9,7 @@
 
 <div style="margin-left: 20%;">
 <div style="float:left; width:450px;" class="block block-themed animated fadeIn">
+{cms service_code="add_single_issue_info"}
 <div class="block-header bg-green"><h3 style="text-align: center;" class="block-title">{$lng.lbl_add_single_issue}</h3></div>
 <div class="col-sm-12" style="padding:10px 0 10px 15px;">{$lng.lbl_single_issue_note}</div>
 <div style="width:450px;" class="jasellerblock-content">
@@ -25,7 +26,7 @@ https://form.jotform.com/70513863664965?yourUsername={$user_account.email}" fram
 
 
 </div></div><div>
-<div style="margin-left: 500px;"><img src="/cw/images/Avatar_Single_Issue.gif" width="116" height="413"><br><a target="_blank" href="{$catalogs.customer}/help-centre-selling-trade-services-adding-single-issue.html"><img src="/cw/images/Avatar_Single_Issue_2.gif" width="116" height="377"></a></div>
+<div style="margin-left: 500px;"><img style="padding-top:200px;" src="/cw/images/Avatar_Single_Issue.gif" width="116"><br><a target="_blank" href="{$catalogs.customer}/help-centre-selling-trade-services-adding-single-issue.html"><img src="/cw/images/Avatar_Single_Issue_2.gif" width="116" height="377"></a></div>
 <div style="clear: both;"></div>
 
 

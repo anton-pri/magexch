@@ -122,7 +122,7 @@
                 <input type="hidden" name="product_id" value="{$product.product_id}" />
 
                 <div class="create-product-page-avatar">
-                  <a target="_blank" href="#">
+                  <a target="_blank" href="/cw/help-centre-selling-trade-services-create-product-page.html">
                     <img src="/cw/images/Create_Product_Page_Avatar.png" width="214" alt="" />
                   </a>
                 </div>
@@ -136,7 +136,7 @@
                   </div>                
 
                   <div class="category_path browse">
-                    Browse Categories
+                    Select Category
                   </div>
                 </div>
 
@@ -209,7 +209,7 @@
                   <label class="col-xs-12">
                     {$lng.lbl_right_description_box|default:"Right Description Box ('Article snippets' for  Magazine issues) (Optional)"}
                   </label>
-                  {$lng.lbl_seller_product_left_description_note}
+                  {$lng.lbl_seller_product_right_description_note}
                   <div class="col-xs-12 col-md-4">
                     <textarea name="product_data[descr]"  rows="10" cols="80"/>{$product.descr}</textarea>
                   </div>  
