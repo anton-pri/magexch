@@ -26,11 +26,12 @@ function cw_messages_create_new_message(
     $recipient_email,
     $subject,
     $body,
-    $conversation_id
+    $conversation_id,
+    $recipient_info
 ) {
     global $config, $current_location;
 
-    cw_load('email');
+    cw_load('email', 'user');
 
     // sent message (incoming folder)
     $new_message_id = cw_array2insert(
@@ -82,7 +83,12 @@ function cw_messages_create_new_message(
     // send notification email to recipient
     // notification is sent from system email and says about new received message from Sender at <sitename>
 
-    $from = $config['Company']['site_administrator'];
+    $sender_info = cw_call('cw_user_get_info', array('customer_id' => $customer_id, 'info_type' => 0));
+    if ($sender_info)
+        $from = $sender_info['email'];
+    else
+        $from = $config['Company']['site_administrator'];
+
 /*
     $mail_subject = "The notification of a new message";
     $mail_body = '<b>You have received a new message from "' . $sender_name . '" at <a href="' . $current_location . '">';
@@ -103,7 +109,8 @@ function cw_messages_create_new_message(
     $smarty->assign('recipient_id', $recipient_id);
     $smarty->assign('current_conversation_id', $current_conversation_id);
     $smarty->assign('new_message_id', $new_message_id);
-
+    $smarty->assign('is_recipient_seller', $recipient_info['usertype'] == 'V');
+  
     cw_call('cw_send_mail', array($from, $recipient_email, 'addons/messaging_system/mail/new_message_subj.tpl', 'addons/messaging_system/mail/new_message_body.tpl'));
 
     return $new_message_id;  

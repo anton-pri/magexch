@@ -146,7 +146,8 @@ if ($action == 'new_message' && !empty($new_message)) {
         $recipient_email,
         $subject,
         $body,
-        $conversation_id
+        $conversation_id,
+        $recipient_info
     ));
 
     $top_message = array(
