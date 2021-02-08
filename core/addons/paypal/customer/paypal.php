@@ -14,6 +14,15 @@ if (isset($request_prepared['mode']) && $request_prepared['mode'] == 'success') 
 
     $skey = $request_prepared['secureid']; // secureid - ref_id in table payment_data
 
+    if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('skey_pre_clean',$skey), false);
+
+    if (strpos($skey, '?') !== false) {
+        $skey_parts = explode('?', $skey);
+        $skey = $skey_parts[0];
+    }
+        
+    if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('skey_post_clean',$skey), false);
+
     $payment_data = cw_call('cw_payment_get_data', array($skey));
     
     cw_call('cw_payment_put_data', array($skey, array('state'=>'END','status'=>'success')));
@@ -31,7 +40,7 @@ if (isset($request_prepared['mode']) && $request_prepared['mode'] == 'success') 
     } else {
 		// If user returns to site successfully before callback (or callback missed) - switch status from I to Q	
 		$doc_ids = cw_query_column("SELECT doc_id FROM $tables[docs] WHERE status='I' AND doc_id IN ('" . implode("','", $payment_data['doc_ids']) . "')");
-        cw_call('cw_doc_change_status', array($doc_ids, 'Q'));
+        cw_call('cw_doc_change_status', array($doc_ids, 'P'));
     }
     
     if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('success',$payment_data), false);

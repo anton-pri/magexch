@@ -61,7 +61,7 @@
     {/if}
     {/foreach}
 {else}
-      <tr><td colspan="5" align="center"><strong>{$lng.lbl_currently_no_sellers}</strong></td></tr>
+      <tr><td colspan="5" align="center"><strong>{$lng.lbl_currently_no_sellers_print}</strong></td></tr>
 {/if}
 
     </tbody>
