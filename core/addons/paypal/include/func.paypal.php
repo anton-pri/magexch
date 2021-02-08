@@ -69,7 +69,9 @@ function cw_payment_paypal_run_processor($params, $return) {
         if ($config['paypal']['use_preauth'] == 'Y') {
             $fields['paymentaction'] = 'authorization';
         }
-        
+       
+	if (constant('PP_STD_DBG')) cw_log_add('paypal_std', array('INIT cw_payment_paypal_run_processor', $fields), 1);
+ 
         cw_func_call('cw_payment_create_form', array('url' => 'https://'.($config['paypal']['test_mode'] == 'N' ? "www.paypal.com" : "www.sandbox.paypal.com").'/cgi-bin/webscr', 'fields' => $fields, 'name' => $params['payment_data']['title']));
         die();
     }
